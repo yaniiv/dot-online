@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-import SVG from '../svg/github'
+import Icon from '../svg/icon'
 import { auto } from "eol"
 
 const ProjectBlock = () => (
@@ -36,7 +36,10 @@ const ProjectBlock = () => (
         <h1>Hi people</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
-        <SVG name="github" />
+        <Icon name="github" width="50px" height="50px"/>
+        <Icon name="twitter" width="50px" height="50px"/>
+        <Icon name="medium" width="50px" height="50px"/>
+
         <div style={{ maxWidth: `300px` }}>
           <Image />
         </div>
