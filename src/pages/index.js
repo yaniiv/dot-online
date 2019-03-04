@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-import Icon from '../svg/icon'
 import { auto } from "eol"
 
 const ProjectBlock = () => (
@@ -23,8 +22,8 @@ const ProjectBlock = () => (
           margin: 'auto',
           fontSize: "16px",
           padding: "2rem",
-          width: "1000px",
-          height: "600px",
+          width: "900px",
+          height: "560px",
           background: "#f9f9f9",
           boxShadow: "inset 2px 2px 6px rgba(0,0,0,.1)",
           borderRadius: "10px",
@@ -36,10 +35,6 @@ const ProjectBlock = () => (
         <h1>Hi people</h1>
         <p>Welcome to your new Gatsby site.</p>
         <p>Now go build something great.</p>
-        <Icon name="github" width="50px" height="50px"/>
-        <Icon name="twitter" width="50px" height="50px"/>
-        <Icon name="medium" width="50px" height="50px"/>
-
         <div style={{ maxWidth: `300px` }}>
           <Image />
         </div>

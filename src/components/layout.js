@@ -11,6 +11,8 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import Socials from "./socials"
+import Menu from "./menu"
+
 import "./layout.css"
 
 const Layout = ({ children }) => (
@@ -22,7 +24,7 @@ const Layout = ({ children }) => (
             title
             siteSocials {
               name
-              link
+              linkTo
             }
           }
         }
@@ -30,6 +32,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+        <Menu />
         <Header siteTitle={data.site.siteMetadata.title} />
         <Socials siteSocials={data.site.siteMetadata.siteSocials} />
         <div

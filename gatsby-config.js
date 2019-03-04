@@ -6,15 +6,15 @@ module.exports = {
     siteSocials: [
       {
         name: `github`,
-        link: `github.com`,
+        linkTo: `https://github.com/yantonsoup`,
       },
       {
         name: `medium`,
-        link: `github.com`,
+        linkTo: `https://medium.com/@yaniv_g`,
       },
       {
         name: `twitter`,
-        link: `github.com`,
+        linkTo: `https://twitter.com/yantonsoup`,
       }
     ],
   },
