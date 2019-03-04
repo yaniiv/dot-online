@@ -30,11 +30,9 @@ const Menu = () => (
 )
 
 Menu.propTypes = {
-  siteSocials: PropTypes.array,
 }
 
 Menu.defaultProps = {
-  siteSocials: ``,
 }
 
 export default Menu

@@ -17,15 +17,15 @@ const Socials = ({ siteSocials }) => (
         // maxWidth: 960,
         display: "flex",
         flexDirection: "column",
-        padding: `1.45rem 2rem`,
+        padding: `1.45rem 2rem 0`,
       }}
     >
       {
         siteSocials.map(({ name, linkTo }) => (
-          <a href={linkTo} target="_blank" style={{
+          <a href={linkTo} key={name} target="_blank" style={{
             width: 50,
             height: 50,
-            margin: '1rem'
+            marginBottom: '2rem'
           }}>
             <Icon name={name} />
           </a>

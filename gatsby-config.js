@@ -9,12 +9,12 @@ module.exports = {
         linkTo: `https://github.com/yantonsoup`,
       },
       {
-        name: `medium`,
-        linkTo: `https://medium.com/@yaniv_g`,
-      },
-      {
         name: `twitter`,
         linkTo: `https://twitter.com/yantonsoup`,
+      },
+      {
+        name: `medium`,
+        linkTo: `https://medium.com/@yaniv_g`,
       }
     ],
   },
