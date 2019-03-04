@@ -22,12 +22,12 @@ const ProjectBlock = () => (
       style={{
         margin: "auto",
         fontSize: "16px",
-        // padding: "2rem",
+        padding: "2rem",
         width: "600px",
         height: "410px",
-        background: "#f9f9f9",
-        boxShadow: "inset 2px 2px 6px rgba(0,0,0,.1)",
-        borderRadius: "10px",
+        // background: "#f9f9f9",
+        // boxShadow: "inset 2px 2px 6px rgba(0,0,0,.1)",
+        // borderRadius: "10px",
       }}
     >
       <div
@@ -41,6 +41,9 @@ const ProjectBlock = () => (
         
         <div style={{  margin: ' 0 auto'}}>
           <BrowserWindow />
+         <img 
+          style={{marginTop: "-7px"}}
+         src='http://placekitten.com/600/366'></img>
           {/* <Image />  */}
         </div>
       </div>

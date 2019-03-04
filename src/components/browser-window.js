@@ -7,7 +7,8 @@ const BrowserWindow = () => (
     id="Layer_1"
     data-name="Layer 1"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 801 558"
+    // viewBox="0 0 801 558"
+    viewBox="0 0 801 44"
   >
     <path
       d="M948,171H147V153a5,5,0,0,1,5.05-5H943a5,5,0,0,1,5,5Z"
@@ -34,11 +35,11 @@ const BrowserWindow = () => (
       style={{fill:"#e6e6e6"}}
 
     />
-    <path
+    {/* <path
       d="M948,699.93a5.85,5.85,0,0,1-5.6,6.07H152.6a5.85,5.85,0,0,1-5.6-6.07V192H948Z"
       transform="translate(-147 -148)"
       style={{fill:"#f2f2f2"}}
-    />
+    /> */}
     <rect y="23" width="801" height="21" style={{fill:"#e6e6e6"}} />
   </svg>
 )
