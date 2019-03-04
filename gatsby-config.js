@@ -3,6 +3,20 @@ module.exports = {
     title: `yaniv`,
     description: `yaniv, online`,
     author: `@yantonsoup`,
+    siteSocials: [
+      {
+        name: `github`,
+        link: `github.com`,
+      },
+      {
+        name: `medium`,
+        link: `github.com`,
+      },
+      {
+        name: `twitter`,
+        link: `github.com`,
+      }
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
