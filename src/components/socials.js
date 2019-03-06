@@ -20,17 +20,20 @@ const Socials = ({ siteSocials }) => (
         padding: `1.45rem 2rem 0`,
       }}
     >
-      {
-        siteSocials.map(({ name, linkTo }) => (
-          <a href={linkTo} key={linkTo} target="_blank" style={{
+      {siteSocials.map(({ name, linkTo }) => (
+        <a
+          href={linkTo}
+          key={linkTo}
+          target="_blank"
+          style={{
             width: 50,
             height: 50,
-            marginBottom: '2rem'
-          }}>
-            <Icon name={name} />
-          </a>
-        ))
-      }
+            marginBottom: "2rem",
+          }}
+        >
+          <Icon name={name} />
+        </a>
+      ))}
     </div>
   </div>
 )

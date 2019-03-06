@@ -19,20 +19,21 @@ const Menu = () => (
         padding: `1.45rem 2rem`,
       }}
     >
-        <a target="_blank" style={{
-            width: 50,
-            height: 50,
-          }}>
-        <Icon name='hamburger' viewBox="0 0 32 32"/>
+      <a
+        target="_blank"
+        style={{
+          width: 50,
+          height: 50,
+        }}
+      >
+        <Icon name="hamburger" viewBox="0 0 32 32" />
       </a>
     </div>
   </div>
 )
 
-Menu.propTypes = {
-}
+Menu.propTypes = {}
 
-Menu.defaultProps = {
-}
+Menu.defaultProps = {}
 
 export default Menu

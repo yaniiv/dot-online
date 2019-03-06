@@ -36,11 +36,13 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <Socials siteSocials={data.site.siteMetadata.siteSocials} />
         <div
-          style={{
-            // margin: `0 auto`,
-            // padding: `0px 1.0875rem 1.45rem`,
-            // paddingTop: 0,
-          }}
+          style={
+            {
+              // margin: `0 auto`,
+              // padding: `0px 1.0875rem 1.45rem`,
+              // paddingTop: 0,
+            }
+          }
         >
           <main>{children}</main>
           {/* <footer>

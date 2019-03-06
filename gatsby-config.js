@@ -17,6 +17,20 @@ module.exports = {
         linkTo: `https://xmedium.com/@yaniv_g`,
       }
     ],
+    projects: [
+      {
+        name: 'after-the-ussr',
+        link: 'https://aftertheussr.com'
+      },
+      {
+        name: 'scott-perry',
+        link: 'https://github.com'
+      },
+      {
+        name: 'terminal-portfolio',
+        link: 'https://yanivgoldobin.com'
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -29,6 +43,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
