@@ -5,6 +5,30 @@ import BrowserWindow from "./browser-window"
 
 const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/video/upload/"
 
+const circleStyles = {
+  width: '40px',
+  height: '40px',
+  background: 'green',
+  border: '8px solid black',
+  borderRadius: '50%'
+}
+
+const BrowserButton = ({ 
+  width = '40px',
+  height = '40px',
+  background = 'transparent',
+  border = '8px solid black',
+  borderRadius = '50%',
+  flexGrow = '1',
+  padding = 0,
+}) => {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', padding, justifyContent: 'center'}}>
+      <div style={{ width, height, background, border, borderRadius, margin: '0 auto' }}></div>
+    </div>
+  )
+}
+
 const ProjectBlock = ({videoId}) => (
   <div
     style={{
@@ -19,21 +43,28 @@ const ProjectBlock = ({videoId}) => (
       style={{
         margin: "auto",
         fontSize: "16px",
-        width: "640px",
-        height: "420px",
-        // background: "#f9f9f9",
-        // boxShadow: "inset 2px 2px 6px rgba(0,0,0,.1)",
-        // borderRadius: "10px",
+        maxWidth: "640px",
+        maxHeight: "420px",
       }}
     >
       <div
       >
-        <div style={{ margin: "0 auto", maxWidth: "640px", position: 'relative' }}>
-          <div style={{ position: 'relative', zIndex: '50'}}>
+        <div style={{ margin: "0 auto", width: '100%', position: 'relative' }}>
+          {/* <div style={{ position: 'relative', zIndex: '50'}}>
             <BrowserWindow />
-          </div>
-          <div style={{ marginTop: 'auto', bottom: '0', position: 'absolute', bottom: '0' }}>
-            <video  muted width="640px" src={`${cloudinaryRootUrl}/${videoId}.mp4`} />
+          </div> */}
+          <div style={{ border: '8px solid black', borderRadius: "10px", display: "flex", flexDirection: "column" }} >
+            <div style={{borderBottom: '8px solid black'}}>
+              <div className="spacer" style={{ height: '60px', width: '100%', display: 'flex'}}>
+              <div style={{flex: '1', flexDirection: 'row', display: 'flex', justifyContent:'space-between'}}>
+                <BrowserButton />
+                <BrowserButton />
+                <BrowserButton />
+              </div>
+                <div style={{flex: '3'}}>im the searchbar</div>
+              </div>
+            </div>
+            <video muted width="100%" src={`${cloudinaryRootUrl}/${videoId}.mp4`} />
           </div>
         
           {/* <CloudinaryContext cloudName="dzprezr1g">
