@@ -14,12 +14,11 @@ const circleStyles = {
 }
 
 const BrowserButton = ({ 
-  width = '40px',
-  height = '40px',
+  width = '30px',
+  height = '30px',
   background = 'transparent',
-  border = '8px solid black',
+  border = '4px solid black',
   borderRadius = '50%',
-  flexGrow = '1',
   padding = 0,
 }) => {
   return (
@@ -54,18 +53,17 @@ const ProjectBlock = ({videoId}) => (
           </div>
           <div style={{ border: '8px solid black', borderRadius: "10px", display: "flex", flexDirection: "column" }} >
             <div style={{borderBottom: '8px solid black'}}>
-              <div className="spacer" style={{ height: '60px', width: '100%', display: 'flex', padding:"0 8px"}}>
-                {/* <div style={{padding: '0 8px'}}> */}
+              <div className="spacer" style={{ height: '60px', width: '100%', display: 'flex'}}>
+                <div style={{flex: '1', flexDirection: 'row', display: 'flex', padding: '0 18px'}}>
                   <BrowserButton />
-                  <BrowserButton padding={0}/>
+                  <BrowserButton /> 
                   <BrowserButton />
-                {/* </div> */}
-                <div style={{flex: '9'}}>im the searchbar</div>
+                </div>
+                <div style={{flex: '4'}}>im the searchbar</div>
               </div>
             </div>
             <video muted controls width="100%" src={`${cloudinaryRootUrl}/${videoId}.mp4`} />
           </div>
-        
       
         </div>
       </div>
