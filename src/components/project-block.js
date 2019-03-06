@@ -17,7 +17,7 @@ const BrowserButton = ({
   width = '30px',
   height = '30px',
   background = 'transparent',
-  border = '4px solid black',
+  border = '3px solid black',
   borderRadius = '50%',
   padding = 0,
 }) => {
@@ -62,7 +62,7 @@ const ProjectBlock = ({videoId}) => (
                 <div style={{flex: '4', padding: '8px 8px'}}>
                   <div style={{
                     background :'transparent',
-                    border : '4px solid black',
+                    border : '3px solid black',
                     borderRadius : '6px',
                     height: '100%'
                   }}> im the searchbar</div>
