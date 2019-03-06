@@ -1,6 +1,6 @@
 import React from "react"
 // import { CloudinaryContext, Video, Transformation } from "cloudinary-react"
-
+import styles from './Project.style';
 import BrowserWindow from "./BrowserWindow"
 
 const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/video/upload/"
@@ -48,6 +48,7 @@ const BrowserButton = ({
 
 const ProjectBlock = ({ name, link }) => (
   <div
+    className={styles.projectContainer}
     style={{
       height: "100vh",
       width: "100vw",
