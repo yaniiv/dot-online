@@ -23,7 +23,7 @@ const BrowserButton = ({
 }) => {
   return (
     <div style={{ flex: '1', display: 'flex', flexDirection: 'column', padding, justifyContent: 'center'}}>
-      <div style={{ width, height, background, border, padding, borderRadius, margin: '0 auto' }}></div>
+      <div style={{ width, height, background, border, padding, borderRadius, margin: 'auto' }}></div>
     </div>
   )
 }
@@ -48,18 +48,25 @@ const ProjectBlock = ({videoId}) => (
     >
       <div>
         <div style={{ margin: "0 auto", width: '100%', position: 'relative' }}>
-          <div style={{ position: 'relative', zIndex: '50'}}>
+          {/* <div style={{ position: 'relative', zIndex: '50'}}>
             <BrowserWindow />
-          </div>
-          <div style={{ border: '8px solid black', borderRadius: "10px", display: "flex", flexDirection: "column" }} >
+          </div> */}
+          <div style={{ border: '8px solid black', borderRadius: "14px", display: "flex", flexDirection: "column" }} >
             <div style={{borderBottom: '8px solid black'}}>
               <div className="spacer" style={{ height: '60px', width: '100%', display: 'flex'}}>
-                <div style={{flex: '1', flexDirection: 'row', display: 'flex', padding: '0 18px'}}>
+                <div style={{flex: '1', flexDirection: 'row', display: 'flex', padding: '0 16px'}}>
                   <BrowserButton />
                   <BrowserButton /> 
                   <BrowserButton />
                 </div>
-                <div style={{flex: '4'}}>im the searchbar</div>
+                <div style={{flex: '4', padding: '8px 8px'}}>
+                  <div style={{
+                    background :'transparent',
+                    border : '4px solid black',
+                    borderRadius : '6px',
+                    height: '100%'
+                  }}> im the searchbar</div>
+                </div>
               </div>
             </div>
             <video muted controls width="100%" src={`${cloudinaryRootUrl}/${videoId}.mp4`} />
