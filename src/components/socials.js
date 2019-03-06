@@ -22,7 +22,7 @@ const Socials = ({ siteSocials }) => (
     >
       {
         siteSocials.map(({ name, linkTo }) => (
-          <a href={linkTo} key={name} target="_blank" style={{
+          <a href={linkTo} key={linkTo} target="_blank" style={{
             width: 50,
             height: 50,
             marginBottom: '2rem'

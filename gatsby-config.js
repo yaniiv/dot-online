@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         name: `medium`,
-        linkTo: `https://medium.com/@yaniv_g`,
+        linkTo: `https://xmedium.com/@yaniv_g`,
       }
     ],
   },

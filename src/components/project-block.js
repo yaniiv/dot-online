@@ -64,8 +64,9 @@ const ProjectBlock = ({videoId}) => (
                     background :'transparent',
                     border : '3px solid black',
                     borderRadius : '6px',
-                    height: '100%'
-                  }}> im the searchbar</div>
+                    height: '100%',
+                    padding: '4px 8px'
+                  }}> <a href='http://yaniv.online'>im the searchbar</a></div>
                 </div>
               </div>
             </div>
