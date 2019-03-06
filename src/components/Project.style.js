@@ -11,11 +11,11 @@ const projectContainer = css`
   display: flex,
   flexDirection: column,
   justifyContent: center,
-`;
+`
 
 export default {
-  projectContainer
-};
+  projectContainer,
+}
 
 // const ProjectBlock = ({ name, link }) => (
 //   <div

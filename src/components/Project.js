@@ -1,6 +1,6 @@
 import React from "react"
 // import { CloudinaryContext, Video, Transformation } from "cloudinary-react"
-import styles from './Project.style';
+import styles from "./Project.style"
 import BrowserWindow from "./BrowserWindow"
 
 const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/video/upload/"
@@ -20,31 +20,29 @@ const BrowserButton = ({
   border = "3px solid black",
   borderRadius = "50%",
   padding = 0,
-}) => {
-  return (
+}) => (
+  <div
+    style={{
+      flex: "1",
+      display: "flex",
+      flexDirection: "column",
+      padding,
+      justifyContent: "center",
+    }}
+  >
     <div
       style={{
-        flex: "1",
-        display: "flex",
-        flexDirection: "column",
+        width,
+        height,
+        background,
+        border,
         padding,
-        justifyContent: "center",
+        borderRadius,
+        margin: "auto",
       }}
-    >
-      <div
-        style={{
-          width,
-          height,
-          background,
-          border,
-          padding,
-          borderRadius,
-          margin: "auto",
-        }}
-      />
-    </div>
-  )
-}
+    />
+  </div>
+)
 
 const ProjectBlock = ({ name, link }) => (
   <div
