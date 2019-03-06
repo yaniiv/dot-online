@@ -1,7 +1,7 @@
 import React from "react"
 
 import { auto } from "eol"
-import ProjectBlock from "./project-block"
+import ProjectBlock from "./Project"
 
 const BrowserWindowTwo = () => (
   <svg

@@ -1,7 +1,7 @@
 import React from "react"
 // import { CloudinaryContext, Video, Transformation } from "cloudinary-react"
 
-import BrowserWindow from "./browser-window"
+import BrowserWindow from "./BrowserWindow"
 
 const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/video/upload/"
 

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 import React from "react"
-import Icon from "../components/icon"
+import Icon from "./Icon"
 
 const Socials = ({ siteSocials }) => (
   <div

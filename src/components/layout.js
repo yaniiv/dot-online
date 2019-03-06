@@ -9,9 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import Socials from "./socials"
-import Menu from "./menu"
+import Header from "./Header"
+import Socials from "./Socials"
+import Menu from "./Menu"
 
 import "./layout.css"
 
