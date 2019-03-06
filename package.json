@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Yaniv Goldobin ygoldobin@gmail.com>",
   "dependencies": {
+    "cloudinary-react": "^1.1.0",
     "gatsby": "^2.1.19",
     "gatsby-image": "^2.0.30",
     "gatsby-plugin-manifest": "^2.0.20",
