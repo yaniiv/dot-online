@@ -2,46 +2,45 @@ import React from "react"
 // import { CloudinaryContext, Video, Transformation } from "cloudinary-react"
 import * as styles from "./Project.style"
 import BrowserButton from "./BrowserButton"
-import { css } from "@emotion/core"
+import Console from './Console';
 
 const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/video/upload/"
-
-
 
 const ProjectBlock = ({ name, link }) => (
   <div css={styles.projectContainer}>
     <div css={styles.project}>
-          {/* <div style={{ position: 'relative', zIndex: '50'}}>
+      {/* <div style={{ position: 'relative', zIndex: '50'}}>
             <BrowserWindow />
           </div> */}
-          <div css={styles.browserFrame}>
-            <div css={styles.browserHeader}>
-              <div css={styles.browserButtons}>
-                <BrowserButton />
-                <BrowserButton />
-                <BrowserButton />
-              </div>
-              <div css={styles.browserUrlBarContainer}>
-                <div css={styles.browserUrlBar}>
-                  <a
-                    css={styles.browserUrlLink}
-                    href="https://aftertheussr.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link}
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <video
-              muted
-              controls
-              width="100%"
-              src={`${cloudinaryRootUrl}/${name}.mp4`}
-            />
+      <div css={styles.browserFrame}>
+        <div css={styles.browserHeader}>
+          <div css={styles.browserButtons}>
+            <BrowserButton />
+            <BrowserButton />
+            <BrowserButton />
           </div>
+          <div css={styles.browserUrlBarContainer}>
+            <div css={styles.browserUrlBar}>
+              <a
+                css={styles.browserUrlLink}
+                href="https://aftertheussr.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link}
+              </a>
+            </div>
+          </div>
+          <Console />
+        </div>
+
+        <video
+          muted
+          controls
+          width="100%"
+          src={`${cloudinaryRootUrl}/${name}.mp4`}
+        />
+      </div>
     </div>
   </div>
 )
