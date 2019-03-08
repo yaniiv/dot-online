@@ -1,140 +1,97 @@
 import React from "react"
 // import { CloudinaryContext, Video, Transformation } from "cloudinary-react"
-import styles from "./Project.style"
-import BrowserWindow from "./BrowserWindow"
+// import * as Styles from "./Project.style"
+import BrowserButton from "./BrowserButton"
+import { css } from "@emotion/core"
 
 const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/video/upload/"
 
-const circleStyles = {
-  width: "40px",
-  height: "40px",
-  background: "green",
-  border: "8px solid black",
-  borderRadius: "50%",
-}
+const projectContainer = css`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
 
-const BrowserButton = ({
-  width = "30px",
-  height = "30px",
-  background = "transparent",
-  border = "3px solid black",
-  borderRadius = "50%",
-  padding = 0,
-}) => (
-  <div
-    style={{
-      flex: "1",
-      display: "flex",
-      flexDirection: "column",
-      padding,
-      justifyContent: "center",
-    }}
-  >
-    <div
-      style={{
-        width,
-        height,
-        background,
-        border,
-        padding,
-        borderRadius,
-        margin: "auto",
-      }}
-    />
-  </div>
-)
+const project = css`
+  margin: auto;
+  font-size: 16px;
+  max-width: 640px;
+  max-height: 420px;
+`
+
+const browserFrame = css`
+  border: 8px solid black;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+`
+
+const browserHeader = css`
+  border-bottom: 8px solid black;
+  height: 60px;
+  width: 100%;
+  display: flex;
+`
+
+const browserButtons = css`
+  flex: 1;
+  flex-direction: row;
+  display: flex;
+  padding: 0 16px;
+`
+
+const browserUrlBarContainer = css`
+  flex: 4;
+  padding: 8px 8px;
+`
+
+const browserUrlBar = css`
+  background: transparent;
+  border: 3px solid black;
+  border-radius: 6px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
+const browserUrlLink = css`
+  margin: auto 16px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen;
+  text-decoration: none;
+  font-size: 18px;
+  color: blue;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+`
 
 const ProjectBlock = ({ name, link }) => (
-  <div
-    className={styles.projectContainer}
-    style={{
-      height: "100vh",
-      width: "100vw",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-    }}
-  >
-    <div
-      style={{
-        margin: "auto",
-        fontSize: "16px",
-        maxWidth: "640px",
-        maxHeight: "420px",
-      }}
-    >
+  <div css={projectContainer}>
+    <div css={project}>
       <div>
-        <div style={{ margin: "0 auto", width: "100%", position: "relative" }}>
+        <div>
           {/* <div style={{ position: 'relative', zIndex: '50'}}>
             <BrowserWindow />
           </div> */}
-          <div
-            style={{
-              border: "8px solid black",
-              borderRadius: "14px",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <div
-              style={{
-                borderBottom: "8px solid black",
-              }}
-            >
-              <div
-                className="spacer"
-                style={{
-                  height: "60px",
-                  width: "100%",
-                  display: "flex",
-                }}
-              >
-                <div
-                  style={{
-                    flex: "1",
-                    flexDirection: "row",
-                    display: "flex",
-                    padding: "0 16px",
-                  }}
-                >
-                  <BrowserButton />
-                  <BrowserButton />
-                  <BrowserButton />
-                </div>
-                <div
-                  style={{
-                    flex: "4",
-                    padding: "8px 8px",
-                  }}
-                >
-                  <div
-                    style={{
-                      background: "transparent",
-                      border: "3px solid black",
-                      borderRadius: "6px",
-                      height: "100%",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                    }}
+          <div css={browserFrame}>
+            <div css={browserHeader}>
+              <div css={browserButtons}>
+                <BrowserButton />
+                <BrowserButton />
+                <BrowserButton />
+              </div>
+              <div css={browserUrlBarContainer}>
+                <div css={browserUrlBar}>
+                  <a
+                    css={browserUrlLink}
+                    href="https://aftertheussr.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <a
-                      style={{
-                        margin: "auto 16px",
-                        fontFamily:
-                          "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen",
-                        textDecoration: "none",
-                        fontSize: "18px",
-                        color: "blue",
-                        fontWeight: "400",
-                        letterSpacing: "0.3px",
-                      }}
-                      href="https://aftertheussr.com"
-                      target="_blank"
-                    >
-                      {link}
-                    </a>
-                  </div>
+                    {link}
+                  </a>
                 </div>
               </div>
             </div>
@@ -151,17 +108,17 @@ const ProjectBlock = ({ name, link }) => (
   </div>
 )
 
-{
-  /* <CloudinaryContext cloudName="dzprezr1g">
-    <div style={{
-      maxWidth: 1600,
-      maxHeight: 900
-    }}>
-    <Video controls autoplay autoPlay muted width={900} publicId={videoId}>
-      <Transformation  autoplay autoPlay muted width={900} quality="10" duration="10" />
-    </Video>
-    </div>
-  </CloudinaryContext> */
-}
+// {
+//   /* <CloudinaryContext cloudName="dzprezr1g">
+//     <div style={{
+//       maxWidth: 1600,
+//       maxHeight: 900
+//     }}>
+//     <Video controls autoplay autoPlay muted width={900} publicId={videoId}>
+//       <Transformation  autoplay autoPlay muted width={900} quality="10" duration="10" />
+//     </Video>
+//     </div>
+//   </CloudinaryContext> */
+// }
 
 export default ProjectBlock

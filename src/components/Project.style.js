@@ -1,9 +1,4 @@
 import { css } from "@emotion/core"
-// import { CloudinaryContext, Video, Transformation } from "cloudinary-react"
-
-import BrowserWindow from "./BrowserWindow"
-
-const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/video/upload/"
 
 const projectContainer = css`
   height: 100vh;
@@ -12,6 +7,8 @@ const projectContainer = css`
   flexDirection: column,
   justifyContent: center,
 `
+
+console.warn("projectContainer", projectContainer)
 
 export default {
   projectContainer,

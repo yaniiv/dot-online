@@ -1,12 +1,12 @@
 import React from "react"
 
 import Layout from "../components/Layout"
-import Image from "../components/Image"
+// import Image from "../components/Image"
 import SEO from "../components/Seo"
 import Project from "../components/Project"
 import { StaticQuery, graphql } from "gatsby"
 
-import { auto } from "eol"
+// import { auto } from "eol"
 
 const IndexPage = ({ projects }) => (
   <Layout>

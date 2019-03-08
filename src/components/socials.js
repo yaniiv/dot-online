@@ -23,6 +23,7 @@ const Socials = ({ siteSocials }) => (
       {siteSocials.map(({ name, linkTo }) => (
         <a
           href={linkTo}
+          rel="noopener noreferrer"
           key={linkTo}
           target="_blank"
           style={{

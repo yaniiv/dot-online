@@ -14,7 +14,7 @@ module.exports = {
       },
       {
         name: `medium`,
-        linkTo: `https://xmedium.com/@yaniv_g`,
+        linkTo: `https://medium.com/@yaniv_g`,
       }
     ],
     projects: [
@@ -33,6 +33,7 @@ module.exports = {
     ]
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -43,7 +44,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
