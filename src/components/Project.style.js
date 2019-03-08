@@ -30,10 +30,10 @@ export const browserFrame = css`
 `
 
 export const browserHeader = css`
-  border-bottom: 8px solid black;
   height: 60px;
   width: 100%;
   display: flex;
+  border-bottom: 8px solid black;
 `
 
 export const browserButtons = css`
@@ -72,13 +72,21 @@ export const browserUrlLink = css`
   }
 `
 
-export const box = css`
-  position: absolute;
-  left: 0;
-  width: 14rem;
-  height: 100px;
-  background-color: lightgoldenrodyellow;
-`
+export const videoContainer = css`
+  :hover {
+    .console {
+      background-color: purple;
+    }
+  }
+` 
+
+export const video = css`
+  width: 100%;
+  height: 100%;
+  :hover {
+    color: blue
+  }
+` 
 
 
 

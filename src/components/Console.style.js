@@ -2,12 +2,14 @@ import { css } from "@emotion/core"
 
 export const console = css`
   position: absolute;
-  left: 0;
+  right: 0;
+  top: 60px;
   width: 14rem;
-  height: 100px;
+  height: calc(100% - 60px);
   background-color: lightgoldenrodyellow;
 `
 
+  // border-top: 8px solid black;
 
 
 // .transform {
