@@ -1,5 +1,4 @@
 import React from "react"
-import * as styles from "./Console.style"
 import { css } from "@emotion/core"
 
 export const console = css`

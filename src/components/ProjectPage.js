@@ -4,8 +4,38 @@ import Console from "./Console"
 import Video from "./Video"
 import BrowserHeader from "./BrowserHeader"
 
-import * as styles from "./Project.style"
-class ProjectBlock extends React.Component {
+import { css } from "@emotion/core"
+
+export const projectContainer = css`
+  height: ${window.innerHeight}px;
+  width: ${window.innerWidth}px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
+export const project = css`
+  margin: auto;
+  padding: 24px;
+  font-size: 16px;
+  max-width: 500px;
+  max-height: 468px;
+
+  @media (min-width: 768px) {
+    max-width: 648px;
+    max-height: 468px;
+  }
+`
+
+export const browserFrame = css`
+  border: 8px solid black;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+`
+
+class ProjectPage extends React.Component {
   constructor(props) {
     super(props)
 
@@ -23,12 +53,12 @@ class ProjectBlock extends React.Component {
     const { name, link } = this.props
 
     return (
-      <div css={styles.projectContainer}>
-        <div css={styles.project}>
+      <div css={projectContainer}>
+        <div css={project}>
           {/* <div style={{ position: 'relative', zIndex: '50'}}>
                 <BrowserWindow />
               </div> */}
-          <div css={styles.browserFrame}>
+          <div css={browserFrame}>
             <BrowserHeader link={link} />
             <div
               onMouseEnter={this.toggleConsole}
@@ -44,4 +74,4 @@ class ProjectBlock extends React.Component {
   }
 }
 
-export default ProjectBlock
+export default ProjectPage
