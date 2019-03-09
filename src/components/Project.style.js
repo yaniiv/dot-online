@@ -72,34 +72,9 @@ export const browserUrlLink = css`
   }
 `
 
-export const videoContainer = css`
-  .console {
-    background-color: purple;
-    transform: translate3d(0, 0, 0);
-    transition: transform .25s ease-in-out;
-  }
-
-  :hover {
-    .console {
-      transform: translate3d(10rem, 0, 0);
-    }
-  }
-` 
-
-export const video = css`
-  width: 100%; 
-  vertical-align: middle;
-
-  :hover {
-    color: blue
-  }
-` 
-
-
-
 // .transform {
 //   position: relative;
-  
+
 //   aside {
 //     position: absolute;
 //     top: 0;
@@ -107,7 +82,7 @@ export const video = css`
 //     bottom: 0;
 //     width: 14rem;
 //   }
-  
+
 //   article {
 //     position: absolute;
 //     top: 0;
@@ -117,7 +92,7 @@ export const video = css`
 //     transform: translate3d(0, 0, 0);
 //     transition: transform .25s ease-in-out;
 //   }
-  
+
 //   &.expanded article {
 //     transform: translate3d(10rem, 0, 0);
 //   }

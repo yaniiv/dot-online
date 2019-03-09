@@ -1,25 +1,23 @@
 import React from "react"
 
-import * as styles from "./Project.style"
-import BrowserButton from "./BrowserButton"
 import Console from "./Console"
+import Video from "./Video"
+import BrowserHeader from "./BrowserHeader"
 
-// import { CloudinaryContext, Video, Transformation } from "cloudinary-react"
-
-const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/video/upload/"
-
+import * as styles from "./Project.style"
 class ProjectBlock extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      consoleIsOpen: false,
+      openConsole: false,
     }
   }
 
-  // openConsole = () => {
-  //   this.setState
-  // }
+  toggleConsole = () => {
+    console.warn("h")
+    this.setState(prevState => ({ openConsole: !prevState.openConsole }))
+  }
 
   render() {
     const { name, link } = this.props
@@ -31,31 +29,12 @@ class ProjectBlock extends React.Component {
                 <BrowserWindow />
               </div> */}
           <div css={styles.browserFrame}>
-            <div css={styles.browserHeader}>
-              <div css={styles.browserButtons}>
-                <BrowserButton />
-                <BrowserButton />
-                <BrowserButton />
-              </div>
-              <div css={styles.browserUrlBarContainer}>
-                <div css={styles.browserUrlBar}>
-                  <a
-                    css={styles.browserUrlLink}
-                    href="https://aftertheussr.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {link}
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div css={styles.videoContainer}>
-              <video
-                css={styles.video}
-                muted
-                src={`${cloudinaryRootUrl}/${name}.mp4`}
-              />
+            <BrowserHeader link={link} />
+            <div
+              onMouseEnter={this.toggleConsole}
+              onMouseLeave={this.toggleConsole}
+            >
+              <Video name={name} />
               <Console />
             </div>
           </div>
@@ -64,18 +43,5 @@ class ProjectBlock extends React.Component {
     )
   }
 }
-
-// {
-//   /* <CloudinaryContext cloudName="dzprezr1g">
-//     <div style={{
-//       maxWidth: 1600,
-//       maxHeight: 900
-//     }}>
-//     <Video controls autoplay autoPlay muted width={900} publicId={videoId}>
-//       <Transformation  autoplay autoPlay muted width={900} quality="10" duration="10" />
-//     </Video>
-//     </div>
-//   </CloudinaryContext> */
-// }
 
 export default ProjectBlock

@@ -28,7 +28,7 @@ const AboutMenu = () => (
         }}
       >
         <Icon name="hamburger" viewBox="0 0 32 32" />
-        </div>
+      </div>
     </div>
   </div>
 )
