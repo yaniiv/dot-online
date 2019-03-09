@@ -12,9 +12,9 @@ const IndexPage = ({ projects }) => (
   <Layout>
     <SEO title="Home" keywords={[`yaniv`, `goldobin`]} />
     {console.warn("projects", projects)}
-    {projects.map(project => (
-      <Project key={project.name} {...project} />
-    ))}
+      {projects.map(project => (
+        <Project key={project.name} {...project} />
+      ))}
     {/* <Link to="/page-2/">Go to page 2</Link> */}
   </Layout>
 )

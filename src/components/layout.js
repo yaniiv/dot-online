@@ -11,7 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./Header"
 import Socials from "./Socials"
-import Menu from "./Menu"
+import AboutMenu from "./AboutMenu"
 
 import "./layout.css"
 
@@ -32,8 +32,8 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Menu />
         <Header siteTitle={data.site.siteMetadata.title} />
+        <AboutMenu />
         <Socials siteSocials={data.site.siteMetadata.siteSocials} />
         <div>
           <main>{children}</main>

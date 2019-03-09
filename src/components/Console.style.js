@@ -3,10 +3,13 @@ import { css } from "@emotion/core"
 export const console = css`
   position: absolute;
   right: 0;
-  top: 60px;
-  width: 14rem;
+  // top: 60px;
+  // width: 14rem;
   height: calc(100% - 60px);
   background-color: lightgoldenrodyellow;
+  left: 4rem;
+  bottom: 0;
+  width: calc(100% - 4rem);
 `
 
   // border-top: 8px solid black;

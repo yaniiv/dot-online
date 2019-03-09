@@ -73,16 +73,23 @@ export const browserUrlLink = css`
 `
 
 export const videoContainer = css`
+  .console {
+    background-color: purple;
+    transform: translate3d(0, 0, 0);
+    transition: transform .25s ease-in-out;
+  }
+
   :hover {
     .console {
-      background-color: purple;
+      transform: translate3d(10rem, 0, 0);
     }
   }
 ` 
 
 export const video = css`
-  width: 100%;
-  height: 100%;
+  width: 100%; 
+  vertical-align: middle;
+
   :hover {
     color: blue
   }

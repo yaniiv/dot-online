@@ -2,7 +2,7 @@
 import React from "react"
 import Icon from "./Icon"
 
-const Menu = () => (
+const AboutMenu = () => (
   <div
     style={{
       background: `transparent`,
@@ -17,23 +17,24 @@ const Menu = () => (
         display: "flex",
         flexDirection: "column",
         padding: `1.45rem 2rem`,
+        width: 50,
+        height: 50,
       }}
     >
-      <a
-        target="_blank"
+      <div
         style={{
           width: 50,
           height: 50,
         }}
       >
         <Icon name="hamburger" viewBox="0 0 32 32" />
-      </a>
+        </div>
     </div>
   </div>
 )
 
-Menu.propTypes = {}
+AboutMenu.propTypes = {}
 
-Menu.defaultProps = {}
+AboutMenu.defaultProps = {}
 
-export default Menu
+export default AboutMenu

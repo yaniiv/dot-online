@@ -1,14 +1,12 @@
 import React from "react"
-import { cx } from "@emotion/core"
 
-// import { CloudinaryContext, Video, Transformation } from "cloudinary-react"
 import * as styles from "./Project.style"
 import BrowserButton from "./BrowserButton"
 import Console from "./Console"
 
-const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/video/upload/"
+// import { CloudinaryContext, Video, Transformation } from "cloudinary-react"
 
-let isConsoleOpen = false
+const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/video/upload/"
 
 class ProjectBlock extends React.Component {
   constructor(props) {
@@ -52,12 +50,14 @@ class ProjectBlock extends React.Component {
                 </div>
               </div>
             </div>
-            <video
-              css={styles.video}
-              muted
-              src={`${cloudinaryRootUrl}/${name}.mp4`}
-            />
-            <Console />
+            <div css={styles.videoContainer}>
+              <video
+                css={styles.video}
+                muted
+                src={`${cloudinaryRootUrl}/${name}.mp4`}
+              />
+              <Console />
+            </div>
           </div>
         </div>
       </div>
