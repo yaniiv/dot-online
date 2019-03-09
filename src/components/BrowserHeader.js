@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-
+import {hoverGrey} from './Console'
 import BrowserButton from "./BrowserButton"
 
 const browserHeader = css`
@@ -32,7 +32,7 @@ const browserUrlBar = css`
   justify-content: center;
 
   :hover {
-    background-color: black;
+    background-color: ${hoverGrey};
   }
 `
 
@@ -47,7 +47,6 @@ const browserUrlLink = css`
 
   :hover {
     text-decoration: underline;
-    color: yellow;
   }
 `
 

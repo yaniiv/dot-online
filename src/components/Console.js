@@ -19,14 +19,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 const purp = `rgb(125, 76, 219)`
 const aqua = `#6cffb4`
-const softGrey = "#dadada"
+const softGrey = "rgb(243, 243, 243)";
+const white = "rgb(255, 255, 255)"
+export const hoverGrey = "rgb(234, 234, 234)"
+const blue = "rgb(0, 169, 242)"
+const borderGrey = "rgb(204, 204, 204)"
 
 const baseConsoleStyles = css`
   position: absolute;
   right: 0;
   width: 0px;
   height: calc(100% - 60px);
-  background-color: ${softGrey};
+  background-color: ${white};
   bottom: 0;
   transition: width 0.15s ease-in;
   display: flex;
@@ -35,14 +39,13 @@ const baseConsoleStyles = css`
 
 const openConsoleStyles = css`
   transition: width 0.15s ease-out;
-  width: 260px;
+  width: 300px;
   border-left: 3px solid black;
 `
 
 const consoleHeaderStyles = css`
-  background-color: ${aqua};
-  height: 40px;
-  border-bottom: 3px solid black;
+  background-color: ${softGrey};
+  height: 50px;
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -50,13 +53,29 @@ const consoleHeaderStyles = css`
 
 const getConsoleHeaderTabStyles = (isConsoleOpen,isActive) => css`
   height: 100%;
-  line-height: 32px;
+  line-height: 40px;
+  font-size: 14px;
   flex-grow: 1;
   opacity: 0;
+  cursor: pointer;
+  text-transform: capitalize;
+  border-bottom: 1.4px solid ${borderGrey};
+
+  :hover {
+    background-color: ${hoverGrey};
+  }
+
   
   ${isActive &&
     css`
-      background-color: #4ddf99;
+      background-color: ${softGrey};
+      border-bottom: 1.4px solid blue;
+
+
+    :hover {
+      background-color: ${softGrey};
+    }
+
     `
   }
 
@@ -69,7 +88,7 @@ const getConsoleHeaderTabStyles = (isConsoleOpen,isActive) => css`
 
 const consoleContentStyles = css`
   opacity: 0;
-  background-color: ${softGrey};
+  background-color: ${white};
   height: 100%;
   width: 100%;
   padding: 18px;
@@ -130,7 +149,7 @@ const ConsoleHeaderTab = ({ activeTab, name, handleClick, isConsoleOpen }) => {
     <div
       css={getConsoleHeaderTabStyles(isConsoleOpen, isActive)}
       onClick={() => handleClick(name)}
-      onMouseEnter={() => handleClick(name)}
+      // onMouseEnter={() => handleClick(name)}
     >
       {name}
     </div>
@@ -149,6 +168,7 @@ class Console extends React.Component {
 
   render() {
     const { isConsoleOpen } = this.props
+    // const isConsoleOpen = true;
     console.warn("this.state.activeTab", this.state.activeTab)
 
     return (
@@ -160,6 +180,7 @@ class Console extends React.Component {
             isConsoleOpen={isConsoleOpen}
             activeTab={this.state.activeTab}
           />
+          {/* <div css={css`border-right: 3px solid black;`}/> */}
           <ConsoleHeaderTab
             name="tools"
             handleClick={this.selectConsoleTab}
