@@ -32,10 +32,10 @@ const video = css`
   }
 `
 
-const Video = ({ name, toggleConsole }) => {
+const Video = ({ name }) => {
   return (
     <div css={videoContainer}>
-      <video css={video} muted src={`${cloudinaryRootUrl}/${name}.mp4`} />
+      <video css={video} autoPlay muted src={`${cloudinaryRootUrl}/${name}.mp4`} />
     </div>
   )
 }

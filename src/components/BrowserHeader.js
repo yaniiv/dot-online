@@ -30,10 +30,14 @@ const browserUrlBar = css`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  :hover {
+    background-color: black;
+  }
 `
 
 const browserUrlLink = css`
-  margin: auto 16px;
+  padding: 0 16px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen;
   text-decoration: none;
   font-size: 18px;
@@ -43,6 +47,7 @@ const browserUrlLink = css`
 
   :hover {
     text-decoration: underline;
+    color: yellow;
   }
 `
 
