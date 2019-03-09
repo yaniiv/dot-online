@@ -1,19 +1,37 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-export const console = css`
+const baseConsoleStyles = css`
   position: absolute;
   right: 0;
-  width: 200px;
+  width: 0px;
   height: calc(100% - 60px);
   background-color: lightgoldenrodyellow;
   bottom: 0;
+  transition: width 0.2s linear;
 `
 
-const Console = () => (
-  <div className="console" css={console}>
-    <div />
-  </div>
-)
+const openConsoleStyles = css`
+  transition: width 0.2s linear;
+  width: 260px;
+`
+
+const getConsoleStyles = isConsoleOpen => css`
+  ${baseConsoleStyles};
+  ${isConsoleOpen && openConsoleStyles};
+`
+
+const Console = ({ isConsoleOpen }) => {
+  return (
+    <div css={getConsoleStyles(isConsoleOpen)}>
+      <div />
+    </div>
+  )
+}
+
+Console.propTypes = {
+  isConsoleOpen: PropTypes.bool.isRequired,
+}
 
 export default Console

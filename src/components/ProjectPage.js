@@ -40,13 +40,12 @@ class ProjectPage extends React.Component {
     super(props)
 
     this.state = {
-      openConsole: false,
+      isConsoleOpen: false,
     }
   }
 
-  toggleConsole = () => {
-    console.warn("h")
-    this.setState(prevState => ({ openConsole: !prevState.openConsole }))
+  toggleIsConsoleOpen = () => {
+    this.setState(prevState => ({ isConsoleOpen: !prevState.isConsoleOpen }))
   }
 
   render() {
@@ -55,17 +54,14 @@ class ProjectPage extends React.Component {
     return (
       <div css={projectContainer}>
         <div css={project}>
-          {/* <div style={{ position: 'relative', zIndex: '50'}}>
-                <BrowserWindow />
-              </div> */}
           <div css={browserFrame}>
             <BrowserHeader link={link} />
             <div
-              onMouseEnter={this.toggleConsole}
-              onMouseLeave={this.toggleConsole}
+              onMouseEnter={this.toggleIsConsoleOpen}
+              onMouseLeave={this.toggleIsConsoleOpen}
             >
               <Video name={name} />
-              <Console />
+              <Console isConsoleOpen={this.state.isConsoleOpen} />
             </div>
           </div>
         </div>
