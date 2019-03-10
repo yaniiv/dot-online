@@ -12,6 +12,7 @@ const Title = ({ siteTitle }) => (
       position: "fixed",
       right: 0,
       top: 0,
+      zIndex: '30',
     }}
   >
     <div

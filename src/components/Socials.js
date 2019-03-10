@@ -13,7 +13,6 @@ const socialIconStyle = css`
     width: 50px;
     height: 50px;
   }
-
 `
 
 const Socials = ({ siteSocials }) => (
@@ -23,6 +22,7 @@ const Socials = ({ siteSocials }) => (
       position: "fixed",
       left: 0,
       bottom: 0,
+      zIndex: '30',
     }}
   >
     <div
