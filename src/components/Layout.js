@@ -12,7 +12,8 @@ import { css } from '@emotion/core'
 
 import Title from "./Title"
 import Socials from "./Socials"
-import AboutMenu from "./AboutMenu"
+import About from "./About"
+import Hamburger from "./Hamburger"
 
 
 import "./layout.css"
@@ -39,7 +40,8 @@ const Layout = ({ children }) => (
     render={data => (
         <div css={layoutStyles}>
           <Title siteTitle={data.site.siteMetadata.title} />
-          <AboutMenu />
+          {/* <About siteTitle="about" /> */}
+          <Hamburger />
           <Socials siteSocials={data.site.siteMetadata.siteSocials} />
           <main>{children}</main>
           {/* <footer>

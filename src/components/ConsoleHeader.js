@@ -24,7 +24,7 @@ const borderGrey = "rgb(204, 204, 204)"
 
 const consoleHeaderStyles = css`
   background-color: white;
-  height: 50px;
+  height: 40px;
   display: flex;
   flex-direction: row;
   text-align: center;
@@ -32,7 +32,7 @@ const consoleHeaderStyles = css`
 
 const getConsoleHeaderTabStyles = (isActive) => css`
   height: 100%;
-  line-height: 40px;
+  line-height: 34px;
   font-size: 14px;
   flex-grow: 1;
   cursor: pointer;
@@ -46,12 +46,11 @@ const getConsoleHeaderTabStyles = (isActive) => css`
 
   ${isActive &&
     css`
-       border-bottom: 0;
+      border-bottom: 0;
       background-color: white;
 
-
       :hover {
-        background-color: ${softGrey};
+        background-color: white;
       }
     `}
 `
