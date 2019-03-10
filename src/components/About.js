@@ -1,47 +1,77 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import React from "react"
+import Icon from "./Icon"
+import { css } from "@emotion/core"
 
-const About = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `transparent`,
-      marginBottom: `1.45rem`,
-      textDecoration: "none",
-      display: "flex",
-      position: "fixed",
-      right: 0,
-      top: 0,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        // maxWidth: 960,
-        padding: `1.45rem 2rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
+const infoIconStyle = css`
+  width: 40px;
+  height: 40px;
+  z-index: 30;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+`
+
+const fullPageOverlayStyles = css`
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  background-color: lightgoldenrodyellow;
+  z-index: 10;
+`
+
+class Hamburger extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = { isOverlayOpen: false }
+  }
+
+  toggleIsOverlayOpen = () => {
+    this.setState(prevState => ({ isOverlayOpen: !prevState.isOverlayOpen }))
+  }
+
+  render() {
+    return (
+      <div
+        style={{
+          background: `transparent`,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          zIndex: '20',
+        }}
+      >
+        <div css={this.state.isOverlayOpen && fullPageOverlayStyles} />
+        <div
           style={{
-            color: `Black`,
-            textDecoration: `none`,
+            margin: `0 auto`,
+            display: "flex",
+            flexDirection: "column",
+            padding: `1.45rem 2rem`,
           }}
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-About.propTypes = {
-  siteTitle: PropTypes.string,
+          <div css={infoIconStyle} onClick={this.toggleIsOverlayOpen}>
+            {
+              this.state.isOverlayOpen 
+                ? <Icon name="close" viewBox="0 0 12 12" />
+                : <Icon name="hamburger" viewBox="0 0 32 32" />
+            }
+            {/* <Icon name="info" viewBox="0 0 330 330" /> */}
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
-About.defaultProps = {
-  siteTitle: ``,
-}
+Hamburger.propTypes = {}
 
-export default About
+Hamburger.defaultProps = {}
+
+export default Hamburger

@@ -13,7 +13,6 @@ import { css } from '@emotion/core'
 import Title from "./Title"
 import Socials from "./Socials"
 import About from "./About"
-import Hamburger from "./Hamburger"
 
 
 import "./layout.css"
@@ -50,7 +49,7 @@ const Layout = ({ children }) => (
         <div css={layoutStyles}>
           <Title siteTitle={data.site.siteMetadata.title} />
           {/* <About siteTitle="about" /> */}
-          <Hamburger />
+          <About />
           <Socials siteSocials={data.site.siteMetadata.siteSocials} />
           {/* <div css={fullPageOverlayStyles}></div> */}
           <main>{children}</main>
