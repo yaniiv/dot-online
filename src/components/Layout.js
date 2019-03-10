@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { css } from '@emotion/core'
 
-import Title from "./Title"
+import Yaniv from "./Yaniv"
 import Socials from "./Socials"
 import About from "./About"
 
@@ -47,7 +47,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
         <div css={layoutStyles}>
-          <Title siteTitle={data.site.siteMetadata.title} />
+          <Yaniv siteTitle={data.site.siteMetadata.title} />
           {/* <About siteTitle="about" /> */}
           <About />
           <Socials siteSocials={data.site.siteMetadata.siteSocials} />
