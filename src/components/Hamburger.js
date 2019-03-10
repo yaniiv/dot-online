@@ -1,8 +1,20 @@
 // import PropTypes from "prop-types"
 import React from "react"
 import Icon from "./Icon"
+import { css } from "@emotion/core"
 
-const AboutMenu = () => (
+const infoIconStyle = css`
+  width: 40px;
+  height: 40px;
+  margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+`
+
+const Hamburger = () => (
   <div
     style={{
       background: `transparent`,
@@ -22,19 +34,18 @@ const AboutMenu = () => (
       }}
     >
       <div
-        style={{
-          width: 50,
-          height: 50,
-        }}
+        css={infoIconStyle}
       >
         <Icon name="hamburger" viewBox="0 0 32 32" />
+
+        {/* <Icon name="info" viewBox="0 0 330 330" /> */}
       </div>
     </div>
   </div>
 )
 
-AboutMenu.propTypes = {}
+Hamburger.propTypes = {}
 
-AboutMenu.defaultProps = {}
+Hamburger.defaultProps = {}
 
-export default AboutMenu
+export default Hamburger

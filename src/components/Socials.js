@@ -1,6 +1,20 @@
-import PropTypes from "prop-types"
 import React from "react"
+import PropTypes from "prop-types"
+import { css } from "@emotion/core"
+
 import Icon from "./Icon"
+
+const socialIconStyle = css`
+  width: 40px;
+  height: 40px;
+  margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
+
+`
 
 const Socials = ({ siteSocials }) => (
   <div
@@ -26,11 +40,7 @@ const Socials = ({ siteSocials }) => (
           rel="noopener noreferrer"
           key={linkTo}
           target="_blank"
-          style={{
-            width: 50,
-            height: 50,
-            marginBottom: "2rem",
-          }}
+          css={socialIconStyle}
         >
           <Icon name={name} />
         </a>
