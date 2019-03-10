@@ -8,7 +8,7 @@ import { css } from "@emotion/core"
 
 export const projectContainer = css`
   height: ${window.innerHeight}px;
-  width: ${window.innerWidth}px;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,12 +18,22 @@ export const project = css`
   margin: auto;
   padding: 24px;
   font-size: 16px;
-  max-width: 500px;
-  max-height: 468px;
+  max-width: 375px;
+  max-height: 211px;
 
   @media (min-width: 768px) {
     max-width: 648px;
     max-height: 468px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 748px;
+    max-height: 378px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 848px;
+    max-height: 478px;
   }
 `
 

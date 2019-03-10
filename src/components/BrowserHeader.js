@@ -13,8 +13,13 @@ const browserHeader = css`
 const browserButtons = css`
   flex: 1;
   flex-direction: row;
-  display: flex;
   padding: 0 16px;
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
 `
 
 const browserUrlBarContainer = css`
