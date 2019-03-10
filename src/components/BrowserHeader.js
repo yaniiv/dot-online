@@ -7,7 +7,7 @@ const browserHeader = css`
   height: 60px;
   width: 100%;
   display: flex;
-  border-bottom: 8px solid black;
+  border-bottom: 4px solid black;
 `
 
 const browserButtons = css`

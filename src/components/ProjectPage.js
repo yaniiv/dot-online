@@ -28,7 +28,7 @@ export const project = css`
 `
 
 export const browserFrame = css`
-  border: 8px solid black;
+  border: 6px solid black;
   border-radius: 14px;
   display: flex;
   flex-direction: column;
