@@ -83,6 +83,7 @@ const Tools = () => (
 )
 
 const ConsoleContent = ({ activeTab }) => {
+  console.warn({activeTab})
   return (
     <div css={consoleContentStyles}>
       {activeTab === "about" ? <About /> : <Tools />}

@@ -30,7 +30,7 @@ const consoleHeaderStyles = css`
   text-align: center;
 `
 
-const getConsoleHeaderTabStyles = (isConsoleOpen, isActive) => css`
+const getConsoleHeaderTabStyles = (isActive) => css`
   height: 100%;
   line-height: 40px;
   font-size: 14px;
@@ -54,18 +54,6 @@ const getConsoleHeaderTabStyles = (isConsoleOpen, isActive) => css`
     `}
 `
 
-const openConsoleContentStyles = css`
-  transition: opacity 0.2s ease-in;
-  opacity: 1;
-`
-
-
-const getConsoleHeaderStyles = isConsoleOpen => css`
-  ${consoleHeaderStyles};
-  ${isConsoleOpen && openConsoleContentStyles};
-`
-
-
 const ConsoleHeaderTab = ({ activeTab, name, handleClick, isConsoleOpen }) => {
   const isActive = name === activeTab
 
@@ -80,40 +68,23 @@ const ConsoleHeaderTab = ({ activeTab, name, handleClick, isConsoleOpen }) => {
   )
 }
 
-class ConsoleHeader extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { activeTab: "about" }
-  }
-
-  selectConsoleTab = activeTab => {
-    this.setState({ activeTab })
-  }
-
-  render() {
-    const { isConsoleOpen } = this.props
-    // const isConsoleOpen = true;
-    console.warn("this.state.activeTab", this.state.activeTab)
-
+const ConsoleHeader = ({activeTab, selectConsoleTab}) => {
     return (
-        <div css={getConsoleHeaderStyles(isConsoleOpen)}>
+        <div css={consoleHeaderStyles}>
           <ConsoleHeaderTab
             name="about"
-            handleClick={this.selectConsoleTab}
-            isConsoleOpen={isConsoleOpen}
-            activeTab={this.state.activeTab}
+            handleClick={selectConsoleTab}
+            activeTab={activeTab}
           />
           {/* <div css={css`border-right: 3px solid black;`}/> */}
           <ConsoleHeaderTab
             name="tools"
-            handleClick={this.selectConsoleTab}
-            isConsoleOpen={isConsoleOpen}
-            activeTab={this.state.activeTab}
+            handleClick={selectConsoleTab}
+            activeTab={activeTab}
           />
       </div>
     )
   }
-}
 
 ConsoleHeader.propTypes = {
   isConsoleOpen: PropTypes.bool.isRequired,

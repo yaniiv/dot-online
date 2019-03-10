@@ -68,7 +68,7 @@ class Console extends React.Component {
 
     return (
       <div css={getConsoleStyles(isConsoleOpen)}>
-        <ConsoleHeader activeTab={this.state.activeTab} />
+        <ConsoleHeader activeTab={this.state.activeTab} selectConsoleTab={this.selectConsoleTab}/>
         >
         <ConsoleContent
           isConsoleOpen={isConsoleOpen}
