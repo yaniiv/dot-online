@@ -17,12 +17,11 @@ const aqua = `#6cffb4`
 const blue = "rgb(0, 169, 242)"
 */
 
-const softGrey = "rgb(243, 243, 243)";
+const softGrey = "rgb(243, 243, 243)"
 export const hoverGrey = "rgb(234, 234, 234)"
 const borderGrey = "rgb(204, 204, 204)"
 
-
-const getConsoleHeaderTabStyles = (isConsoleOpen,isActive) => css`
+const getConsoleHeaderTabStyles = (isConsoleOpen, isActive) => css`
   height: 100%;
   line-height: 40px;
   font-size: 14px;
@@ -36,18 +35,15 @@ const getConsoleHeaderTabStyles = (isConsoleOpen,isActive) => css`
     background-color: ${hoverGrey};
   }
 
-  
   ${isActive &&
     css`
       background-color: ${softGrey};
       border-bottom: 1px solid blue;
 
-
       :hover {
         background-color: ${softGrey};
       }
-    `
-  }
+    `}
 
   ${isConsoleOpen &&
     css`
@@ -96,21 +92,21 @@ class Console extends React.Component {
     console.warn("this.state.activeTab", this.state.activeTab)
 
     return (
-        <div css={getConsoleHeaderStyles(isConsoleOpen)}>
-          <ConsoleHeaderTab
-            name="about"
-            handleClick={this.selectConsoleTab}
-            isConsoleOpen={isConsoleOpen}
-            activeTab={this.state.activeTab}
-          />
-          {/* <div css={css`border-right: 3px solid black;`}/> */}
-          <ConsoleHeaderTab
-            name="tools"
-            handleClick={this.selectConsoleTab}
-            isConsoleOpen={isConsoleOpen}
-            activeTab={this.state.activeTab}
-          />
-        </div>
+      <div css={getConsoleHeaderStyles(isConsoleOpen)}>
+        <ConsoleHeaderTab
+          name="about"
+          handleClick={this.selectConsoleTab}
+          isConsoleOpen={isConsoleOpen}
+          activeTab={this.state.activeTab}
+        />
+        {/* <div css={css`border-right: 3px solid black;`}/> */}
+        <ConsoleHeaderTab
+          name="tools"
+          handleClick={this.selectConsoleTab}
+          isConsoleOpen={isConsoleOpen}
+          activeTab={this.state.activeTab}
+        />
+      </div>
     )
   }
 }

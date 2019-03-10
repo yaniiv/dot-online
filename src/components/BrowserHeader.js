@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-import {hoverGrey} from './Console'
+import { hoverGrey } from "./Console"
 import BrowserButton from "./BrowserButton"
 
 const browserHeader = css`
@@ -19,7 +19,6 @@ const browserButtons = css`
   @media (min-width: 768px) {
     display: flex;
   }
-
 `
 
 const browserUrlBarContainer = css`

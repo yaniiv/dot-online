@@ -35,7 +35,12 @@ const video = css`
 const Video = ({ name }) => {
   return (
     <div css={videoContainer}>
-      <video css={video} autoPlay muted src={`${cloudinaryRootUrl}/${name}.mp4`} />
+      <video
+        css={video}
+        autoPlay
+        muted
+        src={`${cloudinaryRootUrl}/${name}.mp4`}
+      />
     </div>
   )
 }

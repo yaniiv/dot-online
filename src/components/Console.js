@@ -21,7 +21,7 @@ const loremIpsum = `
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
 `
 
-const softGrey = "rgb(243, 243, 243)";
+const softGrey = "rgb(243, 243, 243)"
 const white = "rgb(255, 255, 255)"
 export const hoverGrey = "rgb(234, 234, 234)"
 const borderGrey = "rgb(204, 204, 204)"
@@ -54,7 +54,7 @@ const consoleHeaderStyles = css`
   text-align: center;
 `
 
-const getConsoleHeaderTabStyles = (isConsoleOpen,isActive) => css`
+const getConsoleHeaderTabStyles = (isConsoleOpen, isActive) => css`
   height: 100%;
   line-height: 40px;
   font-size: 14px;
@@ -68,18 +68,15 @@ const getConsoleHeaderTabStyles = (isConsoleOpen,isActive) => css`
     background-color: ${hoverGrey};
   }
 
-  
   ${isActive &&
     css`
       background-color: ${softGrey};
       border-bottom: 1px solid blue;
 
-
       :hover {
         background-color: ${softGrey};
       }
-    `
-  }
+    `}
 
   ${isConsoleOpen &&
     css`
@@ -124,35 +121,43 @@ const aboutStyles = css`
 const About = () => <div css={aboutStyles}>{loremIpsum}</div>
 
 const toolsStyles = css`
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 60px);
+
+  > a {
+    padding: 0 24px;
+    flex-grow: 1;
+    color: blue;
+    border-bottom: 1px solid ${lighterBorderGrey};
     display: flex;
     flex-direction: column;
-    height: calc(100% - 60px);
+    justify-content: center;
 
-    > a {
-      padding: 0 24px;
-      flex-grow: 1;
-      color: blue;
-      border-bottom: 1px solid ${lighterBorderGrey};
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    text-decoration: none;
 
-      text-decoration: none;
-
-      :hover {
-        background-color: ${lighterBorderGrey};
-        text-decoration: underline;
-      }
+    :hover {
+      background-color: ${lighterBorderGrey};
+      text-decoration: underline;
     }
-`;
+  }
+`
 
 const Tools = () => (
-    <div css={toolsStyles}>
-      <a href="xyz" target="_blank"><div>d3.js</div></a>
-      <a href="xyz" target="_blank"><div>scrollama.js</div></a>
-      <a href="xyz" target="_blank"><div> rollup.js</div></a>
-      <a href="xyz" target="_blank"><div>chroma.js</div></a>
-    </div>
+  <div css={toolsStyles}>
+    <a href="xyz" target="_blank">
+      <div>d3.js</div>
+    </a>
+    <a href="xyz" target="_blank">
+      <div>scrollama.js</div>
+    </a>
+    <a href="xyz" target="_blank">
+      <div> rollup.js</div>
+    </a>
+    <a href="xyz" target="_blank">
+      <div>chroma.js</div>
+    </a>
+  </div>
 )
 
 const ConsoleContent = ({ activeTab, isConsoleOpen }) => {
@@ -209,7 +214,10 @@ class Console extends React.Component {
             activeTab={this.state.activeTab}
           />
         </div>
-        <ConsoleContent isConsoleOpen={isConsoleOpen} activeTab={this.state.activeTab} />
+        <ConsoleContent
+          isConsoleOpen={isConsoleOpen}
+          activeTab={this.state.activeTab}
+        />
       </div>
     )
   }
