@@ -6,13 +6,15 @@ import BrowserHeader from "./BrowserHeader"
 
 import { css } from "@emotion/core"
 
-export const projectContainer = css`
-  height: ${window.innerHeight}px;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`
+export const projectContainer = () => {
+  return css`
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  `
+}
 
 export const project = css`
   margin: auto;
@@ -62,7 +64,7 @@ class ProjectPage extends React.Component {
     const { name, link } = this.props
 
     return (
-      <div css={projectContainer}>
+      <div css={projectContainer()}>
         <div css={project}>
           <div css={browserFrame}>
             <BrowserHeader link={link} />
