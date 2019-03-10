@@ -64,7 +64,7 @@ class ProjectPage extends React.Component {
     const { name, link } = this.props
 
     return (
-      <div css={projectContainer()}>
+      <div css={projectContainer}>
         <div css={project}>
           <div css={browserFrame}>
             <BrowserHeader link={link} />

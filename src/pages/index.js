@@ -1,41 +1,17 @@
 import React from "react"
 
 import Layout from "../components/Layout"
-// import Image from "../components/Image"
+
+import Projects from "../components/Projects"
 import SEO from "../components/Seo"
-import ProjectPage from "../components/ProjectPage"
-import { StaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
-// import { auto } from "eol"
-
-const IndexPage = ({ projects }) => (
+const Index = () => (
   <Layout>
     <SEO title="Home" keywords={[`yaniv`, `goldobin`]} />
-    {console.warn("projects", projects)}
-    {projects.map(project => (
-      <ProjectPage key={project.name} {...project} />
-    ))}
-    {/* <Link to="/page-2/">Go to page 2</Link> */}
+    <Projects />
+    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 
-const ProjectsWithData = () => (
-  <StaticQuery
-    query={graphql`
-      query ProjectDataQuery {
-        site {
-          siteMetadata {
-            title
-            projects {
-              name
-              link
-            }
-          }
-        }
-      }
-    `}
-    render={data => <IndexPage projects={data.site.siteMetadata.projects} />}
-  />
-)
-
-export default ProjectsWithData
+export default Index
