@@ -88,7 +88,7 @@ const ConsoleHeader = ({activeTab, selectConsoleTab}) => {
   }
 
 ConsoleHeader.propTypes = {
-  isConsoleOpen: PropTypes.bool.isRequired,
+  isConsoleOpen: PropTypes.bool,
 }
 
 export default ConsoleHeader

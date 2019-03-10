@@ -61,8 +61,11 @@ class About extends React.Component {
             {
               this.state.isOverlayOpen 
                 ? <Icon css={css`stroke-width: 1;`}  name="close" viewBox="0 0 12 12" />
-                : <Icon css={css`stroke-width: 4;`} name="info" viewBox="0 0 330 330" />
+                : <Icon name="hamburger" viewBox="0 0 32 32" />
             }
+
+          {/* : <Icon css={css`stroke-width: 4;`} name="info" viewBox="0 0 330 330" /> */}
+
             {/* <Icon name="info" viewBox="0 0 330 330" /> */}
           </div>
         </div>
