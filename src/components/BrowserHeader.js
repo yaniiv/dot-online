@@ -8,6 +8,7 @@ const browserHeader = css`
   width: 100%;
   display: flex;
   border-bottom: 4px solid black;
+  background-color: white;
 `
 
 const browserButtons = css`

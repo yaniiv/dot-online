@@ -18,15 +18,23 @@ const blue = "rgb(0, 169, 242)"
 */
 
 const softGrey = "rgb(243, 243, 243)"
+// const white = "rgb(255, 255, 255)"
 export const hoverGrey = "rgb(234, 234, 234)"
 const borderGrey = "rgb(204, 204, 204)"
+
+const consoleHeaderStyles = css`
+  background-color: ${softGrey};
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+`
 
 const getConsoleHeaderTabStyles = (isConsoleOpen, isActive) => css`
   height: 100%;
   line-height: 40px;
   font-size: 14px;
   flex-grow: 1;
-  opacity: 0;
   cursor: pointer;
   text-transform: capitalize;
   border-bottom: 1px solid ${borderGrey};
@@ -44,12 +52,6 @@ const getConsoleHeaderTabStyles = (isConsoleOpen, isActive) => css`
         background-color: ${softGrey};
       }
     `}
-
-  ${isConsoleOpen &&
-    css`
-      transition: opacity 0.2s ease-in;
-      opacity: 1;
-    `}
 `
 
 const openConsoleContentStyles = css`
@@ -57,10 +59,12 @@ const openConsoleContentStyles = css`
   opacity: 1;
 `
 
+
 const getConsoleHeaderStyles = isConsoleOpen => css`
   ${consoleHeaderStyles};
   ${isConsoleOpen && openConsoleContentStyles};
 `
+
 
 const ConsoleHeaderTab = ({ activeTab, name, handleClick, isConsoleOpen }) => {
   const isActive = name === activeTab
@@ -76,7 +80,7 @@ const ConsoleHeaderTab = ({ activeTab, name, handleClick, isConsoleOpen }) => {
   )
 }
 
-class Console extends React.Component {
+class ConsoleHeader extends React.Component {
   constructor(props) {
     super(props)
     this.state = { activeTab: "about" }
@@ -92,27 +96,27 @@ class Console extends React.Component {
     console.warn("this.state.activeTab", this.state.activeTab)
 
     return (
-      <div css={getConsoleHeaderStyles(isConsoleOpen)}>
-        <ConsoleHeaderTab
-          name="about"
-          handleClick={this.selectConsoleTab}
-          isConsoleOpen={isConsoleOpen}
-          activeTab={this.state.activeTab}
-        />
-        {/* <div css={css`border-right: 3px solid black;`}/> */}
-        <ConsoleHeaderTab
-          name="tools"
-          handleClick={this.selectConsoleTab}
-          isConsoleOpen={isConsoleOpen}
-          activeTab={this.state.activeTab}
-        />
+        <div css={getConsoleHeaderStyles(isConsoleOpen)}>
+          <ConsoleHeaderTab
+            name="about"
+            handleClick={this.selectConsoleTab}
+            isConsoleOpen={isConsoleOpen}
+            activeTab={this.state.activeTab}
+          />
+          {/* <div css={css`border-right: 3px solid black;`}/> */}
+          <ConsoleHeaderTab
+            name="tools"
+            handleClick={this.selectConsoleTab}
+            isConsoleOpen={isConsoleOpen}
+            activeTab={this.state.activeTab}
+          />
       </div>
     )
   }
 }
 
-Console.propTypes = {
+ConsoleHeader.propTypes = {
   isConsoleOpen: PropTypes.bool.isRequired,
 }
 
-export default Console
+export default ConsoleHeader
