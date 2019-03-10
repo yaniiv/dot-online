@@ -2,9 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-import ConsoleHeader from './ConsoleHeader'
+import ConsoleHeader from "./ConsoleHeader"
 
-import ConsoleContent from './ConsoleContent'
+import ConsoleContent from "./ConsoleContent"
 /* 
 #8b8b8b
 #747474
@@ -26,7 +26,7 @@ export const hoverGrey = "rgb(234, 234, 234)"
 const borderGrey = "rgb(204, 204, 204)"
 // const lighterBorderGrey = "rgb(240, 240, 240)"
 
-const baseConsoleStyles = css`
+const getConsoleStyles = isConsoleOpen => css`
   position: absolute;
   right: 0;
   width: 300px;
@@ -38,17 +38,13 @@ const baseConsoleStyles = css`
   display: flex;
   flex-direction: column;
   font-family: Lucida Grande;
-`
 
-const openConsoleStyles = css`
-  transition: opacity 0.15s ease-out;
-  opacity: 1;
-  border-left: 2px solid ${borderGrey};
-`
-
-const getConsoleStyles = isConsoleOpen => css`
-  ${baseConsoleStyles};
-  ${isConsoleOpen && openConsoleStyles};
+  ${isConsoleOpen &&
+    css`
+      transition: opacity 0.15s ease-out;
+      opacity: 1;
+      border-left: 2px solid black;
+    `}
 `
 
 class Console extends React.Component {
@@ -68,8 +64,10 @@ class Console extends React.Component {
 
     return (
       <div css={getConsoleStyles(isConsoleOpen)}>
-        <ConsoleHeader activeTab={this.state.activeTab} selectConsoleTab={this.selectConsoleTab}/>
-        >
+        <ConsoleHeader
+          activeTab={this.state.activeTab}
+          selectConsoleTab={this.selectConsoleTab}
+        />
         <ConsoleContent
           isConsoleOpen={isConsoleOpen}
           activeTab={this.state.activeTab}

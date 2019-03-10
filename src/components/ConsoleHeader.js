@@ -23,7 +23,7 @@ export const hoverGrey = "rgb(234, 234, 234)"
 const borderGrey = "rgb(204, 204, 204)"
 
 const consoleHeaderStyles = css`
-  background-color: ${softGrey};
+  background-color: white;
   height: 50px;
   display: flex;
   flex-direction: row;
@@ -38,6 +38,7 @@ const getConsoleHeaderTabStyles = (isActive) => css`
   cursor: pointer;
   text-transform: capitalize;
   border-bottom: 1px solid ${borderGrey};
+  background-color: ${softGrey};
 
   :hover {
     background-color: ${hoverGrey};
@@ -45,8 +46,9 @@ const getConsoleHeaderTabStyles = (isActive) => css`
 
   ${isActive &&
     css`
-      background-color: ${softGrey};
-      border-bottom: 1px solid blue;
+       border-bottom: 0;
+      background-color: white;
+
 
       :hover {
         background-color: ${softGrey};
@@ -59,7 +61,7 @@ const ConsoleHeaderTab = ({ activeTab, name, handleClick, isConsoleOpen }) => {
 
   return (
     <div
-      css={getConsoleHeaderTabStyles(isConsoleOpen, isActive)}
+      css={getConsoleHeaderTabStyles(isActive)}
       onClick={() => handleClick(name)}
       // onMouseEnter={() => handleClick(name)}
     >
@@ -76,7 +78,7 @@ const ConsoleHeader = ({activeTab, selectConsoleTab}) => {
             handleClick={selectConsoleTab}
             activeTab={activeTab}
           />
-          {/* <div css={css`border-right: 3px solid black;`}/> */}
+          {/* <div css={css`border-right: 1px solid black;`}/> */}
           <ConsoleHeaderTab
             name="tools"
             handleClick={selectConsoleTab}
