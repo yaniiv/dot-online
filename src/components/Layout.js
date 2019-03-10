@@ -8,12 +8,18 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import { css } from '@emotion/core'
 
-import Header from "./Header"
+import Title from "./Title"
 import Socials from "./Socials"
 import AboutMenu from "./AboutMenu"
 
+
 import "./layout.css"
+const layoutStyles = css`
+  margin: 0 auto;
+`
+
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -31,11 +37,10 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <AboutMenu />
-        <Socials siteSocials={data.site.siteMetadata.siteSocials} />
-        <div>
+        <div css={layoutStyles}>
+          <Title siteTitle={data.site.siteMetadata.title} />
+          <AboutMenu />
+          <Socials siteSocials={data.site.siteMetadata.siteSocials} />
           <main>{children}</main>
           {/* <footer>
             © {new Date().getFullYear()}, Built with
@@ -43,7 +48,6 @@ const Layout = ({ children }) => (
             <a href="https://www.gatsbyjs.org">Gatsby</a>
           </footer> */}
         </div>
-      </>
     )}
   />
 )
