@@ -23,7 +23,26 @@ const fullPageOverlayStyles = css`
   bottom: 0;
   background-color: lightgoldenrodyellow;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
+
+const aboutTextStyles = css`
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+`
+
+const AboutContent = () => {
+  return (
+    <div css={fullPageOverlayStyles} >
+        <div css={aboutTextStyles}>
+          "hey it's me i'm some about me content heyoo"
+        </div>
+    </div>
+  )
+}
 
 class About extends React.Component {
   constructor(props) {
@@ -47,7 +66,7 @@ class About extends React.Component {
           zIndex: '20',
         }}
       >
-        {this.state.isOverlayOpen && <div css={fullPageOverlayStyles} />}
+        {this.state.isOverlayOpen && <AboutContent />}
 
         <div
           style={{
