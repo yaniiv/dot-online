@@ -20,16 +20,6 @@ const layoutStyles = css`
   margin: 0 auto;
 `
 
-const fullPageOverlayStyles = css`
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-  top: 0;
-  bottom: 0;
-  background-color: lightgoldenrodyellow;
-  z-index: 10;
-`
-
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -48,10 +38,8 @@ const Layout = ({ children }) => (
     render={data => (
         <div css={layoutStyles}>
           <Yaniv siteTitle={data.site.siteMetadata.title} />
-          {/* <About siteTitle="about" /> */}
           <About />
           <Socials siteSocials={data.site.siteMetadata.siteSocials} />
-          {/* <div css={fullPageOverlayStyles}></div> */}
           <main>{children}</main>
           {/* <footer>
             © {new Date().getFullYear()}, Built with

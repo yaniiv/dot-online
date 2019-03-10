@@ -38,8 +38,8 @@ const getPath = (name, props) => {
     case "close":
       return (
         <g>
-          <line x1="1" y1="11" x2="11" y2="1" stroke="black" stroke-width="2" />
-          <line x1="1" y1="1" x2="11" y2="11" stroke="black" stroke-width="2" />
+          <line x1="1" y1="11" x2="11" y2="1" stroke="black" />
+          <line x1="1" y1="1" x2="11" y2="11" stroke="black"  />
         </g>
       )
     default:
@@ -49,18 +49,20 @@ const getPath = (name, props) => {
 
 const SVG = ({
   name = "",
-  style = {},
+  css = {},
   fill = "#000",
   width = "100%",
   className = "",
   height = "100%",
   viewBox = "0 0 24 24",
+  strokeWidth = ""
 }) => (
   <svg
     width={width}
-    style={style}
+    css={css}
     height={height}
     viewBox={viewBox}
+    strokeWidth={strokeWidth}
     className={className}
   >
     {getPath(name, { fill })}

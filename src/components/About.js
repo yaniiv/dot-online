@@ -25,7 +25,7 @@ const fullPageOverlayStyles = css`
   z-index: 10;
 `
 
-class Hamburger extends React.Component {
+class About extends React.Component {
   constructor(props) {
     super(props)
 
@@ -47,7 +47,8 @@ class Hamburger extends React.Component {
           zIndex: '20',
         }}
       >
-        <div css={this.state.isOverlayOpen && fullPageOverlayStyles} />
+        {this.state.isOverlayOpen && <div css={fullPageOverlayStyles} />}
+
         <div
           style={{
             margin: `0 auto`,
@@ -59,8 +60,8 @@ class Hamburger extends React.Component {
           <div css={infoIconStyle} onClick={this.toggleIsOverlayOpen}>
             {
               this.state.isOverlayOpen 
-                ? <Icon name="close" viewBox="0 0 12 12" />
-                : <Icon name="hamburger" viewBox="0 0 32 32" />
+                ? <Icon css={css`stroke-width: 1;`}  name="close" viewBox="0 0 12 12" />
+                : <Icon css={css`stroke-width: 4;`} name="info" viewBox="0 0 330 330" />
             }
             {/* <Icon name="info" viewBox="0 0 330 330" /> */}
           </div>
@@ -70,8 +71,8 @@ class Hamburger extends React.Component {
   }
 }
 
-Hamburger.propTypes = {}
+About.propTypes = {}
 
-Hamburger.defaultProps = {}
+About.defaultProps = {}
 
-export default Hamburger
+export default About
