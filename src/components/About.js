@@ -45,7 +45,7 @@ const AboutContent = () => {
         <div css={aboutTextStyles}>
           <div>Hello, i'm Yaniv.</div>
           <div>I'm a software engineer in Los Angeles, California.</div>
-          <div>I'm particularly interested in using data and javascript to tell compelling stories.</div>
+          <div>I'm particularly interested in working with technologies that will help me tell compelling stories with javascript.</div>
           <div>This site is a collection of some of my projects.</div>
           <div className="proffesional">For more professional stuff, you can check out my <a target="_blank" href="https://www.linkedin.com/in/ygoldobin">linkedin</a>.</div>
         </div>
