@@ -30,7 +30,7 @@ const consoleHeaderStyles = css`
   text-align: center;
 `
 
-const getConsoleHeaderTabStyles = (isActive) => css`
+const getConsoleHeaderTabStyles = isActive => css`
   height: 100%;
   line-height: 34px;
   font-size: 14px;
@@ -69,23 +69,23 @@ const ConsoleHeaderTab = ({ activeTab, name, handleClick, isConsoleOpen }) => {
   )
 }
 
-const ConsoleHeader = ({activeTab, selectConsoleTab}) => {
-    return (
-        <div css={consoleHeaderStyles}>
-          <ConsoleHeaderTab
-            name="about"
-            handleClick={selectConsoleTab}
-            activeTab={activeTab}
-          />
-          {/* <div css={css`border-right: 1px solid black;`}/> */}
-          <ConsoleHeaderTab
-            name="tools"
-            handleClick={selectConsoleTab}
-            activeTab={activeTab}
-          />
-      </div>
-    )
-  }
+const ConsoleHeader = ({ activeTab, selectConsoleTab }) => {
+  return (
+    <div css={consoleHeaderStyles}>
+      <ConsoleHeaderTab
+        name="about"
+        handleClick={selectConsoleTab}
+        activeTab={activeTab}
+      />
+      {/* <div css={css`border-right: 1px solid black;`}/> */}
+      <ConsoleHeaderTab
+        name="tools"
+        handleClick={selectConsoleTab}
+        activeTab={activeTab}
+      />
+    </div>
+  )
+}
 
 ConsoleHeader.propTypes = {
   isConsoleOpen: PropTypes.bool,

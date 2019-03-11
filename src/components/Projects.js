@@ -20,6 +20,14 @@ const ProjectsWithData = () => (
             projects {
               name
               link
+              info {
+                about
+                tools {
+                  name
+                  toolLink
+                  toolText
+                }
+              }
             }
           }
         }
@@ -29,4 +37,4 @@ const ProjectsWithData = () => (
   />
 )
 
-export default ProjectsWithData;
+export default ProjectsWithData

@@ -39,8 +39,6 @@ const browserUrlBar = css`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-
 `
 
 const browserUrlLink = css`
@@ -60,15 +58,15 @@ const browserUrlLink = css`
   @media (min-width: 768px) {
     flex: 11;
   }
-
 `
 
 const eyeButtonStyles = css`
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    font-weight: bold;
-    text-rendering: optimizeLegibility;
-    font-size: 1.4rem;
-    line-height: 1.1;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 1.4rem;
+  line-height: 1.1;
 
   text-align: center;
   line-height: 34px;
@@ -96,12 +94,11 @@ const eyeActiveStyles = css`
   background-color: ${hoverGrey};
 `
 
-const getEyeButtonStyles = isConsoleOpen => (
+const getEyeButtonStyles = isConsoleOpen =>
   css`
     ${eyeButtonStyles}
     ${isConsoleOpen && eyeActiveStyles}
   `
-)
 
 const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
   return (
@@ -121,10 +118,11 @@ const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
           >
             {link}
           </a>
-          <div onClick={toggleIsConsoleOpen} css={getEyeButtonStyles(isConsoleOpen)}>
-            <div css={eyeStyles}>
-            i
-            </div>
+          <div
+            onClick={toggleIsConsoleOpen}
+            css={getEyeButtonStyles(isConsoleOpen)}
+          >
+            <div css={eyeStyles}>i</div>
           </div>
         </div>
       </div>

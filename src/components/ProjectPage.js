@@ -36,12 +36,12 @@ export const project = css`
 
   @media (min-width: 1024px) {
     max-width: 748px;
-    max-height: 378px;
+    max-height: 528px;
   }
 
   @media (min-width: 1200px) {
     max-width: 848px;
-    max-height: 478px;
+    max-height: 578px;
   }
 `
 
@@ -73,19 +73,23 @@ class ProjectPage extends React.Component {
   }
 
   render() {
-    const { name, link } = this.props
+    const { name, link, info } = this.props
 
     return (
       <div css={projectContainer}>
         <div css={project}>
           <div css={browserFrame}>
-            <BrowserHeader isConsoleOpen={this.state.isConsoleOpen}  toggleIsConsoleOpen={this.toggleIsConsoleOpen} link={link} />
+            <BrowserHeader
+              isConsoleOpen={this.state.isConsoleOpen}
+              toggleIsConsoleOpen={this.toggleIsConsoleOpen}
+              link={link}
+            />
             <div
-              // onMouseEnter={this.toggleIsConsoleOpen}
-              // onMouseLeave={this.toggleIsConsoleOpen}
+            // onMouseEnter={this.toggleIsConsoleOpen}
+            // onMouseLeave={this.toggleIsConsoleOpen}
             >
               <Video name={name} />
-              <Console isConsoleOpen={this.state.isConsoleOpen} />
+              <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
             </div>
           </div>
         </div>

@@ -20,15 +20,60 @@ module.exports = {
     projects: [
       {
         name: 'after-the-ussr',
-        link: 'https://aftertheussr.com'
+        link: 'https://aftertheussr.com',
+        info: {
+          about: 'A visual essay looking at where people went afeter the collapse of the soviet union.',
+          tools: [
+            {
+              name: 'd3.js',
+              toolLink: '',
+              toolText: 'data visualisations and animations',
+            },
+            {
+              name: 'scrollama.js',
+              toolLink: '',
+              toolText: 'scrollytelling functionality',
+            },
+            {
+              name: 'chroma.js',
+              toolLink: '',
+              toolText: 'scrollytelling functionality',
+            },
+            {
+              name: 'rollup.js',
+              toolLink: '',
+              toolText: 'bundler',
+            }
+          ]
+        }
       },
       {
         name: 'scott-perry',
-        link: 'https://github.com'
+        link: 'https://github.com',
+        info: {
+          about: 'A portfolio for Scott Perry',
+          tools: [
+            {
+              name: 'vimeo.js',
+              toolLink: '',
+              toolText: 'inline videos',
+            },
+          ]
+        }
       },
       {
         name: 'terminal-portfolio',
-        link: 'https://yanivgoldobin.com'
+        link: 'https://yanivgoldobin.com',
+        info: {
+          about: 'About me a-la terminal',
+          tools: [
+            {
+              name: 'jquery.js',
+              toolLink: '',
+              toolText: 'all the things',
+            },
+          ]
+        }
       }
     ]
   },

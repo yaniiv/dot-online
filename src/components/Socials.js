@@ -23,7 +23,7 @@ const Socials = ({ siteSocials }) => (
       position: "fixed",
       left: 0,
       bottom: 0,
-      zIndex: '30',
+      zIndex: "30",
     }}
   >
     <div

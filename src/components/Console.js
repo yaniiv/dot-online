@@ -58,9 +58,9 @@ class Console extends React.Component {
   }
 
   render() {
-    const { isConsoleOpen } = this.props
+    const { isConsoleOpen, info } = this.props
     // const isConsoleOpen = true;
-    console.warn("this.state.activeTab", this.state.activeTab)
+    // console.warn("this.state.activeTab", this.state.activeTab)
 
     return (
       <div css={getConsoleStyles(isConsoleOpen)}>
@@ -69,6 +69,7 @@ class Console extends React.Component {
           selectConsoleTab={this.selectConsoleTab}
         />
         <ConsoleContent
+          info={info}
           isConsoleOpen={isConsoleOpen}
           activeTab={this.state.activeTab}
         />

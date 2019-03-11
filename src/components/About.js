@@ -42,14 +42,29 @@ const aboutTextStyles = css`
 
 const AboutContent = () => {
   return (
-    <div css={fullPageOverlayStyles} >
-        <div css={aboutTextStyles}>
-          <div>Hello, i'm Yaniv. I'm a software engineer in Los Angeles, California.</div>
-          <div>This site is a collection of some of my projects.</div>
-          <div>I'm particularly interested in working with technologies that will help me tell compelling stories with javascript.</div>
-          <div className="proffesional">For my professional work, you can check out <a target="_blank"rel="noopener noreferrer" href="https://www.linkedin.com/in/ygoldobin">linkedin</a>.</div>
-          <div>To get in touch you can email "xxx@email.com"</div>
+    <div css={fullPageOverlayStyles}>
+      <div css={aboutTextStyles}>
+        <div>
+          Hello, i'm Yaniv. I'm a software engineer in Los Angeles, California.
         </div>
+        <div>This site is a collection of some of my projects.</div>
+        <div>
+          I'm particularly interested in working with technologies that will
+          help me tell compelling stories with javascript.
+        </div>
+        <div className="proffesional">
+          For my professional work, you can check out{" "}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/ygoldobin"
+          >
+            linkedin
+          </a>
+          .
+        </div>
+        <div>To get in touch you can email "xxx@email.com"</div>
+      </div>
     </div>
   )
 }
@@ -73,7 +88,7 @@ class About extends React.Component {
           position: "fixed",
           top: 0,
           left: 0,
-          zIndex: '20',
+          zIndex: "20",
         }}
       >
         {this.state.isOverlayOpen && <AboutContent />}
@@ -87,13 +102,19 @@ class About extends React.Component {
           }}
         >
           <div css={infoIconStyle} onClick={this.toggleIsOverlayOpen}>
-            {
-              this.state.isOverlayOpen 
-                ? <Icon css={css`stroke-width: 1;`}  name="close" viewBox="0 0 12 12" />
-                : <Icon name="hamburger" viewBox="0 0 32 32" />
-            }
+            {this.state.isOverlayOpen ? (
+              <Icon
+                css={css`
+                  stroke-width: 1;
+                `}
+                name="close"
+                viewBox="0 0 12 12"
+              />
+            ) : (
+              <Icon name="hamburger" viewBox="0 0 32 32" />
+            )}
 
-          {/* : <Icon css={css`stroke-width: 4;`} name="info" viewBox="0 0 330 330" /> */}
+            {/* : <Icon css={css`stroke-width: 4;`} name="info" viewBox="0 0 330 330" /> */}
 
             {/* <Icon name="info" viewBox="0 0 330 330" /> */}
           </div>
