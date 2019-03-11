@@ -16,35 +16,19 @@ import { css } from "@emotion/core"
 const purp = `rgb(125, 76, 219)`
 const aqua = `#6cffb4`
 const blue = "rgb(0, 169, 242)"
+const softGrey = "rgb(243, 243, 243)"
+const borderGrey = "rgb(204, 204, 204)"
+export const hoverGrey = "rgb(234, 234, 234)"
 */
 
-const loremIpsum = `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud .
-`
-
-// const softGrey = "rgb(243, 243, 243)"
 const white = "rgb(255, 255, 255)"
-export const hoverGrey = "rgb(234, 234, 234)"
-// const borderGrey = "rgb(204, 204, 204)"
 const lighterBorderGrey = "rgb(240, 240, 240)"
 
 const consoleContentStyles = css`
-  background-color: ${white};
+  background-color: white;
   height: 100%;
   width: 100%;
 `
-
-const aboutStyles = css`
-  color: black;
-  font-size: 14px;
-  padding: 10px 18px;
-
-  @media (min-width: 768px) {
-    padding: 24px;
-  }
-`
-
-const About = () => <div css={aboutStyles}>{loremIpsum}</div>
 
 const toolsStyles = css`
   display: flex;
@@ -68,20 +52,27 @@ const toolsStyles = css`
   }
 `
 
-const Tools = () => (
+const aboutStyles = css`
+  color: black;
+  font-size: 14px;
+  padding: 10px 18px;
+
+  @media (min-width: 768px) {
+    padding: 24px;
+  }
+`
+
+const About = ({about}) => <div css={aboutStyles}>{about}</div>
+
+const Tools = ({tools}) => (
   <div css={toolsStyles}>
-    <a href="xyz" target="_blank">
-      <div>d3.js</div>
-    </a>
-    <a href="xyz" target="_blank">
-      <div>scrollama.js</div>
-    </a>
-    <a href="xyz" target="_blank">
-      <div> rollup.js</div>
-    </a>
-    <a href="xyz" target="_blank">
-      <div>chroma.js</div>
-    </a>
+  {
+    tools.map(({name, toolLink, toolText}) => (
+      <a href={toolLink} target="_blank">
+        <div>{name}</div>
+      </a>
+    ))
+  }
   </div>
 )
 
@@ -89,7 +80,7 @@ const ConsoleContent = ({ activeTab, info }) => {
   console.warn({ info })
   return (
     <div css={consoleContentStyles}>
-      {activeTab === "about" ? <About /> : <Tools />}
+      {activeTab === "about" ? <About about={info.about}/> : <Tools tools={info.tools}/>}
     </div>
   )
 }
