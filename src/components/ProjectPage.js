@@ -67,7 +67,7 @@ class ProjectPage extends React.Component {
       <div css={projectContainer}>
         <div css={project}>
           <div css={browserFrame}>
-            <BrowserHeader link={link} />
+            <BrowserHeader isConsoleOpen={this.state.isConsoleOpen}  toggleIsConsoleOpen={this.toggleIsConsoleOpen} link={link} />
             <div
               onMouseEnter={this.toggleIsConsoleOpen}
               onMouseLeave={this.toggleIsConsoleOpen}

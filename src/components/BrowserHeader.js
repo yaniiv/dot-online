@@ -81,25 +81,32 @@ const eyeButtonStyles = css`
   @media (min-width: 768px) {
     flex: 1;
   }
-
-  :hover {
-    background-color: ${hoverGrey};
-  }
 `
 
 const eyeStyles = css`
   padding: 0 18px;
 `
 
-const ProjectInfoButton = () => (
-  <div css={eyeButtonStyles}>
-    <div css={eyeStyles}>
-    i
-    </div>
-  </div>
+const eyeActiveStyles = css`
+  background-color: ${hoverGrey};
+`
+
+const getEyeButtonStyles = isConsoleOpen => (
+  css`
+    ${eyeButtonStyles}
+    ${isConsoleOpen && eyeActiveStyles}
+  `
 )
 
-const BrowserHeader = ({ link }) => {
+// const ProjectInfoButton = () => (
+// <div onClick={toggleIsConsoleOpen} css={eyeButtonStyles}>
+//             <div css={eyeStyles}>
+//             i
+//             </div>
+//           </div>
+// )
+
+const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
   return (
     <div css={browserHeader}>
       <div css={browserButtons}>
@@ -117,8 +124,11 @@ const BrowserHeader = ({ link }) => {
           >
             {link}
           </a>
-          <ProjectInfoButton />
-
+          <div onClick={toggleIsConsoleOpen} css={getEyeButtonStyles(isConsoleOpen)}>
+            <div css={eyeStyles}>
+            i
+            </div>
+          </div>
         </div>
       </div>
     </div>
