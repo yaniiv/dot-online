@@ -23,7 +23,7 @@ const blue = "rgb(0, 169, 242)"
 // const softGrey = "rgb(243, 243, 243)"
 const white = "rgb(255, 255, 255)"
 export const hoverGrey = "rgb(234, 234, 234)"
-const borderGrey = "rgb(204, 204, 204)"
+// const borderGrey = "rgb(204, 204, 204)"
 // const lighterBorderGrey = "rgb(240, 240, 240)"
 
 const getConsoleStyles = isConsoleOpen => css`

@@ -7,11 +7,12 @@ import Icon from "./Icon"
 const socialIconStyle = css`
   width: 40px;
   height: 40px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.45rem;
 
   @media (min-width: 768px) {
     width: 50px;
     height: 50px;
+    margin-bottom: 2rem;
   }
 `
 

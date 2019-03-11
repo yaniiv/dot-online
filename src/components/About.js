@@ -29,7 +29,8 @@ const fullPageOverlayStyles = css`
 `
 
 const aboutTextStyles = css`
-  max-width: 800px;
+  min-width: 375px;
+  max-width: 750px;
   margin: 0 auto;
   font-family: Lucida Grande;
   padding: 40px;
@@ -43,11 +44,10 @@ const AboutContent = () => {
   return (
     <div css={fullPageOverlayStyles} >
         <div css={aboutTextStyles}>
-          <div>Hello, i'm Yaniv.</div>
-          <div>I'm a software engineer in Los Angeles, California.</div>
-          <div>I'm particularly interested in working with technologies that will help me tell compelling stories with javascript.</div>
+          <div>Hello, i'm Yaniv. I'm a software engineer in Los Angeles, California.</div>
           <div>This site is a collection of some of my projects.</div>
-          <div className="proffesional">For my professional work, you can check out <a target="_blank" href="https://www.linkedin.com/in/ygoldobin">linkedin</a>.</div>
+          <div>I'm particularly interested in working with technologies that will help me tell compelling stories with javascript.</div>
+          <div className="proffesional">For my professional work, you can check out <a target="_blank"rel="noopener noreferrer" href="https://www.linkedin.com/in/ygoldobin">linkedin</a>.</div>
           <div>To get in touch you can email "xxx@email.com"</div>
         </div>
     </div>

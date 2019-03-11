@@ -23,6 +23,10 @@ export const project = css`
   font-size: 16px;
   width: 100%;
 
+  @media (min-width: 512px) {
+    padding: 48px;
+  }
+
   @media (min-width: 768px) {
     padding: 24px;
 
@@ -42,8 +46,14 @@ export const project = css`
 `
 
 export const browserFrame = css`
-  border: 6px solid black;
-  border-radius: 14px;
+  border: 4px solid black;
+  border-radius: 4px;
+
+  @media (min-width: 768px) {
+    border: 6px solid black;
+    border-radius: 6px;
+  }
+
   display: flex;
   flex-direction: column;
   position: relative;

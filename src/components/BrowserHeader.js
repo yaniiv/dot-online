@@ -87,6 +87,9 @@ const eyeButtonStyles = css`
 
 const eyeStyles = css`
   padding: 0 18px;
+  :hover {
+    background-color: ${hoverGrey};
+  }
 `
 
 const eyeActiveStyles = css`
