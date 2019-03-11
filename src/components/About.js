@@ -29,7 +29,7 @@ const fullPageOverlayStyles = css`
 `
 
 const aboutTextStyles = css`
-  width: 400px;
+  max-width: 800px;
   height: 400px;
   margin: 0 auto;
   font-family: Lucida Grande;
@@ -48,7 +48,8 @@ const AboutContent = () => {
           <div>I'm a software engineer in Los Angeles, California.</div>
           <div>I'm particularly interested in working with technologies that will help me tell compelling stories with javascript.</div>
           <div>This site is a collection of some of my projects.</div>
-          <div className="proffesional">For more professional stuff, you can check out my <a target="_blank" href="https://www.linkedin.com/in/ygoldobin">linkedin</a>.</div>
+          <div className="proffesional">For my professional work, you can check out <a target="_blank" href="https://www.linkedin.com/in/ygoldobin">linkedin</a>.</div>
+          <div>To get in touch you can email "xxx@email.com"</div>
         </div>
     </div>
   )

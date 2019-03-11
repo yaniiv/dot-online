@@ -23,7 +23,11 @@ const browserButtons = css`
 `
 
 const browserUrlBarContainer = css`
-  flex: 4;
+  flex: 7;
+
+  @media (min-width: 768px) {
+    flex: 4;
+  }
   padding: 8px 8px;
 `
 
@@ -33,12 +37,10 @@ const browserUrlBar = css`
   border-radius: 6px;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
 
-  :hover {
-    background-color: ${hoverGrey};
-  }
+
 `
 
 const browserUrlLink = css`
@@ -46,14 +48,56 @@ const browserUrlLink = css`
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen;
   text-decoration: none;
   font-size: 18px;
-  color: blue;
   font-weight: 400;
   letter-spacing: 0.3px;
+  line-height: 34px;
 
   :hover {
-    text-decoration: underline;
+    background-color: ${hoverGrey};
+  }
+
+  @media (min-width: 768px) {
+    flex: 11;
+  }
+
+`
+
+const eyeButtonStyles = css`
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+    font-size: 1.6rem;
+    line-height: 1.1;
+
+  text-align: center;
+  line-height: 34px;
+  cursor: pointer;
+  border-left: 3px solid white;
+
+  :hover {
+    background-color: ${hoverGrey};
+  }
+
+  @media (min-width: 768px) {
+    flex: 1;
+  }
+
+  :hover {
+    background-color: ${hoverGrey};
   }
 `
+
+const eyeStyles = css`
+  padding: 0 18px;
+`
+
+const ProjectInfoButton = () => (
+  <div css={eyeButtonStyles}>
+    <div css={eyeStyles}>
+    i
+    </div>
+  </div>
+)
 
 const BrowserHeader = ({ link }) => {
   return (
@@ -73,6 +117,8 @@ const BrowserHeader = ({ link }) => {
           >
             {link}
           </a>
+          <ProjectInfoButton />
+
         </div>
       </div>
     </div>
