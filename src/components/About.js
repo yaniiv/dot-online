@@ -32,13 +32,22 @@ const aboutTextStyles = css`
   width: 400px;
   height: 400px;
   margin: 0 auto;
+  font-family: Lucida Grande;
+
+  > div {
+    margin: 12px 0;
+  }
 `
 
 const AboutContent = () => {
   return (
     <div css={fullPageOverlayStyles} >
         <div css={aboutTextStyles}>
-          "hey it's me i'm some about me content heyoo"
+          <div>Hello, i'm yaniv.</div>
+          <div>I'm a software engineer in los angeles, california.</div>
+          <div>I'm particularly interested in using data and javascript to tell compelling stories.</div>
+          <div>This site is a collection of some of my projects.</div>
+          <div className="proffesional">For more professional stuff, you can check out my <a target="_blank" href="https://www.linkedin.com/in/ygoldobin">linkedin</a>.</div>
         </div>
     </div>
   )
