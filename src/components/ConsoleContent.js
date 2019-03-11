@@ -62,17 +62,15 @@ const aboutStyles = css`
   }
 `
 
-const About = ({about}) => <div css={aboutStyles}>{about}</div>
+const About = ({ about }) => <div css={aboutStyles}>{about}</div>
 
-const Tools = ({tools}) => (
+const Tools = ({ tools }) => (
   <div css={toolsStyles}>
-  {
-    tools.map(({name, toolLink, toolText}) => (
+    {tools.map(({ name, toolLink, toolText }) => (
       <a href={toolLink} target="_blank">
         <div>{name}</div>
       </a>
-    ))
-  }
+    ))}
   </div>
 )
 
@@ -80,7 +78,11 @@ const ConsoleContent = ({ activeTab, info }) => {
   console.warn({ info })
   return (
     <div css={consoleContentStyles}>
-      {activeTab === "about" ? <About about={info.about}/> : <Tools tools={info.tools}/>}
+      {activeTab === "about" ? (
+        <About about={info.about} />
+      ) : (
+        <Tools tools={info.tools} />
+      )}
     </div>
   )
 }
