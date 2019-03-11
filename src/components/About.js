@@ -43,8 +43,8 @@ const AboutContent = () => {
   return (
     <div css={fullPageOverlayStyles} >
         <div css={aboutTextStyles}>
-          <div>Hello, i'm yaniv.</div>
-          <div>I'm a software engineer in los angeles, california.</div>
+          <div>Hello, i'm Yaniv.</div>
+          <div>I'm a software engineer in Los Angeles, California.</div>
           <div>I'm particularly interested in using data and javascript to tell compelling stories.</div>
           <div>This site is a collection of some of my projects.</div>
           <div className="proffesional">For more professional stuff, you can check out my <a target="_blank" href="https://www.linkedin.com/in/ygoldobin">linkedin</a>.</div>
