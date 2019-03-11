@@ -51,6 +51,7 @@ const browserUrlLink = css`
   font-weight: 400;
   letter-spacing: 0.3px;
   line-height: 34px;
+  flex: 8;
 
   :hover {
     background-color: ${hoverGrey};
@@ -73,6 +74,7 @@ const eyeButtonStyles = css`
   line-height: 34px;
   cursor: pointer;
   border-left: 3px solid white;
+  flex: 1;
 
   :hover {
     background-color: ${hoverGrey};
@@ -97,14 +99,6 @@ const getEyeButtonStyles = isConsoleOpen => (
     ${isConsoleOpen && eyeActiveStyles}
   `
 )
-
-// const ProjectInfoButton = () => (
-// <div onClick={toggleIsConsoleOpen} css={eyeButtonStyles}>
-//             <div css={eyeStyles}>
-//             i
-//             </div>
-//           </div>
-// )
 
 const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
   return (
