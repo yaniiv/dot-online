@@ -33,6 +33,7 @@ const aboutTextStyles = css`
   height: 400px;
   margin: 0 auto;
   font-family: Lucida Grande;
+  padding: 40px;
 
   > div {
     margin: 12px 0;
