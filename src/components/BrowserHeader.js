@@ -66,7 +66,7 @@ const eyeButtonStyles = css`
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-weight: bold;
     text-rendering: optimizeLegibility;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.1;
 
   text-align: center;
