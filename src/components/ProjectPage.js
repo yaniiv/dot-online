@@ -21,7 +21,7 @@ export const project = css`
   padding: 24px;
   font-size: 16px;
   max-width: 375px;
-  max-height: 211px;
+  max-height: 300px;
 
   @media (min-width: 768px) {
     max-width: 648px;
@@ -69,8 +69,8 @@ class ProjectPage extends React.Component {
           <div css={browserFrame}>
             <BrowserHeader isConsoleOpen={this.state.isConsoleOpen}  toggleIsConsoleOpen={this.toggleIsConsoleOpen} link={link} />
             <div
-              onMouseEnter={this.toggleIsConsoleOpen}
-              onMouseLeave={this.toggleIsConsoleOpen}
+              // onMouseEnter={this.toggleIsConsoleOpen}
+              // onMouseLeave={this.toggleIsConsoleOpen}
             >
               <Video name={name} />
               <Console isConsoleOpen={this.state.isConsoleOpen} />

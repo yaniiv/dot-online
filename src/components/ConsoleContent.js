@@ -19,7 +19,7 @@ const blue = "rgb(0, 169, 242)"
 */
 
 const loremIpsum = `
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud .
 `
 
 // const softGrey = "rgb(243, 243, 243)"
@@ -37,7 +37,11 @@ const consoleContentStyles = css`
 const aboutStyles = css`
   color: black;
   font-size: 14px;
-  padding: 24px;
+  padding: 10px 18px;
+
+  @media (min-width: 768px) {
+    padding: 24px;
+  }
 `
 
 const About = () => <div css={aboutStyles}>{loremIpsum}</div>
@@ -48,8 +52,7 @@ const toolsStyles = css`
   height: calc(100% - 60px);
 
   > a {
-    padding: 0 24px;
-    flex-grow: 1;
+    padding: 4px 24px;
     color: blue;
     border-bottom: 1px solid ${lighterBorderGrey};
     display: flex;

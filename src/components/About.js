@@ -30,7 +30,6 @@ const fullPageOverlayStyles = css`
 
 const aboutTextStyles = css`
   max-width: 800px;
-  height: 400px;
   margin: 0 auto;
   font-family: Lucida Grande;
   padding: 40px;
