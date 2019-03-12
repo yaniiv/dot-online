@@ -1,10 +1,11 @@
 import React from "react"
+import { css, jsx } from "@emotion/core"
 
-import Console from "./Console"
+import Console, { hoverGrey } from "./Console"
 import Video from "./Video"
 import BrowserHeader from "./BrowserHeader"
-
-import { css } from "@emotion/core"
+import Icon from "./Icon"
+import ProjectInfoButton from './ProjectInfoButton'
 
 export const projectContainer = () => {
   return css`
@@ -85,11 +86,14 @@ class ProjectPage extends React.Component {
               link={link}
             />
             <div
-            // onMouseEnter={this.toggleIsConsoleOpen}
-            // onMouseLeave={this.toggleIsConsoleOpen}
+              onMouseEnter={this.toggleIsConsoleOpen}
+              onMouseLeave={this.toggleIsConsoleOpen}
             >
               <Video name={name} />
               <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
+              <ProjectInfoButton 
+                toggleIsConsoleOpen={this.toggleIsConsoleOpen}
+              />
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ const linkStyles = {
 const Title = ({ siteTitle }) => (
   <header css={titleContainerStyles}>
     <div css={titleButtonStyles}>
-      <h1 style={{ margin: 0 }}>
+      <h1 css={{ margin: 0 }}>
         <Link to="/" css={linkStyles}>
           {siteTitle}
         </Link>

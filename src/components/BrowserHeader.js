@@ -118,12 +118,12 @@ const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
           >
             {link}
           </a>
-          <div
+          {/* <div
             onClick={toggleIsConsoleOpen}
             css={getEyeButtonStyles(isConsoleOpen)}
           >
             <div css={eyeStyles}>i</div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

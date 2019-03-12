@@ -1,7 +1,8 @@
 // import PropTypes from "prop-types"
 import React from "react"
-import Icon from "./Icon"
 import { css } from "@emotion/core"
+
+import Icon from "./Icon"
 
 const infoIconStyle = css`
   width: 40px;
