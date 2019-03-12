@@ -2,34 +2,33 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import { jsx } from "@emotion/core"
+
+const titleContainerStyles = {
+  background: `transparent`,
+  marginBottom: `1.45rem`,
+  textDecoration: "underline",
+  display: "flex",
+  position: "fixed",
+  right: 0,
+  top: 0,
+}
+
+const titleButtonStyles = {
+  margin: `0 auto`,
+  padding: `1.45rem 2rem`,
+}
+
+const linkStyles = {
+  color: `Black`,
+  textDecoration: `none`,
+}
+
 const Title = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `transparent`,
-      marginBottom: `1.45rem`,
-      textDecoration: "underline",
-      display: "flex",
-      position: "fixed",
-      right: 0,
-      top: 0,
-      zIndex: "30",
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        // maxWidth: 960,
-        padding: `1.45rem 2rem`,
-      }}
-    >
+  <header css={titleContainerStyles}>
+    <div css={titleButtonStyles}>
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `Black`,
-            textDecoration: `none`,
-          }}
-        >
+        <Link to="/" css={linkStyles}>
           {siteTitle}
         </Link>
       </h1>
