@@ -37,8 +37,8 @@ const Layout = ({ children }) => (
     render={data => (
       <div css={layoutStyles}>
         <Yaniv siteTitle={data.site.siteMetadata.title} />
-        <About />
-        <Socials siteSocials={data.site.siteMetadata.siteSocials} />
+        {/* <About /> */}
+        {/* <Socials siteSocials={data.site.siteMetadata.siteSocials} /> */}
         <main>{children}</main>
         {/* <footer>
             © {new Date().getFullYear()}, Built with

@@ -91,9 +91,9 @@ class ProjectPage extends React.Component {
             >
               <Video name={name} />
               <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
-              <ProjectInfoButton 
+              {/* <ProjectInfoButton 
                 toggleIsConsoleOpen={this.toggleIsConsoleOpen}
-              />
+              /> */}
             </div>
           </div>
         </div>

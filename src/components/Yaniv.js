@@ -10,7 +10,7 @@ const titleContainerStyles = {
   textDecoration: "underline",
   display: "flex",
   position: "fixed",
-  right: 0,
+  left: 0,
   top: 0,
 }
 
@@ -27,11 +27,11 @@ const linkStyles = {
 const Title = ({ siteTitle }) => (
   <header css={titleContainerStyles}>
     <div css={titleButtonStyles}>
-      <h1 css={{ margin: 0 }}>
+      <h2 css={{ margin: 0 }}>
         <Link to="/" css={linkStyles}>
           {siteTitle}
         </Link>
-      </h1>
+      </h2>
     </div>
   </header>
 )
