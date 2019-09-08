@@ -21,8 +21,45 @@ const titleStyle = css``
 
 const projectsSection = css``
 
+const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
+  <div className="form-check">
+    <label>
+      <input
+        type="checkbox"
+        name={label}
+        checked={isSelected}
+        onChange={onCheckboxChange}
+        className="form-check-input"
+      />
+      {label}
+    </label>
+  </div>
+)
+
 const MinimalPage = () => (
   <Layout>
+    <div
+      css={css`
+        position: fixed;
+        top: 20px;
+        right: 20px;
+      `}
+    >
+      <div
+        css={css`
+          display: flex;
+        `}
+      >
+        <div
+          css={css`
+            margin-right: 20px;
+          `}
+        >
+          do you even code broh?
+        </div>
+        <Checkbox />
+      </div>
+    </div>
     {/* <SEO title="Page two" /> */}
     <div
       css={css`
@@ -42,10 +79,9 @@ const MinimalPage = () => (
         <div css={css``}>
           <div css={headerStyle}>Hello</div>
           <div>
-            My name is Yan, and this site is a place where you can climb through
-            some of the branches of my life. I'm passionate about art and
-            technology, and spend lots of time thinking about how we can blend
-            the two with a focus on human connection.
+            My name is Yan, and this site is a place where you can learn a bit
+            more about me. I'm passionate about human connection, self
+            expression, and how technology can be used to reinforce the two.
           </div>
         </div>
       </div>
