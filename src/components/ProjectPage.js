@@ -60,6 +60,25 @@ export const browserFrame = css`
   position: relative;
 `
 
+
+const fullPageOverlayStyles = css`
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: lightgoldenrodyellow;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+const InfoOverlay = () => {
+  return (
+    <div css={fullPageOverlayStyles}> lots of info goes here </div>
+  )
+}
+
 class ProjectPage extends React.Component {
   constructor(props) {
     super(props)
@@ -70,6 +89,7 @@ class ProjectPage extends React.Component {
   }
 
   toggleIsConsoleOpen = () => {
+    console.warn('toggle')
     this.setState(prevState => ({ isConsoleOpen: !prevState.isConsoleOpen }))
   }
 
@@ -91,9 +111,10 @@ class ProjectPage extends React.Component {
             >
               <Video name={name} />
               <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
-              <ProjectInfoButton 
+              {/* {this.state.isConsoleOpen && <InfoOverlay />} */}
+              {/* <ProjectInfoButton 
                 toggleIsConsoleOpen={this.toggleIsConsoleOpen}
-              />
+              /> */}
             </div>
           </div>
         </div>

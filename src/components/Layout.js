@@ -17,6 +17,7 @@ import About from "./About"
 import "./layout.css"
 const layoutStyles = css`
   margin: 0 auto;
+  background-color: #f4f4f4;
 `
 
 const Layout = ({ children }) => (
@@ -37,7 +38,7 @@ const Layout = ({ children }) => (
     render={data => (
       <div css={layoutStyles}>
         <Yaniv siteTitle={data.site.siteMetadata.title} />
-        <About />
+        <About siteSocials={data.site.siteMetadata.siteSocials} />
         <Socials siteSocials={data.site.siteMetadata.siteSocials} />
         <main>{children}</main>
         {/* <footer>

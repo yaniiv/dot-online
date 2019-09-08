@@ -17,6 +17,10 @@ const ProjectsWithData = () => (
         site {
           siteMetadata {
             title
+            siteSocials {
+              name
+              linkTo
+            }
             projects {
               name
               link
@@ -33,7 +37,9 @@ const ProjectsWithData = () => (
         }
       }
     `}
-    render={data => <Projects projects={data.site.siteMetadata.projects} />}
+    render={data => <Projects 
+      siteSocials={data.site.siteMetadata.siteSocials} 
+      projects={data.site.siteMetadata.projects} />}
   />
 )
 
