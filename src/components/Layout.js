@@ -10,10 +10,6 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
-import Yaniv from "./Yaniv"
-import Socials from "./Socials"
-import About from "./About"
-
 import "./layout.css"
 const layoutStyles = css`
   margin: 0 auto;
@@ -36,9 +32,6 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <div css={layoutStyles}>
-        <Yaniv siteTitle={data.site.siteMetadata.title} />
-        <About />
-        <Socials siteSocials={data.site.siteMetadata.siteSocials} />
         <main>{children}</main>
         {/* <footer>
             © {new Date().getFullYear()}, Built with
