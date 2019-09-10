@@ -17,10 +17,6 @@ const headerStyle = css`
   font-weight: bold;
 `
 
-const titleStyle = css``
-
-const projectsSection = css``
-
 const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
   <div className="form-check">
     <label>
@@ -33,6 +29,81 @@ const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
       />
       {label}
     </label>
+  </div>
+)
+
+const Hello = () => (
+  <div css={css``}>
+    <div css={css``}>
+      <div css={headerStyle}>Hello</div>
+      <div>
+        My name is Yan, and this site is a place where you can learn a bit more
+        about me. I'm passionate about human connection, self expression, and
+        how technology can be used to reinforce the two.
+      </div>
+    </div>
+  </div>
+)
+
+const Coding = () => (
+  <div
+    css={css`
+      margin-top: 30px;
+    `}
+  >
+    <div css={css``}>
+      <div css={headerStyle}>Code</div>
+      <div>Sho do! I write mostly Javascript</div>
+    </div>
+  </div>
+)
+
+const ProjectSocials = () => (
+  <div css={css``}>
+    <div
+      css={css`
+        margin-top: 30px;
+        display: flex;
+        flex-basis: 100%;
+        justify-content: space-between;
+      `}
+    >
+      <div
+        css={css`
+          display: flex;
+          flex-direction: column;
+        `}
+      >
+        <div css={headerStyle}>Projects</div>
+        <a css={linkStyle} href="google.com">
+          after the ussr
+        </a>
+        <a css={linkStyle} href="google.com">
+          scott perry site
+        </a>
+        <a css={linkStyle} href="google.com">
+          I am developer portfolio
+        </a>
+      </div>
+      <div
+        css={css`
+          display: flex;
+          flex-direction: column;
+          text-align: right;
+        `}
+      >
+        <div css={headerStyle}>Socials</div>
+        <a css={linkStyle} href="google.com">
+          Medium
+        </a>
+        <a css={linkStyle} href="google.com">
+          Twitter
+        </a>
+        <a css={linkStyle} href="google.com">
+          Github
+        </a>
+      </div>
+    </div>
   </div>
 )
 
@@ -57,7 +128,6 @@ const MinimalPage = () => (
         >
           do you even code broh?
         </div>
-        <Checkbox />
       </div>
     </div>
     {/* <SEO title="Page two" /> */}
@@ -66,68 +136,29 @@ const MinimalPage = () => (
         @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
         font-family: "Manjari", sans-serif;
         margin: 0 auto;
-        max-width: 500px;
+        width: 600px;
         margin-top: 200px;
+        display: flex;
       `}
     >
       <div
         css={css`
-          display: flex;
-          flex-basis: 100%;
+          flex: 5;
         `}
       >
-        <div css={css``}>
-          <div css={headerStyle}>Hello</div>
-          <div>
-            My name is Yan, and this site is a place where you can learn a bit
-            more about me. I'm passionate about human connection, self
-            expression, and how technology can be used to reinforce the two.
-          </div>
-        </div>
+        <Hello />
+        <ProjectSocials />
+        <Coding />
       </div>
       <div
         css={css`
-          margin-top: 30px;
-          display: flex;
-          flex-basis: 100%;
-          justify-content: space-between;
+          flex: 1;
+          padding-left: 30px;
         `}
       >
-        <div
-          css={css`
-            display: flex;
-            flex-direction: column;
-          `}
-        >
-          <div css={headerStyle}>Projects</div>
-          <a css={linkStyle} href="google.com">
-            after the ussr
-          </a>
-          <a css={linkStyle} href="google.com">
-            scott perry site
-          </a>
-          <a css={linkStyle} href="google.com">
-            I am developer portfolio
-          </a>
-        </div>
-        <div
-          css={css`
-            display: flex;
-            flex-direction: column;
-            text-align: right;
-          `}
-        >
-          <div css={headerStyle}>Socials</div>
-          <a css={linkStyle} href="google.com">
-            Medium
-          </a>
-          <a css={linkStyle} href="google.com">
-            Twitter
-          </a>
-          <a css={linkStyle} href="google.com">
-            Github
-          </a>
-        </div>
+        <Checkbox label=" hi there" />
+        <Checkbox label=" hi there" />
+        <Checkbox label=" hi there" />
       </div>
     </div>
     {/* <Link to="/">Go back to the homepage</Link> */}
