@@ -3,6 +3,7 @@ import React from "react"
 import { css } from "@emotion/core"
 
 import Layout from "../components/Layout"
+import Header from "../components/threejs/Header"
 // import SEO from "../components/Seo"
 
 const linkStyle = css`
@@ -53,7 +54,14 @@ const Coding = () => (
   >
     <div css={css``}>
       <div css={headerStyle}>Code</div>
-      <div>Sho do! I write mostly Javascript</div>
+      <div>
+        Sho do! I write mostly Javascript, and have several years of experience
+        building modern web applications for small and medium businesses. You
+        can check out my <a href="">linkedin</a> for more information. <br />
+        <br />
+        I've also built portfolio sites for clients, and worked on some passion
+        projects you can see above.
+      </div>
     </div>
   </div>
 )
@@ -109,34 +117,15 @@ const ProjectSocials = () => (
 
 const MinimalPage = () => (
   <Layout>
-    <div
-      css={css`
-        position: fixed;
-        top: 20px;
-        right: 20px;
-      `}
-    >
-      <div
-        css={css`
-          display: flex;
-        `}
-      >
-        <div
-          css={css`
-            margin-right: 20px;
-          `}
-        >
-          do you even code broh?
-        </div>
-      </div>
-    </div>
     {/* <SEO title="Page two" /> */}
+    <Header />
+
     <div
       css={css`
         @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
         font-family: "Manjari", sans-serif;
         margin: 0 auto;
-        width: 600px;
+        max-width: 600px;
         margin-top: 200px;
         display: flex;
       `}
@@ -149,16 +138,6 @@ const MinimalPage = () => (
         <Hello />
         <ProjectSocials />
         <Coding />
-      </div>
-      <div
-        css={css`
-          flex: 1;
-          padding-left: 30px;
-        `}
-      >
-        <Checkbox label=" hi there" />
-        <Checkbox label=" hi there" />
-        <Checkbox label=" hi there" />
       </div>
     </div>
     {/* <Link to="/">Go back to the homepage</Link> */}
