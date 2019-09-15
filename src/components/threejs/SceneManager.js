@@ -2,6 +2,7 @@ import * as THREE from "three"
 // import SceneSubject from './SceneSubject';
 import BallSubject from "./BallSubject"
 import GeneralLights from "./GeneralLights"
+import MovingBall from "./MovingBall"
 import OrbitControls from "three-orbitcontrols"
 
 export default canvas => {
@@ -26,16 +27,16 @@ export default canvas => {
 
   function buildControls() {
     const controls = new OrbitControls(camera, renderer.domElement)
-    // controls.autoRotate = false
-    // controls.enableZoom = false
-    //controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
-    // controls.enableDamping = true // an animation loop is required when either damping or auto-rotation are enabled
-    // controls.dampingFactor = 0.25
-    // controls.screenSpacePanning = false
-    // controls.minDistance = 100
-    // controls.maxDistance = 5000
-    // controls.maxPolarAngle = Math.PI / 2
-    // controls.enableZoom = false
+    controls.autoRotate = false
+    controls.enableZoom = false
+    controls.addEventListener("change", render) // call this only in static scenes (i.e., if there is no animation loop)
+    controls.enableDamping = true // an animation loop is required when either damping or auto-rotation are enabled
+    controls.dampingFactor = 0.25
+    controls.screenSpacePanning = false
+    controls.minDistance = 100
+    controls.maxDistance = 5000
+    controls.maxPolarAngle = Math.PI / 2
+    controls.enableZoom = false
 
     return controls
   }
@@ -92,6 +93,7 @@ export default canvas => {
       new BallSubject(scene, { x: 25, y: 0, z: 0 }, "#20B2AA"),
       new BallSubject(scene, { x: 0, y: 0, z: 25 }, "indigo"),
       new BallSubject(scene, { x: 0, y: 10, z: 0 }, "red"),
+      new MovingBall(scene, { x: 0, y: 10, z: 0 }, "black"),
       // new BallSubject(scene, { x: 50, y: 20, z: 10 }, "green"),
       // new BallSubject(scene, { x: 10, y: 20, z: 30 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 10 }, "red"),
@@ -106,8 +108,8 @@ export default canvas => {
 
     // controls.update() // only required if controls.enableDamping = true, or if controls.autoRotate = true
 
-    for (let i = 0; i < sceneSubjects.length; i++)
-      sceneSubjects[i].update(elapsedTime)
+    // for (let i = 0; i < sceneSubjects.length; i++)
+    //   sceneSubjects[i].update(elapsedTime)
 
     // updateCameraPositionRelativeToMouse()
 
