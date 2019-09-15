@@ -23,8 +23,6 @@ export default canvas => {
   const camera = buildCamera(screenDimensions)
   const sceneSubjects = createSceneSubjects(scene)
   const controls = buildControls()
-  controls.enableZoom = false
-  // createSceneSubjects(scene)
 
   function buildControls() {
     const controls = new OrbitControls(camera, renderer.domElement)
@@ -34,15 +32,20 @@ export default canvas => {
     controls.enableDamping = true // an animation loop is required when either damping or auto-rotation are enabled
     controls.dampingFactor = 0.25
     controls.screenSpacePanning = false
-    controls.minDistance = 100
-    controls.maxDistance = 5000
+    // controls.minDistance = 100
+    // controls.maxDistance = 5000
     controls.maxPolarAngle = Math.PI / 2
+    // controls.enableZoom = false
+
     return controls
   }
 
   function buildScene() {
     const scene = new THREE.Scene()
+    const axesHelper = new THREE.AxesHelper(50)
+
     scene.background = new THREE.Color("#FFF")
+    scene.add(axesHelper)
 
     return scene
   }
@@ -75,7 +78,9 @@ export default canvas => {
       farPlane
     )
 
-    camera.position.z = 40
+    camera.position.x = 0
+    camera.position.y = 50
+    camera.position.z = 50
 
     return camera
   }
@@ -83,8 +88,12 @@ export default canvas => {
   function createSceneSubjects(scene) {
     const sceneSubjects = [
       new GeneralLights(scene),
-      new BallSubject(scene, { x: -20, y: 0, z: 0 }, "#20B2AA"),
-      new BallSubject(scene, { x: 20, y: 0, z: 0 }, "indigo"),
+      // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
+      new BallSubject(scene, { x: 0, y: 10, z: 0 }, "#20B2AA"),
+      new BallSubject(scene, { x: 0, y: 10, z: 30 }, "indigo"),
+      // new BallSubject(scene, { x: 50, y: 20, z: 10 }, "green"),
+      // new BallSubject(scene, { x: 10, y: 20, z: 30 }, "red"),
+      // new BallSubject(scene, { x: 0, y: 0, z: 10 }, "red"),
     ]
 
     return sceneSubjects
@@ -92,13 +101,14 @@ export default canvas => {
 
   function render() {
     const elapsedTime = clock.getElapsedTime()
+    // const axesHelper = new THREE.AxesHelper(5)
 
-    controls.update() // only required if controls.enableDamping = true, or if controls.autoRotate = true
+    // controls.update() // only required if controls.enableDamping = true, or if controls.autoRotate = true
 
-    for (let i = 0; i < sceneSubjects.length; i++)
-      sceneSubjects[i].update(elapsedTime)
+    // for (let i = 0; i < sceneSubjects.length; i++)
+    //   sceneSubjects[i].update(elapsedTime)
 
-    updateCameraPositionRelativeToMouse()
+    // updateCameraPositionRelativeToMouse()
 
     renderer.render(scene, camera)
   }

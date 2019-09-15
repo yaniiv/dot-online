@@ -10,6 +10,7 @@ export default container => {
   bindEventListeners()
   render()
 
+  // create canvas and add it to the dom - attach it to the document
   function createCanvas(document, container) {
     const canvas = document.createElement("canvas")
     container.appendChild(canvas)
