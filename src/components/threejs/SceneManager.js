@@ -26,8 +26,8 @@ export default canvas => {
 
   function buildControls() {
     const controls = new OrbitControls(camera, renderer.domElement)
-    controls.autoRotate = false
-    controls.enableZoom = false
+    // controls.autoRotate = false
+    // controls.enableZoom = false
     //controls.addEventListener( 'change', render ); // call this only in static scenes (i.e., if there is no animation loop)
     // controls.enableDamping = true // an animation loop is required when either damping or auto-rotation are enabled
     // controls.dampingFactor = 0.25
@@ -106,8 +106,8 @@ export default canvas => {
 
     // controls.update() // only required if controls.enableDamping = true, or if controls.autoRotate = true
 
-    // for (let i = 0; i < sceneSubjects.length; i++)
-    //   sceneSubjects[i].update(elapsedTime)
+    for (let i = 0; i < sceneSubjects.length; i++)
+      sceneSubjects[i].update(elapsedTime)
 
     // updateCameraPositionRelativeToMouse()
 
