@@ -2,7 +2,7 @@ import * as THREE from "three"
 
 export default (scene, position, color) => {
   const group = new THREE.Group()
-  const geometry = new THREE.SphereGeometry(10, 32, 32)
+  const geometry = new THREE.SphereGeometry(5, 32, 32)
   const material = new THREE.MeshBasicMaterial({ color })
   const subjectMesh = new THREE.Mesh(geometry, material)
   const subjectWireframe = new THREE.LineSegments(
