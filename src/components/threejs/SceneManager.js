@@ -48,7 +48,7 @@ export default canvas => {
     const scene = new THREE.Scene()
     const axesHelper = new THREE.AxesHelper(100)
 
-    scene.background = new THREE.Color("#FFF")
+    scene.background = new THREE.Color("#FFECCC")
     scene.add(axesHelper)
 
     return scene
@@ -82,9 +82,9 @@ export default canvas => {
       farPlane
     )
 
-    camera.position.x = 50
-    camera.position.y = 40
-    camera.position.z = 50
+    camera.position.x = 80
+    camera.position.y = 50
+    camera.position.z = 80
 
     return camera
   }
@@ -96,7 +96,7 @@ export default canvas => {
       // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
       new BallSubject(scene, { x: 30, y: 0, z: 0 }, "indigo"),
       new BallSubject(scene, { x: 0, y: 0, z: 30 }, "red"),
-      new MovingBall(scene, { x: 0, y: 10, z: 10 }, "black"),
+      new MovingBall(scene, { x: 0, y: 0, z: 0 }, "black"),
       // new BallSubject(scene, { x: 50, y: 20, z: 10 }, "green"),
       // new BallSubject(scene, { x: 10, y: 20, z: 30 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 10 }, "red"),

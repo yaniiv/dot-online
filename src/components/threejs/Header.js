@@ -1,11 +1,43 @@
 import React, { Component } from "react"
 
-import threeEntryPoint from "./threeEntryPoint"
+import ThreeEntryPointManager from "./ThreeEntryPointManager"
 import "./header.css"
 
+function throttle(f, t) {
+  return function(args) {
+    let previousCall = this.lastCall
+    this.lastCall = Date.now()
+    if (
+      previousCall === undefined || // function is being called for the first time
+      this.lastCall - previousCall > t
+    ) {
+      // throttle time has elapsed
+      f(args)
+    }
+  }
+}
+
 export default class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.ThreeEntryPoint = new ThreeEntryPointManager()
+  }
+
+  // passes the mounted div through
   componentDidMount() {
-    threeEntryPoint(this.threeRootElement)
+    this.ThreeEntryPoint.initialize(this.threeRootElement)
+
+    console.warn("compone nt did mount he ld dl ox")
+  }
+
+  redrawCanvas = throttle(() => {
+    console.warn("called redraw canvbas")
+    this.ThreeEntryPoint.redraw(this.threeRootElement)
+  }, 1000)
+  //
+  componentDidUpdate() {
+    this.redrawCanvas()
+    console.warn("component updated")
   }
 
   render() {

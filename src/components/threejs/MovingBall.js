@@ -24,15 +24,18 @@ export default (scene, position, color) => {
   // const scale = 4
   // const speed = 0.02
   // const textureOffsetSpeed = 0.02
-  const rad = 8
+  const rad = 35
 
   function update(time) {
     // console.warn("time", time)
     // const angle = time * speed
-
-    const x = rad * Math.tan(time * 0.5)
+    const x = rad * Math.sin(time * 0.5) - rad * Math.cos(time * 0.5)
+    const y = 10 * Math.sin(2 * time)
+    // const z = 15 + rad * Math.cos(time * 0.5) - rad * Math.sin(time * 0.5)
     // const y = rad * Math.sin(time * 0.5)
     subjectMesh.position.x = x
+    // subjectMesh.position.z = z
+    // subjectMesh.position.y = y
     // subjectMesh.position.y = y
 
     // subjectWireframe.position.x = x

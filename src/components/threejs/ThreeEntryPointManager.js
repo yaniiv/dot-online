@@ -1,20 +1,33 @@
 import SceneManager from "./SceneManager"
 
-export default container => {
-  const canvas = createCanvas(document, container)
-  const sceneManager = new SceneManager(canvas)
-
+export default () => {
+  let canvas
+  let sceneManager
   let canvasHalfWidth
   let canvasHalfHeight
 
-  bindEventListeners()
-  render()
+  function initialize(container) {
+    canvas = createCanvas(document, container)
+    sceneManager = new SceneManager(canvas)
+
+    bindEventListeners()
+    render()
+  }
 
   // create canvas and add it to the dom - attach it to the document
   function createCanvas(document, container) {
-    const canvas = document.createElement("canvas")
+    console.warn("container in crea te canvas", container)
+    canvas = document.createElement("canvas")
     container.appendChild(canvas)
     return canvas
+  }
+
+  function deleteCanvas(document, container) {
+    console.warn("container", container)
+    console.warn("cont ainer.childN odes", container.childNodes)
+    // Removes an element from the document
+    //The list is LIVE so it will re-index each call
+    container.removeChild(container.firstChild)
   }
 
   function bindEventListeners() {
@@ -46,5 +59,18 @@ export default container => {
   function render(time) {
     requestAnimationFrame(render)
     sceneManager.render()
+  }
+
+  function redraw(container) {
+    console.log("re d  r aw _____- hellow this got called after")
+    deleteCanvas(document, container)
+    setTimeout(() => {
+      initialize(container)
+    }, 500)
+  }
+
+  return {
+    initialize,
+    redraw,
   }
 }
