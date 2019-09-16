@@ -24,15 +24,22 @@ export default (scene, position, color) => {
   // const scale = 4
   // const speed = 0.02
   // const textureOffsetSpeed = 0.02
-  const rad = 80
+  const rad = 8
 
   function update(time) {
+    // console.warn("time", time)
     // const angle = time * speed
 
-    const x = rad * Math.sin(time * 0.2)
+    const x = rad * Math.tan(time * 0.5)
+    // const y = rad * Math.sin(time * 0.5)
     subjectMesh.position.x = x
-    subjectMesh.position.y = x
-    subjectMesh.position.z = x
+    // subjectMesh.position.y = y
+
+    // subjectWireframe.position.x = x
+    // subjectWireframe.position.y = y
+
+    // subjectMesh.position.y = x
+    // subjectMesh.position.z = x
     // group.rotation.y = angle
     // subjectMaterial.alphaMap.offset.y = 0.55 + time * textureOffsetSpeed
     // subjectWireframe.material.color.setHSL(Math.sin(angle * 2), 0.5, 0.5)

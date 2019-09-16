@@ -1,13 +1,5 @@
 import React from "react"
 
-import Console from "./Console"
-import Video from "./Video"
-import BrowserHeader from "./BrowserHeader"
-import Icon from "./Icon"
-import { hoverGrey } from "./Console"
-
-import { css, jsx } from "@emotion/core"
-
 const eyeButtonStyles = {
   fontFamily: `-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif`,
@@ -28,15 +20,15 @@ const eyeButtonStyles = {
 }
 
 const eyeStyles = {
-  color: 'white',
-  backgroundColor: "transparent"
+  color: "white",
+  backgroundColor: "transparent",
 }
 
-const ProjectInfoButton = ({toggleIConsoleOpen}) => {
+const ProjectInfoButton = ({ toggleIConsoleOpen }) => {
   return (
-      <div onClick={toggleIConsoleOpen} css={eyeButtonStyles}>
-        <div css={eyeStyles}>i</div>
-      </div>
+    <div onClick={toggleIConsoleOpen} css={eyeButtonStyles}>
+      <div css={eyeStyles}>i</div>
+    </div>
   )
 }
 

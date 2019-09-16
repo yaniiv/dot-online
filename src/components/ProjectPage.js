@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react"
 import { css, jsx } from "@emotion/core"
 
@@ -5,7 +6,7 @@ import Console, { hoverGrey } from "./Console"
 import Video from "./Video"
 import BrowserHeader from "./BrowserHeader"
 import Icon from "./Icon"
-import ProjectInfoButton from './ProjectInfoButton'
+import ProjectInfoButton from "./ProjectInfoButton"
 
 export const projectContainer = () => {
   return css`
@@ -91,7 +92,7 @@ class ProjectPage extends React.Component {
             >
               <Video name={name} />
               <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
-              <ProjectInfoButton 
+              <ProjectInfoButton
                 toggleIsConsoleOpen={this.toggleIsConsoleOpen}
               />
             </div>

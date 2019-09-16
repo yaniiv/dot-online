@@ -29,7 +29,7 @@ export default canvas => {
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.autoRotate = false
     controls.enableZoom = false
-    controls.addEventListener("change", render) // call this only in static scenes (i.e., if there is no animation loop)
+    // controls.addEventListener("change", render) // call this only in static scenes (i.e., if there is no animation loop)
     controls.enableDamping = true // an animation loop is required when either damping or auto-rotation are enabled
     controls.dampingFactor = 0.25
     controls.screenSpacePanning = false
@@ -38,12 +38,15 @@ export default canvas => {
     controls.maxPolarAngle = Math.PI / 2
     controls.enableZoom = false
 
+    // Point the controls - overrides camera.lookAt
+    // controls.target = new THREE.Vector3(50, 0, 0)
+
     return controls
   }
 
   function buildScene() {
     const scene = new THREE.Scene()
-    const axesHelper = new THREE.AxesHelper(50)
+    const axesHelper = new THREE.AxesHelper(100)
 
     scene.background = new THREE.Color("#FFF")
     scene.add(axesHelper)
@@ -80,7 +83,7 @@ export default canvas => {
     )
 
     camera.position.x = 50
-    camera.position.y = 50
+    camera.position.y = 40
     camera.position.z = 50
 
     return camera
@@ -90,10 +93,10 @@ export default canvas => {
     const sceneSubjects = [
       new GeneralLights(scene),
       // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
-      new BallSubject(scene, { x: 25, y: 0, z: 0 }, "#20B2AA"),
-      new BallSubject(scene, { x: 0, y: 0, z: 25 }, "indigo"),
-      new BallSubject(scene, { x: 0, y: 10, z: 0 }, "red"),
-      new MovingBall(scene, { x: 0, y: 10, z: 0 }, "black"),
+      // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
+      new BallSubject(scene, { x: 30, y: 0, z: 0 }, "indigo"),
+      new BallSubject(scene, { x: 0, y: 0, z: 30 }, "red"),
+      new MovingBall(scene, { x: 0, y: 10, z: 10 }, "black"),
       // new BallSubject(scene, { x: 50, y: 20, z: 10 }, "green"),
       // new BallSubject(scene, { x: 10, y: 20, z: 30 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 10 }, "red"),
@@ -106,10 +109,10 @@ export default canvas => {
     const elapsedTime = clock.getElapsedTime()
     // const axesHelper = new THREE.AxesHelper(5)
 
-    // controls.update() // only required if controls.enableDamping = true, or if controls.autoRotate = true
+    controls.update() // only required if controls.enableDamping = true, or if controls.autoRotate = true
 
-    // for (let i = 0; i < sceneSubjects.length; i++)
-    //   sceneSubjects[i].update(elapsedTime)
+    for (let i = 0; i < sceneSubjects.length; i++)
+      sceneSubjects[i].update(elapsedTime)
 
     // updateCameraPositionRelativeToMouse()
 

@@ -6,6 +6,7 @@
   "author": "Yaniv Goldobin ygoldobin@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.7",
+    "@hot-loader/react-dom": "^16.9.0",
     "cloudinary-react": "^1.1.0",
     "gatsby": "^2.1.19",
     "gatsby-image": "^2.0.30",
