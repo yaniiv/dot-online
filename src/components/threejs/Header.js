@@ -36,7 +36,7 @@ export default class Header extends Component {
   }, 1000)
   //
   componentDidUpdate() {
-    this.redrawCanvas()
+    // this.redrawCanvas()
     console.warn("component updated")
   }
 

@@ -22,19 +22,24 @@ export default (scene, position, color) => {
   // group.rotation.z = Math.PI / 4
 
   // const scale = 4
-  // const speed = 0.02
+  const speed = 0.02
   // const textureOffsetSpeed = 0.02
-  const rad = 35
+  const rad = 32
 
   function update(time) {
     // console.warn("time", time)
     // const angle = time * speed
-    const x = rad * Math.sin(time * 0.5) - rad * Math.cos(time * 0.5)
-    const y = 10 * Math.sin(2 * time)
+    const x =
+      32 +
+      rad * 0.5 * Math.sin(time + Math.PI / 4) /*- rad * Math.cos(time * 0.5)*/
+
+    const z = 32 + rad * 0.5 * Math.sin(time)
+    // const y = 10 * Math.sin(2 * time)
+    // const z = 32 + rad * Math.sin(time) /*- rad * Math.cos(time * 0.5)*/
     // const z = 15 + rad * Math.cos(time * 0.5) - rad * Math.sin(time * 0.5)
     // const y = rad * Math.sin(time * 0.5)
     subjectMesh.position.x = x
-    // subjectMesh.position.z = z
+    subjectMesh.position.z = z
     // subjectMesh.position.y = y
     // subjectMesh.position.y = y
 
