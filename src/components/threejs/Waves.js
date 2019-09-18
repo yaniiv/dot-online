@@ -23,9 +23,9 @@ function fragmentShader() {
 }
 
 export default (scene, position, color) => {
-  const SEPARATION = 100
-  const AMOUNTX = 50
-  const AMOUNTY = 50
+  const SEPARATION = 50
+  const AMOUNTX = 20
+  const AMOUNTY = 20
 
   let particles = 0
   let count = 0

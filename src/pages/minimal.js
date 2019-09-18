@@ -149,7 +149,7 @@ const MinimalPage = () => (
         <Header />
         {/* <SEO title="Home" keywords={[`yaniv`, `goldobin`]} /> */}
         <Yaniv siteTitle={data.site.siteMetadata.title} />
-        <About />
+        {/* <About /> */}
         {/* <Socials siteSocials={data.site.siteMetadata.siteSocials} /> */}
         <div css={bloxContainer}>
           <div

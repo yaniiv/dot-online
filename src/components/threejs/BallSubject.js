@@ -1,9 +1,13 @@
 /* eslint-disable */
 import * as THREE from "three"
 
-export default (scene, position, color) => {
+export default (scene, xPosition, color) => {
   const group = new THREE.Group()
-  const geometry = new THREE.SphereGeometry(10, position, position)
+  const geometry = new THREE.SphereGeometry(
+    10,
+    Math.abs(xPosition),
+    Math.abs(xPosition)
+  )
   const material = new THREE.MeshBasicMaterial({ color })
   const subjectMesh = new THREE.Mesh(geometry, material)
   const subjectWireframe = new THREE.LineSegments(
@@ -11,9 +15,9 @@ export default (scene, position, color) => {
     new THREE.LineBasicMaterial()
   )
 
-  // const { position, y, z } = position
-  subjectMesh.position.set(position, 0, 0)
-  subjectWireframe.position.set(position, 0, 0)
+  // const { focalPointRadius, y, z } = position
+  subjectMesh.position.set(xPosition, 0, 0)
+  subjectWireframe.position.set(xPosition, 0, 0)
 
   group.add(subjectMesh)
   group.add(subjectWireframe)

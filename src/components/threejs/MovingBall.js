@@ -1,6 +1,6 @@
 import * as THREE from "three"
 
-export default (scene, color, focalPointRadius) => {
+export default (scene, focalPointRadius, color) => {
   const group = new THREE.Group()
   const geometry = new THREE.SphereGeometry(
     2,
@@ -40,7 +40,7 @@ export default (scene, color, focalPointRadius) => {
     //   rad * 0.5 * Math.sin(time + Math.PI / 4) /*- rad * Math.cos(time * 0.5)*/
 
     const x = focalPointRadius * 1.5 * Math.sin(time + offset.x * Math.PI)
-    const y = (focalPointRadius / 3) * Math.sin(time + offset.y * Math.PI)
+    const y = (focalPointRadius / 2.5) * Math.sin(time + offset.y * Math.PI)
     const z = (focalPointRadius / 2) * Math.sin(2 * time + offset.z * Math.PI)
     // const y = 10 * Math.sin(2 * time)
     // const z = 32 + rad * Math.sin(time) /*- rad * Math.cos(time * 0.5)*/

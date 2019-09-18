@@ -1,4 +1,6 @@
 import * as THREE from "three"
+import chroma from "chroma-js"
+
 // import SceneSubject from './SceneSubject';
 import BallSubject from "./BallSubject"
 import GeneralLights from "./GeneralLights"
@@ -47,7 +49,7 @@ export default canvas => {
 
   function buildScene() {
     const scene = new THREE.Scene()
-    // const axesHelper = new THREE.AxesHelper(100)
+    const axesHelper = new THREE.AxesHelper(100)
 
     scene.background = new THREE.Color("#FFECCC")
     scene.add(axesHelper)
@@ -90,21 +92,34 @@ export default canvas => {
     return camera
   }
 
+  function createMovingBalls(scene, focalRadius, color) {
+    const colors = [
+      chroma(color).darken(),
+      chroma(color).brighten(1),
+      chroma(color).brighten(2),
+      chroma(color).brighten(3),
+    ]
+
+    console.warn('colors', colors)
+    const balls = colors.map(color => {
+      return new MovingBall(scene, focalRadius, color)
+    })
+
+    return balls
+  }
+
   function createSceneSubjects(scene) {
+    const movingBalls = createMovingBalls(scene, 30, "hotpink")
+
     const sceneSubjects = [
       new GeneralLights(scene),
       // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
       new BallSubject(scene, 30, "indigo"),
       new BallSubject(scene, -30, "red"),
-      new MovingBall(scene, "black", 30),
-      new MovingBall(scene, "pink", 30),
-      new MovingBall(scene, "green", 30),
-      new MovingBall(scene, "white", 30),
-      new Waves(scene),
-      // new BallSubject(scene, { x: 50, y: 20, z: 10 }, "green"),
-      // new BallSubject(scene, { x: 10, y: 20, z: 30 }, "red"),
-      // new BallSubject(scene, { x: 0, y: 0, z: 10 }, "red"),
+      ...movingBalls,
+
+      // new Waves(scene),
     ]
 
     return sceneSubjects
