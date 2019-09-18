@@ -3,7 +3,7 @@ import * as THREE from "three"
 
 export default (scene, position, color) => {
   const group = new THREE.Group()
-  const geometry = new THREE.SphereGeometry(14, 32, 32)
+  const geometry = new THREE.SphereGeometry(10, position, position)
   const material = new THREE.MeshBasicMaterial({ color })
   const subjectMesh = new THREE.Mesh(geometry, material)
   const subjectWireframe = new THREE.LineSegments(
@@ -11,9 +11,9 @@ export default (scene, position, color) => {
     new THREE.LineBasicMaterial()
   )
 
-  const { x, y, z } = position
-  subjectMesh.position.set(x, y, z)
-  subjectWireframe.position.set(x, y, z)
+  // const { position, y, z } = position
+  subjectMesh.position.set(position, 0, 0)
+  subjectWireframe.position.set(position, 0, 0)
 
   group.add(subjectMesh)
   group.add(subjectWireframe)
@@ -24,12 +24,12 @@ export default (scene, position, color) => {
 
   const scale = 4
   const speed = 0.02
-  const textureOffsetSpeed = 0.02
+  const tepositiontureOffsetSpeed = 0.02
 
   function update(time) {
     // const angle = time * speed
     // group.rotation.y = angle
-    // subjectMaterial.alphaMap.offset.y = 0.55 + time * textureOffsetSpeed
+    // subjectMaterial.alphaMap.offset.y = 0.55 + time * tepositiontureOffsetSpeed
     // subjectWireframe.material.color.setHSL(Math.sin(angle * 2), 0.5, 0.5)
     // const scale = (Math.sin(angle * 8) + 6.4) / 5
     // subjectWireframe.scale.set(scale, scale, scale)

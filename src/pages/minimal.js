@@ -147,10 +147,10 @@ const MinimalPage = () => (
       <Layout>
         {/* <SEO title="Page two" /> */}
         <Header />
-        <SEO title="Home" keywords={[`yaniv`, `goldobin`]} />
+        {/* <SEO title="Home" keywords={[`yaniv`, `goldobin`]} /> */}
         <Yaniv siteTitle={data.site.siteMetadata.title} />
         <About />
-        <Socials siteSocials={data.site.siteMetadata.siteSocials} />
+        {/* <Socials siteSocials={data.site.siteMetadata.siteSocials} /> */}
         <div css={bloxContainer}>
           <div
             css={css`
@@ -162,7 +162,7 @@ const MinimalPage = () => (
             <Coding />
           </div>
         </div>
-        <Link to="/minimal/">Go to page 2</Link>
+        {/* <Link to="/minimal/">Go to page 2</Link> */}
         {/* <Link to="/">Go back to the homepage</Link> */}
       </Layout>
     )}

@@ -27,22 +27,16 @@ export default (scene, position, color) => {
   const AMOUNTX = 50
   const AMOUNTY = 50
 
-  var container, stats
-  var camera, scene, renderer
-  var particles,
-    count = 0
-  var mouseX = 0,
-    mouseY = 0
-  var windowHalfX = window.innerWidth / 2
-  var windowHalfY = window.innerHeight / 2
+  let particles = 0
+  let count = 0
 
-  var numParticles = AMOUNTX * AMOUNTY
-  var positions = new Float32Array(numParticles * 3)
-  var scales = new Float32Array(numParticles)
-  var i = 0,
+  const numParticles = AMOUNTX * AMOUNTY
+  const positions = new Float32Array(numParticles * 3)
+  const scales = new Float32Array(numParticles)
+  let i = 0,
     j = 0
-  for (var ix = 0; ix < AMOUNTX; ix++) {
-    for (var iy = 0; iy < AMOUNTY; iy++) {
+  for (let ix = 0; ix < AMOUNTX; ix++) {
+    for (let iy = 0; iy < AMOUNTY; iy++) {
       positions[i] = ix * SEPARATION - (AMOUNTX * SEPARATION) / 2 // x
       positions[i + 1] = 0 // y
       positions[i + 2] = iy * SEPARATION - (AMOUNTY * SEPARATION) / 2 // z
@@ -51,29 +45,28 @@ export default (scene, position, color) => {
       j++
     }
   }
-  var geometry = new THREE.BufferGeometry()
+  const geometry = new THREE.BufferGeometry()
   geometry.addAttribute("position", new THREE.BufferAttribute(positions, 3))
   geometry.addAttribute("scale", new THREE.BufferAttribute(scales, 1))
-  var material = new THREE.ShaderMaterial({
+  const material = new THREE.ShaderMaterial({
     uniforms: {
-      color: { value: new THREE.Color(0xffffff) },
+      color: { value: new THREE.Color("black") },
     },
     fragmentShader: fragmentShader(),
     vertexShader: vertexShader(),
-    // vertexShader: document.getElementById("vertexshader").textContent,
-    // fragmentShader: document.getElementById("fragmentshader").textContent,
   })
   //
   particles = new THREE.Points(geometry, material)
   scene.add(particles)
 
   function update(time) {
-    var positions = particles.geometry.attributes.position.array
-    var scales = particles.geometry.attributes.scale.array
-    var i = 0,
-      j = 0
-    for (var ix = 0; ix < AMOUNTX; ix++) {
-      for (var iy = 0; iy < AMOUNTY; iy++) {
+    const positions = particles.geometry.attributes.position.array
+    const scales = particles.geometry.attributes.scale.array
+    let i = 0
+    let j = 0
+
+    for (let ix = 0; ix < AMOUNTX; ix++) {
+      for (let iy = 0; iy < AMOUNTY; iy++) {
         positions[i + 1] =
           Math.sin((ix + count) * 0.3) * 50 + Math.sin((iy + count) * 0.5) * 50
         scales[j] =

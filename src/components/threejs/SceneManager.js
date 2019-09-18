@@ -47,7 +47,7 @@ export default canvas => {
 
   function buildScene() {
     const scene = new THREE.Scene()
-    const axesHelper = new THREE.AxesHelper(100)
+    // const axesHelper = new THREE.AxesHelper(100)
 
     scene.background = new THREE.Color("#FFECCC")
     scene.add(axesHelper)
@@ -75,7 +75,7 @@ export default canvas => {
     const aspectRatio = width / height
     const fieldOfView = 60
     const nearPlane = 4
-    const farPlane = 1000
+    const farPlane = 500
     const camera = new THREE.PerspectiveCamera(
       fieldOfView,
       aspectRatio,
@@ -95,12 +95,12 @@ export default canvas => {
       new GeneralLights(scene),
       // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
-      new BallSubject(scene, { x: 40, y: 0, z: 0 }, "indigo"),
-      new BallSubject(scene, { x: -40, y: 0, z: 0 }, "red"),
-      new MovingBall(scene, { x: 0, y: 0, z: 0 }, "black"),
-      new MovingBall(scene, { x: 0, y: 0, z: 0 }, "pink"),
-      new MovingBall(scene, { x: 0, y: 0, z: 0 }, "green"),
-      new MovingBall(scene, { x: 0, y: 0, z: 0 }, "white"),
+      new BallSubject(scene, 30, "indigo"),
+      new BallSubject(scene, -30, "red"),
+      new MovingBall(scene, "black", 30),
+      new MovingBall(scene, "pink", 30),
+      new MovingBall(scene, "green", 30),
+      new MovingBall(scene, "white", 30),
       new Waves(scene),
       // new BallSubject(scene, { x: 50, y: 20, z: 10 }, "green"),
       // new BallSubject(scene, { x: 10, y: 20, z: 30 }, "red"),
