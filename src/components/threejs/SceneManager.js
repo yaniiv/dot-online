@@ -49,7 +49,7 @@ export default canvas => {
     const scene = new THREE.Scene()
     const axesHelper = new THREE.AxesHelper(100)
 
-    // scene.background = new THREE.Color("#FFECCC")
+    scene.background = new THREE.Color("#FFECCC")
     scene.add(axesHelper)
 
     return scene
