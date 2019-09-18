@@ -1,10 +1,14 @@
 import React from "react"
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 import Layout from "../components/Layout"
 import Header from "../components/threejs/Header"
-// import SEO from "../components/Seo"
+import SEO from "../components/Seo"
+import Yaniv from "../components/Yaniv"
+import Socials from "../components/Socials"
+import About from "../components/About"
 
 const linkStyle = css`
   text-transform: lowercase;
@@ -18,20 +22,20 @@ const headerStyle = css`
   font-weight: bold;
 `
 
-const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
-  <div className="form-check">
-    <label>
-      <input
-        type="checkbox"
-        name={label}
-        checked={isSelected}
-        onChange={onCheckboxChange}
-        className="form-check-input"
-      />
-      {label}
-    </label>
-  </div>
-)
+// const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
+//   <div className="form-check">
+//     <label>
+//       <input
+//         type="checkbox"
+//         name={label}
+//         checked={isSelected}
+//         onChange={onCheckboxChange}
+//         className="form-check-input"
+//       />
+//       {label}
+//     </label>
+//   </div>
+// )
 
 const Hello = () => (
   <div css={css``}>
@@ -115,33 +119,54 @@ const ProjectSocials = () => (
   </div>
 )
 
-const MinimalPage = () => (
-  <Layout>
-    {/* <SEO title="Page two" /> */}
-    <Header />
+const bloxContainer = css`
+  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
+  font-family: "Manjari", sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  margin-top: 200px;
+  display: flex;
+`
 
-    <div
-      css={css`
-        @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
-        font-family: "Manjari", sans-serif;
-        margin: 0 auto;
-        max-width: 600px;
-        margin-top: 200px;
-        display: flex;
-      `}
-    >
-      <div
-        css={css`
-          flex: 5;
-        `}
-      >
-        <Hello />
-        <ProjectSocials />
-        <Coding />
-      </div>
-    </div>
-    {/* <Link to="/">Go back to the homepage</Link> */}
-  </Layout>
+const MinimalPage = () => (
+  <StaticQuery
+    query={graphql`
+      query MinimalPageQuery {
+        site {
+          siteMetadata {
+            title
+            siteSocials {
+              name
+              linkTo
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Layout>
+        {/* <SEO title="Page two" /> */}
+        <Header />
+        <SEO title="Home" keywords={[`yaniv`, `goldobin`]} />
+        <Yaniv siteTitle={data.site.siteMetadata.title} />
+        <About />
+        <Socials siteSocials={data.site.siteMetadata.siteSocials} />
+        <div css={bloxContainer}>
+          <div
+            css={css`
+              flex: 5;
+            `}
+          >
+            <Hello />
+            <ProjectSocials />
+            <Coding />
+          </div>
+        </div>
+        <Link to="/minimal/">Go to page 2</Link>
+        {/* <Link to="/">Go back to the homepage</Link> */}
+      </Layout>
+    )}
+  />
 )
 
 export default MinimalPage
