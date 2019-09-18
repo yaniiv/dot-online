@@ -82,9 +82,9 @@ export default canvas => {
       farPlane
     )
 
-    camera.position.x = 80
-    camera.position.y = 50
-    camera.position.z = 80
+    camera.position.x = 0
+    camera.position.y = 40
+    camera.position.z = 60
 
     return camera
   }
@@ -94,9 +94,12 @@ export default canvas => {
       new GeneralLights(scene),
       // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
-      new BallSubject(scene, { x: 32, y: 0, z: 0 }, "indigo"),
-      new BallSubject(scene, { x: 0, y: 0, z: 32 }, "red"),
+      new BallSubject(scene, { x: 40, y: 0, z: 0 }, "indigo"),
+      new BallSubject(scene, { x: -40, y: 0, z: 0 }, "red"),
       new MovingBall(scene, { x: 0, y: 0, z: 0 }, "black"),
+      new MovingBall(scene, { x: 0, y: 0, z: 0 }, "pink"),
+      new MovingBall(scene, { x: 0, y: 0, z: 0 }, "green"),
+      new MovingBall(scene, { x: 0, y: 0, z: 0 }, "white"),
       // new BallSubject(scene, { x: 50, y: 20, z: 10 }, "green"),
       // new BallSubject(scene, { x: 10, y: 20, z: 30 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 10 }, "red"),
