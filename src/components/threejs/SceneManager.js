@@ -3,6 +3,7 @@ import * as THREE from "three"
 import BallSubject from "./BallSubject"
 import GeneralLights from "./GeneralLights"
 import MovingBall from "./MovingBall"
+import Waves from "./Waves"
 import OrbitControls from "three-orbitcontrols"
 
 export default canvas => {
@@ -48,7 +49,7 @@ export default canvas => {
     const scene = new THREE.Scene()
     const axesHelper = new THREE.AxesHelper(100)
 
-    scene.background = new THREE.Color("#FFECCC")
+    // scene.background = new THREE.Color("#FFECCC")
     scene.add(axesHelper)
 
     return scene
@@ -100,6 +101,7 @@ export default canvas => {
       new MovingBall(scene, { x: 0, y: 0, z: 0 }, "pink"),
       new MovingBall(scene, { x: 0, y: 0, z: 0 }, "green"),
       new MovingBall(scene, { x: 0, y: 0, z: 0 }, "white"),
+      new Waves(scene),
       // new BallSubject(scene, { x: 50, y: 20, z: 10 }, "green"),
       // new BallSubject(scene, { x: 10, y: 20, z: 30 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 10 }, "red"),
