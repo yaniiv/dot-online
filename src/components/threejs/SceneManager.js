@@ -36,8 +36,8 @@ export default canvas => {
     controls.autoRotate = false
     controls.enableZoom = false
     // controls.addEventListener("change", render) // call this only in static scenes (i.e., if there is no animation loop)
-    controls.enableDamping = true // an animation loop is required when either damping or auto-rotation are enabled
-    controls.dampingFactor = 0.25
+    // controls.enableDamping = true // an animation loop is required when either damping or auto-rotation are enabled
+    // controls.dampingFactor = 0.25
     controls.screenSpacePanning = false
     controls.minDistance = 100
     controls.maxDistance = 5000
@@ -81,7 +81,7 @@ export default canvas => {
 
     const mobileAngle = {
       x: 0,
-      y: 20,
+      y: 60,
       z: 10,
     }
 
@@ -112,6 +112,7 @@ export default canvas => {
 
     const cameraPosition = getCameraHeight()
     camera.position.set(cameraPosition.x, cameraPosition.y, cameraPosition.z)
+    camera.rotate.y = (90 * Math.PI) / 180
 
     return camera
   }
@@ -155,7 +156,6 @@ export default canvas => {
     const movingBalls = createMovingBalls({
       scene,
       focalRadius,
-      color: null,
       numBalls: 6,
     })
 
@@ -168,7 +168,7 @@ export default canvas => {
       new GeneralLights(scene),
       ...staticBalls,
       ...movingBalls,
-      new Waves(scene),
+      // new Waves(scene),
     ]
 
     return sceneSubjects
@@ -178,12 +178,12 @@ export default canvas => {
     const elapsedTime = clock.getElapsedTime()
     // const axesHelper = new THREE.AxesHelper(5)
 
-    controls.update() // only required if controls.enableDamping = true, or if controls.autoRotate = true
+    // controls.update() // only required if controls.enableDamping = true, or if controls.autoRotate = true
 
     for (let i = 0; i < sceneSubjects.length; i++)
       sceneSubjects[i].update(elapsedTime)
 
-    updateCameraPositionRelativeToMouse()
+    // updateCameraPositionRelativeToMouse()
 
     renderer.render(scene, camera)
   }

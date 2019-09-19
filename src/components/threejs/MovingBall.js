@@ -49,7 +49,7 @@ export default (scene, focalPointRadius, color) => {
     // group.position.x = x
     // group.position.y = y
     // group.position.z = z
-    // group.rotation.z = angle
+    group.rotation.z = angle
 
     // subjectMesh.position.z = z
     // subjectMesh.position.y = y
