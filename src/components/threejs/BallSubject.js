@@ -1,23 +1,26 @@
 /* eslint-disable */
 import * as THREE from "three"
 
-export default (scene, xPosition, color) => {
+export default (scene, focalRadius, color) => {
   const group = new THREE.Group()
   const geometry = new THREE.SphereBufferGeometry(
-    xPosition / 3,
-    Math.abs(xPosition),
-    Math.abs(xPosition)
+    focalRadius / 3,
+    Math.abs(focalRadius),
+    Math.abs(focalRadius)
   )
   const material = new THREE.MeshBasicMaterial({ color })
   const subjectMesh = new THREE.Mesh(geometry, material)
   const subjectWireframe = new THREE.LineSegments(
     new THREE.EdgesGeometry(geometry),
-    new THREE.LineBasicMaterial()
+    // https://threejs.org/docs/#api/en/materials/LineBasicMaterial
+    new THREE.LineBasicMaterial({
+      // color: '#FF990D'
+    })
   )
 
   // const { focalPointRadius, y, z } = position
-  subjectMesh.position.set(xPosition, 0, 0)
-  subjectWireframe.position.set(xPosition, 0, 0)
+  subjectMesh.position.set(focalRadius, 0, 0)
+  subjectWireframe.position.set(focalRadius, 0, 0)
 
   group.add(subjectMesh)
   group.add(subjectWireframe)

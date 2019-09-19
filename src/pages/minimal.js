@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react"
 import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
@@ -38,8 +39,8 @@ const headerStyle = css`
 // )
 
 const Hello = () => (
-  <div css={css``}>
-    <div css={css``}>
+  <div>
+    <div>
       <div css={headerStyle}>x red / y green / z blue</div>
       <div>
         My name is Yan, and this site is a place where you can learn a bit more

@@ -52,10 +52,10 @@ export default canvas => {
 
   function buildScene() {
     const scene = new THREE.Scene()
-    const axesHelper = new THREE.AxesHelper(100)
-
-    scene.background = new THREE.Color("#FFECCC")
-    scene.add(axesHelper)
+    // const axesHelper = new THREE.AxesHelper(100)
+    const chalkyTang = "#FEFAE3"
+    scene.background = new THREE.Color(chalkyTang)
+    // scene.add(axesHelper)ß
 
     return scene
   }
@@ -80,8 +80,8 @@ export default canvas => {
     console.warn("getCameraHeight", window.innerWidth)
 
     const mobileAngle = {
-      x: 0,
-      y: 60,
+      x: 40,
+      y: 80,
       z: 10,
     }
 
@@ -112,7 +112,6 @@ export default canvas => {
 
     const cameraPosition = getCameraHeight()
     camera.position.set(cameraPosition.x, cameraPosition.y, cameraPosition.z)
-    camera.rotate.y = (90 * Math.PI) / 180
 
     return camera
   }
