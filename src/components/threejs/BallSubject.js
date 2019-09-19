@@ -3,7 +3,7 @@ import * as THREE from "three"
 
 export default (scene, xPosition, color) => {
   const group = new THREE.Group()
-  const geometry = new THREE.SphereGeometry(
+  const geometry = new THREE.SphereBufferGeometry(
     10,
     Math.abs(xPosition),
     Math.abs(xPosition)

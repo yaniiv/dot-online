@@ -2,7 +2,7 @@ import * as THREE from "three"
 
 export default (scene, focalPointRadius, color) => {
   const group = new THREE.Group()
-  const geometry = new THREE.SphereGeometry(
+  const geometry = new THREE.SphereBufferGeometry(
     2,
     focalPointRadius / 2,
     focalPointRadius / 2
@@ -35,20 +35,20 @@ export default (scene, focalPointRadius, color) => {
   function update(time) {
     // console.warn("time", time)
     const angle = time * speed
-    // const x =
-
     //   rad * 0.5 * Math.sin(time + Math.PI / 4) /*- rad * Math.cos(time * 0.5)*/
 
     const x = focalPointRadius * 1.5 * Math.sin(time + offset.x * Math.PI)
     const y = (focalPointRadius / 2.5) * Math.sin(time + offset.y * Math.PI)
     const z = (focalPointRadius / 2) * Math.sin(2 * time + offset.z * Math.PI)
+
+    group.position.set(x, y, z)
     // const y = 10 * Math.sin(2 * time)
     // const z = 32 + rad * Math.sin(time) /*- rad * Math.cos(time * 0.5)*/
     // const z = 15 + rad * Math.cos(time * 0.5) - rad * Math.sin(time * 0.5)
     // const y = rad * Math.sin(time * 0.5)
-    group.position.x = x
-    group.position.y = y
-    group.position.z = z
+    // group.position.x = x
+    // group.position.y = y
+    // group.position.z = z
     // group.rotation.z = angle
 
     // subjectMesh.position.z = z

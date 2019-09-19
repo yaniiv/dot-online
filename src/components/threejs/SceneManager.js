@@ -1,3 +1,4 @@
+/* eslint-disable */
 import * as THREE from "three"
 import chroma from "chroma-js"
 
@@ -7,6 +8,8 @@ import GeneralLights from "./GeneralLights"
 import MovingBall from "./MovingBall"
 import Waves from "./Waves"
 import OrbitControls from "three-orbitcontrols"
+
+import isDesktop from "./utils"
 
 export default canvas => {
   const clock = new THREE.Clock()
@@ -73,6 +76,28 @@ export default canvas => {
     return renderer
   }
 
+  function getCameraHeight() {
+    console.warn("getCameraHeight", window.innerWidth)
+
+    const mobileAngle = {
+      x: 0,
+      y: 20,
+      z: 10,
+    }
+
+    const desktopAngle = {
+      x: 0,
+      y: 40,
+      z: 60,
+    }
+
+    if (isDesktop()) {
+      return desktopAngle
+    }
+
+    return mobileAngle
+  }
+
   function buildCamera({ width, height }) {
     const aspectRatio = width / height
     const fieldOfView = 60
@@ -85,22 +110,20 @@ export default canvas => {
       farPlane
     )
 
-    camera.position.x = 0
-    camera.position.y = 40
-    camera.position.z = 60
+    const cameraPosition = getCameraHeight()
+    camera.position.set(cameraPosition.x, cameraPosition.y, cameraPosition.z)
 
     return camera
   }
 
-  function createMovingBalls(scene, focalRadius, color) {
-    const colors = [
-      chroma(color).darken(),
-      chroma(color).brighten(1),
-      chroma(color).brighten(2),
-      chroma(color).brighten(3),
-    ]
+  function createMovingBalls({ scene, focalRadius, color, numBalls }) {
+    const colors = chroma
+      .scale(["#fafa6e", "hotpink"])
+      .mode("lch")
+      .colors(numBalls)
 
-    console.warn('colors', colors)
+    console.warn("colors", colors)
+
     const balls = colors.map(color => {
       return new MovingBall(scene, focalRadius, color)
     })
@@ -108,18 +131,44 @@ export default canvas => {
     return balls
   }
 
+  function createStaticBalls({ scene, focalRadius }) {
+    const colors = chroma
+      .scale(["#fafa6e", "#2A4858"])
+      .mode("lch")
+      .colors(2)
+
+    return [
+      new BallSubject(scene, focalRadius, colors[0]),
+      new BallSubject(scene, -focalRadius, colors[1]),
+      // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
+      // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
+    ]
+  }
+
   function createSceneSubjects(scene) {
-    const movingBalls = createMovingBalls(scene, 30, "hotpink")
+    let focalRadius = 15
+
+    if (isDesktop()) {
+      focalRadius = 30
+    }
+
+    const movingBalls = createMovingBalls({
+      scene,
+      focalRadius,
+      color: null,
+      numBalls: 6,
+    })
+
+    const staticBalls = createStaticBalls({
+      scene,
+      focalRadius,
+    })
 
     const sceneSubjects = [
       new GeneralLights(scene),
-      // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
-      // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
-      new BallSubject(scene, 30, "indigo"),
-      new BallSubject(scene, -30, "red"),
+      ...staticBalls,
       ...movingBalls,
-
-      // new Waves(scene),
+      new Waves(scene),
     ]
 
     return sceneSubjects
@@ -134,7 +183,7 @@ export default canvas => {
     for (let i = 0; i < sceneSubjects.length; i++)
       sceneSubjects[i].update(elapsedTime)
 
-    // updateCameraPositionRelativeToMouse()
+    updateCameraPositionRelativeToMouse()
 
     renderer.render(scene, camera)
   }
