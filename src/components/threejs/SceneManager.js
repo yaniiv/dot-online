@@ -77,7 +77,7 @@ export default canvas => {
   }
 
   function getCameraHeight() {
-    console.warn("getCameraHeight", window.innerWidth)
+    // console.warn("getCameraHeight", window.innerWidth)
 
     const mobileAngle = {
       x: 40,

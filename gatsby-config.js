@@ -15,67 +15,68 @@ module.exports = {
       {
         name: `medium`,
         linkTo: `https://medium.com/@yaniv_g`,
-      }
+      },
     ],
     projects: [
       {
-        name: 'after-the-ussr',
-        link: 'https://aftertheussr.com',
+        name: "after-the-ussr",
+        link: "https://aftertheussr.com",
         info: {
-          about: 'A visual essay looking at where people went afeter the collapse of the soviet union.',
+          about:
+            "A visual essay looking at where people went afeter the collapse of the soviet union.",
           tools: [
             {
-              name: 'd3.js',
-              toolLink: '',
-              toolText: 'data visualisations and animations',
+              name: "d3.js",
+              toolLink: "",
+              toolText: "data visualisations and animations",
             },
             {
-              name: 'scrollama.js',
-              toolLink: '',
-              toolText: 'scrollytelling functionality',
+              name: "scrollama.js",
+              toolLink: "",
+              toolText: "scrollytelling functionality",
             },
             {
-              name: 'chroma.js',
-              toolLink: '',
-              toolText: 'scrollytelling functionality',
+              name: "chroma.js",
+              toolLink: "",
+              toolText: "scrollytelling functionality",
             },
             {
-              name: 'rollup.js',
-              toolLink: '',
-              toolText: 'bundler',
-            }
-          ]
-        }
+              name: "rollup.js",
+              toolLink: "",
+              toolText: "bundler",
+            },
+          ],
+        },
       },
       {
-        name: 'scott-perry',
-        link: 'https://github.com',
+        name: "scott-perry",
+        link: "https://github.com",
         info: {
-          about: 'A portfolio for Scott Perry',
+          about: "A portfolio for Scott Perry",
           tools: [
             {
-              name: 'vimeo.js',
-              toolLink: '',
-              toolText: 'inline videos',
+              name: "vimeo.js",
+              toolLink: "",
+              toolText: "inline videos",
             },
-          ]
-        }
+          ],
+        },
       },
       {
-        name: 'terminal-portfolio',
-        link: 'https://yanivgoldobin.com',
+        name: "terminal-portfolio",
+        link: "https://yanivgoldobin.com",
         info: {
-          about: 'About me a-la terminal',
+          about: "About me a-la terminal",
           tools: [
             {
-              name: 'jquery.js',
-              toolLink: '',
-              toolText: 'all the things',
+              name: "jquery.js",
+              toolLink: "",
+              toolText: "all the things",
             },
-          ]
-        }
-      }
-    ]
+          ],
+        },
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -98,10 +99,10 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        // icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
