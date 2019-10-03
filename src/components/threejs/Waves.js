@@ -1,4 +1,5 @@
 import * as THREE from "three"
+import * as COLORS from "../../colors"
 
 function vertexShader() {
   return `
@@ -50,7 +51,7 @@ export default (scene, position, color) => {
   geometry.addAttribute("scale", new THREE.BufferAttribute(scales, 1))
   const material = new THREE.ShaderMaterial({
     uniforms: {
-      color: { value: new THREE.Color("black") },
+      color: { value: new THREE.Color(`${COLORS.WAVES}`) },
     },
     fragmentShader: fragmentShader(),
     vertexShader: vertexShader(),

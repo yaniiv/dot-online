@@ -1,7 +1,9 @@
 /* eslint-disable */
 import * as THREE from "three"
 import chroma from "chroma-js"
+import Stats from "stats.js"
 
+import * as COLORS from "../../colors"
 // import SceneSubject from './SceneSubject';
 import BallSubject from "./BallSubject"
 import GeneralLights from "./GeneralLights"
@@ -31,6 +33,17 @@ export default canvas => {
   const sceneSubjects = createSceneSubjects(scene)
   const controls = buildControls()
 
+  // https://github.com/mrdoob/stats.js/
+  const stats = buildStats()
+
+  function buildStats() {
+    const stats = new Stats()
+    stats.showPanel(0) // 0: fps, 1: ms, 2: mb, 3+: custom
+    document.body.appendChild(stats.dom)
+
+    return stats
+  }
+
   function buildControls() {
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.autoRotate = false
@@ -50,12 +63,13 @@ export default canvas => {
     return controls
   }
 
+  // => #FFC917 this is the color that I want the "I" to look like
   function buildScene() {
     const scene = new THREE.Scene()
     // const axesHelper = new THREE.AxesHelper(100)
-    const chalkyTang = "#FEFAE3"
+    const chalkyTang = COLORS.BACKGROUND
     scene.background = new THREE.Color(chalkyTang)
-    // scene.add(axesHelper)ß
+    // scene.add(axesHelper)
 
     return scene
   }
@@ -118,7 +132,7 @@ export default canvas => {
 
   function createMovingBalls({ scene, focalRadius, color, numBalls }) {
     const colors = chroma
-      .scale(["#fafa6e", "hotpink"])
+      .scale(COLORS.SMALLBALLGRADIENT)
       .mode("lch")
       .colors(numBalls)
 
@@ -132,14 +146,14 @@ export default canvas => {
   }
 
   function createStaticBalls({ scene, focalRadius }) {
-    const colors = chroma
-      .scale(["#fafa6e", "#2A4858"])
-      .mode("lch")
-      .colors(2)
+    // const colors = chroma
+    //   .scale(["#fafa6e", "#2A4858"])
+    //   .mode("lch")
+    //   .colors(2)
 
     return [
-      new BallSubject(scene, focalRadius, colors[0]),
-      new BallSubject(scene, -focalRadius, colors[1]),
+      new BallSubject(scene, focalRadius, COLORS.STATICBALLS[0]),
+      new BallSubject(scene, -focalRadius, COLORS.STATICBALLS[1]),
       // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
     ]
@@ -174,6 +188,8 @@ export default canvas => {
   }
 
   function render() {
+    stats.begin()
+
     const elapsedTime = clock.getElapsedTime()
     // const axesHelper = new THREE.AxesHelper(5)
 
@@ -185,6 +201,8 @@ export default canvas => {
     // updateCameraPositionRelativeToMouse()
 
     renderer.render(scene, camera)
+
+    stats.end()
   }
 
   function updateCameraPositionRelativeToMouse() {

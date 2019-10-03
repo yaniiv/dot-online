@@ -4,12 +4,14 @@ import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
+import * as COLORS from "../colors"
 import Layout from "../components/Layout"
 import Header from "../components/threejs/Header"
 import SEO from "../components/Seo"
 import Yaniv from "../components/Yaniv"
 import Socials from "../components/Socials"
 import About from "../components/About"
+import Projects from "../components/Projects"
 
 const linkStyle = css`
   text-transform: lowercase;
@@ -129,6 +131,23 @@ const bloxContainer = css`
   display: flex;
 `
 
+const zig = css`
+  height: 5em;
+  background: linear-gradient(45deg, transparent 50%, ${COLORS.BACKGROUND} 50%),
+    linear-gradient(90deg, transparent 50%, #ffd926 50%),
+    linear-gradient(135deg, ${COLORS.BACKGROUND} 50%, #cbab00 50%), 0 50%;
+  background-repeat: repeat-x;
+  background-size: 5em 5em, 5em 5em;
+`
+
+const zag = css`
+  height: 5em;
+  background: linear-gradient(-45deg, transparent 74%, #cbab00 75%),
+    linear-gradient(45deg, transparent 74%, #ffd926 75%) 0 50%;
+  background-repeat: repeat-x;
+  background-size: 5em 5em, 5em 5em;
+`
+
 const MinimalPage = () => (
   <StaticQuery
     query={graphql`
@@ -147,9 +166,12 @@ const MinimalPage = () => (
     render={data => (
       <Layout>
         {/* <SEO title="Page two" /> */}
-        <Header />
-        {/* <SEO title="Home" keywords={[`yaniv`, `goldobin`]} /> */}
         <Yaniv siteTitle={data.site.siteMetadata.title} />
+        <Header />
+        <div css={zig} />
+        <div css={zag} />
+        {/* <SEO title="Home" keywords={[`yaniv`, `goldobin`]} /> */}
+        {/* <Projects /> */}
         {/* <About /> */}
         {/* <Socials siteSocials={data.site.siteMetadata.siteSocials} /> */}
         <div css={bloxContainer}>
