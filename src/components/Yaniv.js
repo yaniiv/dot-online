@@ -2,13 +2,14 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { css } from "@emotion/core"
 
-import { jsx } from "@emotion/core"
+import * as COLORS from "../colors"
 
 const titleContainerStyles = {
   background: `transparent`,
   marginBottom: `1.45rem`,
-  textDecoration: "underline",
+  // textDecoration: "underline",
   display: "flex",
   position: "fixed",
   right: 0,
@@ -20,10 +21,10 @@ const titleButtonStyles = {
   padding: `1.45rem 2rem`,
 }
 
-const linkStyles = {
-  color: `Black`,
-  textDecoration: `none`,
-}
+const linkStyles = css`
+  color: ${COLORS.YANIV};
+  textdecoration: none;
+`
 
 const Title = ({ siteTitle }) => (
   <header css={titleContainerStyles}>

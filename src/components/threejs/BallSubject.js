@@ -14,7 +14,7 @@ export default (scene, focalRadius, color) => {
     new THREE.EdgesGeometry(geometry),
     // https://threejs.org/docs/#api/en/materials/LineBasicMaterial
     new THREE.LineBasicMaterial({
-      // color: '#FF990D'
+      // color: "#412C94",
     })
   )
 

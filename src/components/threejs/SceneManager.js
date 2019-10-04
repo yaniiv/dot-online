@@ -101,7 +101,7 @@ export default canvas => {
 
     const desktopAngle = {
       x: 0,
-      y: 40,
+      y: 80,
       z: 60,
     }
 
