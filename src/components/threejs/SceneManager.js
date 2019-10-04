@@ -152,8 +152,18 @@ export default canvas => {
     //   .colors(2)
 
     return [
-      new BallSubject(scene, focalRadius, COLORS.STATICBALLS[0]),
-      new BallSubject(scene, -focalRadius, COLORS.STATICBALLS[1]),
+      new BallSubject(
+        scene,
+        focalRadius,
+        COLORS.STATICBALLS[0],
+        COLORS.STATICBALLS[1]
+      ),
+      new BallSubject(
+        scene,
+        -focalRadius,
+        COLORS.STATICBALLS[1],
+        COLORS.STATICBALLS[0]
+      ),
       // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
     ]

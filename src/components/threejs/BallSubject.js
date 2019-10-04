@@ -1,7 +1,7 @@
 /* eslint-disable */
 import * as THREE from "three"
 
-export default (scene, focalRadius, color) => {
+export default (scene, focalRadius, color, meshColor) => {
   const group = new THREE.Group()
   const geometry = new THREE.SphereBufferGeometry(
     focalRadius / 3,
@@ -14,7 +14,7 @@ export default (scene, focalRadius, color) => {
     new THREE.EdgesGeometry(geometry),
     // https://threejs.org/docs/#api/en/materials/LineBasicMaterial
     new THREE.LineBasicMaterial({
-      // color: "#412C94",
+      color: meshColor,
     })
   )
 
