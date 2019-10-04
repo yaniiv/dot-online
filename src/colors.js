@@ -8,3 +8,5 @@ export const SMALLBALLGRADIENT = [lightend, darkend]
 export const WAVES = lightend
 
 export const YANIV = lightend
+
+export const WHITE = "#fff"

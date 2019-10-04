@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 
 import ThreeEntryPointManager from "./ThreeEntryPointManager"
-import "./header.css"
+import "./duality.css"
 
 function throttle(f, t) {
   return function(args) {

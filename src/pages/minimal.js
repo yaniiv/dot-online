@@ -6,7 +6,7 @@ import { css } from "@emotion/core"
 
 import * as COLORS from "../colors"
 import Layout from "../components/Layout"
-import Header from "../components/threejs/Header"
+import Duality from "../components/threejs/Duality"
 import SEO from "../components/Seo"
 import Yaniv from "../components/Yaniv"
 import Socials from "../components/Socials"
@@ -148,6 +148,22 @@ const zag = css`
   background-size: 5em 5em, 5em 5em;
 `
 
+// const zog = css`
+//   height: 5em;
+//   background: linear-gradient(45deg, transparent 50%, ${COLORS.WHITE} 50%),
+//     linear-gradient(90deg, transparent 50%, #ffd926 50%),
+//     linear-gradient(135deg, ${COLORS.WHITE} 50%, #cbab00 50%), 0 50%;
+//   background-repeat: repeat-x;
+//   background-size: 5em 5em, 5em 5em;
+// `
+
+const headerBlock = css`
+  /* background-color: #282828; */
+  /* border-bottom: 4px solid $h {COLORS.BACKGROUND}; */
+  height: 100px;
+  width: 100vw;
+`
+
 const MinimalPage = () => (
   <StaticQuery
     query={graphql`
@@ -166,8 +182,10 @@ const MinimalPage = () => (
     render={data => (
       <Layout>
         {/* <SEO title="Page two" /> */}
+        {/* <div css={headerBlock} /> */}
+        {/* <div css={zog} /> */}
         <Yaniv siteTitle={data.site.siteMetadata.title} />
-        <Header />
+        <Duality />
         <div css={zig} />
         <div css={zag} />
         {/* <SEO title="Home" keywords={[`yaniv`, `goldobin`]} /> */}
