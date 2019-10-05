@@ -27,8 +27,8 @@ const Index = () => (
     render={data => (
       <Layout>
         {/* <Yaniv siteTitle={data.site.siteMetadata.title} /> */}
-        <About />
-        <Socials siteSocials={data.site.siteMetadata.siteSocials} />
+        {/* <About /> */}
+        {/* <Socials siteSocials={data.site.siteMetadata.siteSocials} /> */}
         <Projects />
         <Link to="/minimal/">Go to page 2</Link>
       </Layout>

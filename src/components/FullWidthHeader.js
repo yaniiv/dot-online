@@ -19,11 +19,11 @@ const titleContainerStyles = css`
 `
 
 const titleButtonStyles = css`
+  cursor: pointer;
   /* padding: 1.45rem 2rem; */
 `
 
 const linkStyles = css`
-  padding: 1.45rem 2rem;
   color: ${COLORS.YANIV};
   text-decoration: none;
 `
@@ -31,8 +31,19 @@ const linkStyles = css`
 const Title = ({ siteTitle }) => (
   <header css={titleContainerStyles}>
     <div css={titleButtonStyles}>
-      <h2 css={{ margin: 0 }}>
-        <Link css={{ textDecoration: "underline", color: COLORS.YANIV }} to="/">
+      <h2
+        css={css`
+          margin: 0;
+          padding: 1.45rem 2rem;
+
+          &:hover {
+            a {
+              text-decoration: underline;
+            }
+          }
+        `}
+      >
+        <Link css={linkStyles} to="/">
           {siteTitle}
         </Link>
       </h2>
@@ -40,14 +51,37 @@ const Title = ({ siteTitle }) => (
     <div
       css={css`
         display: flex;
+        cursor: pointer;
       `}
     >
-      <h2 css={{ margin: 0 }}>
+      <h2
+        css={css`
+          margin: 0;
+          padding: 1.5rem 1rem;
+
+          &:hover {
+            a {
+              text-decoration: underline;
+            }
+          }
+        `}
+      >
         <Link css={linkStyles} to="/projects">
           projects
         </Link>
       </h2>
-      <h2 css={{ margin: 0 }}>
+      <h2
+        css={css`
+          margin: 0;
+          padding: 1.5rem 2rem;
+
+          &:hover {
+            a {
+              text-decoration: underline;
+            }
+          }
+        `}
+      >
         <Link css={linkStyles} to="/projects">
           about
         </Link>
