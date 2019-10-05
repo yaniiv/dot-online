@@ -19,10 +19,11 @@ const titleContainerStyles = css`
 `
 
 const titleButtonStyles = css`
-  padding: 1.45rem 2rem;
+  /* padding: 1.45rem 2rem; */
 `
 
 const linkStyles = css`
+  padding: 1.45rem 2rem;
   color: ${COLORS.YANIV};
   text-decoration: none;
 `
@@ -30,18 +31,27 @@ const linkStyles = css`
 const Title = ({ siteTitle }) => (
   <header css={titleContainerStyles}>
     <div css={titleButtonStyles}>
-      <h1 css={{ margin: 0 }}>
+      <h2 css={{ margin: 0 }}>
         <Link css={{ textDecoration: "underline", color: COLORS.YANIV }} to="/">
           {siteTitle}
         </Link>
-      </h1>
+      </h2>
     </div>
-    <div css={titleButtonStyles}>
-      <h1 css={{ margin: 0 }}>
+    <div
+      css={css`
+        display: flex;
+      `}
+    >
+      <h2 css={{ margin: 0 }}>
         <Link css={linkStyles} to="/projects">
           projects
         </Link>
-      </h1>
+      </h2>
+      <h2 css={{ margin: 0 }}>
+        <Link css={linkStyles} to="/projects">
+          about
+        </Link>
+      </h2>
     </div>
   </header>
 )
