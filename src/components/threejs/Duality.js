@@ -1,7 +1,15 @@
 import React, { Component } from "react"
+import { css } from "@emotion/core"
 
 import ThreeEntryPointManager from "./ThreeEntryPointManager"
 import "./duality.css"
+import * as SIZES from "../../sizes"
+
+const duality = css`
+  margin: auto;
+  height: ${SIZES.DUALITY};
+  width: 100%;
+`
 
 function throttle(f, t) {
   return function(args) {
@@ -43,7 +51,8 @@ export default class Header extends Component {
   render() {
     return (
       <div
-        className="header-header"
+        // className="header-header"
+        css={duality}
         ref={element => (this.threeRootElement = element)}
       />
     )

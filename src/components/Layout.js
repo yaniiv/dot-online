@@ -10,6 +10,9 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
+import FullWidthHeader from "../components/FullWidthHeader"
+import SEO from "../components/Seo"
+
 import "./layout.css"
 const layoutStyles = css`
   margin: 0 auto;
@@ -32,6 +35,8 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <div css={layoutStyles}>
+        <SEO title="Home" keywords={[`yaniv`, `goldobin`]} />
+        <FullWidthHeader siteTitle="yaniv" />
         <main>{children}</main>
         {/* <footer>
             © {new Date().getFullYear()}, Built with

@@ -104,11 +104,11 @@ const getEyeButtonStyles = isConsoleOpen =>
 const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
   return (
     <div css={browserHeader}>
-      <div css={browserButtons}>
+      {/* <div css={browserButtons}>
         <BrowserButton />
         <BrowserButton />
         <BrowserButton />
-      </div>
+      </div> */}
       <div css={browserUrlBarContainer}>
         <div css={browserUrlBar}>
           <a
@@ -119,12 +119,12 @@ const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
           >
             {link}
           </a>
-          {/* <div
+          <div
             onClick={toggleIsConsoleOpen}
             css={getEyeButtonStyles(isConsoleOpen)}
           >
             <div css={eyeStyles}>i</div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

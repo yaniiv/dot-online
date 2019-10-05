@@ -5,32 +5,41 @@ import React from "react"
 import { css } from "@emotion/core"
 
 import * as COLORS from "../colors"
+import * as SIZES from "../sizes"
 
 const titleContainerStyles = css`
-  background: ${COLORS.BACKGROUND};
-  text-decoration: "underline";
-  display: "flex";
-  position: "fixed";
+  background: 'transparent';
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  /* height: ${SIZES.HEADER_HEIGHT}; */
   right: 0;
   top: 0;
+  width: 100vw;
 `
 
 const titleButtonStyles = css`
-  width: 100vh;
   padding: 1.45rem 2rem;
 `
 
 const linkStyles = css`
   color: ${COLORS.YANIV};
-  textdecoration: none;
+  text-decoration: none;
 `
 
 const Title = ({ siteTitle }) => (
   <header css={titleContainerStyles}>
     <div css={titleButtonStyles}>
       <h1 css={{ margin: 0 }}>
-        <Link to="/" css={linkStyles}>
+        <Link css={{ textDecoration: "underline", color: COLORS.YANIV }} to="/">
           {siteTitle}
+        </Link>
+      </h1>
+    </div>
+    <div css={titleButtonStyles}>
+      <h1 css={{ margin: 0 }}>
+        <Link css={linkStyles} to="/projects">
+          projects
         </Link>
       </h1>
     </div>
