@@ -12,6 +12,7 @@ import Yaniv from "../components/Yaniv"
 import Socials from "../components/Socials"
 import About from "../components/About"
 import Projects from "../components/Projects"
+import HorizontalProjects from "../components/HorizontalProjects"
 
 const linkStyle = css`
   text-transform: lowercase;
@@ -188,6 +189,8 @@ const MinimalPage = () => (
         <Duality />
         <div css={zig} />
         <div css={zag} />
+        <HorizontalProjects />
+
         {/* <SEO title="Home" keywords={[`yaniv`, `goldobin`]} /> */}
         {/* <Projects /> */}
         {/* <About /> */}

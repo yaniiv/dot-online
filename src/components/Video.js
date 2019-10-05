@@ -32,17 +32,21 @@ const video = css`
   }
 `
 
-const Video = ({ name }) => {
+const Video = ({ name, autoplay }) => {
   return (
     <div css={videoContainer}>
       <video
         css={video}
-        autoPlay
+        autoPlay={autoplay}
         muted
         src={`${cloudinaryRootUrl}/${name}.mp4`}
       />
     </div>
   )
+}
+
+Video.defaultProps = {
+  autoPlay: true,
 }
 
 // {
