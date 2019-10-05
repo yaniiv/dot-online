@@ -7,7 +7,6 @@ import Projects from "../components/Projects"
 
 import Yaniv from "../components/Yaniv"
 import Socials from "../components/Socials"
-import About from "../components/About"
 
 const Index = () => (
   <StaticQuery
@@ -30,7 +29,6 @@ const Index = () => (
         {/* <About /> */}
         {/* <Socials siteSocials={data.site.siteMetadata.siteSocials} /> */}
         <Projects />
-        <Link to="/minimal/">Go to page 2</Link>
       </Layout>
     )}
   />

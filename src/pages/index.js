@@ -10,7 +10,6 @@ import Duality from "../components/threejs/Duality"
 import SEO from "../components/Seo"
 import Yaniv from "../components/Yaniv"
 import Socials from "../components/Socials"
-import About from "../components/About"
 import Projects from "../components/Projects"
 import HorizontalProjects from "../components/HorizontalProjects"
 import FullWidthHeader from "../components/FullWidthHeader"
@@ -191,7 +190,6 @@ const MinimalPage = () => (
         <Duality />
         <div css={zig} />
         <div css={zag} />
-        <HorizontalProjects />
 
         {/* <SEO title="Home" keywords={[`yaniv`, `goldobin`]} /> */}
         {/* <Projects /> */}

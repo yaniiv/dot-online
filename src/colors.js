@@ -10,3 +10,7 @@ export const WAVES = lightend
 export const YANIV = lightend
 
 export const WHITE = "#fff"
+export const BLACK = "#000"
+
+export const PROJECT_CONTAINER = "#4F4D4C"
+//"#DBD7D3"

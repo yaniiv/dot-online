@@ -7,7 +7,7 @@ import { css } from "@emotion/core"
 import * as COLORS from "../colors"
 import * as SIZES from "../sizes"
 
-const titleContainerStyles = css`
+const FooterContainerStyles = css`
   background: 'transparent';
   display: flex;
   position: fixed;
@@ -18,7 +18,7 @@ const titleContainerStyles = css`
   width: 100vw;
 `
 
-const titleButtonStyles = css`
+const FooterButtonStyles = css`
   cursor: pointer;
   /* padding: 1.45rem 2rem; */
 `
@@ -28,9 +28,9 @@ const linkStyles = css`
   text-decoration: none;
 `
 
-const Title = ({ siteTitle }) => (
-  <header css={titleContainerStyles}>
-    <div css={titleButtonStyles}>
+const Footer = ({ siteFooter }) => (
+  <header css={FooterContainerStyles}>
+    <div css={FooterButtonStyles}>
       <h2
         css={css`
           margin: 0;
@@ -44,7 +44,7 @@ const Title = ({ siteTitle }) => (
         `}
       >
         <Link css={linkStyles} to="/">
-          {siteTitle}
+          {siteFooter}
         </Link>
       </h2>
     </div>
@@ -90,12 +90,12 @@ const Title = ({ siteTitle }) => (
   </header>
 )
 
-Title.propTypes = {
-  siteTitle: PropTypes.string,
+Footer.propTypes = {
+  siteFooter: PropTypes.string,
 }
 
-Title.defaultProps = {
-  siteTitle: ``,
+Footer.defaultProps = {
+  siteFooter: ``,
 }
 
-export default Title
+export default Footer

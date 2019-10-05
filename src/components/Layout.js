@@ -18,7 +18,7 @@ const layoutStyles = css`
   margin: 0 auto;
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, headerBackground }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {

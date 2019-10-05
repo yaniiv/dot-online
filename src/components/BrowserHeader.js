@@ -4,45 +4,48 @@ import { css } from "@emotion/core"
 import { hoverGrey } from "./Console"
 import BrowserButton from "./BrowserButton"
 
+import * as COLORS from "../colors"
+
 const browserHeader = css`
   height: 60px;
-  width: 100%;
   display: flex;
+  background-color: #9c9795;
   border-bottom: 4px solid black;
-  background-color: white;
+  border-radius: 4px;
 `
 
-const browserButtons = css`
-  flex: 1;
-  flex-direction: row;
-  padding: 0 16px;
-  display: none;
+// const browserButtons = css`
+//   flex: 1;
+//   flex-direction: row;
+//   padding: 0 16px;
+//   display: none;
 
-  @media (min-width: 768px) {
-    display: flex;
-  }
-`
+//   @media (min-width: 768px) {
+//     display: flex;
+//   }
+// `
 
 const browserUrlBarContainer = css`
-  flex: 7;
+  /* flex: 7;
 
   @media (min-width: 768px) {
     flex: 4;
-  }
+  } */
+
+  display: flex;
+  width: 100%;
   padding: 8px 8px;
+  background: transparent;
 `
 
 const browserUrlBar = css`
-  background: transparent;
-  border: 3px solid black;
+  background: #363433;
+  border: 2px solid black;
   border-radius: 6px;
   height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
-
-const browserUrlLink = css`
+  /* width: 100%; */
+  flex: 1;
+  cursor: pointer;
   padding: 0 16px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen;
   text-decoration: none;
@@ -50,56 +53,66 @@ const browserUrlLink = css`
   font-weight: 400;
   letter-spacing: 0.3px;
   line-height: 34px;
-  flex: 8;
 
-  :hover {
-    background-color: ${hoverGrey};
-  }
+  color: ${COLORS.YANIV};
 
-  @media (min-width: 768px) {
-    flex: 11;
+  &:hover {
+    text-decoration: underline;
   }
 `
 
 const eyeButtonStyles = css`
+  margin: 8px;
+  margin-left: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   text-rendering: optimizeLegibility;
-  font-size: 1.4rem;
-  line-height: 1.1;
-
-  text-align: center;
-  line-height: 34px;
+  height: 40;
+  width: 40;
+  // border: 3px solid black;
+  border-radius: 6;
   cursor: pointer;
-  border-left: 3px solid white;
-  flex: 1;
-
-  :hover {
-    background-color: ${hoverGrey};
-  }
-
-  @media (min-width: 768px) {
-    flex: 1;
-  }
-`
-
-const eyeStyles = css`
-  padding: 0 18px;
-  :hover {
-    background-color: ${hoverGrey};
+  // background-color: ${COLORS.PROJECT_CONTAINER};
+  &:hover {
+    path {
+      fill: ${COLORS.YANIV};
+    }
+    circle {
+      fill: blue;
+    }
   }
 `
 
-const eyeActiveStyles = css`
-  background-color: ${hoverGrey};
-`
+const eyeStyles = {
+  color: "white",
+  backgroundColor: "transparent",
+}
 
-const getEyeButtonStyles = isConsoleOpen =>
-  css`
-    ${eyeButtonStyles}
-    ${isConsoleOpen && eyeActiveStyles}
-  `
+const Settings = ({ size = 38, color = COLORS.BLACK }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="1.4"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="12" r="3" fill={COLORS.YANIV} />
+    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+  </svg>
+)
+
+const ProjectInfoButton = ({ toggleIConsoleOpen }) => {
+  return (
+    <div onClick={toggleIConsoleOpen} css={eyeButtonStyles}>
+      <Settings />
+    </div>
+  )
+}
 
 const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
   return (
@@ -110,23 +123,22 @@ const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
         <BrowserButton />
       </div> */}
       <div css={browserUrlBarContainer}>
-        <div css={browserUrlBar}>
-          <a
-            css={browserUrlLink}
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {link}
-          </a>
-          <div
+        <a
+          css={browserUrlBar}
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {link}
+        </a>
+        {/* <div
             onClick={toggleIsConsoleOpen}
             css={getEyeButtonStyles(isConsoleOpen)}
           >
             <div css={eyeStyles}>i</div>
-          </div>
-        </div>
+          </div> */}
       </div>
+      <ProjectInfoButton />
     </div>
   )
 }

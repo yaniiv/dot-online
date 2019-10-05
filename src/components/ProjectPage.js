@@ -8,6 +8,8 @@ import BrowserHeader from "./BrowserHeader"
 import Icon from "./Icon"
 import ProjectInfoButton from "./ProjectInfoButton"
 
+import * as COLORS from "../colors"
+
 export const projectContainer = () => {
   return css`
     height: 100vh;
@@ -15,6 +17,7 @@ export const projectContainer = () => {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: ${COLORS.PROJECT_CONTAINER};
   `
 }
 
@@ -52,7 +55,7 @@ export const browserFrame = css`
   border-radius: 4px;
 
   @media (min-width: 768px) {
-    border: 6px solid black;
+    border: 4px solid black;
     border-radius: 6px;
   }
 
@@ -91,10 +94,10 @@ class ProjectPage extends React.Component {
               onMouseLeave={this.toggleIsConsoleOpen}
             >
               <Video name={name} />
-              <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
+              {/* <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
               <ProjectInfoButton
                 toggleIsConsoleOpen={this.toggleIsConsoleOpen}
-              />
+              /> */}
             </div>
           </div>
         </div>
