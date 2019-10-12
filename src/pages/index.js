@@ -7,6 +7,8 @@ import { css } from "@emotion/core"
 import * as COLORS from "../colors"
 import Layout from "../components/Layout"
 import Duality from "../components/threejs/Duality"
+import Footer from "../components/Footer"
+
 import SEO from "../components/Seo"
 import Yaniv from "../components/Yaniv"
 import Socials from "../components/Socials"

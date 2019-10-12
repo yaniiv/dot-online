@@ -8,7 +8,7 @@ import * as COLORS from "../colors"
 import * as SIZES from "../sizes"
 
 const titleContainerStyles = css`
-  background: 'transparent';
+  background: transparent;
   display: flex;
   position: fixed;
   justify-content: space-between;

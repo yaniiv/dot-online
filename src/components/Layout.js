@@ -12,6 +12,7 @@ import { css } from "@emotion/core"
 
 import FullWidthHeader from "../components/FullWidthHeader"
 import SEO from "../components/Seo"
+import Footer from "../components/Footer"
 
 import "./layout.css"
 const layoutStyles = css`
@@ -38,6 +39,7 @@ const Layout = ({ children, headerBackground }) => (
         <SEO title="Home" keywords={[`yaniv`, `goldobin`]} />
         <FullWidthHeader siteTitle="yaniv" />
         <main>{children}</main>
+        <Footer />
         {/* <footer>
             © {new Date().getFullYear()}, Built with
             {` `}

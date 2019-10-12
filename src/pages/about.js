@@ -4,6 +4,8 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import { css } from "@emotion/core"
 
 import Layout from "../components/Layout"
+import * as COLORS from "../colors"
+import * as SIZES from "../sizes"
 
 const linkStyle = css`
   text-transform: lowercase;
@@ -136,8 +138,13 @@ const bloxContainer = css`
   font-family: "Manjari", sans-serif;
   margin: 0 auto;
   max-width: 600px;
-  margin-top: 200px;
-  display: flex;
+  margin-top: ${SIZES.HEADER_HEIGHT};
+`
+
+const pageContainer = css`
+  background: ${COLORS.ABOUT_PAGE_BACKGROUND};
+  width: 100vw;
+  height: 100vh;
 `
 
 const About = () => {
@@ -158,10 +165,11 @@ const About = () => {
       `}
       render={data => (
         <Layout>
-          {/* <Yaniv siteTitle={data.site.siteMetadata.title} /> */}
-          {/* <About /> */}
-          {/* <Socials siteSocials={data.site.siteMetadata.siteSocials} /> */}
-          {/* <div css={fullPageOverlayStyles}>
+          <div css={pageContainer}>
+            {/* <Yaniv siteTitle={data.site.siteMetadata.title} /> */}
+            {/* <About /> */}
+            {/* <Socials siteSocials={data.site.siteMetadata.siteSocials} /> */}
+            {/* <div css={fullPageOverlayStyles}>
             <div css={aboutTextStyles}>
               <div>
                 Hello, i'm Yaniv. I'm a software engineer in Los Angeles,
@@ -186,12 +194,7 @@ const About = () => {
               <div>To get in touch you can email "xxx@email.com"</div>
             </div>
           </div> */}
-          <div css={bloxContainer}>
-            <div
-              css={css`
-                flex: 5;
-              `}
-            >
+            <div css={bloxContainer}>
               <Hello />
               <ProjectSocials />
               <Coding />

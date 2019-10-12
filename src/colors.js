@@ -14,3 +14,4 @@ export const BLACK = "#000"
 
 export const PROJECT_CONTAINER = "#4F4D4C"
 //"#DBD7D3"
+export const ABOUT_PAGE_BACKGROUND = "#707082"
