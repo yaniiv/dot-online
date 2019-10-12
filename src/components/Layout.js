@@ -15,6 +15,8 @@ import SEO from "../components/Seo"
 import Footer from "../components/Footer"
 
 import "./layout.css"
+import "../normalize.css"
+
 const layoutStyles = css`
   margin: 0 auto;
 `
