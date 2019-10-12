@@ -8,13 +8,13 @@ import * as COLORS from "../colors"
 import * as SIZES from "../sizes"
 
 const FooterContainerStyles = css`
-  background: 'transparent';
+  background: ${COLORS.FOOTER_BACKGROUND};
   display: flex;
-  position: fixed;
   justify-content: space-between;
   /* height: ${SIZES.HEADER_HEIGHT}; */
   right: 0;
-  top: 0;
+  bottom: 0;
+  height: 200px;
   width: 100vw;
 `
 

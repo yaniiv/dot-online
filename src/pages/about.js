@@ -15,7 +15,7 @@ const linkStyle = css`
   /* border-bottom: 1px solid #0000ee; */
 `
 
-const headerStyle = css`
+const subHeader = css`
   font-weight: bold;
 `
 
@@ -54,7 +54,7 @@ const aboutTextStyles = css`
 const Hello = () => (
   <div>
     <div>
-      <div css={headerStyle}>x red / y green / z blue</div>
+      <h2 css={subHeader}>Hello!</h2>
       <div>
         My name is Yan, and this site is a place where you can learn a bit more
         about me. I'm passionate about human connection, self expression, and
@@ -71,7 +71,7 @@ const Coding = () => (
     `}
   >
     <div css={css``}>
-      <div css={headerStyle}>Code</div>
+      <div css={subHeader}>Code</div>
       <div>
         Sho do! I write mostly Javascript, and have several years of experience
         building modern web applications for small and medium businesses. You
@@ -100,7 +100,7 @@ const ProjectSocials = () => (
           flex-direction: column;
         `}
       >
-        <div css={headerStyle}>Projects</div>
+        <div css={subHeader}>Projects</div>
         <a css={linkStyle} href="google.com">
           after the ussr
         </a>
@@ -118,7 +118,7 @@ const ProjectSocials = () => (
           text-align: right;
         `}
       >
-        <div css={headerStyle}>Socials</div>
+        <div css={subHeader}>Socials</div>
         <a css={linkStyle} href="google.com">
           Medium
         </a>
@@ -133,16 +133,18 @@ const ProjectSocials = () => (
   </div>
 )
 
-const bloxContainer = css`
-  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
-  font-family: "Manjari", sans-serif;
+const contentContainer = css`
   margin: 0 auto;
   max-width: 600px;
-  margin-top: ${SIZES.HEADER_HEIGHT};
+  padding-top: ${SIZES.HEADER_HEIGHT};
 `
-
 const pageContainer = css`
-  background: ${COLORS.ABOUT_PAGE_BACKGROUND};
+  background: ${COLORS.PROJECT_CONTAINER};
+  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
+  font-family: "Manjari", sans-serif;
+  font-size: 22px;
+  color: whitesmoke;
+  font-weight: 600px;
   width: 100vw;
   height: 100vh;
 `
@@ -194,7 +196,7 @@ const About = () => {
               <div>To get in touch you can email "xxx@email.com"</div>
             </div>
           </div> */}
-            <div css={bloxContainer}>
+            <div css={contentContainer}>
               <Hello />
               <ProjectSocials />
               <Coding />

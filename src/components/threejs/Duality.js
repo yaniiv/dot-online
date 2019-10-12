@@ -25,7 +25,7 @@ function throttle(f, t) {
   }
 }
 
-export default class Header extends Component {
+export default class Duality extends Component {
   constructor(props) {
     super(props)
     this.ThreeEntryPoint = new ThreeEntryPointManager()
@@ -51,7 +51,7 @@ export default class Header extends Component {
   render() {
     return (
       <div
-        // className="header-header"
+        // className="Duality-Duality"
         css={duality}
         ref={element => (this.threeRootElement = element)}
       />
