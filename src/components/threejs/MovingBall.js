@@ -44,10 +44,10 @@ export default (scene, focalPointRadius, color) => {
   )
   const material = new THREE.MeshBasicMaterial({ color })
   const subjectMesh = new THREE.Mesh(geometry, material)
-  const subjectWireframe = new THREE.LineSegments(
-    new THREE.EdgesGeometry(geometry),
-    new THREE.LineBasicMaterial()
-  )
+  // const subjectWireframe = new THREE.LineSegments(
+  //   new THREE.EdgesGeometry(geometry),
+  //   new THREE.LineBasicMaterial()
+  // )
 
   group.add(subjectMesh)
   // group.add(subjectWireframe)

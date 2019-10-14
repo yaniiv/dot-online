@@ -43,8 +43,6 @@ function SEO({ description, lang, meta, keywords, title }) {
           sizes: "64x64",
           href: `${favicon64}`,
         },
-      ]}
-      link={[
         {
           rel: "shortcut icon",
           type: "image/png",
