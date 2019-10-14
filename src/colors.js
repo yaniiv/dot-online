@@ -1,17 +1,17 @@
 // "#FBF664"
-const lightend = "#ffd926"
-const darkend = "#412C94"
+export const LIGHT_END_DUALITY = "#ffd926"
+export const DARK_END_DUALITY = "#412C94"
 
 export const PROJECT_CONTAINER = "#4F4D4C"
 
 export const PRIMARY_YELLOW = "#ffd926"
 export const PRIMARY_GRAY = PROJECT_CONTAINER
-export const BACKGROUND = darkend
-export const STATICBALLS = [lightend, darkend]
-export const SMALLBALLGRADIENT = [lightend, darkend]
-export const WAVES = lightend
+export const BACKGROUND = DARK_END_DUALITY
+export const STATICBALLS = [LIGHT_END_DUALITY, DARK_END_DUALITY]
+export const SMALLBALLGRADIENT = [LIGHT_END_DUALITY, DARK_END_DUALITY]
+export const WAVES = LIGHT_END_DUALITY
 
-export const YANIV = lightend
+export const YANIV = LIGHT_END_DUALITY
 
 export const WHITE = "#fff"
 export const BLACK = "#000"
