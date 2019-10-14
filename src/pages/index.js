@@ -22,10 +22,43 @@ const zig = css`
   background-size: 5em 5em, 5em 5em;
 `
 
+function getConicGradient(degreeOffset) {
+  return `
+    conic-gradient(
+      from ${degreeOffset}deg,
+      ${COLORS.PRIMARY_YELLOW},
+      ${COLORS.BACKGROUND}
+    );
+  `
+}
+
+// const numSwirls = 24
+const swirlDiameter = 100
+const numSwirls = 24
+
+const swirl = css`
+  width: 6em;
+  height: 6em;
+  margin-left: -3em;
+  border-radius: 3em;
+  /* background: ${getConicGradient(90)}; */
+`
+
+const dynamicSquiggles = deg => {
+  return css`
+    width: ${swirlDiameter}px;
+    height: ${swirlDiameter}px;
+    margin-left: -50px;
+    border-radius: 50px;
+    background: transparent;
+    background: ${getConicGradient(deg)};
+  `
+}
+
 const zag = css`
   height: 5em;
   background: linear-gradient(-45deg, transparent 74%, #cbab00 75%),
-    linear-gradient(45deg, transparent 74%, #ffd926 75%) 0 50%;
+    linear-gradient(45deg, ${COLORS.PRIMARY_GRAY} 74%, #ffd926 75%) 0 50%;
   background-repeat: repeat-x;
   background-size: 5em 5em, 5em 5em;
 `
@@ -53,6 +86,31 @@ const MinimalPage = () => (
         {/* <Yaniv siteTitle={data.site.siteMetadata.title} /> */}
         {/* <FullWidthHeader siteTitle="yaniv" /> */}
         <Duality />
+        <div
+          css={css`
+            display: flex;
+            background: ${COLORS.BACKGROUND};
+          `}
+        >
+          <div css={swirl} />
+          {Array(numSwirls)
+            .fill("array-filler-vals")
+            .map((item, index) => {
+              console.warn("hi")
+              const degreeRotationPerFrame = 90 + index * 15
+
+              return (
+                <div
+                  css={dynamicSquiggles(degreeRotationPerFrame)}
+                  key={index}
+                />
+              )
+            })}
+          {/* <div css={dynamicSquiggles} />
+          <div css={dynamicSquiggles} />
+          <div css={dynamicSquiggles} />
+          <div css={dynamicSquiggles} /> */}
+        </div>
         <div css={zig} />
         <div css={zag} />
         <div css={contactFormContainer} />
