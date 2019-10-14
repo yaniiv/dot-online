@@ -1,12 +1,13 @@
+/* eslint-disable */
 import React from "react"
-import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
+// import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
 import Projects from "../components/Projects"
 
-import Yaniv from "../components/Yaniv"
-import Socials from "../components/Socials"
+// import Yaniv from "../components/Yaniv"
+// import Socials from "../components/Socials"
 
 const Index = () => (
   <StaticQuery

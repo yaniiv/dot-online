@@ -1,5 +1,5 @@
-import React from "react"
 /* eslint-disable */
+import React from "react"
 import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
