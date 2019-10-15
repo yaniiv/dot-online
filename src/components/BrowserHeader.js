@@ -39,7 +39,7 @@ const browserUrlBarContainer = css`
 `
 
 const browserUrlBar = css`
-  background: #363433;
+  background: ${COLORS.GREY_DARK};
   border: 2px solid black;
   border-radius: 6px;
   height: 100%;
@@ -73,7 +73,7 @@ const eyeButtonStyles = css`
   // border: 3px solid black;
   border-radius: 6;
   cursor: pointer;
-  // background-color: ${COLORS.PROJECT_CONTAINER};
+  // background-color: ${COLORS.GREY};
   &:hover {
     path {
       fill: ${COLORS.YANIV};

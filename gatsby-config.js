@@ -3,6 +3,10 @@ module.exports = {
     title: `yaniv`,
     description: `yaniv, online`,
     author: `@yantonsoup`,
+    aboutPage: {
+      hello: "",
+      coding: "",
+    },
     siteSocials: [
       {
         name: `github`,
@@ -78,6 +82,7 @@ module.exports = {
       },
     ],
   },
+
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,

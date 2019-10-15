@@ -20,47 +20,53 @@ const subHeader = css`
   font-weight: bold;
 `
 
-const infoIconStyle = css`
-  width: 40px;
-  height: 40px;
-  z-index: 30;
-  cursor: pointer;
-
-  @media (min-width: 768px) {
-    width: 50px;
-    height: 50px;
+const hello = css`
+  a {
+    text-decoration: none;
+  }
+  a,
+  a:visited {
+    color: ${COLORS.DARK_END_DUALITY};
+  }
+  &:hover {
+    /* text-decoration: underline; */
   }
 `
 
-const fullPageOverlayStyles = css`
-  background-color: lightgoldenrodyellow;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const pageContainer = css`
+  background: ${COLORS.GREY};
+  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
+  font-family: "Manjari", sans-serif;
+  font-size: 22px;
+  /* color: whitesmoke; */
+  padding: 8px;
+  border-radius: 8px;
+  color: ${COLORS.GREY_DARK};
+  font-weight: 600px;
+  width: 100vw;
+  height: 100vh;
+  padding-top: ${SIZES.HEADER_HEIGHT};
 `
 
-const aboutTextStyles = css`
-  min-width: 375px;
-  max-width: 750px;
+const textContainer = css`
+  border: 4px solid black;
+  border-radius: 4px;
+  background: ${COLORS.WHITE_SOFT};
   margin: 0 auto;
-  font-family: Lucida Grande;
-  padding: 40px;
-
-  > div {
-    margin: 12px 0;
-  }
+  max-width: 600px;
+  margin-top: ${SIZES.HEADER_HEIGHT};
+  padding: 8px;
+  border-radius: 8px;
+  color: ${COLORS.GREY_DARK};
 `
 
 const Hello = () => (
-  <div>
+  <div css={hello}>
+    <h2 css={subHeader}>Hello! I'm Yaniv</h2>
     <div>
-      <h2 css={subHeader}>Hello!</h2>
-      <div>
-        My name is Yan, and this site is a place where you can learn a bit more
-        about me. I'm passionate about human connection, self expression, and
-        how technology can be used to reinforce the two.
-      </div>
+      This site is a collection of some of the projects I've worked on. I try to
+      make all my code <a href="">open source</a>. Info about my corporate work
+      is available <a href="">over here</a>.
     </div>
   </div>
 )
@@ -85,71 +91,6 @@ const Coding = () => (
   </div>
 )
 
-const ProjectSocials = () => (
-  <div css={css``}>
-    <div
-      css={css`
-        margin-top: 30px;
-        display: flex;
-        flex-basis: 100%;
-        justify-content: space-between;
-      `}
-    >
-      <div
-        css={css`
-          display: flex;
-          flex-direction: column;
-        `}
-      >
-        <div css={subHeader}>Projects</div>
-        <a css={linkStyle} href="google.com">
-          after the ussr
-        </a>
-        <a css={linkStyle} href="google.com">
-          scott perry site
-        </a>
-        <a css={linkStyle} href="google.com">
-          I am developer portfolio
-        </a>
-      </div>
-      <div
-        css={css`
-          display: flex;
-          flex-direction: column;
-          text-align: right;
-        `}
-      >
-        <div css={subHeader}>Socials</div>
-        <a css={linkStyle} href="google.com">
-          Medium
-        </a>
-        <a css={linkStyle} href="google.com">
-          Twitter
-        </a>
-        <a css={linkStyle} href="google.com">
-          Github
-        </a>
-      </div>
-    </div>
-  </div>
-)
-
-const contentContainer = css`
-  margin: 0 auto;
-  max-width: 600px;
-  padding-top: ${SIZES.HEADER_HEIGHT};
-`
-const pageContainer = css`
-  background: ${COLORS.PROJECT_CONTAINER};
-  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
-  font-family: "Manjari", sans-serif;
-  font-size: 22px;
-  color: whitesmoke;
-  font-weight: 600px;
-  width: 100vw;
-  height: 100vh;
-`
-
 const About = () => {
   return (
     <StaticQuery
@@ -172,34 +113,8 @@ const About = () => {
             {/* <Yaniv siteTitle={data.site.siteMetadata.title} /> */}
             {/* <About /> */}
             {/* <Socials siteSocials={data.site.siteMetadata.siteSocials} /> */}
-            {/* <div css={fullPageOverlayStyles}>
-            <div css={aboutTextStyles}>
-              <div>
-                Hello, i'm Yaniv. I'm a software engineer in Los Angeles,
-                California.
-              </div>
-              <div>This site is a collection of some of my projects.</div>
-              <div>
-                I'm particularly interested in working with technologies that
-                will help me tell compelling stories with javascript.
-              </div>
-              <div className="proffesional">
-                For my professional work, you can check out{" "}
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.linkedin.com/in/ygoldobin"
-                >
-                  linkedin
-                </a>
-                .
-              </div>
-              <div>To get in touch you can email "xxx@email.com"</div>
-            </div>
-          </div> */}
-            <div css={contentContainer}>
+            <div css={textContainer}>
               <Hello />
-              <ProjectSocials />
               <Coding />
             </div>
           </div>

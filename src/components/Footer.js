@@ -19,7 +19,7 @@ const FooterContainerStyles = css`
 `
 
 const FooterButtonStyles = css`
-  cursor: pointer;
+  /* cursor: pointer; */
   /* padding: 1.45rem 2rem; */
 `
 
@@ -29,65 +29,23 @@ const linkStyles = css`
 `
 
 const Footer = ({ siteFooter }) => (
-  <header css={FooterContainerStyles}>
-    <div css={FooterButtonStyles}>
-      <h2
-        css={css`
-          margin: 0;
-          padding: 1.45rem 2rem;
-
-          &:hover {
-            a {
-              text-decoration: underline;
-            }
-          }
-        `}
-      >
-        <Link css={linkStyles} to="/">
-          {siteFooter}
-        </Link>
-      </h2>
-    </div>
+  <footer css={FooterContainerStyles}>
     <div
       css={css`
-        display: flex;
-        cursor: pointer;
+        flex: 1;
       `}
-    >
-      <h2
-        css={css`
-          margin: 0;
-          padding: 1.5rem 1rem;
-
-          &:hover {
-            a {
-              text-decoration: underline;
-            }
-          }
-        `}
-      >
-        <Link css={linkStyles} to="/projects">
-          projects
-        </Link>
-      </h2>
-      <h2
-        css={css`
-          margin: 0;
-          padding: 1.5rem 2rem;
-
-          &:hover {
-            a {
-              text-decoration: underline;
-            }
-          }
-        `}
-      >
-        <Link css={linkStyles} to="/about">
-          about
-        </Link>
-      </h2>
-    </div>
-  </header>
+    />
+    <div
+      css={css`
+        flex: 3;
+      `}
+    />
+    <div
+      css={css`
+        flex: 1;
+      `}
+    />
+  </footer>
 )
 
 Footer.propTypes = {

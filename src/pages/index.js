@@ -33,8 +33,8 @@ function getConicGradient(degreeOffset, blendedIn = COLORS.TRANSPARENT) {
 }
 
 // const numSwirls = 24
-const swirlDiameter = 180
-const numSwirls = 18
+const swirlDiameter = 90
+const numSwirls = 36
 
 const swirl = css`
   width:${swirlDiameter}px;
