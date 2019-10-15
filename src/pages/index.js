@@ -1,10 +1,11 @@
 /* eslint-disable */
 import React from "react"
-import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
+import chroma from "chroma-js"
 
 import * as COLORS from "../constants/colors"
+
 import Layout from "../components/Layout"
 import Duality from "../components/threejs/Duality"
 
@@ -22,19 +23,22 @@ const zig = css`
   background-size: 5em 5em, 5em 5em;
 `
 
-function getConicGradient(degreeOffset, blendedIn = COLORS.TRANSPARENT) {
+function getConicGradient(degreeOffset, coneColor) {
   return `
     conic-gradient(
       from ${degreeOffset}deg,
-      ${COLORS.PRIMARY_YELLOW},
-      ${blendedIn}
+      ${coneColor},
+      ${COLORS.TRANSPARENT}
     );
   `
 }
 
 // const numSwirls = 24
-const swirlDiameter = 90
-const numSwirls = 36
+const numSwirls = 18
+// const swirlDiameter = 90 // (px)
+const swirlDiameter = (window.innerWidth / numSwirls) * 2
+console.warn({ swirlDiameter })
+// const swirlDiameter = window.innerWidth / numSwirls
 
 const swirl = css`
   width:${swirlDiameter}px;
@@ -44,13 +48,13 @@ const swirl = css`
   /* background: ${getConicGradient(90)}; */
 `
 
-const dynamicSquiggles = (degreeRotate, blendedIn) => {
+const dynamicSquiggles = (degreeRotate, color) => {
   return css`
     width: ${swirlDiameter}px;
     height: ${swirlDiameter}px;
     margin-left: -${swirlDiameter / 2}px;
     border-radius: ${swirlDiameter / 2}px;
-    background: ${getConicGradient(degreeRotate, blendedIn)};
+    background: ${getConicGradient(degreeRotate, color)};
   `
 }
 
@@ -61,6 +65,13 @@ const zag = css`
   background-repeat: repeat-x;
   background-size: 5em 5em, 5em 5em;
 `
+
+const colors = chroma
+  .scale(COLORS.SMALLBALLGRADIENT)
+  .mode("lch")
+  .colors(numSwirls)
+
+console.warn({ colors })
 
 const MinimalPage = () => (
   <StaticQuery
@@ -99,19 +110,19 @@ const MinimalPage = () => (
               flex: 1;
             `}
           >
-            {Array(numSwirls)
-              .fill("array-filler-vals")
-              .map((item, index) => {
-                console.warn("hi")
-                const degreeRotationPerFrame = -90 + index * 36
+            {colors.map((color, index) => {
+              const rotationPerFrame = 720 / numSwirls
+              console.warn("frame rotationPerFrame", rotationPerFrame)
+              const circleRotation = -90 + index * rotationPerFrame
+              console.warn("circleRotation", circleRotation)
 
-                return (
-                  <div
-                    css={dynamicSquiggles(degreeRotationPerFrame)}
-                    key={index}
-                  />
-                )
-              })}
+              return (
+                <div
+                  css={dynamicSquiggles(circleRotation, color)}
+                  key={index}
+                />
+              )
+            })}
           </div>
 
           {/* <div css={dynamicSquiggles} />

@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-import * as COLORS from "../colors"
+import * as COLORS from "../constants/colors"
 
 import Icon from "./Icon"
 

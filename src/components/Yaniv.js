@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { css } from "@emotion/core"
 
-import * as COLORS from "../colors"
+import * as COLORS from "../constants/colors"
 
 const titleContainerStyles = css`
   background: ${COLORS.BACKGROUND};
