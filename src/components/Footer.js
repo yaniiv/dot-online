@@ -61,9 +61,7 @@ const Footer = ({ siteFooter }) => {
               }
             `}
           >
-            <div>
-              Copyright my stuff<a href="">ok</a>
-            </div>
+            <div>Copyright 2019 © yaniv goldobin</div>
           </div>
           <div
             css={css`

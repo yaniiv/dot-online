@@ -83,7 +83,7 @@ const MinimalPage = () => (
         {/* <div css={headerBlock} /> */}
         {/* <div css={zog} /> */}
         {/* <Yaniv siteTitle={data.site.siteMetadata.title} /> */}
-        {/* <FullWidthHeader siteTitle="yaniv" /> */}
+        {/* <Header siteTitle="yaniv" /> */}
         <Duality />
         <div
           css={css`

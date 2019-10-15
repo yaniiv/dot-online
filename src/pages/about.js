@@ -36,14 +36,13 @@ const pageContainer = css`
 `
 
 const textContainer = css`
-  border: 4px solid black;
-  border-radius: 4px;
+  /* border: 4px solid black; */
+  /* border-radius: 4px; */
   background: ${COLORS.WHITE_SOFT};
   margin: 0 auto;
   max-width: 600px;
   margin-top: ${SIZES.HEADER_HEIGHT};
   padding: 8px;
-  border-radius: 8px;
   color: ${COLORS.GREY_DARK};
 `
 

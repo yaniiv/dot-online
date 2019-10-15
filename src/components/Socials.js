@@ -24,6 +24,7 @@ const Socials = ({ siteSocials }) => (
   >
     {siteSocials.map(({ name, linkTo }) => (
       <div
+        key={linkTo}
         css={css`
           padding: 1.6rem 0;
         `}
@@ -31,7 +32,6 @@ const Socials = ({ siteSocials }) => (
         <a
           href={linkTo}
           rel="noopener noreferrer"
-          key={linkTo}
           target="_blank"
           css={socialIconStyle}
         >
