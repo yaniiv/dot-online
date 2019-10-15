@@ -11,6 +11,8 @@ export const STATICBALLS = [LIGHT_END_DUALITY, DARK_END_DUALITY]
 export const SMALLBALLGRADIENT = [LIGHT_END_DUALITY, DARK_END_DUALITY]
 export const WAVES = LIGHT_END_DUALITY
 
+export const TRANSPARENT = "transparent"
+
 export const YANIV = LIGHT_END_DUALITY
 
 export const WHITE = "#fff"

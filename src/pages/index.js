@@ -22,7 +22,7 @@ const zig = css`
   background-size: 5em 5em, 5em 5em;
 `
 
-function getConicGradient(degreeOffset, blendedIn = COLORS.PROJECT_CONTAINER) {
+function getConicGradient(degreeOffset, blendedIn = COLORS.TRANSPARENT) {
   return `
     conic-gradient(
       from ${degreeOffset}deg,
@@ -33,14 +33,14 @@ function getConicGradient(degreeOffset, blendedIn = COLORS.PROJECT_CONTAINER) {
 }
 
 // const numSwirls = 24
-const swirlDiameter = 200
-const numSwirls = 15
+const swirlDiameter = 180
+const numSwirls = 18
 
 const swirl = css`
-  width: 6em;
-  height: 6em;
-  margin-left: -3em;
-  border-radius: 3em;
+  width:${swirlDiameter}px;
+  height: ${swirlDiameter}px;
+  margin-left: -${swirlDiameter / 2}px;
+    border-radius: ${swirlDiameter / 2}px;
   /* background: ${getConicGradient(90)}; */
 `
 
@@ -89,7 +89,7 @@ const MinimalPage = () => (
           css={css`
             display: flex;
             background: ${COLORS.BACKGROUND};
-            margin-bottom: -100px;
+            margin-bottom: -${swirlDiameter / 2}px;
           `}
         >
           <div css={swirl} />
@@ -103,7 +103,7 @@ const MinimalPage = () => (
               .fill("array-filler-vals")
               .map((item, index) => {
                 console.warn("hi")
-                const degreeRotationPerFrame = 90 + index * 30
+                const degreeRotationPerFrame = -90 + index * 36
 
                 return (
                   <div
