@@ -2,6 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
+import * as COLORS from "../colors"
+
 import Icon from "./Icon"
 
 const socialIconStyle = css`
@@ -20,13 +22,18 @@ const Socials = ({ siteSocials }) => (
       display: flex;
       justify-content: space-around;
       max-height: 100px;
+      max-width: 230px;
+
+      svg {
+        fill: ${COLORS.YANIV};
+      }
     `}
   >
     {siteSocials.map(({ name, linkTo }) => (
       <div
         key={linkTo}
         css={css`
-          padding: 1.6rem 0;
+          padding: 1.8rem 0;
         `}
       >
         <a

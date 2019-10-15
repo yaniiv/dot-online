@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import * as COLORS from "../../colors"
+import * as COLORS from "../../constants/colors"
 
 function vertexShader() {
   return `

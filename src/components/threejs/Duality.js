@@ -3,7 +3,7 @@ import { css } from "@emotion/core"
 
 import ThreeEntryPointManager from "./ThreeEntryPointManager"
 import "./duality.css"
-import * as SIZES from "../../sizes"
+import * as SIZES from "../../constants/sizes"
 
 const duality = css`
   margin: auto;

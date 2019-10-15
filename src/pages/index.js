@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
-import * as COLORS from "../colors"
+import * as COLORS from "../constants/colors"
 import Layout from "../components/Layout"
 import Duality from "../components/threejs/Duality"
 

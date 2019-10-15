@@ -4,8 +4,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import { css } from "@emotion/core"
 
-import * as COLORS from "../colors"
-import * as SIZES from "../sizes"
+import * as COLORS from "../constants/colors"
+import * as SIZES from "../constants/sizes"
 
 import Socials from "../components/Socials"
 
@@ -13,21 +13,13 @@ const FooterContainerStyles = css`
   background: ${COLORS.FOOTER_BACKGROUND};
   display: flex;
   justify-content: space-between;
+  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
+  font-family: "Manjari", sans-serif;
   /* height: ${SIZES.HEADER_HEIGHT}; */
   right: 0;
   bottom: 0;
   height: 100px;
   width: 100vw;
-`
-
-const FooterButtonStyles = css`
-  /* cursor: pointer; */
-  /* padding: 1.45rem 2rem; */
-`
-
-const linkStyles = css`
-  color: ${COLORS.YANIV};
-  text-decoration: none;
 `
 
 const Footer = ({ siteFooter }) => {
@@ -54,23 +46,12 @@ const Footer = ({ siteFooter }) => {
               flex-direction: column;
               justify-content: center;
               padding: 24px;
-
-              a {
-                color: ${COLORS.YANIV};
-                padding: 8px;
-              }
+              color: ${COLORS.GREY_LIGHT};
             `}
           >
-            <div>Copyright 2019 © yaniv goldobin</div>
+            <div>Copyright 2019 © Yaniv Goldobin</div>
           </div>
-          <div
-            css={css`
-              max-width: 230px;
-              svg {
-                fill: ${COLORS.YANIV};
-              }
-            `}
-          >
+          <div>
             <Socials siteSocials={data.site.siteMetadata.siteSocials} />
           </div>
         </footer>

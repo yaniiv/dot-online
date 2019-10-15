@@ -8,7 +8,7 @@ import BrowserHeader from "./BrowserHeader"
 import Icon from "./Icon"
 import ProjectInfoButton from "./ProjectInfoButton"
 
-import * as COLORS from "../colors"
+import * as COLORS from "../constants/colors"
 
 export const projectContainer = () => {
   return css`

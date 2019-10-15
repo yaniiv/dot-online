@@ -3,7 +3,7 @@ import * as THREE from "three"
 import chroma from "chroma-js"
 import Stats from "stats.js"
 
-import * as COLORS from "../../colors"
+import * as COLORS from "../../constants/colors"
 // import SceneSubject from './SceneSubject';
 import BallSubject from "./BallSubject"
 import GeneralLights from "./GeneralLights"

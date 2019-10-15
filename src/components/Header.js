@@ -4,8 +4,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import { css } from "@emotion/core"
 
-import * as COLORS from "../colors"
-import * as SIZES from "../sizes"
+import * as COLORS from "../constants/colors"
+import * as SIZES from "../constants/sizes"
 
 const titleContainerStyles = css`
   background: transparent;
