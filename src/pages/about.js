@@ -8,17 +8,7 @@ import Layout from "../components/Layout"
 import * as COLORS from "../colors"
 import * as SIZES from "../sizes"
 
-const linkStyle = css`
-  text-transform: lowercase;
-  text-decoration-line: underline;
-  width: 100%;
-  /* padding-bottom: 1px; */
-  /* border-bottom: 1px solid #0000ee; */
-`
-
-const subHeader = css`
-  font-weight: bold;
-`
+const subHeader = css``
 
 const hello = css`
   a {
@@ -39,9 +29,6 @@ const pageContainer = css`
   font-family: "Manjari", sans-serif;
   font-size: 22px;
   /* color: whitesmoke; */
-  padding: 8px;
-  border-radius: 8px;
-  color: ${COLORS.GREY_DARK};
   font-weight: 600px;
   width: 100vw;
   height: 100vh;
@@ -68,6 +55,21 @@ const Hello = () => (
       make all my code <a href="">open source</a>. Info about my corporate work
       is available <a href="">over here</a>.
     </div>
+    <div
+      css={css`
+        margin-top: 30px;
+      `}
+    >
+      Code
+    </div>
+    <div>
+      Sho do! I write mostly Javascript, and have several years of experience
+      building modern web applications for small and medium businesses. You can
+      check out my <a href="">linkedin</a> for more information. <br />
+      <br />
+      I've also built portfolio sites for clients, and worked on some passion
+      projects you can see above.
+    </div>
   </div>
 )
 
@@ -77,17 +79,7 @@ const Coding = () => (
       margin-top: 30px;
     `}
   >
-    <div css={css``}>
-      <div css={subHeader}>Code</div>
-      <div>
-        Sho do! I write mostly Javascript, and have several years of experience
-        building modern web applications for small and medium businesses. You
-        can check out my <a href="">linkedin</a> for more information. <br />
-        <br />
-        I've also built portfolio sites for clients, and worked on some passion
-        projects you can see above.
-      </div>
-    </div>
+    <div css={css``} />
   </div>
 )
 

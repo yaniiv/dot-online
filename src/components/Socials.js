@@ -7,35 +7,27 @@ import Icon from "./Icon"
 const socialIconStyle = css`
   width: 40px;
   height: 40px;
-  margin-bottom: 1.45rem;
 
   @media (min-width: 768px) {
     width: 50px;
     height: 50px;
-    margin-bottom: 2rem;
   }
 `
 
 const Socials = ({ siteSocials }) => (
   <div
-    style={{
-      background: `transparent`,
-      position: "fixed",
-      left: 0,
-      bottom: 0,
-      zIndex: "30",
-    }}
+    css={css`
+      display: flex;
+      justify-content: space-around;
+      max-height: 100px;
+    `}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        // maxWidth: 960,
-        display: "flex",
-        flexDirection: "column",
-        padding: `1.45rem 2rem 0`,
-      }}
-    >
-      {siteSocials.map(({ name, linkTo }) => (
+    {siteSocials.map(({ name, linkTo }) => (
+      <div
+        css={css`
+          padding: 1.6rem 0;
+        `}
+      >
         <a
           href={linkTo}
           rel="noopener noreferrer"
@@ -45,8 +37,8 @@ const Socials = ({ siteSocials }) => (
         >
           <Icon name={name} />
         </a>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
 )
 

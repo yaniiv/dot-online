@@ -1,11 +1,13 @@
 /* eslint-disable */
-import { Link } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { css } from "@emotion/core"
 
 import * as COLORS from "../colors"
 import * as SIZES from "../sizes"
+
+import Socials from "../components/Socials"
 
 const FooterContainerStyles = css`
   background: ${COLORS.FOOTER_BACKGROUND};
@@ -14,7 +16,7 @@ const FooterContainerStyles = css`
   /* height: ${SIZES.HEADER_HEIGHT}; */
   right: 0;
   bottom: 0;
-  height: 200px;
+  height: 100px;
   width: 100vw;
 `
 
@@ -28,25 +30,56 @@ const linkStyles = css`
   text-decoration: none;
 `
 
-const Footer = ({ siteFooter }) => (
-  <footer css={FooterContainerStyles}>
-    <div
-      css={css`
-        flex: 1;
+const Footer = ({ siteFooter }) => {
+  return (
+    <StaticQuery
+      query={graphql`
+        query Footer {
+          site {
+            siteMetadata {
+              title
+              siteSocials {
+                name
+                linkTo
+              }
+            }
+          }
+        }
       `}
+      render={data => (
+        <footer css={FooterContainerStyles}>
+          <div
+            css={css`
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              padding: 24px;
+
+              a {
+                color: ${COLORS.YANIV};
+                padding: 8px;
+              }
+            `}
+          >
+            <div>
+              Copyright my stuff<a href="">ok</a>
+            </div>
+          </div>
+          <div
+            css={css`
+              max-width: 230px;
+              svg {
+                fill: ${COLORS.YANIV};
+              }
+            `}
+          >
+            <Socials siteSocials={data.site.siteMetadata.siteSocials} />
+          </div>
+        </footer>
+      )}
     />
-    <div
-      css={css`
-        flex: 3;
-      `}
-    />
-    <div
-      css={css`
-        flex: 1;
-      `}
-    />
-  </footer>
-)
+  )
+}
 
 Footer.propTypes = {
   siteFooter: PropTypes.string,
