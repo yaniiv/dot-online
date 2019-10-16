@@ -33,13 +33,14 @@ function getConicGradient(degreeOffset, coneColor) {
   `
 }
 
-console.warn("window.innerWidth", window.innerWidth)
-console.warn("window.devicePixelRatio", window.devicePixelRatio)
 // const numSwirls = 24
 const numSwirls = 18
 // const swirlDiameter = 90 // (px)
 let swirlDiameter = 2
 if (typeof window !== `undefined`) {
+  console.warn("window.innerWidth", window.innerWidth)
+  console.warn("window.devicePixelRatio", window.devicePixelRatio)
+
   swirlDiameter = (window.innerWidth / numSwirls) * 2
 }
 console.warn({ swirlDiameter })
