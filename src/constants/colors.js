@@ -1,4 +1,3 @@
-// "#FBF664"
 export const LIGHT_END_DUALITY = "#ffd926"
 export const DARK_END_DUALITY = "#412C94"
 
@@ -20,7 +19,6 @@ export const YANIV = LIGHT_END_DUALITY
 export const WHITE = "#fff"
 export const BLACK = "#000"
 
-//"#DBD7D3"
 export const WHITE_SOFT = "#dbd5d3"
 export const ABOUT_PAGE_BACKGROUND = "#415C52"
 
