@@ -25,7 +25,7 @@ export const LARGE_BALL_PROPERTIES = {
   mobile: {
     focalRadius: 15,
     ballRadius: 5,
-    heightSegments: 15,
-    widthSegments: 15,
+    heightSegments: 30,
+    widthSegments: 30,
   },
 }
