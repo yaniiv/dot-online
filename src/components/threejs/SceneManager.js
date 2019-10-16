@@ -4,6 +4,8 @@ import chroma from "chroma-js"
 import Stats from "stats.js"
 
 import * as COLORS from "../../constants/colors"
+import * as NUMBERS from "../../constants/numbers"
+
 // import SceneSubject from './SceneSubject';
 import BallSubject from "./BallSubject"
 import GeneralLights from "./GeneralLights"
@@ -130,7 +132,7 @@ export default canvas => {
     return camera
   }
 
-  function createMovingBalls({ scene, focalRadius, color, numBalls }) {
+  function createMovingBalls({ scene, ballProperties, color, numBalls }) {
     const colors = chroma
       .scale(COLORS.SMALLBALLGRADIENT)
       .mode("lch")
@@ -139,52 +141,58 @@ export default canvas => {
     console.warn("colors", colors)
 
     const balls = colors.map(color => {
-      return new MovingBall(scene, focalRadius, color)
+      return new MovingBall(scene, ballProperties, color)
     })
 
     return balls
   }
 
-  function createStaticBalls({ scene, focalRadius }) {
+  function createStaticBalls({ scene, ballProperties }) {
     // const colors = chroma
     //   .scale(["#fafa6e", "#2A4858"])
     //   .mode("lch")
     //   .colors(2)
 
     return [
-      new BallSubject(
+      new BallSubject({
         scene,
-        focalRadius,
-        COLORS.STATICBALLS[0],
-        COLORS.STATICBALLS[1]
-      ),
-      new BallSubject(
+        ballProperties,
+        xPosition: ballProperties.focalRadius,
+        color: COLORS.STATICBALLS[0],
+        meshColor: COLORS.STATICBALLS[1],
+      }),
+      new BallSubject({
         scene,
-        -focalRadius,
-        COLORS.STATICBALLS[1],
-        COLORS.STATICBALLS[0]
-      ),
+        ballProperties,
+        xPosition: -ballProperties.focalRadius,
+        color: COLORS.STATICBALLS[1],
+        meshColor: COLORS.STATICBALLS[0],
+      }),
       // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
       // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
     ]
   }
 
   function createSceneSubjects(scene) {
-    let focalRadius = 15
+    let staticBallProperties = NUMBERS.LARGE_BALL_PROPERTIES.mobile
+    let movingBallProperties = NUMBERS.SMALL_BALL_PROPERTIES.mobile
 
     if (isDesktop()) {
-      focalRadius = 30
+      staticBallProperties = NUMBERS.LARGE_BALL_PROPERTIES.desktop
+      movingBallProperties = NUMBERS.SMALL_BALL_PROPERTIES.desktop
+      let focalRadius = 30
     }
 
     const movingBalls = createMovingBalls({
       scene,
-      focalRadius,
-      numBalls: 6,
+      ballProperties: movingBallProperties,
+      focalRadius: movingBallProperties.focalRadius,
+      numBalls: NUMBERS.NUM_BALLS,
     })
 
     const staticBalls = createStaticBalls({
       scene,
-      focalRadius,
+      ballProperties: staticBallProperties,
     })
 
     const sceneSubjects = [

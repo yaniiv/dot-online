@@ -2,7 +2,7 @@ import * as THREE from "three"
 
 var MAX_POINTS = 500
 
-export default (scene, focalPointRadius, color) => {
+export default (scene, ballProperties, color) => {
   const group = new THREE.Group()
 
   // // geometry
@@ -35,12 +35,17 @@ export default (scene, focalPointRadius, color) => {
   //   y += (Math.random() - 0.5) * 30
   //   z += (Math.random() - 0.5) * 30
   // }
-
+  const {
+    focalRadius,
+    ballRadius,
+    heightSegments,
+    widthSegments,
+  } = ballProperties
   //Ball
   const geometry = new THREE.SphereBufferGeometry(
-    2,
-    focalPointRadius / 2,
-    focalPointRadius / 2
+    ballRadius,
+    widthSegments,
+    heightSegments
   )
   const material = new THREE.MeshBasicMaterial({ color })
   const subjectMesh = new THREE.Mesh(geometry, material)
@@ -73,9 +78,9 @@ export default (scene, focalPointRadius, color) => {
     const angle = time * speed
     //   rad * 0.5 * Math.sin(time + Math.PI / 4) /*- rad * Math.cos(time * 0.5)*/
 
-    const x = focalPointRadius * 1.5 * Math.sin(time + offset.x * Math.PI)
-    const y = (focalPointRadius / 2.5) * Math.sin(time + offset.y * Math.PI)
-    const z = (focalPointRadius / 2) * Math.sin(2 * time + offset.z * Math.PI)
+    const x = focalRadius * 1.5 * Math.sin(time + offset.x * Math.PI)
+    const y = (focalRadius / 2.5) * Math.sin(time + offset.y * Math.PI)
+    const z = (focalRadius / 2) * Math.sin(2 * time + offset.z * Math.PI)
 
     group.position.set(x, y, z)
     // const y = 10 * Math.sin(2 * time)

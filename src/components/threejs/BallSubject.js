@@ -1,12 +1,20 @@
 /* eslint-disable */
 import * as THREE from "three"
 
-export default (scene, focalRadius, color, meshColor) => {
+import * as NUMBERS from "../../constants/numbers"
+
+export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
   const group = new THREE.Group()
+  const {
+    focalRadius,
+    ballRadius,
+    heightSegments,
+    widthSegments,
+  } = ballProperties
   const geometry = new THREE.SphereBufferGeometry(
-    focalRadius / 3,
-    Math.abs(focalRadius),
-    Math.abs(focalRadius)
+    ballRadius,
+    widthSegments,
+    heightSegments
   )
   const material = new THREE.MeshBasicMaterial({ color })
   const subjectMesh = new THREE.Mesh(geometry, material)
@@ -19,11 +27,11 @@ export default (scene, focalRadius, color, meshColor) => {
   )
 
   // const { focalPointRadius, y, z } = position
-  subjectMesh.position.set(focalRadius, 0, 0)
-  subjectWireframe.position.set(focalRadius, 0, 0)
+  subjectMesh.position.set(xPosition, 0, 0)
+  subjectWireframe.position.set(xPosition, 0, 0)
 
   group.add(subjectMesh)
-  group.add(subjectWireframe)
+  // group.add(subjectWireframe)
 
   scene.add(group)
 
