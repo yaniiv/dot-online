@@ -38,7 +38,7 @@ const numSwirls = 18
 // const swirlDiameter = 90 // (px)
 let swirlDiameter = 2
 if (typeof window !== `undefined`) {
-  const swirlDiameter = (window.innerWidth / numSwirls) * 2
+  swirlDiameter = (window.innerWidth / numSwirls) * 2
 }
 console.warn({ swirlDiameter })
 // const swirlDiameter = window.innerWidth / numSwirls
