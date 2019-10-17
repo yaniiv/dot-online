@@ -23,7 +23,7 @@ const Socials = ({ siteSocials }) => (
       justify-content: space-around;
       max-height: 100px;
       max-width: 230px;
-
+      margin-left: auto;
       svg {
         fill: ${COLORS.YANIV};
       }

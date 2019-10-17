@@ -39,13 +39,6 @@ const MinimalPage = () => (
         {/* <Header siteTitle="yaniv" /> */}
         <Duality />
         <MagicBorder />
-
-        {/* <div css={dynamicSquiggles} />
-          <div css={dynamicSquiggles} />
-          <div css={dynamicSquiggles} />
-          <div css={dynamicSquiggles} /> */}
-        {/* <div css={zig} />
-        <div css={zag} /> */}
         <div css={contactFormContainer} />
         {/* <SEO title="Home" keywords={[`yaniv`, `goldobin`]} /> */}
         {/* <Projects /> */}

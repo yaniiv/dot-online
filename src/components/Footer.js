@@ -51,9 +51,6 @@ const Footer = ({ siteFooter }) => {
           >
             <div>Copyright 2019 © Yaniv Goldobin</div>
           </div>
-          <div>
-            <Socials siteSocials={data.site.siteMetadata.siteSocials} />
-          </div>
         </footer>
       )}
     />

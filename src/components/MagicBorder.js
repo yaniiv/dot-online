@@ -5,6 +5,8 @@ import chroma from "chroma-js"
 
 import * as COLORS from "../constants/colors"
 
+const numSwirls = 18
+
 function getConicGradient(degreeOffset, coneColor) {
   return `
     conic-gradient(
@@ -15,75 +17,87 @@ function getConicGradient(degreeOffset, coneColor) {
   `
 }
 
-// const swirlDiameter = window.innerWidth / numSwirls
+const getSwirlDiameter = numSwirls => {
+  let swirlDiameter = 2
+  if (typeof window !== `undefined`) {
+    swirlDiameter = (window.innerWidth / numSwirls) * 2
 
-console.warn({ colors })
-
-class MagicBorder extends Component {
-  constructor(props) {
-    super(props)
-  }
-  componentDidMount() {
-    console.warn("hi  mounting up")
+    console.warn("window.innerWidth", window.innerWidth)
+    console.warn("window.devicePixelRatio", window.devicePixelRatio)
   }
 
-  render() {
-    // const numSwirls = 24
-    const numSwirls = 18
-    // const swirlDiameter = 90 // (px)
-    let swirlDiameter = 2
-    if (typeof window !== `undefined`) {
-      console.warn("window.innerWidth", window.innerWidth)
-      console.warn("window.devicePixelRatio", window.devicePixelRatio)
+  return swirlDiameter
+}
 
-      swirlDiameter = (window.innerWidth / numSwirls) * 2
+const getSwirlColors = numSwirls => {
+  const swirlColors = chroma
+    .scale(COLORS.SMALLBALLGRADIENT)
+    .mode("lch")
+    .colors(numSwirls)
+
+  return swirlColors
+}
+
+const dynamicSquiggles = (degreeRotate, color, swirlDiameter) => {
+  const conicGradientProperties = getConicGradient(degreeRotate, color)
+
+  return css`
+    width: ${swirlDiameter}px;
+    height: ${swirlDiameter}px;
+    margin-left: -${swirlDiameter / 2}px;
+    border-radius: ${swirlDiameter / 2}px;
+    background: ${conicGradientProperties};
+  `
+}
+
+const MagicBorder = () => {
+  const initialSwirlDiameter = getSwirlDiameter(numSwirls)
+  console.warn({ initialSwirlDiameter })
+  const [swirlDiameter, setSwirlDiameter] = React.useState(initialSwirlDiameter)
+
+  React.useEffect(() => {
+    function handleResize() {
+      const swirlDiameter = getSwirlDiameter(numSwirls)
+      setSwirlDiameter(swirlDiameter)
     }
-    console.warn({ swirlDiameter })
 
-    const dynamicSquiggles = (degreeRotate, color) => {
-      return css`
-        width: ${swirlDiameter}px;
-        height: ${swirlDiameter}px;
-        margin-left: -${swirlDiameter / 2}px;
-        border-radius: ${swirlDiameter / 2}px;
-        background: ${getConicGradient(degreeRotate, color)};
-      `
-    }
+    window.addEventListener("resize", handleResize)
+  })
 
-    const colors = chroma
-      .scale(COLORS.SMALLBALLGRADIENT)
-      .mode("lch")
-      .colors(numSwirls)
+  /* 
+  
+  return <div>Rendered at {dimensions.width} x {dim
+  */
+  console.warn("magic border rerender")
+  const swirlColors = getSwirlColors(numSwirls)
 
-    return (
-      <div
-        css={css`
-          display: flex;
-          background: ${COLORS.BACKGROUND};
-          margin-bottom: -${swirlDiameter / 2}px;
-        `}
-      >
-        <div css={swirl} />
-        <div
-          css={css`
-            display: flex;
-            flex: 1;
-          `}
-        >
-          {colors.map((color, index) => {
-            const rotationPerFrame = 720 / numSwirls
-            const circleRotation = -90 + index * rotationPerFrame
+  console.warn({ swirlDiameter })
+  console.warn({ swirlColors })
 
-            console.warn("circleRotation", circleRotation)
+  return (
+    <div
+      css={css`
+        display: flex;
+        background: ${COLORS.BACKGROUND};
+        margin-bottom: -${swirlDiameter / 2}px;
+      `}
+    >
+      {swirlColors.map((color, index) => {
+        const rotationPerFrame = 720 / numSwirls
+        const circleRotation = -90 + index * rotationPerFrame
 
-            return (
-              <div css={dynamicSquiggles(circleRotation, color)} key={index} />
-            )
-          })}
-        </div>
-      </div>
-    )
-  }
+        // console.warn("swirl color", color)
+        // console.warn("swirl rotation", circleRotation)
+
+        return (
+          <div
+            css={dynamicSquiggles(circleRotation, color, swirlDiameter)}
+            key={index}
+          />
+        )
+      })}
+    </div>
+  )
 }
 
 export default MagicBorder
