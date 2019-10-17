@@ -45,7 +45,7 @@ const Footer = ({ siteFooter }) => {
               display: flex;
               flex-direction: column;
               justify-content: center;
-              padding: 24px;
+              padding: 18px;
               color: ${COLORS.GREY_LIGHT};
             `}
           >

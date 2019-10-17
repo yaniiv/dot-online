@@ -1,13 +1,12 @@
 /* eslint-disable */
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import { css } from "@emotion/core"
 
 import * as COLORS from "../constants/colors"
 import * as SIZES from "../constants/sizes"
 
-const titleContainerStyles = css`
+const headerContainerStyles = css`
   background: transparent;
   display: flex;
   position: fixed;
@@ -18,84 +17,46 @@ const titleContainerStyles = css`
   width: 100vw;
 `
 
-const titleButtonStyles = css`
-  cursor: pointer;
-  /* padding: 1.45rem 2rem; */
+const headerLinkStyles = css`
+  h2 {
+    margin: 0;
+    cursor: pointer;
+    padding: 1.5rem 2rem;
+
+    &:hover {
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  a {
+    color: ${COLORS.YANIV};
+    text-decoration: none;
+  }
 `
 
-const linkStyles = css`
-  color: ${COLORS.YANIV};
-  text-decoration: none;
-`
-
-const Title = ({ siteTitle }) => (
-  <header css={titleContainerStyles}>
-    <div css={titleButtonStyles}>
-      <h2
-        css={css`
-          margin: 0;
-          padding: 1.45rem 2rem;
-
-          &:hover {
-            a {
-              text-decoration: underline;
-            }
-          }
-        `}
-      >
-        <Link css={linkStyles} to="/">
-          {siteTitle}
-        </Link>
+const Header = () => (
+  <header css={headerContainerStyles}>
+    <div css={headerLinkStyles}>
+      <h2>
+        <Link to="/">yaniv</Link>
       </h2>
     </div>
     <div
       css={css`
         display: flex;
-        cursor: pointer;
+        ${headerLinkStyles}
       `}
     >
-      <h2
-        css={css`
-          margin: 0;
-          padding: 1.5rem 1rem;
-
-          &:hover {
-            a {
-              text-decoration: underline;
-            }
-          }
-        `}
-      >
-        <Link css={linkStyles} to="/projects">
-          projects
-        </Link>
+      <h2>
+        <Link to="/projects">projects</Link>
       </h2>
-      <h2
-        css={css`
-          margin: 0;
-          padding: 1.5rem 2rem;
-
-          &:hover {
-            a {
-              text-decoration: underline;
-            }
-          }
-        `}
-      >
-        <Link css={linkStyles} to="/about">
-          about
-        </Link>
+      <h2>
+        <Link to="/about">about</Link>
       </h2>
     </div>
   </header>
 )
 
-Title.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Title.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Title
+export default Header

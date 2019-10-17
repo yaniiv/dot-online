@@ -18,8 +18,8 @@ const hello = css`
   a:visited {
     color: ${COLORS.YANIV};
   }
-  &:hover {
-    /* text-decoration: underline; */
+  a:hover {
+    text-decoration: underline;
   }
 `
 
@@ -40,7 +40,7 @@ const pageContainer = css`
 const textContainer = css`
   margin: 0 auto;
   max-width: 600px;
-  padding: 8px;
+  padding: 0 16px;
   color: ${COLORS.WHITE_SOFT};
 `
 
@@ -110,7 +110,11 @@ const About = () => {
           <div css={pageContainer}>
             <div css={textContainer}>
               <Hello />
-              <div css={css``}>
+              <div
+                css={css`
+                  margin-top: 30px;
+                `}
+              >
                 <Socials siteSocials={data.site.siteMetadata.siteSocials} />
               </div>
             </div>
