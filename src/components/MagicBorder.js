@@ -64,10 +64,6 @@ const MagicBorder = () => {
     window.addEventListener("resize", handleResize)
   })
 
-  /* 
-  
-  return <div>Rendered at {dimensions.width} x {dim
-  */
   console.warn("magic border rerender")
   const swirlColors = getSwirlColors(numSwirls)
 
