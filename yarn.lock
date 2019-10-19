@@ -8688,6 +8688,11 @@ react-helmet@^5.2.0:
     prop-types "^15.5.4"
     react-side-effect "^1.1.0"
 
+react-hook-form@^3.24.1:
+  version "3.24.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-3.24.1.tgz#07860bf0cf64a7a8ff5e752521d69da2edaaa92f"
+  integrity sha512-tF3f7tYP7cF1h+AiO5vdHexTiaq94VWeiRgnbYQTD9BjLRxugyHZAA2IvYWkD3Q4L+3tnF9ORd8YRx27JnIPKw==
+
 react-hot-loader@^4.6.2:
   version "4.7.1"
   resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.7.1.tgz#1260b939297859cff35aff61412887a92c9b4275"

@@ -9,6 +9,7 @@ import * as COLORS from "../constants/colors"
 import Layout from "../components/Layout"
 import Duality from "../components/threejs/Duality"
 import MagicBorder from "../components/MagicBorder"
+import EmailForm from "../components/EmailForm"
 
 const contactFormContainer = css`
   height: 100vh;
@@ -39,7 +40,9 @@ const MinimalPage = () => (
         {/* <Header siteTitle="yaniv" /> */}
         <Duality />
         <MagicBorder />
-        <div css={contactFormContainer} />
+        <div css={contactFormContainer}>
+          <EmailForm />
+        </div>
         {/* <SEO title="Home" keywords={[`yaniv`, `goldobin`]} /> */}
         {/* <Projects /> */}
         {/* <About /> */}
