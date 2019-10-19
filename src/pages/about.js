@@ -9,6 +9,7 @@ import * as SIZES from "../constants/sizes"
 
 import Layout from "../components/Layout"
 import Socials from "../components/Socials"
+import Header from "../components/Header"
 
 const hello = css`
   a {
@@ -29,9 +30,8 @@ const pageContainer = css`
   font-family: "Manjari", sans-serif;
   font-size: 22px;
   font-weight: 600px;
-  height: 100vh;
   width: 100vw;
-  padding-top: ${SIZES.HEADER_HEIGHT};
+  padding-top: ${SIZES.INDEX_HEADER_HEIGHT};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -107,15 +107,23 @@ const About = () => {
       `}
       render={data => (
         <Layout>
-          <div css={pageContainer}>
-            <div css={textContainer}>
-              <Hello />
-              <div
-                css={css`
-                  margin-top: 30px;
-                `}
-              >
-                <Socials siteSocials={data.site.siteMetadata.siteSocials} />
+          <div
+            css={css`
+              background: ${COLORS.DARK_END_DUALITY};
+              height: 100vh;
+            `}
+          >
+            <Header height={SIZES.INDEX_HEADER_HEIGHT} siteTitle="yaniv" />
+            <div css={pageContainer}>
+              <div css={textContainer}>
+                <Hello />
+                <div
+                  css={css`
+                    margin-top: 30px;
+                  `}
+                >
+                  <Socials siteSocials={data.site.siteMetadata.siteSocials} />
+                </div>
               </div>
             </div>
           </div>

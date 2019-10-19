@@ -6,13 +6,13 @@ import { css } from "@emotion/core"
 import * as COLORS from "../constants/colors"
 import * as SIZES from "../constants/sizes"
 
-const headerContainerStyles = css`
+const headerContainerStyles = ({ height }) => css`
   background: transparent;
   display: flex;
-  position: fixed;
+  /* position: fixed; */
   justify-content: space-between;
-  /* height: ${SIZES.HEADER_HEIGHT}; */
-  right: 0;
+  height: ${SIZES.INDEX_HEADER_HEIGHT};
+  position: sticky;
   top: 0;
   width: 100vw;
 `
@@ -36,8 +36,8 @@ const headerLinkStyles = css`
   }
 `
 
-const Header = () => (
-  <header css={headerContainerStyles}>
+const Header = ({ height }) => (
+  <header css={headerContainerStyles({ height })}>
     <div css={headerLinkStyles}>
       <h2>
         <Link to="/">yaniv</Link>
