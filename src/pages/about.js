@@ -39,7 +39,7 @@ const pageContainer = css`
 
 const textContainer = css`
   margin: 0 auto;
-  max-width: 600px;
+  max-width: ${SIZES.MAX_TEXT_WIDTH};
   padding: 0 16px;
   color: ${COLORS.WHITE_SOFT};
 `

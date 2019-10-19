@@ -1,20 +1,10 @@
-/* eslint-disable */
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import { css } from "@emotion/core"
-import chroma from "chroma-js"
-
-import * as COLORS from "../constants/colors"
 
 import Layout from "../components/Layout"
 import Duality from "../components/threejs/Duality"
 import MagicBorder from "../components/MagicBorder"
 import EmailForm from "../components/EmailForm"
-
-const contactFormContainer = css`
-  height: 100vh;
-  background: ${COLORS.CONTACT_FORM_BACKGROUND};
-`
 
 const MinimalPage = () => (
   <StaticQuery
@@ -40,9 +30,7 @@ const MinimalPage = () => (
         {/* <Header siteTitle="yaniv" /> */}
         <Duality />
         <MagicBorder />
-        <div css={contactFormContainer}>
-          <EmailForm />
-        </div>
+        <EmailForm />
         {/* <SEO title="Home" keywords={[`yaniv`, `goldobin`]} /> */}
         {/* <Projects /> */}
         {/* <About /> */}
