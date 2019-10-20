@@ -2,6 +2,10 @@ import React from "react"
 import Project from "./Project"
 import { StaticQuery, graphql } from "gatsby"
 
+function normalizeProjectEdge(edge) {
+  return {}
+}
+
 function normalizeProjectData(graphqlResponse) {
   const projectEdges = graphqlResponse.allPrismicProjects.edges
   console.warn({ projectEdges })
@@ -16,7 +20,9 @@ function normalizeProjectData(graphqlResponse) {
     return {
       id,
       link: project_website.url,
-      gif: project_gif.url,
+      gif: {
+        ...project_gif,
+      },
       info: project_description.text,
     }
   })
@@ -49,6 +55,8 @@ const ProjectsWithData = () => (
                 project_gif {
                   name
                   url
+                  width
+                  height
                 }
                 project_description {
                   html

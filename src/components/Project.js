@@ -95,8 +95,6 @@ class ProjectPage extends React.Component {
               onMouseLeave={this.toggleIsConsoleOpen}
             >
               <ProjectGif gif={gif} />
-              {/* <Video name={name} /> */}
-
               {/* <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
               <ProjectInfoButton
                 toggleIsConsoleOpen={this.toggleIsConsoleOpen}

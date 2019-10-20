@@ -33,9 +33,11 @@ const gifStyles = css`
 `
 
 const ProjectGif = ({ gif }) => {
+  const { width, height, url } = gif
+
   return (
     <div css={gifContainer}>
-      <img css={gifStyles} src={gif} />
+      <img css={gifStyles} src={url} />
     </div>
   )
 }
