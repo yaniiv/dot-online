@@ -1,11 +1,33 @@
 import React from "react"
-import ProjectPage from "./ProjectPage"
+import Project from "./Project"
 import { StaticQuery, graphql } from "gatsby"
+
+function normalizeProjectData(graphqlResponse) {
+  const projectEdges = graphqlResponse.allPrismicProjects.edges
+  console.warn({ projectEdges })
+  const projectData = projectEdges.map(project => {
+    const {
+      node: {
+        id,
+        data: { project_website, project_gif, project_description },
+      },
+    } = project
+
+    return {
+      id,
+      link: project_website.url,
+      gif: project_gif.url,
+      info: project_description.text,
+    }
+  })
+
+  return projectData
+}
 
 const Projects = ({ projects }) => (
   <>
     {projects.map(project => (
-      <ProjectPage key={project.name} {...project} />
+      <Project key={project.id} data={project} />
     ))}
   </>
 )
@@ -13,19 +35,24 @@ const Projects = ({ projects }) => (
 const ProjectsWithData = () => (
   <StaticQuery
     query={graphql`
-      query ProjectDataQuery {
-        site {
-          siteMetadata {
-            title
-            projects {
-              name
-              link
-              info {
-                about
-                tools {
+      query Projects {
+        allPrismicProjects {
+          edges {
+            node {
+              id
+              first_publication_date
+              data {
+                project_website {
+                  url
+                  target
+                }
+                project_gif {
                   name
-                  toolLink
-                  toolText
+                  url
+                }
+                project_description {
+                  html
+                  text
                 }
               }
             }
@@ -33,7 +60,7 @@ const ProjectsWithData = () => (
         }
       }
     `}
-    render={data => <Projects projects={data.site.siteMetadata.projects} />}
+    render={data => <Projects projects={normalizeProjectData(data)} />}
   />
 )
 

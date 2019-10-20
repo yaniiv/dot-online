@@ -3,7 +3,7 @@ import React from "react"
 import { css, jsx } from "@emotion/core"
 
 import Console, { hoverGrey } from "./Console"
-import Video from "./Video"
+import ProjectGif from "./ProjectGif"
 import BrowserHeader from "./BrowserHeader"
 import Icon from "./Icon"
 import ProjectInfoButton from "./ProjectInfoButton"
@@ -78,7 +78,8 @@ class ProjectPage extends React.Component {
   }
 
   render() {
-    const { name, link, info } = this.props
+    console.warn("Project Component Props,", this.props.data)
+    const { link, gif, info } = this.props.data
 
     return (
       <div css={projectContainer}>
@@ -93,7 +94,9 @@ class ProjectPage extends React.Component {
               onMouseEnter={this.toggleIsConsoleOpen}
               onMouseLeave={this.toggleIsConsoleOpen}
             >
-              <Video name={name} />
+              <ProjectGif gif={gif} />
+              {/* <Video name={name} /> */}
+
               {/* <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
               <ProjectInfoButton
                 toggleIsConsoleOpen={this.toggleIsConsoleOpen}

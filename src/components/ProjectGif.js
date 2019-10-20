@@ -1,0 +1,60 @@
+import React from "react"
+import { css } from "@emotion/core"
+
+// import { CloudinaryContext, gif, Transformation } from "cloudinary-react"
+
+const cloudinaryRootUrl = "https://res.cloudinary.com/dzprezr1g/gif/upload/"
+
+const gifContainer = css`
+  .console {
+    background-color: darkslategray;
+    // transform: translate3d(0, 0, 0);
+    // transition: transform .25s ease-in-out;
+    transition: max-height 0.3s ease-out;
+    // opacity: 0;
+    max-width: 0;
+  }
+
+  :hover {
+    .console {
+      transition: max-width 0.3s ease-out;
+      max-width: 690px;
+    }
+  }
+`
+
+const gifStyles = css`
+  width: 100%;
+  vertical-align: middle;
+
+  :hover {
+    color: #5b5f5e;
+  }
+`
+
+const ProjectGif = ({ gif }) => {
+  return (
+    <div css={gifContainer}>
+      <img css={gifStyles} src={gif} />
+    </div>
+  )
+}
+
+ProjectGif.defaultProps = {
+  autoPlay: true,
+}
+
+// {
+//   /* <CloudinaryContext cloudName="dzprezr1g">
+//     <div style={{
+//       maxWidth: 1600,
+//       maxHeight: 900
+//     }}>
+//     <gif controls autoplay autoPlay muted width={900} publicId={gifId}>
+//       <Transformation  autoplay autoPlay muted width={900} quality="10" duration="10" />
+//     </gif>
+//     </div>
+//   </CloudinaryContext> */
+// }
+
+export default ProjectGif
