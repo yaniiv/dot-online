@@ -15,16 +15,25 @@ const headerContainerStyles = css`
   right: 0;
   top: 0;
   width: 100vw;
+
+  padding: 1.5rem 1.5rem;
+
+@media (min-width: 768px) {
+  padding: 2.5rem 2rem;
+}
 `
 
 const headerLinkStyles = css`
   h2 {
     margin: 0;
     cursor: pointer;
-    padding: 1.5rem 1.5rem;
 
-    @media (min-width: 768px) {
-      padding: 1.5rem 2rem;
+    a {
+      padding: 1.5rem 1.5rem;
+
+      @media (min-width: 768px) {
+        padding: 2.5rem 2rem;
+      }
     }
 
     &:hover {
