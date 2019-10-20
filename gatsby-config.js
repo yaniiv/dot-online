@@ -9,7 +9,22 @@ module.exports = {
     title: `yaniv`,
     description: `yaniv, online`,
     author: `@yantonsoup`,
+    siteSocials: [
+      {
+        name: `github`,
+        linkTo: `https://github.com/yantonsoup`,
+      },
+      {
+        name: `twitter`,
+        linkTo: `https://twitter.com/yantonsoup`,
+      },
+      {
+        name: `medium`,
+        linkTo: `https://medium.com/@yaniv_g`,
+      },
+    ],
   },
+
   plugins: [
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,

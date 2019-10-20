@@ -1,10 +1,10 @@
 import React from "react"
-import PropTypes from "prop-types"
+import { useStaticQuery } from "gatsby"
 import { css } from "@emotion/core"
 
-import * as COLORS from "../constants/colors"
-
 import Icon from "./Icon"
+
+import * as COLORS from "../constants/colors"
 
 const socialIconStyle = css`
   width: 40px;
@@ -16,45 +16,64 @@ const socialIconStyle = css`
   }
 `
 
-const Socials = ({ siteSocials }) => (
-  <div
-    css={css`
-      display: flex;
-      justify-content: space-around;
-      max-height: 100px;
-      max-width: 230px;
-      margin-left: auto;
-      svg {
-        fill: ${COLORS.YANIV};
+const Socials = () => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            siteSocials {
+              name
+              linkTo
+            }
+          }
+        }
       }
-    `}
-  >
-    {siteSocials.map(({ name, linkTo }) => (
+    `
+  )
+
+  const {
+    siteMetadata: { siteSocials },
+  } = site
+
+  return (
+    <div
+      css={css`
+        margin-top: 30px;
+      `}
+    >
       <div
-        key={linkTo}
         css={css`
-          padding: 1.8rem 0;
+          display: flex;
+          justify-content: space-around;
+          max-height: 100px;
+          max-width: 230px;
+          margin-left: auto;
+          svg {
+            fill: ${COLORS.YANIV};
+          }
         `}
       >
-        <a
-          href={linkTo}
-          rel="noopener noreferrer"
-          target="_blank"
-          css={socialIconStyle}
-        >
-          <Icon name={name} />
-        </a>
+        {siteSocials.map(({ name, linkTo }) => (
+          <div
+            key={linkTo}
+            css={css`
+              padding: 1.8rem 0;
+            `}
+          >
+            <a
+              href={linkTo}
+              rel="noopener noreferrer"
+              target="_blank"
+              css={socialIconStyle}
+            >
+              <Icon name={name} />
+            </a>
+          </div>
+        ))}
       </div>
-    ))}
-  </div>
-)
-
-Socials.propTypes = {
-  siteSocials: PropTypes.array,
-}
-
-Socials.defaultProps = {
-  siteSocials: ``,
+    </div>
+  )
 }
 
 export default Socials

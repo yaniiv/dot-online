@@ -1,27 +1,24 @@
-/* eslint-disable */
-// import PropTypes from "prop-types"
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 import Layout from "../Layout"
 import Socials from "../Socials"
+import About from "./About"
 
 import * as COLORS from "../../constants/colors"
 import * as SIZES from "../../constants/sizes"
 
-const hello = css`
-  a {
-    text-decoration: none;
-  }
-  a,
-  a:visited {
-    color: ${COLORS.YANIV};
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-`
+function normalizeAboutData(graphqlResponse) {
+  console.warn({ graphqlResponse })
+
+  const aboutData = graphqlResponse.allPrismicAbout.edges[0].node.data
+
+  const aboutHtml = aboutData.about_page_text.html
+
+  console.warn("normalized:", { aboutHtml })
+  return aboutHtml
+}
 
 const pageContainer = css`
   background: ${COLORS.DARK_END_DUALITY};
@@ -44,62 +41,19 @@ const textContainer = css`
   color: ${COLORS.WHITE_SOFT};
 `
 
-const Hello = () => (
-  <div css={hello}>
-    <div css={css``}>
-      <h2>
-        Hello, i'm{" "}
-        <Link to="/">
-          <span
-            css={css`
-              color: ${COLORS.DARK_END_DUALITY};
-              text-decoration: underline;
-              text-decoration-color: ${COLORS.YANIV};
-
-              &:hover {
-                color: ${COLORS.YANIV};
-              }
-            `}
-          >
-            yaniv
-          </span>
-        </Link>
-      </h2>
-      <div>
-        This site is a collection of some of the projects I've worked on. I try
-        to make all my code <a href="">open source</a>. Info about my corporate
-        work is available <a href="">over here</a>.
-      </div>
-      <div
-        css={css`
-          margin-top: 30px;
-        `}
-      >
-        Code
-      </div>
-      <div>
-        Sho do! I write mostly Javascript, and have several years of experience
-        building modern web applications for small and medium businesses. You
-        can check out my <a href="">linkedin</a> for more information. <br />
-        <br />
-        I've also built portfolio sites for clients, and worked on some passion
-        projects you can see above.
-      </div>
-    </div>
-  </div>
-)
-
 const AboutEntry = () => {
   return (
     <StaticQuery
       query={graphql`
-        query AboutPageQuery {
-          site {
-            siteMetadata {
-              title
-              siteSocials {
-                name
-                linkTo
+        query AboutPage {
+          allPrismicAbout {
+            edges {
+              node {
+                data {
+                  about_page_text {
+                    html
+                  }
+                }
               }
             }
           }
@@ -109,14 +63,8 @@ const AboutEntry = () => {
         <Layout>
           <div css={pageContainer}>
             <div css={textContainer}>
-              <Hello />
-              <div
-                css={css`
-                  margin-top: 30px;
-                `}
-              >
-                <Socials siteSocials={data.site.siteMetadata.siteSocials} />
-              </div>
+              <About html={normalizeAboutData(data)} />
+              <Socials />
             </div>
           </div>
         </Layout>
