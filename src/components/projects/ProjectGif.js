@@ -7,10 +7,6 @@ const gifContainer = css`
 
 const image = css`
   margin: 0;
-
-  :hover {
-    color: #5b5f5e;
-  }
 `
 
 const ProjectGif = ({ gif }) => {

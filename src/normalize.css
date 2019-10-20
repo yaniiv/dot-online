@@ -349,16 +349,3 @@ template {
 [hidden] {
   display: none;
 }
-
-/* Personal Preferences
-   ========================================================================== */
-
-/**
- * I don't like any margin on header elements
-*/
-
-h1,
-h2,
-h3 {
-  margin: 0;
-}
