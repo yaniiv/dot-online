@@ -3,36 +3,35 @@ import React from "react"
 import { css, jsx } from "@emotion/core"
 
 import Console, { hoverGrey } from "./Console"
-import Video from "./Video"
+import ProjectGif from "./ProjectGif"
 import BrowserHeader from "./BrowserHeader"
-import Icon from "./Icon"
+import Icon from "../Icon"
 import ProjectInfoButton from "./ProjectInfoButton"
+
+import * as COLORS from "../../constants/colors"
 
 export const projectContainer = () => {
   return css`
     height: 100vh;
     width: 100vw;
     display: flex;
-    /* flex-direction: row; */
-    /* justify-content: center; */
+    flex-direction: column;
+    justify-content: center;
+    background: ${COLORS.GREY};
   `
 }
 
 export const project = css`
-  flex: 2;
   margin: auto;
   min-width: 375px;
-  padding: 32px;
+  /* padding: 32px; */
   font-size: 16px;
   width: 100%;
 
   @media (min-width: 512px) {
-    padding: 48px;
   }
 
   @media (min-width: 768px) {
-    padding: 24px;
-
     max-width: 648px;
     max-height: 468px;
   }
@@ -53,7 +52,7 @@ export const browserFrame = css`
   border-radius: 4px;
 
   @media (min-width: 768px) {
-    border: 6px solid black;
+    border: 4px solid black;
     border-radius: 6px;
   }
 
@@ -76,7 +75,8 @@ class ProjectPage extends React.Component {
   }
 
   render() {
-    const { name, link, info } = this.props
+    console.warn("Project Component Props,", this.props.data)
+    const { link, gif, info } = this.props.data
 
     return (
       <div css={projectContainer}>
@@ -91,7 +91,7 @@ class ProjectPage extends React.Component {
               onMouseEnter={this.toggleIsConsoleOpen}
               onMouseLeave={this.toggleIsConsoleOpen}
             >
-              <Video name={name} autoplay={false} />
+              <ProjectGif gif={gif} />
               <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
               <ProjectInfoButton
                 toggleIsConsoleOpen={this.toggleIsConsoleOpen}
@@ -99,16 +99,6 @@ class ProjectPage extends React.Component {
             </div>
           </div>
         </div>
-        {/* <div
-          css={css`
-            flex: 1;
-            background-color: blue;
-            display: flex;
-            justify-content: center;
-          `}
-        >
-           Tools
-        </div> */}
       </div>
     )
   }

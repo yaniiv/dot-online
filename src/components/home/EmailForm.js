@@ -2,8 +2,8 @@ import React from "react"
 import useForm from "react-hook-form"
 import { css } from "@emotion/core"
 
-import * as COLORS from "../constants/colors"
-import * as SIZES from "../constants/sizes"
+import * as COLORS from "../../constants/colors"
+import * as SIZES from "../../constants/sizes"
 
 const pageContainer = css`
   height: 100vh;

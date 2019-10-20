@@ -1,8 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
 
-// import { CloudinaryContext, gif, Transformation } from "cloudinary-react"
-
 const gifContainer = css`
   display: flex;
   .console {
@@ -32,7 +30,7 @@ const image = css`
 `
 
 const ProjectGif = ({ gif }) => {
-  const { width, height, url } = gif
+  const { url } = gif
 
   return (
     <div css={gifContainer}>

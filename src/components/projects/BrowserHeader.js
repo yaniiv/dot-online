@@ -4,7 +4,7 @@ import { css } from "@emotion/core"
 import { hoverGrey } from "./Console"
 import BrowserButton from "./BrowserButton"
 
-import * as COLORS from "../constants/colors"
+import * as COLORS from "../../constants/colors"
 
 const browserHeader = css`
   height: 60px;

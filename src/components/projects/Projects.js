@@ -1,14 +1,11 @@
 import React from "react"
-import Project from "./Project"
 import { StaticQuery, graphql } from "gatsby"
 
-function normalizeProjectEdge(edge) {
-  return {}
-}
+import Project from "./Project"
 
 function normalizeProjectData(graphqlResponse) {
+  console.warn({ graphqlResponse })
   const projectEdges = graphqlResponse.allPrismicProjects.edges
-  console.warn({ projectEdges })
   const projectData = projectEdges.map(project => {
     const {
       node: {
@@ -27,6 +24,7 @@ function normalizeProjectData(graphqlResponse) {
     }
   })
 
+  console.warn("normalized:", { projectData })
   return projectData
 }
 
