@@ -7,7 +7,7 @@ import { css } from "@emotion/core"
 import * as COLORS from "../constants/colors"
 import * as SIZES from "../constants/sizes"
 
-import Socials from "../components/Socials"
+import Socials from "./Socials"
 
 const FooterContainerStyles = css`
   background: ${COLORS.FOOTER_BACKGROUND};

@@ -3,25 +3,14 @@ import { css } from "@emotion/core"
 
 const gifContainer = css`
   display: flex;
-  .console {
-    background-color: darkslategray;
-    // transform: translate3d(0, 0, 0);
-    // transition: transform .25s ease-in-out;
-    transition: max-height 0.3s ease-out;
-    // opacity: 0;
-    max-width: 0;
-  }
+  padding: 24px;
 
-  :hover {
-    .console {
-      transition: max-width 0.3s ease-out;
-      /* max-width: 690px; */
-    }
+  @media (min-width: 768px) {
+    padding: 0;
   }
 `
 
 const image = css`
-  width: 100%;
   margin: 0;
 
   :hover {
