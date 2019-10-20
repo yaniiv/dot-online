@@ -77,6 +77,14 @@ const getPath = (name, props) => {
           <line x1="1" y1="1" x2="11" y2="11" stroke="black" />
         </g>
       )
+    case "airplane":
+      return (
+        <g>
+          <polygon points="17.064,31.032 58.064,10.032 24.064,35.032 44.064,48.032 58.064,10.032 0,22.032 " />
+          <polygon points="24.064,35.032 20.127,48.032 17.064,31.032 58.064,10.032 " />
+          <polygon points="24.064,35.032 20.064,48.032 31.912,40.133 " />
+        </g>
+      )
     default:
       return <path />
   }

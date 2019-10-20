@@ -1,12 +1,17 @@
-export const LIGHT_END_DUALITY = "#ffd926"
-export const DARK_END_DUALITY = "#412C94"
-
+export const PURPE_LIGHT = "#9987E0"
+export const PURPLE = "#412C94"
+export const PURPLE_DARK = "#1A0E47"
 export const GREY_LIGHT = "#9c9795"
+
 export const GREY = "#4F4D4C"
 export const GREY_DARK = "#363433"
 
-export const PRIMARY_YELLOW = "#ffd926"
+export const YELLOW = "#ffd926"
 export const PRIMARY_GRAY = GREY
+
+export const LIGHT_END_DUALITY = "#ffd926"
+export const DARK_END_DUALITY = PURPLE
+
 export const BACKGROUND = DARK_END_DUALITY
 export const STATICBALLS = [LIGHT_END_DUALITY, DARK_END_DUALITY]
 export const SMALLBALLGRADIENT = [LIGHT_END_DUALITY, DARK_END_DUALITY]

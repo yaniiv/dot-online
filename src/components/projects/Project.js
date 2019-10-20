@@ -2,10 +2,9 @@
 import React from "react"
 import { css, jsx } from "@emotion/core"
 
-import Console, { hoverGrey } from "./Console"
+import Console from "./Console"
 import ProjectGif from "./ProjectGif"
 import BrowserHeader from "./BrowserHeader"
-import Icon from "../Icon"
 import ProjectInfoButton from "./ProjectInfoButton"
 
 import * as COLORS from "../../constants/colors"
