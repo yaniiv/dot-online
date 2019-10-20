@@ -134,7 +134,7 @@ export default function EmailForm() {
               <div
                 css={css`
                   display: flex;
-                  margin-left: 8px;
+                  margin: 0 auto;
                 `}
               >
                 Send Mail
