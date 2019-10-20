@@ -1,3 +1,9 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+console.warn(`.env.${process.env.NODE_ENV}`)
+
 module.exports = {
   siteMetadata: {
     title: `yaniv`,
@@ -105,6 +111,15 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         // icon: `src/images/hollow-64.png`, // This path is relative to the root of the site.
+      },
+    },
+    // https://www.gatsbyjs.org/docs/sourcing-from-prismic/
+    {
+      resolve: `gatsby-source-prismic`,
+      options: {
+        repositoryName: `dot-online`,
+        accessToken: `${process.env.PRISMIC_API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
 
