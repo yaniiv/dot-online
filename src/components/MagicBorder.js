@@ -97,7 +97,7 @@ const MagicBorder = () => {
           color,
           swirlDiameter
         )
-        console.warn("sswirlStylesn", swirlStyles)
+        // console.warn("sswirlStylesn", swirlStyles)
 
         return <div css={swirlStyles} key={swirlStyles.name} />
       })}

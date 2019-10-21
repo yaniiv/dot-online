@@ -12,31 +12,34 @@ const duality = css`
   width: 100%;
 `
 
-function throttle(f, t) {
-  return function(args) {
-    let previousCall = this.lastCall
-    this.lastCall = Date.now()
-    if (
-      previousCall === undefined || // function is being called for the first time
-      this.lastCall - previousCall > t
-    ) {
-      // throttle time has elapsed
-      f(args)
-    }
-  }
-}
+// function throttle(f, t) {
+//   return function(args) {
+//     let previousCall = this.lastCall
+//     this.lastCall = Date.now()
+//     if (
+//       previousCall === undefined || // function is being called for the first time
+//       this.lastCall - previousCall > t
+//     ) {
+//       // throttle time has elapsed
+//       f(args)
+//     }
+//   }
+// }
 
 export default class Duality extends Component {
   constructor(props) {
     super(props)
     this.ThreeEntryPoint = new ThreeEntryPointManager()
+    this.state = {
+      swirl: false,
+    }
   }
 
   // passes the mounted div through
   componentDidMount() {
     this.ThreeEntryPoint.initialize(this.threeRootElement)
-
-    console.warn("Duality compone nt did mount he ld dl ox")
+    console.warn("component mount")
+    this.setState({ swirl: true })
   }
 
   // redrawCanvas = throttle(() => {
@@ -50,6 +53,7 @@ export default class Duality extends Component {
   }
 
   render() {
+    console.warn("swirl rendered? ", this.state.swirl)
     return (
       <>
         <div
@@ -57,7 +61,7 @@ export default class Duality extends Component {
           css={duality}
           ref={element => (this.threeRootElement = element)}
         />
-        <MagicBorder />
+        {this.state.swirl && <MagicBorder />}
       </>
     )
   }
