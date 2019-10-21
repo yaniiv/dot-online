@@ -24,7 +24,7 @@ const HomeEntry = () => (
     render={data => (
       <Layout>
         <Duality />
-        <MagicBorder />
+        {/* <MagicBorder /> */}
         <EmailForm />
       </Layout>
     )}

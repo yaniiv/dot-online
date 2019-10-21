@@ -4,6 +4,7 @@ import { css } from "@emotion/core"
 import ThreeEntryPointManager from "./ThreeEntryPointManager"
 import "./duality.css"
 import * as SIZES from "../../constants/sizes"
+import MagicBorder from "../MagicBorder"
 
 const duality = css`
   margin: auto;
@@ -50,11 +51,14 @@ export default class Duality extends Component {
 
   render() {
     return (
-      <div
-        // className="Duality-Duality"
-        css={duality}
-        ref={element => (this.threeRootElement = element)}
-      />
+      <>
+        <div
+          // className="Duality-Duality"
+          css={duality}
+          ref={element => (this.threeRootElement = element)}
+        />
+        <MagicBorder />
+      </>
     )
   }
 }
