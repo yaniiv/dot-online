@@ -29,7 +29,7 @@ const headerLinkStyles = css`
     cursor: pointer;
 
     a {
-      padding: 1.5rem 1.5rem;
+      padding: 1.5rem 1rem;
 
       @media (min-width: 768px) {
         padding: 2.5rem 2rem;
