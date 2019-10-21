@@ -92,14 +92,14 @@ const MagicBorder = () => {
         const circleRotation = -90 + index * rotationPerFrame
 
         console.warn("swirl rerender swirlDiameter", swirlDiameter)
-        // console.warn("swirl rotation", circleRotation)
-
-        return (
-          <div
-            css={dynamicSquiggles(circleRotation, color, swirlDiameter)}
-            key={index}
-          />
+        const swirlStyles = dynamicSquiggles(
+          circleRotation,
+          color,
+          swirlDiameter
         )
+        console.warn("sswirlStylesn", swirlStyles)
+
+        return <div css={swirlStyles} key={index} />
       })}
     </div>
   )
