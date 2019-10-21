@@ -9,7 +9,7 @@ export const GREY_DARK = "#363433"
 export const YELLOW = "#ffd926"
 export const PRIMARY_GRAY = GREY
 
-export const LIGHT_END_DUALITY = "#ffd926"
+export const LIGHT_END_DUALITY = YELLOW
 export const DARK_END_DUALITY = PURPLE
 
 export const BACKGROUND = DARK_END_DUALITY

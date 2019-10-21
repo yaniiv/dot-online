@@ -1,13 +1,10 @@
 /* eslint-disable */
-import { StaticQuery, graphql, Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 import * as COLORS from "../constants/colors"
 import * as SIZES from "../constants/sizes"
-
-import Socials from "./Socials"
 
 const FooterContainerStyles = css`
   background: ${COLORS.FOOTER_BACKGROUND};
@@ -22,7 +19,7 @@ const FooterContainerStyles = css`
   width: 100vw;
 `
 
-const Footer = ({ siteFooter }) => {
+const Footer = () => {
   return (
     <StaticQuery
       query={graphql`
@@ -55,14 +52,6 @@ const Footer = ({ siteFooter }) => {
       )}
     />
   )
-}
-
-Footer.propTypes = {
-  siteFooter: PropTypes.string,
-}
-
-Footer.defaultProps = {
-  siteFooter: ``,
 }
 
 export default Footer

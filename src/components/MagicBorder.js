@@ -61,7 +61,10 @@ const MagicBorder = () => {
       setSwirlDiameter(swirlDiameter)
     }
 
-    window.addEventListener("resize", handleResize)
+    window.addEventListener("resize", () => {
+      console.warn("resize")
+      handleResize()
+    })
     window.addEventListener("load", () => {
       console.warn("onload")
       handleResize()

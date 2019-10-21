@@ -40,13 +40,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `yaniv.online`,
+        short_name: `yaniv`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        // icon: `src/images/hollow-64.png`, // This path is relative to the root of the site.
+        background_color: `#412C94`,
+        theme_color: `#ffd926`,
+        display: `standalone`,
+        icon: `src/images/hollow-64.png`, // This path is relative to the root of the site.
       },
     },
     // https://www.gatsbyjs.org/docs/sourcing-from-prismic/
