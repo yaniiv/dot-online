@@ -39,6 +39,7 @@ const getSwirlColors = numSwirls => {
 }
 
 const dynamicSquiggles = (degreeRotate, color, swirlDiameter) => {
+  console.warn("dynamic squiggle swirlDiameter", swirlDiameter)
   const conicGradientProperties = getConicGradient(degreeRotate, color)
 
   return css`
@@ -57,6 +58,7 @@ const MagicBorder = () => {
 
   React.useEffect(() => {
     function handleResize() {
+      console.warn("handle resize effect")
       const swirlDiameter = getSwirlDiameter(numSwirls)
       setSwirlDiameter(swirlDiameter)
     }
@@ -70,9 +72,9 @@ const MagicBorder = () => {
       handleResize()
     })
   })
+  const swirlColors = getSwirlColors(numSwirls)
 
   console.warn("magic border rerender")
-  const swirlColors = getSwirlColors(numSwirls)
 
   console.warn({ swirlDiameter })
   console.warn({ swirlColors })

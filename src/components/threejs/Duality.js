@@ -35,13 +35,13 @@ export default class Duality extends Component {
   componentDidMount() {
     this.ThreeEntryPoint.initialize(this.threeRootElement)
 
-    console.warn("compone nt did mount he ld dl ox")
+    console.warn("Duality compone nt did mount he ld dl ox")
   }
 
-  redrawCanvas = throttle(() => {
-    console.warn("called redraw canvbas")
-    this.ThreeEntryPoint.redraw(this.threeRootElement)
-  }, 1000)
+  // redrawCanvas = throttle(() => {
+  //   console.warn("called redraw canvbas")
+  //   this.ThreeEntryPoint.redraw(this.threeRootElement)
+  // }, 1000)
   //
   componentDidUpdate() {
     // this.redrawCanvas()
