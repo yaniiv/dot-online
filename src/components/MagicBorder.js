@@ -91,7 +91,7 @@ const MagicBorder = () => {
         const rotationPerFrame = 720 / numSwirls
         const circleRotation = -90 + index * rotationPerFrame
 
-        // console.warn("swirl color", color)
+        console.warn("swirl rerender swirlDiameter", swirlDiameter)
         // console.warn("swirl rotation", circleRotation)
 
         return (
