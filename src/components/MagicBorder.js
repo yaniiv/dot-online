@@ -62,6 +62,10 @@ const MagicBorder = () => {
     }
 
     window.addEventListener("resize", handleResize)
+    window.addEventListener("load", () => {
+      console.warn("onload")
+      handleResize()
+    })
   })
 
   console.warn("magic border rerender")

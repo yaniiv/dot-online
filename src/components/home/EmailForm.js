@@ -38,7 +38,18 @@ export default function EmailForm() {
             }
           `}
         >
-          some text could go here
+          <div
+            css={css`
+              font-size: 16px;
+              @media (min-width: 768px) {
+                /* border: 4px solid black; */
+                display: flex;
+              }
+            `}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </div>
         </div>
         <Form />
       </div>
