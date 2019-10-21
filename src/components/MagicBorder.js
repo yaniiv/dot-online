@@ -99,7 +99,7 @@ const MagicBorder = () => {
         )
         console.warn("sswirlStylesn", swirlStyles)
 
-        return <div css={swirlStyles} key={index} />
+        return <div css={swirlStyles} key={swirlStyles.name} />
       })}
     </div>
   )
