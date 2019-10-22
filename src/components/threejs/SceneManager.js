@@ -30,8 +30,8 @@ export default canvas => {
   }
 
   const scene = buildScene()
-  const renderer = buildRender(screenDimensions)
   const camera = buildCamera(screenDimensions)
+  const renderer = buildRender(screenDimensions)
   const sceneSubjects = createSceneSubjects(scene)
   const controls = buildControls()
 
@@ -68,10 +68,10 @@ export default canvas => {
   // => #FFC917 this is the color that I want the "I" to look like
   function buildScene() {
     const scene = new THREE.Scene()
-    // const axesHelper = new THREE.AxesHelper(100)
+    const axesHelper = new THREE.AxesHelper(100)
     const chalkyTang = COLORS.BACKGROUND
     scene.background = new THREE.Color(chalkyTang)
-    // scene.add(axesHelper)
+    scene.add(axesHelper)
 
     return scene
   }

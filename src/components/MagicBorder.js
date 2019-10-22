@@ -17,6 +17,10 @@ function getConicGradient(degreeOffset, coneColor) {
 }
 
 const getSwirlDiameter = numSwirls => {
+  if (!window) {
+    return null
+  }
+
   const swirlDiameter = (window.innerWidth / numSwirls) * 2
 
   return swirlDiameter
