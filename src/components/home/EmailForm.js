@@ -21,9 +21,12 @@ export default function EmailForm() {
       <div
         css={css`
           display: flex;
-          margin: 16px;
+          margin: 16px auto;
+          max-width: 400px;
+
           font-family: "Manjari", sans-serif;
           @media (min-width: 768px) {
+            max-width: unset;
             /* border: 4px solid black; */
             margin: 100px;
           }
@@ -31,7 +34,6 @@ export default function EmailForm() {
       >
         <div
           css={css`
-            flex: 2;
             display: flex;
             flex-direction: column;
             @media (min-width: 768px) {
@@ -41,18 +43,15 @@ export default function EmailForm() {
         >
           <div
             css={css`
+              flex: 2;
+
               font-size: 22px;
               color: ${COLORS.WHITE};
-              padding: 18px;
-              @media (min-width: 768px) {
-                /* border: 4px solid black; */
-                /* display: flex; */
-              }
             `}
           >
             <div
               css={css`
-                margin: 0 40px;
+                margin: 0 24px;
               `}
             >
               <p>
@@ -70,8 +69,8 @@ export default function EmailForm() {
               </p>
             </div>
           </div>
+          <Form />
         </div>
-        <Form />
       </div>
     </div>
   )

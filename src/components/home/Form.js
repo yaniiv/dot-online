@@ -10,7 +10,7 @@ import * as SIZES from "../../constants/sizes"
 const formContainer = css`
   /* max-width: ${SIZES.MAX_TEXT_WIDTH}; */
   background: ${COLORS.PURPLE_DARK};
-  margin: 0 auto;
+  margin: 0 24px;
   padding: 16px;
   flex: 1;
   /* border: 4px solid black; */

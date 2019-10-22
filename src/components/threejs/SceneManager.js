@@ -37,6 +37,12 @@ export default canvas => {
 
   // https://github.com/mrdoob/stats.js/
   // const stats = buildStats()
+  // buildAxisHelper(scene)
+
+  function buildAxisHelper(scene) {
+    const axesHelper = new THREE.AxesHelper(100)
+    scene.add(axesHelper)
+  }
 
   function buildStats() {
     const stats = new Stats()
@@ -71,10 +77,7 @@ export default canvas => {
   // => #FFC917 this is the color that I want the "I" to look like
   function buildScene() {
     const scene = new THREE.Scene()
-    const axesHelper = new THREE.AxesHelper(100)
-    const chalkyTang = COLORS.BACKGROUND
-    scene.background = new THREE.Color(chalkyTang)
-    scene.add(axesHelper)
+    scene.background = new THREE.Color(COLORS.BACKGROUND)
 
     return scene
   }
