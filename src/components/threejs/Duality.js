@@ -61,7 +61,7 @@ export default class Duality extends Component {
           css={duality}
           ref={element => (this.threeRootElement = element)}
         />
-        {this.state.swirl && <MagicBorder />}
+        {/* {this.state.swirl && <MagicBorder />} */}
       </>
     )
   }

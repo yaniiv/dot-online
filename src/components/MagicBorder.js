@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { Component } from "react"
+import React, { useState, useEffect } from "react"
 import { css } from "@emotion/core"
 import chroma from "chroma-js"
 
@@ -53,10 +53,15 @@ const dynamicSquiggles = (degreeRotate, color, swirlDiameter) => {
 
 const MagicBorder = () => {
   const initialSwirlDiameter = getSwirlDiameter(numSwirls)
-  console.warn({ initialSwirlDiameter })
-  const [swirlDiameter, setSwirlDiameter] = React.useState(initialSwirlDiameter)
+  const swirlColors = getSwirlColors(numSwirls)
 
-  React.useEffect(() => {
+  console.warn({ initialSwirlDiameter })
+  const [isVisible, setIsVisible] = useState(false)
+  const [swirlDiameter, setSwirlDiameter] = useState(initialSwirlDiameter)
+
+  useEffect(() => {
+    setIsVisible(true)
+
     function handleResize() {
       console.warn("handle resize effect")
       const swirlDiameter = getSwirlDiameter(numSwirls)
@@ -67,17 +72,13 @@ const MagicBorder = () => {
       console.warn("resize")
       handleResize()
     })
-    window.addEventListener("load", () => {
-      console.warn("onload")
-      handleResize()
-    })
   })
-  const swirlColors = getSwirlColors(numSwirls)
 
   console.warn("magic border rerender")
 
   console.warn({ swirlDiameter })
   console.warn({ swirlColors })
+  console.warn({ isVisible })
 
   return (
     <div
@@ -87,20 +88,22 @@ const MagicBorder = () => {
         margin-bottom: -${swirlDiameter / 2}px;
       `}
     >
-      {swirlColors.map((color, index) => {
-        const rotationPerFrame = 720 / numSwirls
-        const circleRotation = -90 + index * rotationPerFrame
+      {isVisible
+        ? swirlColors.map((color, index) => {
+            const rotationPerFrame = 720 / numSwirls
+            const circleRotation = -90 + index * rotationPerFrame
 
-        console.warn("swirl rerender swirlDiameter", swirlDiameter)
-        const swirlStyles = dynamicSquiggles(
-          circleRotation,
-          color,
-          swirlDiameter
-        )
-        // console.warn("sswirlStylesn", swirlStyles)
+            console.warn("swirl rerender swirlDiameter", swirlDiameter)
+            const swirlStyles = dynamicSquiggles(
+              circleRotation,
+              color,
+              swirlDiameter
+            )
+            // console.warn("sswirlStylesn", swirlStyles)
 
-        return <div css={swirlStyles} key={swirlStyles.name} />
-      })}
+            return <div css={swirlStyles} key={swirlStyles.name} />
+          })
+        : null}
     </div>
   )
 }

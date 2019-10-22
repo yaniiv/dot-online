@@ -22,6 +22,7 @@ export default function EmailForm() {
         css={css`
           display: flex;
           margin: 16px;
+          font-family: "Manjari", sans-serif;
           @media (min-width: 768px) {
             /* border: 4px solid black; */
             margin: 100px;
@@ -31,24 +32,35 @@ export default function EmailForm() {
         <div
           css={css`
             flex: 2;
-            display: none;
-            @media (min-width: 768px) {
-              /* border: 4px solid black; */
-              display: flex;
-            }
+            /* display: none; */
+            /* @media (min-width: 768px) { */
+            /* border: 4px solid black; */
+            display: flex;
+            /* } */
           `}
         >
           <div
             css={css`
-              font-size: 16px;
+              font-size: 22px;
+              color: ${COLORS.WHITE};
+              padding: 18px;
               @media (min-width: 768px) {
                 /* border: 4px solid black; */
-                display: flex;
+                /* display: flex; */
               }
             `}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            <div
+              css={css`
+                margin: 0 40px;
+              `}
+            >
+              You've flipped, tumbled, jumped, and stumbled your way through the{" "}
+              <a href="https://www.live-counter.com/how-big-is-the-internet/">
+                vast{" "}
+              </a>
+              highways of the internet to find yourself here...why?
+            </div>
           </div>
         </div>
         <Form />
