@@ -58,9 +58,14 @@ export default canvas => {
     controls.maxDistance = 5000
     controls.maxPolarAngle = Math.PI / 2
     controls.enableZoom = false
+
+    controls.enabled = false
+    if (isDesktop()) {
+      controls.enabled = true
+    }
     // Point the controls - overrides camera.lookAt
     // controls.target = new THREE.Vector3(50, 0, 0)
-    // return controls
+    return controls
   }
 
   // => #FFC917 this is the color that I want the "I" to look like
@@ -201,7 +206,7 @@ export default canvas => {
   }
 
   function render() {
-    // stats.begin()
+    stats.begin()
 
     const elapsedTime = clock.getElapsedTime()
     // const axesHelper = new THREE.AxesHelper(5)
@@ -215,7 +220,7 @@ export default canvas => {
 
     renderer.render(scene, camera)
 
-    // stats.end()
+    stats.end()
   }
 
   function updateCameraPositionRelativeToMouse() {
@@ -225,7 +230,6 @@ export default canvas => {
   }
 
   function onWindowResize() {
-    // canvas is our window
     const { width, height } = canvas
 
     screenDimensions.width = width

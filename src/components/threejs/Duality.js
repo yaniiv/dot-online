@@ -26,16 +26,11 @@ const duality = css`
 // }
 
 export default class Duality extends Component {
-  constructor(props) {
-    super(props)
-    this.ThreeEntryPoint = new ThreeEntryPointManager()
-  }
-
   // passes the mounted div through
   componentDidMount() {
-    this.ThreeEntryPoint.initialize(this.threeRootElement)
     console.warn("component mount")
-    this.setState({ swirl: true })
+    const ThreeEntryPoint = new ThreeEntryPointManager()
+    ThreeEntryPoint.initialize(this.threeRootElement)
   }
 
   render() {
