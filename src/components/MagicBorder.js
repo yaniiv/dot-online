@@ -81,15 +81,16 @@ const MagicBorder = () => {
   console.warn({ isVisible })
 
   return (
-    <div
-      css={css`
-        display: flex;
-        background: ${COLORS.BACKGROUND};
-        margin-bottom: -${swirlDiameter / 2}px;
-      `}
-    >
-      {isVisible
-        ? swirlColors.map((color, index) => {
+    <>
+      {isVisible ? (
+        <div
+          css={css`
+            display: flex;
+            background: ${COLORS.BACKGROUND};
+            margin-bottom: -${swirlDiameter / 2}px;
+          `}
+        >
+          {swirlColors.map((color, index) => {
             const rotationPerFrame = 720 / numSwirls
             const circleRotation = -90 + index * rotationPerFrame
 
@@ -102,9 +103,10 @@ const MagicBorder = () => {
             // console.warn("sswirlStylesn", swirlStyles)
 
             return <div css={swirlStyles} key={swirlStyles.name} />
-          })
-        : null}
-    </div>
+          })}
+        </div>
+      ) : null}
+    </>
   )
 }
 
