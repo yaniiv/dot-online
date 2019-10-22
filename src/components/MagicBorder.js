@@ -18,13 +18,8 @@ function getConicGradient(degreeOffset, coneColor) {
 }
 
 const getSwirlDiameter = numSwirls => {
-  let swirlDiameter = 2
-  if (typeof window !== `undefined`) {
-    swirlDiameter = (window.innerWidth / numSwirls) * 2
-
-    console.warn("window.innerWidth", window.innerWidth)
-    console.warn("window.devicePixelRatio", window.devicePixelRatio)
-  }
+  // let swirlDiameter = 2
+  const swirlDiameter = (window.innerWidth / numSwirls) * 2
 
   return swirlDiameter
 }
@@ -51,34 +46,38 @@ const dynamicSquiggles = (degreeRotate, color, swirlDiameter) => {
   `
 }
 
-const MagicBorder = () => {
-  const initialSwirlDiameter = getSwirlDiameter(numSwirls)
+const createSwirlStyles = (numSwirls, swirlDiameter) => {
   const swirlColors = getSwirlColors(numSwirls)
+  const rotationPerFrame = 720 / numSwirls
 
-  console.warn({ initialSwirlDiameter })
+  return swirlColors.map((color, index) => {
+    const circleRotation = -90 + index * rotationPerFrame
+    const swirlStyles = dynamicSquiggles(circleRotation, color, swirlDiameter)
+
+    return swirlStyles
+  })
+}
+
+const MagicBorder = () => {
   const [isVisible, setIsVisible] = useState(false)
-  const [swirlDiameter, setSwirlDiameter] = useState(initialSwirlDiameter)
+  const [swirlDiameter, setSwirlDiameter] = useState(2)
 
   useEffect(() => {
+    // only render swirls after component mounts
     setIsVisible(true)
 
     function handleResize() {
-      console.warn("handle resize effect")
       const swirlDiameter = getSwirlDiameter(numSwirls)
       setSwirlDiameter(swirlDiameter)
     }
 
-    window.addEventListener("resize", () => {
-      console.warn("resize")
-      handleResize()
-    })
+    window.addEventListener("resize", handleResize)
   })
 
-  console.warn("magic border rerender")
-
-  console.warn({ swirlDiameter })
-  console.warn({ swirlColors })
-  console.warn({ isVisible })
+  // console.warn({ swirlDiameter })
+  // console.warn({ swirlColors })
+  // console.warn({ isVisible })
+  const swirlStyles = createSwirlStyles(numSwirls, swirlDiameter)
 
   return (
     <>
@@ -90,20 +89,9 @@ const MagicBorder = () => {
             margin-bottom: -${swirlDiameter / 2}px;
           `}
         >
-          {swirlColors.map((color, index) => {
-            const rotationPerFrame = 720 / numSwirls
-            const circleRotation = -90 + index * rotationPerFrame
-
-            console.warn("swirl rerender swirlDiameter", swirlDiameter)
-            const swirlStyles = dynamicSquiggles(
-              circleRotation,
-              color,
-              swirlDiameter
-            )
-            // console.warn("sswirlStylesn", swirlStyles)
-
-            return <div css={swirlStyles} key={swirlStyles.name} />
-          })}
+          {swirlStyles.map((css, index) => (
+            <div css={css} key={index} />
+          ))}
         </div>
       ) : null}
     </>

@@ -2,9 +2,8 @@ import React, { Component } from "react"
 import { css } from "@emotion/core"
 
 import ThreeEntryPointManager from "./ThreeEntryPointManager"
-import "./duality.css"
 import * as SIZES from "../../constants/sizes"
-import MagicBorder from "../MagicBorder"
+import "./duality.css"
 
 const duality = css`
   margin: auto;
@@ -30,9 +29,6 @@ export default class Duality extends Component {
   constructor(props) {
     super(props)
     this.ThreeEntryPoint = new ThreeEntryPointManager()
-    this.state = {
-      swirl: false,
-    }
   }
 
   // passes the mounted div through
@@ -42,18 +38,7 @@ export default class Duality extends Component {
     this.setState({ swirl: true })
   }
 
-  // redrawCanvas = throttle(() => {
-  //   console.warn("called redraw canvbas")
-  //   this.ThreeEntryPoint.redraw(this.threeRootElement)
-  // }, 1000)
-  //
-  componentDidUpdate() {
-    // this.redrawCanvas()
-    console.warn("component updated")
-  }
-
   render() {
-    console.warn("swirl rendered? ", this.state.swirl)
     return (
       <div css={duality} ref={element => (this.threeRootElement = element)} />
     )

@@ -59,7 +59,8 @@ export default function EmailForm() {
               <a href="https://www.live-counter.com/how-big-is-the-internet/">
                 vast{" "}
               </a>
-              highways of the internet to find yourself here...why?
+              highways of the internet to find yourself here. It would be fun
+              for me if you told me...why?
             </div>
           </div>
         </div>
