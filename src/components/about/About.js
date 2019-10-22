@@ -24,9 +24,9 @@ function createMarkup(html) {
   return { __html: html }
 }
 
-const About = ({ html }) => (
+const About = ({ prismicAbout: { data } }) => (
   <div css={about}>
-    {console.warn({ html })}
+    {console.warn("prismic about", data)}
     <h2>
       Hello, i'm{" "}
       <Link to="/">
@@ -52,7 +52,7 @@ const About = ({ html }) => (
         display: inline-block;
       `}
     >
-      <div dangerouslySetInnerHTML={createMarkup(html)} />
+      <div dangerouslySetInnerHTML={createMarkup(data.about_page_text.html)} />
     </div>
   </div>
 )

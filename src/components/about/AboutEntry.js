@@ -9,17 +9,6 @@ import About from "./About"
 import * as COLORS from "../../constants/colors"
 import * as SIZES from "../../constants/sizes"
 
-function normalizeAboutData(graphqlResponse) {
-  console.warn({ graphqlResponse })
-
-  const aboutData = graphqlResponse.allPrismicAbout.edges[0].node.data
-
-  const aboutHtml = aboutData.about_page_text.html
-
-  console.warn("normalized:", { aboutHtml })
-  return aboutHtml
-}
-
 const pageContainer = css`
   background: ${COLORS.DARK_END_DUALITY};
   @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
@@ -46,13 +35,15 @@ const AboutEntry = () => {
     <StaticQuery
       query={graphql`
         query AboutPage {
-          allPrismicAbout {
-            edges {
-              node {
-                data {
-                  about_page_text {
-                    html
-                  }
+          prismicAbout {
+            id
+            data {
+              about_page_text {
+                html
+                text
+                raw {
+                  type
+                  text
                 }
               }
             }
@@ -63,7 +54,7 @@ const AboutEntry = () => {
         <Layout>
           <div css={pageContainer}>
             <div css={textContainer}>
-              <About html={normalizeAboutData(data)} />
+              <About prismicAbout={data.prismicAbout} />
               <Socials />
             </div>
           </div>
