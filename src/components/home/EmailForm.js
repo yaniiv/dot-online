@@ -32,11 +32,11 @@ export default function EmailForm() {
         <div
           css={css`
             flex: 2;
-            /* display: none; */
-            /* @media (min-width: 768px) { */
-            /* border: 4px solid black; */
             display: flex;
-            /* } */
+            flex-direction: column;
+            @media (min-width: 768px) {
+              flex-direction: row;
+            }
           `}
         >
           <div
