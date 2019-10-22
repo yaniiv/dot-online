@@ -33,7 +33,7 @@ export default canvas => {
   const camera = buildCamera(screenDimensions)
   const renderer = buildRender(screenDimensions)
   const sceneSubjects = createSceneSubjects(scene)
-  const controls = buildControls()
+  // const controls = buildControls()
 
   // https://github.com/mrdoob/stats.js/
   // const stats = buildStats()
@@ -48,16 +48,16 @@ export default canvas => {
 
   function buildControls() {
     const controls = new OrbitControls(camera, renderer.domElement)
-    controls.autoRotate = false
-    controls.enableZoom = false
-    // controls.addEventListener("change", render) // call this only in static scenes (i.e., if there is no animation loop)
-    // controls.enableDamping = true // an animation loop is required when either damping or auto-rotation are enabled
-    // controls.dampingFactor = 0.25
-    controls.screenSpacePanning = false
-    controls.minDistance = 100
-    controls.maxDistance = 5000
-    controls.maxPolarAngle = Math.PI / 2
-    controls.enableZoom = false
+    // controls.autoRotate = false
+    // controls.enableZoom = false
+    // // controls.addEventListener("change", render) // call this only in static scenes (i.e., if there is no animation loop)
+    // // controls.enableDamping = true // an animation loop is required when either damping or auto-rotation are enabled
+    // // controls.dampingFactor = 0.25
+    // controls.screenSpacePanning = false
+    // controls.minDistance = 100
+    // controls.maxDistance = 5000
+    // controls.maxPolarAngle = Math.PI / 2
+    // controls.enableZoom = false
 
     // Point the controls - overrides camera.lookAt
     // controls.target = new THREE.Vector3(50, 0, 0)
