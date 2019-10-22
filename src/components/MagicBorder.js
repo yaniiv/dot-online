@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from "react"
 import { css } from "@emotion/core"
 import chroma from "chroma-js"
@@ -18,7 +17,6 @@ function getConicGradient(degreeOffset, coneColor) {
 }
 
 const getSwirlDiameter = numSwirls => {
-  // let swirlDiameter = 2
   const swirlDiameter = (window.innerWidth / numSwirls) * 2
 
   return swirlDiameter
@@ -33,7 +31,7 @@ const getSwirlColors = numSwirls => {
   return swirlColors
 }
 
-const dynamicSquiggles = (degreeRotate, color, swirlDiameter) => {
+const getSquiggleStyle = (degreeRotate, color, swirlDiameter) => {
   console.warn("dynamic squiggle swirlDiameter", swirlDiameter)
   const conicGradientProperties = getConicGradient(degreeRotate, color)
 
@@ -52,7 +50,7 @@ const createSwirlStyles = (numSwirls, swirlDiameter) => {
 
   return swirlColors.map((color, index) => {
     const circleRotation = -90 + index * rotationPerFrame
-    const swirlStyles = dynamicSquiggles(circleRotation, color, swirlDiameter)
+    const swirlStyles = getSquiggleStyle(circleRotation, color, swirlDiameter)
 
     return swirlStyles
   })
@@ -60,10 +58,13 @@ const createSwirlStyles = (numSwirls, swirlDiameter) => {
 
 const MagicBorder = () => {
   const [isVisible, setIsVisible] = useState(false)
-  const [swirlDiameter, setSwirlDiameter] = useState(2)
+  const [swirlDiameter, setSwirlDiameter] = useState(
+    getSwirlDiameter(numSwirls)
+  )
+  const swirlStyles = createSwirlStyles(numSwirls, swirlDiameter)
 
   useEffect(() => {
-    // only render swirls after component mounts
+    // only render swirls after
     setIsVisible(true)
 
     function handleResize() {
@@ -73,11 +74,6 @@ const MagicBorder = () => {
 
     window.addEventListener("resize", handleResize)
   })
-
-  // console.warn({ swirlDiameter })
-  // console.warn({ swirlColors })
-  // console.warn({ isVisible })
-  const swirlStyles = createSwirlStyles(numSwirls, swirlDiameter)
 
   return (
     <>

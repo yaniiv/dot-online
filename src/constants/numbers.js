@@ -1,4 +1,4 @@
-export const NUM_BALLS = 1
+export const NUM_BALLS = 10
 
 export const SMALL_BALL_PROPERTIES = {
   desktop: {

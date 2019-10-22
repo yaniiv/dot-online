@@ -55,12 +55,19 @@ export default function EmailForm() {
                 margin: 0 40px;
               `}
             >
-              You've flipped, tumbled, jumped, and stumbled your way through the{" "}
-              <a href="https://www.live-counter.com/how-big-is-the-internet/">
-                vast{" "}
-              </a>
-              highways of the internet to find yourself here. It would be fun
-              for me if you told me...why?
+              <p>
+                Hi! I'm Yaniv. I write code sometimes. This site is my
+                playground, as well as a portfolio.
+              </p>
+              <p>
+                You've zoomed your way around the
+                <a href="https://www.live-counter.com/how-big-is-the-internet/">
+                  {" "}
+                  vast{" "}
+                </a>
+                interwebs only to find yourself here. It would be fun for me if
+                you told me...why?
+              </p>
             </div>
           </div>
         </div>
