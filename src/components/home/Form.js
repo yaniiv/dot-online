@@ -30,7 +30,6 @@ const formContainer = css`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    max-width: 400px;
     background: ${COLORS.TRANSPARENT};
     margin-bottom: 8px;
 
