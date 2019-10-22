@@ -36,7 +36,7 @@ export default canvas => {
   const controls = buildControls()
 
   // https://github.com/mrdoob/stats.js/
-  const stats = buildStats()
+  // const stats = buildStats()
 
   function buildStats() {
     const stats = new Stats()
@@ -206,7 +206,7 @@ export default canvas => {
   }
 
   function render() {
-    stats.begin()
+    // stats.begin()
 
     const elapsedTime = clock.getElapsedTime()
     // const axesHelper = new THREE.AxesHelper(5)
@@ -220,7 +220,7 @@ export default canvas => {
 
     renderer.render(scene, camera)
 
-    stats.end()
+    // stats.end()
   }
 
   function updateCameraPositionRelativeToMouse() {
