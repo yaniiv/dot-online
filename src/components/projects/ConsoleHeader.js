@@ -18,27 +18,26 @@ const getConsoleHeaderTabStyles = isActive => css`
   font-size: 14px;
   flex-grow: 1;
   cursor: pointer;
-  text-transform: capitalize;
   background-color: ${COLORS.PURPLE_LIGHT};
 
-  :hover {
+  /* :hover {
     background-color: ${COLORS.PURPLE};
-  }
+  } */
 
   ${isActive &&
     css`
       border-bottom: 0;
-      bbackground-color: ${COLORS.GREY_LIGHT};
+      background-color: ${COLORS.PURPLE};
 
-      :hover {
+      /* :hover {
         background-color: white;
-      }
+      } */
     `}
 `
 
 const ConsoleHeaderTab = ({ activeTab, name, handleClick, isConsoleOpen }) => {
   const isActive = name === activeTab
-
+  console.warn({ activeTab })
   return (
     <div
       css={getConsoleHeaderTabStyles(isActive)}
