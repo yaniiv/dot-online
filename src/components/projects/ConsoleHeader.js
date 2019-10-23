@@ -2,25 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-/* 
-#8b8b8b
-#747474
-#b9b9b9
-#747474
-#5d5d5d
-#464646
-#2e2e2e
-#171717
-
-const purp = `rgb(125, 76, 219)`
-const aqua = `#6cffb4`
-const blue = "rgb(0, 169, 242)"
-*/
-
-const softGrey = "rgb(243, 243, 243)"
-// const white = "rgb(255, 255, 255)"
-export const hoverGrey = "rgb(234, 234, 234)"
-const borderGrey = "rgb(204, 204, 204)"
+import * as COLORS from "../../constants/colors"
 
 const consoleHeaderStyles = css`
   background-color: white;
@@ -37,17 +19,16 @@ const getConsoleHeaderTabStyles = isActive => css`
   flex-grow: 1;
   cursor: pointer;
   text-transform: capitalize;
-  border-bottom: 1px solid ${borderGrey};
-  background-color: ${softGrey};
+  background-color: ${COLORS.PURPLE_LIGHT};
 
   :hover {
-    background-color: ${hoverGrey};
+    background-color: ${COLORS.PURPLE};
   }
 
   ${isActive &&
     css`
       border-bottom: 0;
-      background-color: white;
+      bbackground-color: ${COLORS.GREY_LIGHT};
 
       :hover {
         background-color: white;

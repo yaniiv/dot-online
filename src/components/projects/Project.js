@@ -5,7 +5,6 @@ import { css, jsx } from "@emotion/core"
 import Console from "./Console"
 import ProjectGif from "./ProjectGif"
 import BrowserHeader from "./BrowserHeader"
-import ProjectInfoButton from "./ProjectInfoButton"
 
 import * as COLORS from "../../constants/colors"
 
@@ -71,6 +70,7 @@ class ProjectPage extends React.Component {
   }
 
   toggleIsConsoleOpen = () => {
+    console.warn("toggleIsConsoleOpen")
     this.setState(prevState => ({ isConsoleOpen: !prevState.isConsoleOpen }))
   }
 
@@ -87,15 +87,9 @@ class ProjectPage extends React.Component {
               toggleIsConsoleOpen={this.toggleIsConsoleOpen}
               link={link}
             />
-            <div
-              onMouseEnter={this.toggleIsConsoleOpen}
-              onMouseLeave={this.toggleIsConsoleOpen}
-            >
+            <div>
               <ProjectGif gif={gif} />
               <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
-              <ProjectInfoButton
-                toggleIsConsoleOpen={this.toggleIsConsoleOpen}
-              />
             </div>
           </div>
         </div>

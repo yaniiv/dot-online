@@ -63,17 +63,14 @@ const browserUrlBar = css`
 
 const eyeButtonStyles = css`
   margin: 8px;
+  padding-top: 4px;
+  padding-left: 2px;
+  width: 38px;
   margin-left: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: 600;
-  text-rendering: optimizeLegibility;
-  height: 40;
-  width: 40;
-  // border: 3px solid black;
-  border-radius: 6;
+  border: 2px solid black;
+  border-radius: 6px;
   cursor: pointer;
-  // background-color: ${COLORS.GREY};
+  background-color: ${COLORS.GREY_DARK};
   &:hover {
     path {
       fill: ${COLORS.YANIV};
@@ -83,11 +80,6 @@ const eyeButtonStyles = css`
     }
   }
 `
-
-const eyeStyles = {
-  color: "white",
-  backgroundColor: "transparent",
-}
 
 const Settings = ({ size = 38, color = COLORS.BLACK }) => (
   <svg
@@ -106,15 +98,26 @@ const Settings = ({ size = 38, color = COLORS.BLACK }) => (
   </svg>
 )
 
-const ProjectInfoButton = ({ toggleIConsoleOpen }) => {
-  return (
-    <div onClick={toggleIConsoleOpen} css={eyeButtonStyles}>
-      <Settings />
-    </div>
-  )
-}
+const MoreVertical = ({ size = 28, color = COLORS.YELLOW }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    strokeWidth="3"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <circle cx="12" cy="12" r="0.5" />
+    <circle cx="12" cy="5" r="0.5" />
+    <circle cx="12" cy="19" r="0.5" />
+  </svg>
+)
 
 const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
+  console.warn("BrowserHeader toggleIsConsoleOpen", toggleIsConsoleOpen)
   return (
     <div css={browserHeader}>
       {/* <div css={browserButtons}>
@@ -131,14 +134,11 @@ const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
         >
           {link}
         </a>
-        {/* <div
-            onClick={toggleIsConsoleOpen}
-            css={getEyeButtonStyles(isConsoleOpen)}
-          >
-            <div css={eyeStyles}>i</div>
-          </div> */}
       </div>
-      <ProjectInfoButton />
+      <div onClick={toggleIsConsoleOpen} css={eyeButtonStyles}>
+        {/* <Settings /> */}
+        <MoreVertical />
+      </div>
     </div>
   )
 }

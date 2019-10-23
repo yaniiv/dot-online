@@ -1,4 +1,4 @@
-export const PURPE_LIGHT = "#9987E0"
+export const PURPLE_LIGHT = "#9987E0"
 export const PURPLE = "#412C94"
 export const PURPLE_DARK = "#1A0E47"
 export const GREY_LIGHT = "#9c9795"
@@ -31,6 +31,11 @@ export const FOOTER_BACKGROUND = "#363433"
 export const CONTACT_FORM_BACKGROUND = GREY
 
 /* 
+const softGrey = "rgb(243, 243, 243)"
+// const white = "rgb(255, 255, 255)"
+export const hoverGrey = "rgb(234, 234, 234)"
+const borderGrey = "rgb(204, 204, 204)"
+
 #8b8b8b
 #747474
 #b9b9b9

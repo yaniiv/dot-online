@@ -5,10 +5,8 @@ import { css } from "@emotion/core"
 import Icon from "../Icon"
 
 import * as COLORS from "../../constants/colors"
-import * as SIZES from "../../constants/sizes"
 
 const formContainer = css`
-  /* max-width: ${SIZES.MAX_TEXT_WIDTH}; */
   background: ${COLORS.PURPLE_DARK};
   margin: 0 24px;
   padding: 16px;
@@ -21,9 +19,6 @@ const formContainer = css`
     border-radius: 6px;
   }
 
-  /* display: flex; */
-  /* flex-direction: column; */
-
   form {
     font-family: "Manjari", sans-serif;
     font-size: 16px;
@@ -34,7 +29,7 @@ const formContainer = css`
     margin-bottom: 8px;
 
     input {
-      margin: 0 0 24px 0; 
+      margin: 0 0 24px 0;
       padding: 8px 18px;
     }
   }
