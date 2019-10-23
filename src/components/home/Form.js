@@ -8,7 +8,8 @@ import * as COLORS from "../../constants/colors"
 
 const formContainer = css`
   background: ${COLORS.PURPLE_DARK};
-  margin: 0 24px;
+  margin: 0 auto;
+  min-width: 330px;
   padding: 16px;
   flex: 1;
   /* border: 4px solid black; */
