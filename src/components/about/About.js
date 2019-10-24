@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
 
+import TextBlobs from "../TextBlobs"
+
 import * as COLORS from "../../constants/colors"
 
 const about = css`
@@ -19,14 +21,9 @@ const about = css`
   }
 `
 
-function createMarkup(html) {
-  console.warn({ html })
-  return { __html: html }
-}
-
-const About = ({ prismicAbout: { data } }) => (
+const About = ({ textBlobs }) => (
   <div css={about}>
-    {console.warn("prismic about", data)}
+    {console.warn("prismic about textBlobs", textBlobs)}
     <h2>
       Hello, i'm{" "}
       <Link to="/">
@@ -45,15 +42,7 @@ const About = ({ prismicAbout: { data } }) => (
         </span>
       </Link>
     </h2>
-    <div
-      css={css`
-        word-break: break-all;
-        overflow-wrap: break-all;
-        display: inline-block;
-      `}
-    >
-      <div dangerouslySetInnerHTML={createMarkup(data.about_page_text.html)} />
-    </div>
+    <TextBlobs textBlobs={textBlobs} />
   </div>
 )
 

@@ -2,6 +2,7 @@ import React from "react"
 import { css } from "@emotion/core"
 
 import Form from "./Form"
+import TextBlobs from "../TextBlobs"
 
 import * as COLORS from "../../constants/colors"
 
@@ -15,7 +16,7 @@ const pageContainer = css`
   justify-content: center;
 `
 
-export default function EmailForm() {
+export default function EmailForm({ textBlobs }) {
   return (
     <div css={pageContainer}>
       <div
@@ -35,6 +36,7 @@ export default function EmailForm() {
         <div
           css={css`
             display: flex;
+            padding: 0 24px;
             flex-direction: column;
             @media (min-width: 768px) {
               flex-direction: row;
@@ -44,30 +46,15 @@ export default function EmailForm() {
           <div
             css={css`
               flex: 2;
-
+              margin-bottom: 24px;
               font-size: 22px;
               color: ${COLORS.WHITE};
+              @media (min-width: 768px) {
+                padding-right: 18px;
+              }
             `}
           >
-            <div
-              css={css`
-                margin: 0 24px;
-              `}
-            >
-              <p>
-                Hi! I'm Yaniv. I write code sometimes. This site is my
-                playground, as well as a portfolio.
-              </p>
-              <p>
-                You've zoomed your way around the
-                <a href="https://www.live-counter.com/how-big-is-the-internet/">
-                  {" "}
-                  vast{" "}
-                </a>
-                interwebs only to find yourself here. It would be fun for me if
-                you told me...why?
-              </p>
-            </div>
+            <TextBlobs textBlobs={textBlobs} />
           </div>
           <Form />
         </div>

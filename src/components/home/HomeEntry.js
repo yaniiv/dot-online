@@ -6,16 +6,19 @@ import Duality from "../threejs/Duality"
 import MagicBorder from "../MagicBorder"
 import EmailForm from "./EmailForm"
 
+const normalizePrismicHome = ({ prismicHome: { data } }) => {
+  return data.text_fields.map(({ text_field }) => text_field)
+}
+
 const HomeEntry = () => (
   <StaticQuery
     query={graphql`
-      query MinimalPageQuery {
-        site {
-          siteMetadata {
-            title
-            siteSocials {
-              name
-              linkTo
+      query Home {
+        prismicHome {
+          id
+          data {
+            text_fields {
+              text_field
             }
           }
         }
@@ -25,7 +28,7 @@ const HomeEntry = () => (
       <Layout>
         <Duality />
         <MagicBorder />
-        <EmailForm />
+        <EmailForm textBlobs={normalizePrismicHome(data)} />
       </Layout>
     )}
   />

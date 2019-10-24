@@ -30,6 +30,10 @@ const textContainer = css`
   color: ${COLORS.WHITE_SOFT};
 `
 
+const normalizePrismicAbout = ({ prismicAbout: { data } }) => {
+  return data.text_fields.map(({ text_field }) => text_field)
+}
+
 const AboutEntry = () => {
   return (
     <StaticQuery
@@ -38,13 +42,8 @@ const AboutEntry = () => {
           prismicAbout {
             id
             data {
-              about_page_text {
-                html
-                text
-                raw {
-                  type
-                  text
-                }
+              text_fields {
+                text_field
               }
             }
           }
@@ -52,9 +51,10 @@ const AboutEntry = () => {
       `}
       render={data => (
         <Layout>
+          {console.warn(data)}
           <div css={pageContainer}>
             <div css={textContainer}>
-              <About prismicAbout={data.prismicAbout} />
+              <About textBlobs={normalizePrismicAbout(data)} />
               <Socials />
             </div>
           </div>

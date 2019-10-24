@@ -7,20 +7,23 @@ import Icon from "../Icon"
 import * as COLORS from "../../constants/colors"
 
 const formContainer = css`
-  background: ${COLORS.PURPLE_DARK};
-  margin: 0 auto;
+  width: 100%;
   min-width: 330px;
-  padding: 16px;
   flex: 1;
   /* border: 4px solid black; */
   border-radius: 4px;
 
   @media (min-width: 768px) {
     /* border: 4px solid black; */
+    background: ${COLORS.PURPLE_DARK};
+    padding: 18px;
     border-radius: 6px;
   }
 
   form {
+    background: ${COLORS.PURPLE_DARK};
+
+    /* padding: 16px; */
     font-family: "Manjari", sans-serif;
     font-size: 16px;
     display: flex;
