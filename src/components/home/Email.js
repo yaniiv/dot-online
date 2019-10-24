@@ -16,7 +16,7 @@ const pageContainer = css`
   justify-content: center;
 `
 
-export default function EmailForm({ textBlobs }) {
+export default function Email({ textBlobs }) {
   return (
     <div css={pageContainer}>
       <div

@@ -14,7 +14,7 @@ export const hoverGrey = "rgb(234, 234, 234)"
 const getConsoleStyles = isConsoleOpen => css`
   position: absolute;
   right: 0;
-  width: 300px;
+  width: 100%;
   opacity: 0;
   height: calc(100% - 60px);
   background-color: ${white};
@@ -28,7 +28,7 @@ const getConsoleStyles = isConsoleOpen => css`
     css`
       transition: opacity 0.15s ease-out;
       opacity: 1;
-      border-left: 2px solid black;
+      /* border-left: 2px solid black; */
     `}
 `
 

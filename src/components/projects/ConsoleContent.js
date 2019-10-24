@@ -58,11 +58,7 @@ const ConsoleContent = ({ activeTab, info }) => {
   console.warn({ info })
   return (
     <div css={consoleContentStyles}>
-      {activeTab === "about" ? (
-        <About about={info.about} />
-      ) : (
-        <Tools tools={info.tools} />
-      )}
+      {activeTab === "about" ? <About about={info} /> : <Tools tools={[]} />}
     </div>
   )
 }

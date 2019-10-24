@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Layout from "../Layout"
 import Duality from "../threejs/Duality"
 import MagicBorder from "../MagicBorder"
-import EmailForm from "./EmailForm"
+import Email from "./Email"
 
 import * as COLORS from "../../constants/colors"
 
@@ -30,7 +30,7 @@ const HomeEntry = () => (
       <Layout backgroundColor={COLORS.PURPLE}>
         <Duality />
         <MagicBorder />
-        <EmailForm textBlobs={normalizePrismicHome(data)} />
+        <Email textBlobs={normalizePrismicHome(data)} />
       </Layout>
     )}
   />
