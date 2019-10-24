@@ -3,6 +3,11 @@ import { css } from "@emotion/core"
 
 const gifContainer = css`
   display: flex;
+  /* display: block; */
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 `
 
 const image = css`
