@@ -10,11 +10,12 @@ import Footer from "../components/Footer"
 import "../normalize.css"
 import "./layout.css"
 
-const layoutStyles = css`
+const layoutStyles = backgroundColor => css`
+  background: ${backgroundColor};
   margin: 0 auto;
 `
 
-const Layout = ({ children }) => (
+const Layout = ({ children, backgroundColor }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -30,9 +31,9 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <div css={layoutStyles}>
+      <div css={layoutStyles(backgroundColor)}>
         <SEO title="Home" keywords={[`yaniv`, `goldobin`]} />
-        <Header siteTitle="yaniv" />
+        <Header siteTitle="yaniv" color={backgroundColor} />
         <main>{children}</main>
         <Footer />
       </div>

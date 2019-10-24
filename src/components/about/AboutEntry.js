@@ -15,9 +15,9 @@ const pageContainer = css`
   font-family: "Manjari", sans-serif;
   font-size: 22px;
   font-weight: 600px;
-  height: 100vh;
+  height: ${SIZES.DUALITY};
   width: 100vw;
-  padding-top: ${SIZES.HEADER_HEIGHT};
+  /* padding-top: ${SIZES.HEADER_HEIGHT}; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,7 +50,7 @@ const AboutEntry = () => {
         }
       `}
       render={data => (
-        <Layout>
+        <Layout backgroundColor={COLORS.PURPLE}>
           {console.warn(data)}
           <div css={pageContainer}>
             <div css={textContainer}>

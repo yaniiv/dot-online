@@ -6,34 +6,40 @@ import { css } from "@emotion/core"
 import * as COLORS from "../constants/colors"
 import * as SIZES from "../constants/sizes"
 
-const headerContainerStyles = css`
-  background: transparent;
+const headerContainerStyles = backgroundColor => css`
+  background: ${backgroundColor};
   display: flex;
-  position: fixed;
+  /* position: fixed; */
   justify-content: space-between;
-  /* height: ${SIZES.HEADER_HEIGHT}; */
+  height: ${SIZES.HEADER_HEIGHT};
   right: 0;
   top: 0;
   width: 100vw;
 
   padding: 1.5rem 1.5rem;
 
-@media (min-width: 768px) {
-  padding: 2.5rem 2rem;
-}
+  @media (min-width: 768px) {
+    padding: 0 2rem;
+  }
 `
 
 const headerLinkStyles = css`
+  display: flex;
+
   h2 {
     margin: 0;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     a {
+      /* display: block; */
       padding: 1.5rem 1rem;
 
-      @media (min-width: 768px) {
+      /* @media (min-width: 768px) {
         padding: 2.5rem 2rem;
-      }
+      } */
     }
 
     &:hover {
@@ -49,8 +55,8 @@ const headerLinkStyles = css`
   }
 `
 
-const Header = () => (
-  <header css={headerContainerStyles}>
+const Header = ({ color }) => (
+  <header css={headerContainerStyles(color)}>
     <div css={headerLinkStyles}>
       <h2>
         <Link to="/">yaniv</Link>
@@ -58,7 +64,6 @@ const Header = () => (
     </div>
     <div
       css={css`
-        display: flex;
         ${headerLinkStyles}
       `}
     >

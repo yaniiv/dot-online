@@ -6,6 +6,8 @@ import Duality from "../threejs/Duality"
 import MagicBorder from "../MagicBorder"
 import EmailForm from "./EmailForm"
 
+import * as COLORS from "../../constants/colors"
+
 const normalizePrismicHome = ({ prismicHome: { data } }) => {
   return data.text_fields.map(({ text_field }) => text_field)
 }
@@ -25,7 +27,7 @@ const HomeEntry = () => (
       }
     `}
     render={data => (
-      <Layout>
+      <Layout backgroundColor={COLORS.PURPLE}>
         <Duality />
         <MagicBorder />
         <EmailForm textBlobs={normalizePrismicHome(data)} />

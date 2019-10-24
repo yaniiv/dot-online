@@ -4,6 +4,8 @@ import { StaticQuery, graphql } from "gatsby"
 import Layout from "../Layout"
 import Projects from "./Projects"
 
+import * as COLORS from "../../constants/colors"
+
 function normalizeProjectData(graphqlResponse) {
   console.warn("allPrismicProjects:", { graphqlResponse })
 
@@ -61,7 +63,7 @@ const ProjectsEntry = () => (
       }
     `}
     render={data => (
-      <Layout>
+      <Layout backgroundColor={COLORS.GREY}>
         <Projects projects={normalizeProjectData(data)} />
       </Layout>
     )}
