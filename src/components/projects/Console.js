@@ -7,24 +7,27 @@ import ConsoleContent from "./ConsoleContent"
 import * as COLORS from "../../constants/colors"
 
 const getConsoleStyles = isConsoleOpen => css`
+  background-color: ${COLORS.WHITE};
+  color: ${COLORS.YELLOW};
   position: absolute;
   right: 0;
-  width: 100%;
   opacity: 0;
-  height: calc(100% - 60px);
-  background-color: ${COLORS.WHITE};
+  width: 100%;
+  display: flex;
   bottom: 0;
   transition: width 0.15s ease-in;
-  display: flex;
   flex-direction: column;
+  margin-top: 0;
+
   @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
   font-family: "Manjari", sans-serif;
 
+  height: calc(100% - 60px);
+
   ${isConsoleOpen &&
     css`
-      transition: opacity 0.15s ease-out;
       opacity: 1;
-      /* border-left: 2px solid black; */
+      transition: opacity 0.15s ease-out;
     `}
 `
 

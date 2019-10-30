@@ -8,7 +8,11 @@ import * as SIZES from "../../constants/sizes"
 const Projects = ({ projects }) => (
   <div
     css={css`
-      margin-top: -${SIZES.HEADER_HEIGHT};
+      margin-top: -${SIZES.HEADER_HEIGHT_MOBILE};
+
+      @media (min-width: 768px) {
+        margin-top: -${SIZES.HEADER_HEIGHT_DESKTOP};
+      }
     `}
   >
     {projects.map(project => (

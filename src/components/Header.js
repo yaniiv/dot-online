@@ -11,7 +11,7 @@ const headerContainerStyles = backgroundColor => css`
   display: flex;
   /* position: fixed; */
   justify-content: space-between;
-  height: ${SIZES.HEADER_HEIGHT};
+  height: ${SIZES.HEADER_HEIGHT_MOBILE};
   right: 0;
   top: 0;
   width: 100vw;
@@ -19,6 +19,7 @@ const headerContainerStyles = backgroundColor => css`
   padding: 1.5rem 1.5rem;
 
   @media (min-width: 768px) {
+    height: ${SIZES.HEADER_HEIGHT_DESKTOP};
     padding: 0 2rem;
   }
 `

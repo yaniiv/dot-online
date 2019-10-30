@@ -33,7 +33,6 @@ const toolsStyles = css`
 `
 
 const aboutStyles = css`
-  color: black;
   font-size: 14px;
   padding: 10px 18px;
 

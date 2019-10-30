@@ -17,7 +17,6 @@ const pageContainer = css`
   font-weight: 600px;
   height: ${SIZES.DUALITY};
   width: 100vw;
-  /* padding-top: ${SIZES.HEADER_HEIGHT}; */
   display: flex;
   flex-direction: column;
   justify-content: center;

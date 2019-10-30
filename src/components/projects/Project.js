@@ -50,12 +50,12 @@ export const project = css`
 `
 
 export const browserFrame = css`
-  border: 4px solid black;
-  border-radius: 4px;
+  border: 3px solid black;
+  border-radius: 3px;
 
   @media (min-width: 768px) {
     border: 4px solid black;
-    border-radius: 6px;
+    border-radius: 4px;
   }
 
   display: flex;

@@ -12,7 +12,6 @@ const FooterContainerStyles = css`
   justify-content: space-between;
   @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
   font-family: "Manjari", sans-serif;
-  /* height: ${SIZES.HEADER_HEIGHT}; */
   right: 0;
   bottom: 0;
   height: 100px;
