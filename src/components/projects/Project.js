@@ -26,6 +26,9 @@ export const project = css`
   font-size: 16px;
   width: 100%;
 
+  max-width: 375px;
+  max-height: 270px;
+
   @media (min-width: 768px) {
     padding: 0;
   }

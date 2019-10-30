@@ -44,21 +44,22 @@ const aboutStyles = css`
 
 const About = ({ about }) => <div css={aboutStyles}>{about}</div>
 
-const Tools = ({ tools = [] }) => (
-  <div css={toolsStyles}>
-    {tools.map(({ name, toolLink, toolText }) => (
-      <a href={toolLink} target="_blank">
-        <div>{name}</div>
-      </a>
-    ))}
-  </div>
-)
+// const Tools = ({ tools = [] }) => (
+//   <div css={toolsStyles}>
+//     {tools.map(({ name, toolLink, toolText }) => (
+//       <a href={toolLink} target="_blank">
+//         <div>{name}</div>
+//       </a>
+//     ))}
+//   </div>
+// )
 
-const ConsoleContent = ({ activeTab, info }) => {
+const ConsoleContent = ({ activeTab, info, isConsoleOpen }) => {
   console.warn({ info })
   return (
     <div css={consoleContentStyles}>
-      {activeTab === "about" ? <About about={info} /> : <Tools tools={[]} />}
+      {/* {activeTab === "about" ? <About about={info} /> : <Tools tools={[]} />} */}
+      {isConsoleOpen && <About about={info} />}
     </div>
   )
 }

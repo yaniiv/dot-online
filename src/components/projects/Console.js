@@ -2,14 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 
-import ConsoleHeader from "./ConsoleHeader"
 import ConsoleContent from "./ConsoleContent"
 
-// const softGrey = "rgb(243, 243, 243)"
-const white = "rgb(255, 255, 255)"
-export const hoverGrey = "rgb(234, 234, 234)"
-// const borderGrey = "rgb(204, 204, 204)"
-// const lighterBorderGrey = "rgb(240, 240, 240)"
+import * as COLORS from "../../constants/colors"
 
 const getConsoleStyles = isConsoleOpen => css`
   position: absolute;
@@ -17,12 +12,13 @@ const getConsoleStyles = isConsoleOpen => css`
   width: 100%;
   opacity: 0;
   height: calc(100% - 60px);
-  background-color: ${white};
+  background-color: ${COLORS.WHITE};
   bottom: 0;
   transition: width 0.15s ease-in;
   display: flex;
   flex-direction: column;
-  font-family: Lucida Grande;
+  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
+  font-family: "Manjari", sans-serif;
 
   ${isConsoleOpen &&
     css`
@@ -33,30 +29,15 @@ const getConsoleStyles = isConsoleOpen => css`
 `
 
 class Console extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = { activeTab: "about" }
-  }
-
-  selectConsoleTab = activeTab => {
-    this.setState({ activeTab })
-  }
-
   render() {
     const { isConsoleOpen, info } = this.props
-    // const isConsoleOpen = true;
-    // console.warn("this.state.activeTab", this.state.activeTab)
 
     return (
       <div css={getConsoleStyles(isConsoleOpen)}>
-        <ConsoleHeader
-          activeTab={this.state.activeTab}
-          selectConsoleTab={this.selectConsoleTab}
-        />
         <ConsoleContent
           info={info}
           isConsoleOpen={isConsoleOpen}
-          activeTab={this.state.activeTab}
+          // activeTab={this.state.activeTab}
         />
       </div>
     )
