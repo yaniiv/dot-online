@@ -40,7 +40,6 @@ class Console extends React.Component {
         <ConsoleContent
           info={info}
           isConsoleOpen={isConsoleOpen}
-          // activeTab={this.state.activeTab}
         />
       </div>
     )
