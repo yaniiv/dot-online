@@ -3,11 +3,6 @@ import { css } from "@emotion/core"
 
 const gifContainer = css`
   display: flex;
-  /* display: block; */
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
 `
 
 const image = css`
@@ -19,7 +14,7 @@ const ProjectGif = ({ gif }) => {
 
   return (
     <div css={gifContainer}>
-      <img alt="gif-of-project" css={image} src={url} />
+      <img alt="gif-of-projec" css={image} src={url} />
     </div>
   )
 }
