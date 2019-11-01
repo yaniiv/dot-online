@@ -1,6 +1,6 @@
 import * as THREE from "three"
 
-import * as COLORS from "../../constants/colors"
+import * as COLORS from "../../colors"
 
 export default scene => {
   // lightOut.position.set(40, 20, 40)

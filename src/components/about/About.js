@@ -4,7 +4,7 @@ import { css } from "@emotion/core"
 
 import TextBlobs from "../TextBlobs"
 
-import * as COLORS from "../../constants/colors"
+import * as COLORS from "../../colors"
 
 const about = css`
   max-width: 500px;

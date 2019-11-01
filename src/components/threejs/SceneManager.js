@@ -3,8 +3,8 @@ import * as THREE from "three"
 import chroma from "chroma-js"
 import Stats from "stats.js"
 
-import * as COLORS from "../../constants/colors"
-import * as NUMBERS from "../../constants/numbers"
+import * as COLORS from "../../colors"
+import * as NUMBERS from "../numbers"
 
 import StaticBall from "./StaticBall"
 import GeneralLights from "./GeneralLights"
@@ -13,7 +13,7 @@ import MovingBall from "./MovingBall"
 import Waves from "./Waves"
 import OrbitControls from "three-orbitcontrols"
 
-import isDesktop from "./utils"
+import isDesktop from "../../utils"
 
 export default canvas => {
   const clock = new THREE.Clock()

@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 import React from "react"
 import { css } from "@emotion/core"
 
-import * as COLORS from "../constants/colors"
-import * as SIZES from "../constants/sizes"
+import * as COLORS from "../colors"
+import * as SIZES from "../sizes"
 
 const headerContainerStyles = backgroundColor => css`
   background: ${backgroundColor};

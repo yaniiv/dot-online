@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
 
-import * as COLORS from "../../constants/colors"
+import * as COLORS from "../../colors"
 
 const browserHeader = css`
   height: 60px;

@@ -4,7 +4,7 @@ import { css } from "@emotion/core"
 import Form from "./Form"
 import TextBlobs from "../TextBlobs"
 
-import * as COLORS from "../../constants/colors"
+import * as COLORS from "../../colors"
 
 const pageContainer = css`
   height: 100vh;

@@ -6,7 +6,7 @@ import Console from "./Console"
 import ProjectGif from "./ProjectGif"
 import BrowserHeader from "./BrowserHeader"
 
-import * as COLORS from "../../constants/colors"
+import * as COLORS from "../../colors"
 
 export const projectContainer = () => {
   return css`

@@ -3,7 +3,7 @@ import React from "react"
 import Project from "./Project"
 import { css } from "@emotion/core"
 
-import * as SIZES from "../../constants/sizes"
+import * as SIZES from "../../sizes"
 
 const Projects = ({ projects }) => (
   <div

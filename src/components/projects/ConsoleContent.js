@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-import * as COLORS from "../../constants/colors"
+import * as COLORS from "../../colors"
 
 const consoleContentStyles = css`
   background-color: ${COLORS.PURPLE};

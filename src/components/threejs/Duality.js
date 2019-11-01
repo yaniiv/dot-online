@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import { css } from "@emotion/core"
 
 import ThreeEntryPointManager from "./ThreeEntryPointManager"
-import * as SIZES from "../../constants/sizes"
+import * as SIZES from "../../sizes"
 import "./duality.css"
 
 const duality = css`

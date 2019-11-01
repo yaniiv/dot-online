@@ -2,9 +2,20 @@ import React, { useState, useEffect } from "react"
 import { css } from "@emotion/core"
 import chroma from "chroma-js"
 
-import * as COLORS from "../constants/colors"
+import * as COLORS from "../colors"
+import isDesktop from "../utils"
 
-const numSwirls = 18
+function getNumSwirls() {
+  let numSwirls = 18
+
+  if (isDesktop()) {
+    numSwirls = 40
+  }
+
+  return numSwirls
+}
+
+const numSwirls = getNumSwirls()
 
 function getConicGradient(degreeOffset, coneColor) {
   return `

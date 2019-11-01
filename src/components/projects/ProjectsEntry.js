@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Layout from "../Layout"
 import Projects from "./Projects"
 
-import * as COLORS from "../../constants/colors"
+import * as COLORS from "../../colors"
 
 function normalizeProjectData(graphqlResponse) {
   console.warn("allPrismicProjects:", { graphqlResponse })

@@ -4,7 +4,7 @@ import { css } from "@emotion/core"
 
 import ConsoleContent from "./ConsoleContent"
 
-import * as COLORS from "../../constants/colors"
+import * as COLORS from "../../colors"
 
 const getConsoleStyles = isConsoleOpen => css`
   background-color: ${COLORS.WHITE};
@@ -37,10 +37,7 @@ class Console extends React.Component {
 
     return (
       <div css={getConsoleStyles(isConsoleOpen)}>
-        <ConsoleContent
-          info={info}
-          isConsoleOpen={isConsoleOpen}
-        />
+        <ConsoleContent info={info} isConsoleOpen={isConsoleOpen} />
       </div>
     )
   }

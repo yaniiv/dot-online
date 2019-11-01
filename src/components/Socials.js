@@ -4,7 +4,7 @@ import { css } from "@emotion/core"
 
 import Icon from "./Icon"
 
-import * as COLORS from "../constants/colors"
+import * as COLORS from "../colors"
 
 const socialIconStyle = css`
   width: 40px;

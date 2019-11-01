@@ -6,8 +6,8 @@ import Layout from "../Layout"
 import Socials from "../Socials"
 import About from "./About"
 
-import * as COLORS from "../../constants/colors"
-import * as SIZES from "../../constants/sizes"
+import * as COLORS from "../../colors"
+import * as SIZES from "../../sizes"
 
 const pageContainer = css`
   background: ${COLORS.DARK_END_DUALITY};
