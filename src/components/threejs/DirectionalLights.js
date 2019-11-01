@@ -17,8 +17,8 @@ export default scene => {
   light.shadow.camera.left = 80
   light.shadow.camera.right = -80
 
-  var shadowHelper = new THREE.CameraHelper(light.shadow.camera)
-  scene.add(shadowHelper)
+  // var shadowHelper = new THREE.CameraHelper(light.shadow.camera)
+  // scene.add(shadowHelper)
 
   scene.add(light)
 

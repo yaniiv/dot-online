@@ -39,7 +39,7 @@ export default canvas => {
 
   // https://github.com/mrdoob/stats.js/
   const stats = buildStats()
-  buildAxisHelper(scene)
+  // buildAxisHelper(scene)
 
   function buildAxisHelper(scene) {
     const axesHelper = new THREE.AxesHelper(100)

@@ -3,6 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Layout from "../Layout"
 import Projects from "./Projects"
+import TransparentHeader from "../TransparentHeader"
 
 import * as COLORS from "../../colors"
 
@@ -64,6 +65,7 @@ const ProjectsEntry = () => (
     `}
     render={data => (
       <Layout backgroundColor={COLORS.GREY}>
+        <TransparentHeader />
         <Projects projects={normalizeProjectData(data)} />
       </Layout>
     )}

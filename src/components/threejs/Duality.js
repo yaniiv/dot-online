@@ -2,12 +2,12 @@ import React, { Component } from "react"
 import { css } from "@emotion/core"
 
 import ThreeEntryPointManager from "./ThreeEntryPointManager"
-import * as SIZES from "../../sizes"
+
 import "./duality.css"
 
 const duality = css`
   margin: auto;
-  height: ${SIZES.DUALITY};
+  height: 100vh;
   width: 100%;
 `
 

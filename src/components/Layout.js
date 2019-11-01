@@ -33,7 +33,7 @@ const Layout = ({ children, backgroundColor }) => (
     render={data => (
       <div css={layoutStyles(backgroundColor)}>
         <SEO title="Home" keywords={[`yaniv`, `goldobin`]} />
-        <Header siteTitle="yaniv" color={backgroundColor} />
+        {/* <Header siteTitle="yaniv" color={backgroundColor} /> */}
         <main>{children}</main>
         <Footer />
       </div>

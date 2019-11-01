@@ -5,6 +5,7 @@ import { css } from "@emotion/core"
 import Layout from "../Layout"
 import Socials from "../Socials"
 import About from "./About"
+import TransparentHeader from "../TransparentHeader"
 
 import * as COLORS from "../../colors"
 import * as SIZES from "../../sizes"
@@ -50,6 +51,7 @@ const AboutEntry = () => {
       `}
       render={data => (
         <Layout backgroundColor={COLORS.PURPLE}>
+          <TransparentHeader />
           {console.warn(data)}
           <div css={pageContainer}>
             <div css={textContainer}>
