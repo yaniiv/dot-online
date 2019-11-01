@@ -22,12 +22,12 @@ export const projectContainer = () => {
 export const project = css`
   margin: auto;
   min-width: 375px;
-  padding: 32px;
+  padding: 12px;
   font-size: 16px;
   width: 100%;
 
-  max-width: 375px;
-  max-height: 270px;
+  /* max-width: 375px;
+  max-height: 270px; */
 
   @media (min-width: 768px) {
     padding: 0;

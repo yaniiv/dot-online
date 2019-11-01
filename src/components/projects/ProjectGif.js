@@ -6,7 +6,8 @@ const gifContainer = css`
 `
 
 const image = css`
-  margin: 0;
+  width: 100%;
+  height: 100%;
 `
 
 const ProjectGif = ({ gif }) => {
