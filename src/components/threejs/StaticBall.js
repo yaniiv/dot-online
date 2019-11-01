@@ -17,8 +17,8 @@ export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
     heightSegments
   )
   const material = new THREE.MeshBasicMaterial({ color })
-  const subjectMesh = new THREE.Mesh(geometry, material)
-  const subjectWireframe = new THREE.LineSegments(
+  const sphere = new THREE.Mesh(geometry, material)
+  const sphereFrame = new THREE.LineSegments(
     new THREE.EdgesGeometry(geometry),
     // https://threejs.org/docs/#api/en/materials/LineBasicMaterial
     new THREE.LineBasicMaterial({
@@ -26,12 +26,15 @@ export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
     })
   )
 
-  // const { focalPointRadius, y, z } = position
-  subjectMesh.position.set(xPosition, 0, 0)
-  subjectWireframe.position.set(xPosition, 0, 0)
+  sphere.castShadow = true //default is false
+  sphere.receiveShadow = false //default
 
-  group.add(subjectMesh)
-  // group.add(subjectWireframe)
+  // const { focalPointRadius, y, z } = position
+  sphere.position.set(xPosition, 20, 0)
+  sphereFrame.position.set(xPosition, 20, 0)
+
+  group.add(sphere)
+  group.add(sphereFrame)
 
   scene.add(group)
 
@@ -45,9 +48,9 @@ export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
     // const angle = time * speed
     // group.rotation.y = angle
     // subjectMaterial.alphaMap.offset.y = 0.55 + time * tepositiontureOffsetSpeed
-    // subjectWireframe.material.color.setHSL(Math.sin(angle * 2), 0.5, 0.5)
+    // sphereFrame.material.color.setHSL(Math.sin(angle * 2), 0.5, 0.5)
     // const scale = (Math.sin(angle * 8) + 6.4) / 5
-    // subjectWireframe.scale.set(scale, scale, scale)
+    // sphereFrame.scale.set(scale, scale, scale)
   }
 
   return {

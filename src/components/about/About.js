@@ -14,7 +14,7 @@ const about = css`
   }
   a,
   a:visited {
-    color: ${COLORS.YANIV};
+    color: ${COLORS.DARK_END_DUALITY};
   }
   a:hover {
     text-decoration: underline;

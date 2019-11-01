@@ -4,37 +4,6 @@ var MAX_POINTS = 500
 
 export default (scene, ballProperties, color) => {
   const group = new THREE.Group()
-
-  // // geometry
-  // const lineGeometry = new THREE.BufferGeometry()
-
-  // // attributes
-  // const positions = new Float32Array(MAX_POINTS * 3) // 3 vertices per point
-  // lineGeometry.addAttribute("position", new THREE.BufferAttribute(positions, 3))
-
-  // // draw range
-  // const drawCount = 2 // draw the first 2 points, only
-  // lineGeometry.setDrawRange(0, drawCount)
-
-  // // material
-  // const lineMaterial = new THREE.LineBasicMaterial({ color: 0xff0000 })
-
-  // // line
-  // const line = new THREE.Line(lineGeometry, lineMaterial)
-
-  // const linePositions = line.geometry.attributes.position.array
-
-  // // var x = (y = z = index = 0)
-
-  // for (var i = 0, l = MAX_POINTS; i < l; i++) {
-  //   linePositions[index++] = x
-  //   linePositions[index++] = y
-  //   linePositions[index++] = z
-
-  //   x += (Math.random() - 0.5) * 30
-  //   y += (Math.random() - 0.5) * 30
-  //   z += (Math.random() - 0.5) * 30
-  // }
   const {
     focalRadius,
     ballRadius,
@@ -48,14 +17,16 @@ export default (scene, ballProperties, color) => {
     heightSegments
   )
   const material = new THREE.MeshBasicMaterial({ color })
-  const subjectMesh = new THREE.Mesh(geometry, material)
-  // const subjectWireframe = new THREE.LineSegments(
-  //   new THREE.EdgesGeometry(geometry),
-  //   new THREE.LineBasicMaterial()
-  // )
+  const sphere = new THREE.Mesh(geometry, material)
+  const sphereFrame = new THREE.LineSegments(
+    new THREE.EdgesGeometry(geometry),
+    new THREE.LineBasicMaterial()
+  )
+  sphere.castShadow = true //default is false
+  sphere.receiveShadow = false //default
 
-  group.add(subjectMesh)
-  // group.add(subjectWireframe)
+  group.add(sphere)
+  group.add(sphereFrame)
 
   scene.add(group)
 
@@ -79,7 +50,7 @@ export default (scene, ballProperties, color) => {
     //   rad * 0.5 * Math.sin(time + Math.PI / 4) /*- rad * Math.cos(time * 0.5)*/
 
     const x = focalRadius * 1.5 * Math.sin(time + offset.x * Math.PI)
-    const y = (focalRadius / 2.5) * Math.sin(time + offset.y * Math.PI)
+    const y = (focalRadius / 2.5) * Math.sin(time + offset.y * Math.PI) + 20
     const z = (focalRadius / 2) * Math.sin(2 * time + offset.z * Math.PI)
 
     group.position.set(x, y, z)
@@ -92,12 +63,12 @@ export default (scene, ballProperties, color) => {
     // group.position.z = z
     group.rotation.z = angle
 
-    // subjectMesh.position.z = z
-    // subjectMesh.position.y = y
-    // subjectMesh.position.y = y
+    // sphere.position.z = z
+    // sphere.position.y = y
+    // sphere.position.y = y
 
-    // subjectWireframe.position.x = x
-    // subjectWireframe.position.y = y
+    // sphereFrame.position.x = x
+    // sphereFrame.position.y = y
     // line.geometry.attributes.position.needsUpdate = true // required after the first render
     // geometry
     const lineGeometry = new THREE.SphereBufferGeometry(2, 5, 5)
@@ -121,13 +92,13 @@ export default (scene, ballProperties, color) => {
     line.position.set(x, y, z)
     scene.add(line)
 
-    // subjectMesh.position.y = x
-    // subjectMesh.position.z = x
+    // sphere.position.y = x
+    // sphere.position.z = x
     // group.rotation.y = angle
     // subjectMaterial.alphaMap.offset.y = 0.55 + time * textureOffsetSpeed
-    // subjectWireframe.material.color.setHSL(Math.sin(angle * 2), 0.5, 0.5)
+    // sphereFrame.material.color.setHSL(Math.sin(angle * 2), 0.5, 0.5)
     // const scale = (Math.sin(angle * 8) + 6.4) / 5
-    // subjectWireframe.scale.set(scale, scale, scale)
+    // sphereFrame.scale.set(scale, scale, scale)
   }
 
   return {

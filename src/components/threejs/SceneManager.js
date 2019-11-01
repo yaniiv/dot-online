@@ -6,9 +6,9 @@ import Stats from "stats.js"
 import * as COLORS from "../../constants/colors"
 import * as NUMBERS from "../../constants/numbers"
 
-// import SceneSubject from './SceneSubject';
-import BallSubject from "./BallSubject"
+import StaticBall from "./StaticBall"
 import GeneralLights from "./GeneralLights"
+import DirectionalLights from "./DirectionalLights"
 import MovingBall from "./MovingBall"
 import Waves from "./Waves"
 import OrbitControls from "three-orbitcontrols"
@@ -35,9 +35,11 @@ export default canvas => {
   const sceneSubjects = createSceneSubjects(scene)
   const controls = buildControls()
 
+  buildPlane(scene)
+
   // https://github.com/mrdoob/stats.js/
-  // const stats = buildStats()
-  // buildAxisHelper(scene)
+  const stats = buildStats()
+  buildAxisHelper(scene)
 
   function buildAxisHelper(scene) {
     const axesHelper = new THREE.AxesHelper(100)
@@ -50,6 +52,23 @@ export default canvas => {
     document.body.appendChild(stats.dom)
 
     return stats
+  }
+
+  function buildPlane() {
+    var planeGeometry = new THREE.PlaneBufferGeometry(5000, 5000)
+    var planeMaterial = new THREE.MeshStandardMaterial({
+      color: COLORS.PURPLE,
+      // side: THREE.DoubleSide,
+      // transparent: true,
+      // opacity: 0.5,
+      // depthWrite: false,
+    })
+    var plane = new THREE.Mesh(planeGeometry, planeMaterial)
+
+    plane.rotateX(29.827)
+    plane.receiveShadow = true
+
+    scene.add(plane)
   }
 
   function buildControls() {
@@ -89,11 +108,15 @@ export default canvas => {
       alpha: true,
     })
     const DPR = window.devicePixelRatio ? window.devicePixelRatio : 1
+
     renderer.setPixelRatio(DPR)
     renderer.setSize(width, height)
 
     renderer.gammaInput = true
     renderer.gammaOutput = true
+
+    renderer.shadowMap.enabled = true
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
     return renderer
   }
@@ -106,9 +129,9 @@ export default canvas => {
     }
 
     const desktopAngle = {
-      x: 0,
-      y: 80,
-      z: 60,
+      x: 45,
+      y: 100,
+      z: 65,
     }
 
     if (isDesktop()) {
@@ -158,32 +181,32 @@ export default canvas => {
     //   .colors(2)
 
     return [
-      new BallSubject({
+      new StaticBall({
         scene,
         ballProperties,
-        xPosition: ballProperties.focalRadius,
+        xPosition: ballProperties.xPosition,
         color: COLORS.STATICBALLS[0],
         meshColor: COLORS.STATICBALLS[1],
       }),
-      new BallSubject({
+      new StaticBall({
         scene,
         ballProperties,
-        xPosition: -ballProperties.focalRadius,
+        xPosition: -ballProperties.xPosition,
         color: COLORS.STATICBALLS[1],
         meshColor: COLORS.STATICBALLS[0],
       }),
-      // new BallSubject(scene, { x: 10, y: 10, z: 40 }, "red"),
-      // new BallSubject(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
+      // new StaticBall(scene, { x: 10, y: 10, z: 40 }, "red"),
+      // new StaticBall(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
     ]
   }
 
   function createSceneSubjects(scene) {
-    let staticBallProperties = NUMBERS.LARGE_BALL_PROPERTIES.mobile
-    let movingBallProperties = NUMBERS.SMALL_BALL_PROPERTIES.mobile
+    let staticBallProperties = NUMBERS.STATIC_BALL_PROPERTIES.mobile
+    let movingBallProperties = NUMBERS.MOVING_BALL_PROPERTIES.mobile
 
     if (isDesktop()) {
-      staticBallProperties = NUMBERS.LARGE_BALL_PROPERTIES.desktop
-      movingBallProperties = NUMBERS.SMALL_BALL_PROPERTIES.desktop
+      staticBallProperties = NUMBERS.STATIC_BALL_PROPERTIES.desktop
+      movingBallProperties = NUMBERS.MOVING_BALL_PROPERTIES.desktop
     }
 
     const movingBalls = createMovingBalls({
@@ -199,7 +222,8 @@ export default canvas => {
     })
 
     const sceneSubjects = [
-      new GeneralLights(scene),
+      // new GeneralLights(scene),
+      new DirectionalLights(scene),
       ...staticBalls,
       ...movingBalls,
       // new Waves(scene),
@@ -209,7 +233,7 @@ export default canvas => {
   }
 
   function render() {
-    // stats.begin()
+    stats.begin()
 
     const elapsedTime = clock.getElapsedTime()
     // const axesHelper = new THREE.AxesHelper(5)
@@ -222,8 +246,9 @@ export default canvas => {
     // updateCameraPositionRelativeToMouse()
 
     renderer.render(scene, camera)
+    // for shadlw
 
-    // stats.end()
+    stats.end()
   }
 
   function updateCameraPositionRelativeToMouse() {
