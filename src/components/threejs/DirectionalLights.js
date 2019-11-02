@@ -5,7 +5,7 @@ import * as COLORS from "../../colors"
 export default scene => {
   // lightOut.position.set(40, 20, 40)
 
-  var light = new THREE.DirectionalLight(COLORS.PURPLE, 0.96)
+  var light = new THREE.DirectionalLight(COLORS.PURPLE, 0.99)
   light.position.set(0, 90, 0) //default; light shining from top
   light.castShadow = true // default false
   light.shadow.mapSize.width = 1512 // default

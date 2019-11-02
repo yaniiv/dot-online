@@ -19,6 +19,7 @@ const headerContainerStyles = backgroundColor => css`
   width: 100vw;
 
   padding: 1.5rem 1.5rem;
+  text-shadow: 12px 12px 2px rgba(0, 0, 0, 0.2);
 
   @media (min-width: 768px) {
     height: ${SIZES.HEADER_HEIGHT_DESKTOP};

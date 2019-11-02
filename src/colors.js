@@ -2,6 +2,7 @@ export const PURPLE_LIGHT = "#9987E0"
 export const PURPLE = "#412C94"
 export const PURPLE_DARK = "#1A0E47"
 export const GREY_LIGHT = "#9c9795"
+export const SQUIGGLE_PURPLE = "#39267c"
 
 export const GREY = "#4F4D4C"
 export const GREY_DARK = "#363433"

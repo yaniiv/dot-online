@@ -55,13 +55,14 @@ export default canvas => {
   }
 
   function buildPlane() {
-    var planeGeometry = new THREE.PlaneBufferGeometry(5000, 5000)
+    var planeGeometry = new THREE.PlaneBufferGeometry(500, 500)
     var planeMaterial = new THREE.MeshStandardMaterial({
       color: COLORS.PURPLE,
-      // side: THREE.DoubleSide,
-      // transparent: true,
-      // opacity: 0.5,
-      // depthWrite: false,
+      side: THREE.DoubleSide,
+      transparent: true,
+      opacity: 0.1,
+      metalness: 0.1,
+      reflectivity: 0.1,
     })
     var plane = new THREE.Mesh(planeGeometry, planeMaterial)
 
