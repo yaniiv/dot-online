@@ -19,6 +19,9 @@ const HomeEntry = () => (
         prismicHome {
           id
           data {
+            text_field_html {
+              html
+            }
             text_fields {
               text_field
             }
@@ -34,7 +37,10 @@ const HomeEntry = () => (
         </div>
 
         <MagicBorder />
-        <Email textBlobs={normalizePrismicHome(data)} />
+        <Email
+          html={data.prismicHome.data.text_field_html.html}
+          textBlobs={normalizePrismicHome(data)}
+        />
       </Layout>
     )}
   />

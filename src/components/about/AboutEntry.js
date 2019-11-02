@@ -25,13 +25,18 @@ const pageContainer = css`
 
 const textContainer = css`
   margin: 0 auto;
-  max-width: ${SIZES.MAX_TEXT_WIDTH};
-  padding: 0 16px;
+  max-width: 800px;
   color: ${COLORS.WHITE_SOFT};
 `
 
 const normalizePrismicAbout = ({ prismicAbout: { data } }) => {
-  return data.text_fields.map(({ text_field }) => text_field)
+  console.warn({ data })
+
+  return data.text_fields.map(textField => {
+    console.warn({ textField })
+
+    return textField.text_field
+  })
 }
 
 const AboutEntry = () => {
@@ -42,6 +47,14 @@ const AboutEntry = () => {
           prismicAbout {
             id
             data {
+              text_rich_field {
+                html
+                text
+                raw {
+                  type
+                  text
+                }
+              }
               text_fields {
                 text_field
               }
@@ -52,10 +65,13 @@ const AboutEntry = () => {
       render={data => (
         <Layout backgroundColor={COLORS.PURPLE}>
           <TransparentHeader />
-          {console.warn(data)}
+          {console.warn("prismic about data", data)}
           <div css={pageContainer}>
             <div css={textContainer}>
-              <About textBlobs={normalizePrismicAbout(data)} />
+              <About
+                prismicAbout={data.prismicAbout}
+                textBlobs={normalizePrismicAbout(data)}
+              />
               <Socials />
             </div>
           </div>

@@ -16,7 +16,12 @@ const pageContainer = css`
   justify-content: center;
 `
 
-export default function Email({ textBlobs }) {
+function createMarkup(html) {
+  return { __html: html }
+}
+
+export default function Email({ textBlobs, html }) {
+  console.warn("Email", { html })
   return (
     <div css={pageContainer}>
       <div
@@ -50,11 +55,24 @@ export default function Email({ textBlobs }) {
               font-size: 22px;
               color: ${COLORS.WHITE};
               @media (min-width: 768px) {
-                padding-right: 18px;
+                padding-right: 48px;
+              }
+
+              a {
+                text-decoration: none;
+                color: ${COLORS.YANIV};
+              }
+              a,
+              a:visited {
+                color: ${COLORS.DARK_END_DUALITY};
+              }
+              a:hover {
+                text-decoration: underline;
               }
             `}
           >
-            <TextBlobs textBlobs={textBlobs} />
+            <div dangerouslySetInnerHTML={createMarkup(html)} />
+            {/* <TextBlobs textBlobs={textBlobs} /> */}
           </div>
           <Form />
         </div>

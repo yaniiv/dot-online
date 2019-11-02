@@ -8,24 +8,18 @@ import * as COLORS from "../../colors"
 
 const about = css`
   max-width: 600px;
-
-  a {
-    text-decoration: none;
-  }
-  a,
-  a:visited {
-    color: ${COLORS.DARK_END_DUALITY};
-  }
-  a:hover {
-    text-decoration: underline;
-  }
 `
 
 const skills = css`
   max-width: 600px;
+`
+
+const aboutContent = css`
+  display: flex;
 
   a {
     text-decoration: none;
+    color: ${COLORS.YANIV};
   }
   a,
   a:visited {
@@ -36,38 +30,22 @@ const skills = css`
   }
 `
 
-const About = ({ textBlobs }) => {
+function createMarkup(html) {
+  return { __html: html }
+}
+
+const About = ({ textBlobs, prismicAbout }) => {
   console.warn({ textBlobs })
 
-  return (
-    <div
-      css={css`
-        display: flex;
-      `}
-    >
-      <div css={about}>
-        {console.warn("prismic about textBlobs", textBlobs)}
-        <h2>
-          Hello, i'm{" "}
-          <Link to="/">
-            <span
-              css={css`
-                color: ${COLORS.DARK_END_DUALITY};
-                text-decoration: underline;
-                text-decoration-color: ${COLORS.YANIV};
+  const htmlContent = prismicAbout.data.text_rich_field.html
+  console.warn("ho", htmlContent)
 
-                &:hover {
-                  color: ${COLORS.YANIV};
-                }
-              `}
-            >
-              yaniv
-            </span>
-          </Link>
-        </h2>
-        <TextBlobs textBlobs={textBlobs} />
+  return (
+    <div css={aboutContent}>
+      <div css={about}>
+        <div dangerouslySetInnerHTML={createMarkup(htmlContent)} />
       </div>
-      <div css={skills}>
+      {/* <div css={skills}>
         {console.warn("prismic skills textBlobs", textBlobs)}
         <h2>
           Hello, i'm{" "}
@@ -88,7 +66,7 @@ const About = ({ textBlobs }) => {
           </Link>
         </h2>
         <TextBlobs textBlobs={textBlobs} />
-      </div>
+      </div> */}
     </div>
   )
 }
