@@ -52,6 +52,9 @@ export const project = css`
 export const browserFrame = css`
   border: 3px solid black;
   border-radius: 3px;
+  /* drop-shadow(offset-x offset-y blur-radius spread-radius color) */
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
 
   @media (min-width: 768px) {
     border: 4px solid black;
