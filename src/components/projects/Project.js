@@ -15,7 +15,7 @@ export const projectContainer = () => {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: ${COLORS.GREY};
+    background: ${COLORS.PURPLE};
   `
 }
 

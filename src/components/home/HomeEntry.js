@@ -1,14 +1,18 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-
+import { css } from "@emotion/core"
 import Layout from "../Layout"
 import Duality from "../threejs/Duality"
 import MagicBorder from "../MagicBorder"
 import Email from "./Email"
 import Projects from "../projects/Projects"
 import TransparentHeader from "../TransparentHeader"
-import * as COLORS from "../../colors"
+import Socials from "../Socials"
+import About from "../about/About"
+import SideNav from "../SideNav"
 
+import * as COLORS from "../../colors"
+import * as SIZES from "../../sizes"
 const normalizePrismicHome = ({ prismicHome: { data } }) => {
   return data.text_fields.map(({ text_field }) => text_field)
 }
@@ -39,6 +43,35 @@ function normalizeProjectData(graphqlResponse) {
   return projectData
 }
 
+const normalizePrismicAbout = ({ prismicAbout: { data } }) => {
+  console.warn({ data })
+
+  return data.text_fields.map(textField => {
+    console.warn({ textField })
+
+    return textField.text_field
+  })
+}
+
+const aboutContainer = css`
+  background: ${COLORS.GREY};
+  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
+  font-family: "Manjari", sans-serif;
+  font-size: 22px;
+  font-weight: 600px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
+const textContainer = css`
+  margin: 0 auto;
+  max-width: 800px;
+  color: ${COLORS.WHITE_SOFT};
+`
+
 const HomeEntry = () => (
   <StaticQuery
     query={graphql`
@@ -67,6 +100,22 @@ const HomeEntry = () => (
             }
           }
         }
+        prismicAbout {
+          id
+          data {
+            text_rich_field {
+              html
+              text
+              raw {
+                type
+                text
+              }
+            }
+            text_fields {
+              text_field
+            }
+          }
+        }
         prismicHome {
           id
           data {
@@ -82,18 +131,34 @@ const HomeEntry = () => (
     `}
     render={data => (
       <Layout backgroundColor={COLORS.PURPLE}>
-        <div>
-          <TransparentHeader />
+        <SideNav />
+        <div id="duality">
           <Duality />
         </div>
 
         <MagicBorder />
-        <Projects projects={normalizeProjectData(data)} />
 
-        <Email
-          html={data.prismicHome.data.text_field_html.html}
-          textBlobs={normalizePrismicHome(data)}
-        />
+        <div className="about" css={aboutContainer}>
+          <div css={textContainer}>
+            <About
+              prismicAbout={data.prismicAbout}
+              textBlobs={normalizePrismicAbout(data)}
+            />
+            <Socials />
+          </div>
+        </div>
+
+        <MagicBorder />
+        <div id="projects">
+          <Projects projects={normalizeProjectData(data)} />
+        </div>
+
+        <div id="contact">
+          <Email
+            html={data.prismicHome.data.text_field_html.html}
+            textBlobs={normalizePrismicHome(data)}
+          />
+        </div>
       </Layout>
     )}
   />
