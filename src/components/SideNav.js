@@ -71,8 +71,12 @@ const headerLinkStyles = css`
 const Circle = ({ size = 24, color = COLORS.YELLOW, fill = "none" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={size}
-    height={size}
+    css={css`
+      vertical-align: middle;
+      stroke-width: 2;
+      height: ${size}px;
+      width: ${size}px;
+    `}
     viewBox="0 0 24 24"
     fill={fill}
     stroke={color}
@@ -91,12 +95,16 @@ const bulleted = css`
 
   .active {
     display: flex;
+    justify-content: flex-end;
 
     .bullet-container {
+      padding: 0 3px 0 8px;
       display: inline-block;
       vertical-align: middle;
+    }
 
-      padding: 0 0 0 10px;
+    svg {
+      fill: ${COLORS.YELLOW};
     }
   }
 `
@@ -104,7 +112,15 @@ const bulleted = css`
 const SideNav = ({ color }) => (
   <header css={headerContainerStyles(color)}>
     <div css={headerLinkStyles}>
-      <div>
+      <div
+        css={css`
+          .active {
+            svg {
+              fill: ${COLORS.YELLOW};
+            }
+          }
+        `}
+      >
         <ScrollLink
           activeClass="active"
           to="duality"
@@ -127,7 +143,7 @@ const SideNav = ({ color }) => (
         >
           about
           <span className="bullet-container">
-            <Circle size={16} />
+            <Circle size={14} />
           </span>
         </ScrollLink>
       </div>
@@ -142,7 +158,7 @@ const SideNav = ({ color }) => (
         >
           projects
           <span className="bullet-container">
-            <Circle size={16} />
+            <Circle size={14} />
           </span>
         </ScrollLink>
       </div>
@@ -157,11 +173,19 @@ const SideNav = ({ color }) => (
         >
           contact
           <span className="bullet-container">
-            <Circle size={16} />
+            <Circle size={14} />
           </span>
         </ScrollLink>
       </div>
-      <div>
+      <div
+        css={css`
+          .active {
+            svg {
+              fill: ${COLORS.PURPLE};
+            }
+          }
+        `}
+      >
         <ScrollLink
           activeClass="active"
           to="foot"

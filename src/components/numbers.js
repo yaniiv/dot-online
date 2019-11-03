@@ -1,4 +1,4 @@
-export const NUM_BALLS = 10
+export const NUM_BALLS = 1
 
 export const MOVING_BALL_PROPERTIES = {
   desktop: {

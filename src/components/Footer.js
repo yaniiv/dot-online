@@ -16,7 +16,7 @@ const FooterContainerStyles = css`
   font-family: "Manjari", sans-serif;
   right: 0;
   bottom: 0;
-  height: 70vh;
+  height: 100vh;
   width: 100vw;
 `
 
