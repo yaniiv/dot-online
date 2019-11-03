@@ -29,10 +29,12 @@ export default function Email({ textBlobs, html }) {
           display: flex;
           margin: 16px auto;
           max-width: 400px;
+          flex-direction: column;
 
           font-family: "Manjari", sans-serif;
           @media (min-width: 768px) {
             max-width: unset;
+            flex-direction: row;
             /* border: 4px solid black; */
             margin: 100px;
           }

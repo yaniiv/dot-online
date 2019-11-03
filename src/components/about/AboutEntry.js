@@ -55,9 +55,6 @@ const AboutEntry = () => {
                   text
                 }
               }
-              text_fields {
-                text_field
-              }
             }
           }
         }
@@ -68,10 +65,7 @@ const AboutEntry = () => {
           {console.warn("prismic about data", data)}
           <div css={pageContainer}>
             <div css={textContainer}>
-              <About
-                prismicAbout={data.prismicAbout}
-                textBlobs={normalizePrismicAbout(data)}
-              />
+              <About prismicAbout={data.prismicAbout} />
               <Socials />
             </div>
           </div>

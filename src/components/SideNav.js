@@ -16,7 +16,7 @@ const headerContainerStyles = backgroundColor => css`
   justify-content: center;
 
   height: 100vh;
-  width: 120px;
+  width: 140px;
 
   right: 0;
   top: 0;
@@ -43,7 +43,7 @@ const headerLinkStyles = css`
     cursor: pointer;
     justify-content: center;
 
-    padding: 0.5rem 1rem;
+    padding: 0.12rem 1rem;
     @media (min-width: 768px) {
       /* padding: 2.5rem 2rem; */
     }
@@ -84,7 +84,24 @@ const Circle = ({ size = 24, color = COLORS.YELLOW, fill = "none" }) => (
   </svg>
 )
 
-const Header = ({ color }) => (
+const bulleted = css`
+  .bullet-container {
+    display: none;
+  }
+
+  .active {
+    display: flex;
+
+    .bullet-container {
+      display: inline-block;
+      vertical-align: middle;
+
+      padding: 0 0 0 10px;
+    }
+  }
+`
+
+const SideNav = ({ color }) => (
   <header css={headerContainerStyles(color)}>
     <div css={headerLinkStyles}>
       <div>
@@ -99,7 +116,7 @@ const Header = ({ color }) => (
           <Circle size={20} />
         </ScrollLink>
       </div>
-      <div>
+      <div css={bulleted}>
         <ScrollLink
           activeClass="active"
           to="about"
@@ -109,9 +126,12 @@ const Header = ({ color }) => (
           duration={500}
         >
           about
+          <span className="bullet-container">
+            <Circle size={16} />
+          </span>
         </ScrollLink>
       </div>
-      <div>
+      <div css={bulleted}>
         <ScrollLink
           activeClass="active"
           to="projects"
@@ -121,9 +141,12 @@ const Header = ({ color }) => (
           duration={500}
         >
           projects
+          <span className="bullet-container">
+            <Circle size={16} />
+          </span>
         </ScrollLink>
       </div>
-      <div>
+      <div css={bulleted}>
         <ScrollLink
           activeClass="active"
           to="contact"
@@ -133,13 +156,25 @@ const Header = ({ color }) => (
           duration={500}
         >
           contact
+          <span className="bullet-container">
+            <Circle size={16} />
+          </span>
         </ScrollLink>
       </div>
       <div>
-        <Circle fill={COLORS.YELLOW} size={20} />
+        <ScrollLink
+          activeClass="active"
+          to="foot"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+        >
+          <Circle fill={COLORS.YELLOW} size={20} />
+        </ScrollLink>
       </div>
     </div>
   </header>
 )
 
-export default Header
+export default SideNav

@@ -37,15 +37,6 @@ const getSwirlDiameter = numSwirls => {
   return swirlDiameter
 }
 
-const getSwirlColors = numSwirls => {
-  const swirlColors = chroma
-    .scale(COLORS.SMALLBALLGRADIENT)
-    .mode("lch")
-    .colors(numSwirls)
-
-  return swirlColors
-}
-
 const getSquiggleStyle = (degreeRotate, color, swirlDiameter) => {
   console.warn("dynamic squiggle swirlDiameter", swirlDiameter)
   const conicGradientProperties = getConicGradient(degreeRotate, color)
@@ -59,8 +50,17 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter) => {
   `
 }
 
-const createSwirlStyles = (numSwirls, swirlDiameter) => {
-  const swirlColors = getSwirlColors(numSwirls)
+const getSwirlColors = (numSwirls, colorScale) => {
+  const swirlColors = chroma
+    .scale(colorScale)
+    .mode("lch")
+    .colors(numSwirls)
+
+  return swirlColors
+}
+
+const createSwirlStyles = ({ numSwirls, swirlDiameter, colorScale }) => {
+  const swirlColors = getSwirlColors(numSwirls, colorScale)
   const rotationPerFrame = 720 / numSwirls
 
   return swirlColors.map((color, index) => {
@@ -71,12 +71,20 @@ const createSwirlStyles = (numSwirls, swirlDiameter) => {
   })
 }
 
-const MagicBorder = () => {
+const MagicBorder = ({
+  colorScale = COLORS.SMALLBALLGRADIENT,
+  backgroundColor = COLORS.PURPLE,
+}) => {
   const [isVisible, setIsVisible] = useState(false)
   const [swirlDiameter, setSwirlDiameter] = useState(
     getSwirlDiameter(numSwirls)
   )
-  const swirlStyles = createSwirlStyles(numSwirls, swirlDiameter)
+
+  const swirlStyles = createSwirlStyles({
+    numSwirls,
+    swirlDiameter,
+    colorScale,
+  })
 
   useEffect(() => {
     // only render swirls after
@@ -96,7 +104,7 @@ const MagicBorder = () => {
         <div
           css={css`
             display: flex;
-            background: ${COLORS.BACKGROUND};
+            background: ${backgroundColor};
             margin-bottom: -${swirlDiameter / 2}px;
           `}
         >

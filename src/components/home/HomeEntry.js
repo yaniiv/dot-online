@@ -1,18 +1,18 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
+
 import Layout from "../Layout"
 import Duality from "../threejs/Duality"
 import MagicBorder from "../MagicBorder"
 import Email from "./Email"
 import Projects from "../projects/Projects"
-import TransparentHeader from "../TransparentHeader"
 import Socials from "../Socials"
 import About from "../about/About"
 import SideNav from "../SideNav"
 
 import * as COLORS from "../../colors"
-import * as SIZES from "../../sizes"
+
 const normalizePrismicHome = ({ prismicHome: { data } }) => {
   return data.text_fields.map(({ text_field }) => text_field)
 }
@@ -66,12 +66,6 @@ const aboutContainer = css`
   justify-content: center;
 `
 
-const textContainer = css`
-  margin: 0 auto;
-  max-width: 800px;
-  color: ${COLORS.WHITE_SOFT};
-`
-
 const HomeEntry = () => (
   <StaticQuery
     query={graphql`
@@ -111,9 +105,6 @@ const HomeEntry = () => (
                 text
               }
             }
-            text_fields {
-              text_field
-            }
           }
         }
         prismicHome {
@@ -139,19 +130,19 @@ const HomeEntry = () => (
         <MagicBorder />
 
         <div className="about" css={aboutContainer}>
-          <div css={textContainer}>
-            <About
-              prismicAbout={data.prismicAbout}
-              textBlobs={normalizePrismicAbout(data)}
-            />
-            <Socials />
-          </div>
+          <About prismicAbout={data.prismicAbout} />
         </div>
 
-        <MagicBorder />
+        <MagicBorder
+          backgroundColor={COLORS.GREY}
+          colorScale={[COLORS.LIGHT_END_DUALITY, COLORS.DARK_END_DUALITY]}
+        />
+
         <div id="projects">
           <Projects projects={normalizeProjectData(data)} />
         </div>
+
+        <MagicBorder />
 
         <div id="contact">
           <Email

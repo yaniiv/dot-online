@@ -1,22 +1,20 @@
 import React from "react"
-import { Link } from "gatsby"
 import { css } from "@emotion/core"
-
-import TextBlobs from "../TextBlobs"
 
 import * as COLORS from "../../colors"
 
-const about = css`
-  max-width: 600px;
-`
+const textContainer = css`
+  margin: 0 auto;
+  width: 100%;
+  padding: 24px;
 
-const skills = css`
-  max-width: 600px;
+  @media (min-width: 758px) {
+    padding: 0 70px;
+  }
+  color: ${COLORS.WHITE_SOFT};
 `
 
 const aboutContent = css`
-  display: flex;
-
   a {
     text-decoration: none;
     color: ${COLORS.YANIV};
@@ -34,39 +32,15 @@ function createMarkup(html) {
   return { __html: html }
 }
 
-const About = ({ textBlobs, prismicAbout }) => {
-  console.warn({ textBlobs })
-
+const About = ({ prismicAbout }) => {
   const htmlContent = prismicAbout.data.text_rich_field.html
-  console.warn("ho", htmlContent)
+  console.warn("about HTML", htmlContent)
 
   return (
-    <div css={aboutContent}>
-      <div css={about}>
+    <div css={textContainer}>
+      <div css={aboutContent}>
         <div dangerouslySetInnerHTML={createMarkup(htmlContent)} />
       </div>
-      {/* <div css={skills}>
-        {console.warn("prismic skills textBlobs", textBlobs)}
-        <h2>
-          Hello, i'm{" "}
-          <Link to="/">
-            <span
-              css={css`
-                color: ${COLORS.DARK_END_DUALITY};
-                text-decoration: underline;
-                text-decoration-color: ${COLORS.YANIV};
-
-                &:hover {
-                  color: ${COLORS.YANIV};
-                }
-              `}
-            >
-              yaniv
-            </span>
-          </Link>
-        </h2>
-        <TextBlobs textBlobs={textBlobs} />
-      </div> */}
     </div>
   )
 }

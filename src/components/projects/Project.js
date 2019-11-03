@@ -22,7 +22,7 @@ export const projectContainer = () => {
 export const project = css`
   margin: auto;
   min-width: 375px;
-  padding: 12px;
+  padding: 12px 24px;
   font-size: 16px;
   width: 100%;
 

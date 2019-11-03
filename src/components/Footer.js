@@ -6,6 +6,8 @@ import { css } from "@emotion/core"
 import * as COLORS from "../colors"
 import * as SIZES from "../sizes"
 
+import Socials from "./Socials"
+
 const FooterContainerStyles = css`
   background: ${COLORS.FOOTER_BACKGROUND};
   display: flex;
@@ -14,7 +16,7 @@ const FooterContainerStyles = css`
   font-family: "Manjari", sans-serif;
   right: 0;
   bottom: 0;
-  height: 100px;
+  height: 70vh;
   width: 100vw;
 `
 
@@ -35,7 +37,7 @@ const Footer = () => {
         }
       `}
       render={data => (
-        <footer css={FooterContainerStyles}>
+        <footer id="foot" css={FooterContainerStyles}>
           <div
             css={css`
               display: flex;
@@ -46,6 +48,7 @@ const Footer = () => {
             `}
           >
             <div>Copyright 2019 © Yaniv Goldobin</div>
+            <Socials />
           </div>
         </footer>
       )}
