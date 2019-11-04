@@ -5,6 +5,7 @@ import { css, jsx } from "@emotion/core"
 import Console from "./Console"
 import ProjectGif from "./ProjectGif"
 import BrowserHeader from "./BrowserHeader"
+import Icon from "../Icon"
 
 import * as COLORS from "../../colors"
 
@@ -20,6 +21,9 @@ export const projectContainer = () => {
 }
 
 export const project = css`
+  font-family: "Manjari", sans-serif;
+  font-size: 16px;
+
   margin: auto;
   min-width: 375px;
   padding: 12px 24px;
@@ -66,6 +70,44 @@ export const browserFrame = css`
   }
 `
 
+const submitButton = css`
+  color: ${COLORS.GREY_DARK};
+  background: ${COLORS.YELLOW};
+  border: 2px solid ${COLORS.PURPLE};
+  margin-top: 24px;
+  display: flex;
+  border-radius: 4px;
+  height: 50px;
+  width: 150px;
+  margin-left: auto;
+  box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
+
+  svg {
+    display: block;
+    margin-left: 8px;
+    width: 24px;
+    height: 24px;
+  }
+`
+
+const Button = ({ toggleIsConsoleOpen }) => {
+  return (
+    <button onClick={toggleIsConsoleOpen} css={submitButton} value="Send Email">
+      <div
+        css={css`
+          display: flex;
+          margin: 0 auto;
+        `}
+      >
+        More Info
+        <div css={css``}>
+          <Icon fill="black" viewBox="0 0 58 58" name="info" />
+        </div>
+      </div>
+    </button>
+  )
+}
+
 class ProjectPage extends React.Component {
   constructor(props) {
     super(props)
@@ -88,15 +130,14 @@ class ProjectPage extends React.Component {
       <div css={projectContainer}>
         <div css={project}>
           <div css={browserFrame}>
-            <BrowserHeader
-              isConsoleOpen={this.state.isConsoleOpen}
-              toggleIsConsoleOpen={this.toggleIsConsoleOpen}
-              link={link}
-            />
+            <BrowserHeader link={link} />
             <div>
               <ProjectGif gif={gif} />
               <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
             </div>
+          </div>
+          <div>
+            <Button toggleIsConsoleOpen={this.toggleIsConsoleOpen} />
           </div>
         </div>
       </div>

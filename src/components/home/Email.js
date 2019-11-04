@@ -44,15 +44,16 @@ export default function Email({ textBlobs, html }) {
           css={css`
             display: flex;
             padding: 0 24px;
+            margin: 0 auto;
             flex-direction: column;
             @media (min-width: 768px) {
+              padding: 0 24px;
               flex-direction: row;
             }
           `}
         >
           <div
             css={css`
-              flex: 2;
               margin-bottom: 24px;
               font-size: 22px;
               color: ${COLORS.WHITE};

@@ -2,6 +2,7 @@ import React from "react"
 import { css } from "@emotion/core"
 
 import * as COLORS from "../../colors"
+import Icon from "../Icon"
 
 const browserHeader = css`
   height: 60px;
@@ -69,15 +70,9 @@ const ExternalLink = ({ color = COLORS.YELLOW }) => (
   </svg>
 )
 
-const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
-  console.warn("BrowserHeader toggleIsConsoleOpen", toggleIsConsoleOpen)
+const BrowserHeader = ({ link }) => {
   return (
     <div css={browserHeader}>
-      {/* <div css={browserButtons}>
-        <BrowserButton />
-        <BrowserButton />
-        <BrowserButton />
-      </div> */}
       <div css={browserUrlBarContainer}>
         <a
           css={browserUrlBar}
@@ -91,10 +86,6 @@ const BrowserHeader = ({ link, toggleIsConsoleOpen, isConsoleOpen }) => {
           </div>
         </a>
       </div>
-      {/* <div onClick={toggleIsConsoleOpen} css={eyeButtonStyles}> */}
-      {/* <Settings /> */}
-      {/* <MoreVertical /> */}
-      {/* </div> */}
     </div>
   )
 }

@@ -7,6 +7,8 @@ const textContainer = css`
   margin: 0 auto;
   width: 100%;
   padding: 24px;
+  max-width: 1000px;
+  display: flex;
 
   @media (min-width: 758px) {
     padding: 0 70px;
@@ -15,6 +17,9 @@ const textContainer = css`
 `
 
 const aboutContent = css`
+  max-width: 600px;
+  margin: 0 auto;
+
   a {
     text-decoration: none;
     color: ${COLORS.YANIV};
@@ -31,6 +36,11 @@ const aboutContent = css`
 function createMarkup(html) {
   return { __html: html }
 }
+
+const emph = css`
+  font-weight: 600px;
+  font-size: 24px;
+`
 
 const About = ({ prismicAbout }) => {
   const htmlContent = prismicAbout.data.text_rich_field.html

@@ -95,26 +95,16 @@ const HomeEntry = () => (
           }
         }
         prismicAbout {
-          id
           data {
             text_rich_field {
               html
-              text
-              raw {
-                type
-                text
-              }
             }
           }
         }
         prismicHome {
-          id
           data {
             text_field_html {
               html
-            }
-            text_fields {
-              text_field
             }
           }
         }
@@ -147,7 +137,7 @@ const HomeEntry = () => (
         <div id="contact">
           <Email
             html={data.prismicHome.data.text_field_html.html}
-            textBlobs={normalizePrismicHome(data)}
+            // textBlobs={normalizePrismicHome(data)}
           />
         </div>
       </Layout>

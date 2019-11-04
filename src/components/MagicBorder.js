@@ -9,7 +9,7 @@ function getNumSwirls() {
   let numSwirls = 18
 
   if (isDesktop()) {
-    numSwirls = 40
+    numSwirls = 50
   }
 
   return numSwirls
