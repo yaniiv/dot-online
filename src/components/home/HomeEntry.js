@@ -1,5 +1,6 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
+import { Waypoint } from "react-waypoint"
 import { css } from "@emotion/core"
 
 import Layout from "../Layout"
@@ -7,7 +8,6 @@ import Duality from "../threejs/Duality"
 import MagicBorder from "../MagicBorder"
 import Email from "./Email"
 import Projects from "../projects/Projects"
-import Socials from "../Socials"
 import About from "../about/About"
 import SideNav from "../SideNav"
 
@@ -64,9 +64,9 @@ const aboutContainer = css`
   justify-content: center;
 `
 
-const HomeEntry = () => (
-  <StaticQuery
-    query={graphql`
+const HomeEntry = () => {
+  const data = useStaticQuery(
+    graphql`
       query Home {
         allPrismicProjects {
           edges {
@@ -107,40 +107,53 @@ const HomeEntry = () => (
           }
         }
       }
-    `}
-    render={data => (
-      <Layout backgroundColor={COLORS.PURPLE}>
-        <SideNav />
-        <div id="duality">
-          <Duality />
-        </div>
+    `
+  )
 
-        <MagicBorder />
+  const [pauseDuality, setPauseDuality] = React.useState(false)
 
-        <div className="about" css={aboutContainer}>
-          <About prismicAbout={data.prismicAbout} />
-        </div>
+  return (
+    <Layout backgroundColor={COLORS.PURPLE}>
+      <SideNav />
+      <div id="duality">
+        <Duality pauseRender={pauseDuality} />
+      </div>
 
-        <MagicBorder
-          backgroundColor={COLORS.GREY}
-          colorScale={[COLORS.LIGHT_END_DUALITY, COLORS.DARK_END_DUALITY]}
-        />
+      <Waypoint
+        topOffset={"-100px"}
+        onEnter={() => {
+          console.warn("PLAY")
+          setPauseDuality(false)
+        }}
+      />
+      <MagicBorder />
 
-        <div id="projects">
-          <Projects projects={normalizeProjectData(data)} />
-        </div>
+      <div className="about" css={aboutContainer}>
+        <About prismicAbout={data.prismicAbout} />
+      </div>
+      <Waypoint
+        topOffset={"-100px"}
+        onEnter={() => {
+          console.warn("'PAUSE DAULTIY'")
+          setPauseDuality(true)
+        }}
+      />
+      <MagicBorder
+        backgroundColor={COLORS.GREY}
+        colorScale={[COLORS.LIGHT_END_DUALITY, COLORS.DARK_END_DUALITY]}
+      />
 
-        <MagicBorder />
+      <div id="projects">
+        <Projects projects={normalizeProjectData(data)} />
+      </div>
 
-        <div id="contact">
-          <Email
-            html={data.prismicHome.data.text_field_html.html}
-            // textBlobs={normalizePrismicHome(data)}
-          />
-        </div>
-      </Layout>
-    )}
-  />
-)
+      <MagicBorder />
+
+      <div id="contact">
+        <Email html={data.prismicHome.data.text_field_html.html} />
+      </div>
+    </Layout>
+  )
+}
 
 export default HomeEntry

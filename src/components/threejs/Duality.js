@@ -12,11 +12,29 @@ const duality = css`
 `
 
 export default class Duality extends Component {
+  constructor(props) {
+    super(props)
+
+    this.ThreeEntryPoint = null
+  }
+
   // passes the mounted div through
   componentDidMount() {
     console.warn("component mount")
-    const ThreeEntryPoint = new ThreeEntryPointManager()
-    ThreeEntryPoint.initialize(this.threeRootElement)
+    this.ThreeEntryPoint = new ThreeEntryPointManager()
+    this.ThreeEntryPoint.initialize(this.threeRootElement)
+  }
+
+  componentDidUpdate() {
+    console.warn(
+      "Duality componentDidUpdate this.props.pauseRender",
+      this.props.pauseRender
+    )
+    if (this.props.pauseRender) {
+      this.ThreeEntryPoint.pause()
+    } else {
+      this.ThreeEntryPoint.resume()
+    }
   }
 
   render() {
