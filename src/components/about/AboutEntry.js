@@ -12,8 +12,6 @@ import * as SIZES from "../../sizes"
 
 const pageContainer = css`
   background: ${COLORS.DARK_END_DUALITY};
-  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
-  font-family: "Manjari", sans-serif;
   font-size: 22px;
   font-weight: 600px;
   height: ${SIZES.DUALITY};

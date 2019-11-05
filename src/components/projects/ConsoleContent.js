@@ -3,7 +3,7 @@ import { css } from "@emotion/core"
 import * as COLORS from "../../colors"
 
 const consoleContentStyles = css`
-  background-color: ${COLORS.PURPLE};
+  background-color: ${COLORS.GREY};
   height: 100%;
   width: 100%;
 `

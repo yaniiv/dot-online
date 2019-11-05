@@ -30,8 +30,8 @@ const headerContainerStyles = backgroundColor => css`
 `
 
 const headerLinkStyles = css`
-  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
-  font-family: "Manjari", sans-serif;
+  /* @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
+  font-family: "Manjari", sans-serif; */
   font-size: 20px;
   display: flex;
   color: ${COLORS.YANIV};

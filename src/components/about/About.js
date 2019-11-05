@@ -44,7 +44,6 @@ const emph = css`
 
 const About = ({ prismicAbout }) => {
   const htmlContent = prismicAbout.data.text_rich_field.html
-  console.warn("about HTML", htmlContent)
 
   return (
     <div css={textContainer}>

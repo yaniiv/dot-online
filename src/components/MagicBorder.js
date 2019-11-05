@@ -38,7 +38,6 @@ const getSwirlDiameter = numSwirls => {
 }
 
 const getSquiggleStyle = (degreeRotate, color, swirlDiameter) => {
-  console.warn("dynamic squiggle swirlDiameter", swirlDiameter)
   const conicGradientProperties = getConicGradient(degreeRotate, color)
 
   return css`

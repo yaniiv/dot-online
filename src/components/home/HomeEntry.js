@@ -55,8 +55,6 @@ const normalizePrismicAbout = ({ prismicAbout: { data } }) => {
 
 const aboutContainer = css`
   background: ${COLORS.GREY};
-  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
-  font-family: "Manjari", sans-serif;
   font-size: 22px;
   font-weight: 600px;
   height: 100vh;

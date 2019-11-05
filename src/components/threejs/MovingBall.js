@@ -36,8 +36,6 @@ export default (scene, ballProperties, color) => {
     z: Math.random(),
   }
 
-  // group.rotation.z = (Math.random() * Math.PI) / 4
-
   // const scale = 4
   const speed = 0.02
   // const textureOffsetSpeed = 0.02

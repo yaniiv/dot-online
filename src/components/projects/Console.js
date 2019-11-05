@@ -10,7 +10,6 @@ const getConsoleStyles = isConsoleOpen => css`
   background-color: ${COLORS.WHITE};
   color: ${COLORS.YELLOW};
   position: absolute;
-  right: 0;
   opacity: 0;
   width: 100%;
   display: flex;
@@ -18,9 +17,6 @@ const getConsoleStyles = isConsoleOpen => css`
   transition: width 0.15s ease-in;
   flex-direction: column;
   margin-top: 0;
-
-  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
-  font-family: "Manjari", sans-serif;
 
   height: calc(100% - 60px);
 

@@ -22,9 +22,6 @@ const formContainer = css`
 
   form {
     background: ${COLORS.PURPLE_DARK};
-
-    /* padding: 16px; */
-    font-family: "Manjari", sans-serif;
     font-size: 16px;
     display: flex;
     flex-direction: column;

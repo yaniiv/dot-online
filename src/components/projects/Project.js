@@ -21,23 +21,16 @@ export const projectContainer = () => {
 }
 
 export const project = css`
-  font-family: "Manjari", sans-serif;
-  font-size: 16px;
+  width: 100%;
+  min-width: 375px;
 
   margin: auto;
-  min-width: 375px;
   padding: 12px 24px;
-  font-size: 16px;
-  width: 100%;
 
-  /* max-width: 375px;
-  max-height: 270px; */
+  font-size: 16px;
 
   @media (min-width: 768px) {
     padding: 0;
-  }
-
-  @media (min-width: 768px) {
     max-width: 648px;
     max-height: 468px;
   }
@@ -56,8 +49,6 @@ export const project = css`
 export const browserFrame = css`
   border: 3px solid black;
   border-radius: 3px;
-  /* drop-shadow(offset-x offset-y blur-radius spread-radius color) */
-  /* offset-x | offset-y | blur-radius | spread-radius | color */
 
   display: flex;
   flex-direction: column;

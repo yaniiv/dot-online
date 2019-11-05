@@ -7,7 +7,7 @@ import Header from "../components/Header"
 import SEO from "../components/Seo"
 import Footer from "../components/Footer"
 
-import "../normalize.css"
+// import "../normalize.css"
 import "./layout.css"
 
 const layoutStyles = backgroundColor => css`

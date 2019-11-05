@@ -6,13 +6,25 @@ import Icon from "./Icon"
 
 import * as COLORS from "../colors"
 
-const socialIconStyle = css`
+const socialIcon = css`
   width: 40px;
   height: 40px;
 
   @media (min-width: 768px) {
+    margin-right: 20px;
     width: 50px;
     height: 50px;
+  }
+`
+
+const iconsContainer = css`
+  display: flex;
+  max-height: 100px;
+  max-width: 230px;
+  margin-left: auto;
+
+  svg {
+    fill: ${COLORS.YANIV};
   }
 `
 
@@ -37,41 +49,24 @@ const Socials = () => {
   } = site
 
   return (
-    <div
-      css={css`
-        margin-top: 30px;
-      `}
-    >
-      <div
-        css={css`
-          display: flex;
-          justify-content: space-around;
-          max-height: 100px;
-          max-width: 230px;
-          margin-left: auto;
-          svg {
-            fill: ${COLORS.YANIV};
-          }
-        `}
-      >
-        {siteSocials.map(({ name, linkTo }) => (
-          <div
-            key={linkTo}
-            css={css`
-              padding: 1.8rem 0;
-            `}
+    <div css={iconsContainer}>
+      {siteSocials.map(({ name, linkTo }) => (
+        <div
+          key={linkTo}
+          css={css`
+            padding: 32px 0;
+          `}
+        >
+          <a
+            href={linkTo}
+            rel="noopener noreferrer"
+            target="_blank"
+            css={socialIcon}
           >
-            <a
-              href={linkTo}
-              rel="noopener noreferrer"
-              target="_blank"
-              css={socialIconStyle}
-            >
-              <Icon name={name} />
-            </a>
-          </div>
-        ))}
-      </div>
+            <Icon name={name} />
+          </a>
+        </div>
+      ))}
     </div>
   )
 }

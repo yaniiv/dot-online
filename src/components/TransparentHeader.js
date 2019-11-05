@@ -7,8 +7,6 @@ import * as COLORS from "../colors"
 import * as SIZES from "../sizes"
 
 const headerContainerStyles = backgroundColor => css`
-  @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
-  font-family: "Manjari", sans-serif;
   display: flex;
   position: absolute;
   background: transparent;
