@@ -115,29 +115,24 @@ const HomeEntry = () => {
   return (
     <Layout backgroundColor={COLORS.PURPLE}>
       <SideNav />
-      <div id="duality">
-        <Duality pauseRender={pauseDuality} />
-      </div>
-
       <Waypoint
-        topOffset={"-100px"}
         onEnter={() => {
           console.warn("PLAY")
           setPauseDuality(false)
         }}
+        onLeave={() => {
+          console.warn("'PAUSE DAULTIY'")
+          setPauseDuality(true)
+        }}
       />
+
+      <Duality pauseRender={pauseDuality} />
       <MagicBorder />
 
       <div className="about" css={aboutContainer}>
         <About prismicAbout={data.prismicAbout} />
       </div>
-      <Waypoint
-        topOffset={"-100px"}
-        onEnter={() => {
-          console.warn("'PAUSE DAULTIY'")
-          setPauseDuality(true)
-        }}
-      />
+
       <MagicBorder
         backgroundColor={COLORS.GREY}
         colorScale={[COLORS.LIGHT_END_DUALITY, COLORS.DARK_END_DUALITY]}

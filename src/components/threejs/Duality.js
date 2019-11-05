@@ -3,8 +3,6 @@ import { css } from "@emotion/core"
 
 import ThreeEntryPointManager from "./ThreeEntryPointManager"
 
-import "./duality.css"
-
 const duality = css`
   margin: auto;
   height: 100vh;
@@ -18,9 +16,7 @@ export default class Duality extends Component {
     this.ThreeEntryPoint = null
   }
 
-  // passes the mounted div through
   componentDidMount() {
-    console.warn("component mount")
     this.ThreeEntryPoint = new ThreeEntryPointManager()
     this.ThreeEntryPoint.initialize(this.threeRootElement)
   }
@@ -39,7 +35,11 @@ export default class Duality extends Component {
 
   render() {
     return (
-      <div css={duality} ref={element => (this.threeRootElement = element)} />
+      <div
+        id="duality"
+        css={duality}
+        ref={element => (this.threeRootElement = element)}
+      />
     )
   }
 }
