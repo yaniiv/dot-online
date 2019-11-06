@@ -16,33 +16,16 @@ const layoutStyles = backgroundColor => css`
 `
 
 const Layout = ({ children, backgroundColor }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-            siteSocials {
-              name
-              linkTo
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <div css={layoutStyles(backgroundColor)}>
-        <SEO title="Home" keywords={[`yaniv`, `goldobin`]} />
-        {/* <Header siteTitle="yaniv" color={backgroundColor} /> */}
-        <main>{children}</main>
-        <Footer />
-      </div>
-    )}
-  />
+  <div css={layoutStyles(backgroundColor)}>
+    <SEO title="Home" keywords={[`yaniv`, `goldobin`]} />
+    <main>{children}</main>
+    <Footer />
+  </div>
 )
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  backgroundColor: PropTypes.string,
 }
 
 export default Layout

@@ -54,7 +54,7 @@ const Socials = () => {
         <div
           key={linkTo}
           css={css`
-            padding: 32px 0;
+            padding: 38px 0;
           `}
         >
           <a

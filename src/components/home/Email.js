@@ -2,14 +2,13 @@ import React from "react"
 import { css } from "@emotion/core"
 
 import Form from "./Form"
-import TextBlobs from "../TextBlobs"
 
 import * as COLORS from "../../colors"
 
 const pageContainer = css`
+  background: ${COLORS.GREY};
   height: 100vh;
   width: 100vw;
-  background: ${COLORS.CONTACT_FORM_BACKGROUND};
 
   display: flex;
   flex-direction: column;
@@ -25,23 +24,13 @@ export default function Email({ textBlobs, html }) {
     <div css={pageContainer}>
       <div
         css={css`
-          display: flex;
-          margin: 16px auto;
-          max-width: 400px;
-          flex-direction: column;
-
-          @media (min-width: 768px) {
-            max-width: unset;
-            flex-direction: row;
-            margin: 100px;
-          }
+          max-width: 1000px;
         `}
       >
         <div
           css={css`
             display: flex;
-            padding: 0 24px;
-            margin: 0 auto;
+            padding: 0 40px;
             flex-direction: column;
             @media (min-width: 768px) {
               padding: 0 24px;
@@ -72,7 +61,6 @@ export default function Email({ textBlobs, html }) {
             `}
           >
             <div dangerouslySetInnerHTML={createMarkup(html)} />
-            {/* <TextBlobs textBlobs={textBlobs} /> */}
           </div>
           <Form />
         </div>

@@ -25,7 +25,7 @@ export const project = css`
   min-width: 375px;
 
   margin: auto;
-  padding: 12px 24px;
+  padding: 12px 40px;
 
   font-size: 16px;
 
@@ -47,8 +47,8 @@ export const project = css`
 `
 
 export const browserFrame = css`
-  border: 3px solid black;
-  border-radius: 3px;
+  border: 2px solid black;
+  border-radius: 2px;
 
   display: flex;
   flex-direction: column;

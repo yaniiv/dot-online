@@ -6,8 +6,7 @@ import * as COLORS from "../../colors"
 const textContainer = css`
   margin: 0 auto;
   width: 100%;
-  padding: 24px;
-  max-width: 1000px;
+  padding: 0 40px;
   display: flex;
 
   @media (min-width: 758px) {

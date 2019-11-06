@@ -8,13 +8,11 @@ import * as COLORS from "../../colors"
 
 const formContainer = css`
   width: 100%;
-  min-width: 330px;
+  min-width: 300px;
   flex: 1;
-  /* border: 4px solid black; */
   border-radius: 4px;
 
   @media (min-width: 768px) {
-    /* border: 4px solid black; */
     background: ${COLORS.PURPLE_DARK};
     padding: 18px;
     border-radius: 6px;
@@ -27,7 +25,6 @@ const formContainer = css`
     flex-direction: column;
     justify-content: center;
     background: ${COLORS.TRANSPARENT};
-    margin-bottom: 8px;
 
     input {
       margin: 0 0 24px 0;

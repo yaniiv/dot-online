@@ -12,39 +12,53 @@ const headerContainerStyles = backgroundColor => css`
   background: ${backgroundColor};
   position: fixed;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  /* justify-content: center; */
 
-  height: 100vh;
-  width: 140px;
+  height: 300px;
+  width: 30px;
 
-  right: 0;
-  top: 0;
+  left: 0;
+  top: 30vh;
 
-  /* writing-mode: vertical-rl; */
+  writing-mode: vertical-lr;
   /* padding: 1.5rem 1.5rem; */
 
   @media (min-width: 768px) {
+    writing-mode: horizontal-tb;
+    height: 100vh;
+    width: 140px;
+    flex-direction: column;
+    justify-content: center;
+    left: unset;
+    right: 0;
+    top: 0;
     /* padding: 0 2rem; */
   }
 `
 
 const headerLinkStyles = css`
-  /* @import url("https://fonts.googleapis.com/css?family=Manjari&display=swap");
-  font-family: "Manjari", sans-serif; */
   font-size: 20px;
   display: flex;
   color: ${COLORS.YANIV};
-  flex-direction: column;
+  flex-direction: row;
   text-align: right;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+  }
 
   div {
     margin: 0;
     cursor: pointer;
     justify-content: center;
 
-    padding: 0.12rem 1rem;
+    padding: 10px 4px;
+
     @media (min-width: 768px) {
+      flex-direction: column;
+      padding: 0.12rem 1rem;
       /* padding: 2.5rem 2rem; */
     }
 
@@ -98,9 +112,18 @@ const bulleted = css`
     justify-content: flex-end;
 
     .bullet-container {
-      padding: 0 3px 0 8px;
+      padding: 8px 8px 0 0px;
+      margin-left: -4px;
+
       display: inline-block;
       vertical-align: middle;
+
+      @media (min-width: 768px) {
+        margin: unset;
+        flex-direction: column;
+        padding: 0 3px 0 8px;
+        /* padding: 2.5rem 2rem; */
+      }
     }
 
     svg {
@@ -114,8 +137,16 @@ const SideNav = ({ color }) => (
     <div css={headerLinkStyles}>
       <div
         css={css`
+          @media (max-width: 768px) {
+            svg {
+              margin-left: -4px;
+              fill: ${COLORS.YELLOW};
+            }
+          }
+
           .active {
             svg {
+              margin-left: -4px;
               fill: ${COLORS.YELLOW};
             }
           }
@@ -126,7 +157,6 @@ const SideNav = ({ color }) => (
           to="duality"
           spy={true}
           smooth={true}
-          offset={-70}
           duration={500}
         >
           <Circle size={20} />
@@ -138,7 +168,6 @@ const SideNav = ({ color }) => (
           to="about"
           spy={true}
           smooth={true}
-          offset={-70}
           duration={500}
         >
           about
@@ -153,8 +182,7 @@ const SideNav = ({ color }) => (
           to="projects"
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          duration={1000}
         >
           projects
           <span className="bullet-container">
@@ -168,8 +196,7 @@ const SideNav = ({ color }) => (
           to="contact"
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          duration={1000}
         >
           contact
           <span className="bullet-container">
@@ -179,6 +206,13 @@ const SideNav = ({ color }) => (
       </div>
       <div
         css={css`
+          @media (max-width: 768px) {
+            svg {
+              margin-left: -4px;
+              fill: ${COLORS.YELLOW};
+            }
+          }
+
           .active {
             svg {
               fill: ${COLORS.PURPLE};
@@ -191,8 +225,7 @@ const SideNav = ({ color }) => (
           to="foot"
           spy={true}
           smooth={true}
-          offset={-70}
-          duration={500}
+          duration={1000}
         >
           <Circle fill={COLORS.YELLOW} size={20} />
         </ScrollLink>
