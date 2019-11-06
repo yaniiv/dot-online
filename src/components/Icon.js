@@ -92,7 +92,7 @@ const getPath = (name, props) => {
       )
     case "out-link":
       return (
-        <g fill="none">
+        <g>
           <path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8" />
         </g>
       )

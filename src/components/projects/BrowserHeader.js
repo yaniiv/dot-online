@@ -30,7 +30,7 @@ const browserUrlBar = css`
   flex: 1;
   cursor: pointer;
   padding: 0 16px;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen;
+  font-family: -apple-system, BlinkMacSystemFont;
   text-decoration: none;
   font-size: 18px;
   font-weight: 400;
@@ -44,32 +44,6 @@ const browserUrlBar = css`
   }
 `
 
-const ExternalLink = ({ color = COLORS.YELLOW }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    css={css`
-      vertical-align: middle;
-      stroke-width: 1.5;
-      height: 16px;
-      width: 16px;
-
-      @media (min-width: 768px) {
-        stroke-width: 2;
-        height: 20px;
-        width: 20px;
-      }
-    `}
-    stroke={color}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <g fill="none">
-      <path d="M18 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8c0-1.1.9-2 2-2h5M15 3h6v6M10 14L20.2 3.8" />
-    </g>
-  </svg>
-)
-
 const BrowserHeader = ({ link }) => {
   return (
     <div css={browserHeader}>
@@ -82,7 +56,25 @@ const BrowserHeader = ({ link }) => {
         >
           {link}
           <div>
-            <ExternalLink />
+            <Icon
+              css={css`
+                vertical-align: middle;
+                stroke-width: 1.5;
+                height: 16px;
+                width: 16px;
+                stroke: ${COLORS.YELLOW};
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+
+                @media (min-width: 768px) {
+                  stroke-width: 2;
+                  height: 20px;
+                  width: 20px;
+                }
+              `}
+              name="out-link"
+            />
           </div>
         </a>
       </div>

@@ -1,6 +1,8 @@
 import React from "react"
 import { css } from "@emotion/core"
 
+import Image from "../Image"
+
 import * as COLORS from "../../colors"
 
 const textContainer = css`
@@ -20,10 +22,9 @@ const aboutContent = css`
   margin: 0 auto;
 
   a {
-    text-decoration: none;
     color: ${COLORS.YANIV};
   }
-  a,
+
   a:visited {
     color: ${COLORS.DARK_END_DUALITY};
   }
@@ -32,22 +33,14 @@ const aboutContent = css`
   }
 `
 
-function createMarkup(html) {
-  return { __html: html }
-}
-
-const emph = css`
-  font-weight: 600px;
-  font-size: 24px;
-`
-
 const About = ({ prismicAbout }) => {
   const htmlContent = prismicAbout.data.text_rich_field.html
 
   return (
     <div css={textContainer}>
+      {/* <Image src="me.png" /> */}
       <div css={aboutContent}>
-        <div dangerouslySetInnerHTML={createMarkup(htmlContent)} />
+        <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
       </div>
     </div>
   )

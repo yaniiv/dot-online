@@ -11,6 +11,7 @@ const formContainer = css`
   min-width: 300px;
   flex: 1;
   border-radius: 4px;
+  box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
 
   @media (min-width: 768px) {
     background: ${COLORS.PURPLE_DARK};

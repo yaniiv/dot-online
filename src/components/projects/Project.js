@@ -62,6 +62,7 @@ export const browserFrame = css`
 `
 
 const submitButton = css`
+  cursor: pointer;
   color: ${COLORS.GREY_DARK};
   background: ${COLORS.YELLOW};
   border: 2px solid ${COLORS.PURPLE};
