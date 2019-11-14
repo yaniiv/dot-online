@@ -4,15 +4,18 @@ import { css } from "@emotion/core"
 import * as COLORS from "../../colors"
 
 const container = css`
-  margin: 0 auto;
-  width: 100%;
-  padding: 60px 40px;
   display: flex;
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 60px 40px;
+  font-size: 18px;
 
   @media (min-width: 758px) {
+    font-size: 20px;
     padding: 0 70px;
   }
-  color: ${COLORS.WHITE_SOFT};
+  color: ${COLORS.WHITE};
 `
 
 const text = css`
@@ -26,6 +29,7 @@ const text = css`
   a:visited {
     color: ${COLORS.DARK_END_DUALITY};
   }
+
   a:hover {
     text-decoration: underline;
   }
