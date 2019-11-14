@@ -7,34 +7,32 @@ import Icon from "../Icon"
 import * as COLORS from "../../colors"
 
 const formContainer = css`
+  background: ${COLORS.PURPLE_DARK};
   width: 100%;
-  min-width: 300px;
+
   flex: 1;
   border-radius: 4px;
   box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 18px;
 
   @media (min-width: 768px) {
-    background: ${COLORS.PURPLE_DARK};
-    padding: 18px;
+    min-width: 300px;
     border-radius: 6px;
-  }
-
-  form {
-    background: ${COLORS.PURPLE_DARK};
-    font-size: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: ${COLORS.TRANSPARENT};
-
-    input {
-      margin: 0 0 24px 0;
-      padding: 8px 18px;
-    }
   }
 `
 
+const form = css`
+  background: ${COLORS.PURPLE_DARK};
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
+
 const inputText = css`
+  margin: 0 0 24px 0;
+  width: 100%;
+  padding: 8px 30px;
   background: ${COLORS.GREY_DARK};
   color: ${COLORS.YELLOW};
   border: 2px solid ${COLORS.PURPLE};
@@ -50,13 +48,6 @@ const submitButton = css`
   height: 50px;
   width: 150px;
   margin-left: auto;
-
-  svg {
-    display: block;
-    margin-left: 8px;
-    width: 24px;
-    height: 24px;
-  }
 `
 
 export default function Form() {
@@ -66,7 +57,7 @@ export default function Form() {
 
   return (
     <div css={formContainer}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form css={form} onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
           placeholder="name"
@@ -100,8 +91,18 @@ export default function Form() {
             `}
           >
             Send Mail
-            <div css={css``}>
-              <Icon fill="black" viewBox="0 0 58 58" name="airplane" />
+            <div>
+              <Icon
+                fill="black"
+                css={css`
+                  display: block;
+                  margin-left: 8px;
+                `}
+                width="24px"
+                height="24px"
+                viewBox="0 0 58 58"
+                name="airplane"
+              />
             </div>
           </div>
         </button>

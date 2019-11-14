@@ -6,9 +6,8 @@ import Form from "../home/Form"
 import * as COLORS from "../../colors"
 
 const pageContainer = css`
-  background: ${COLORS.GREY};
-  height: calc(100vh - 100px);
   width: 100vw;
+  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -24,7 +23,7 @@ const contentContainer = css`
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  padding: 0 40px;
+  padding: 0 30px;
   flex-direction: column;
 
   @media (min-width: 768px) {
@@ -36,6 +35,7 @@ const contentContainer = css`
 const text = css`
   margin-bottom: 24px;
   color: ${COLORS.WHITE};
+
   @media (min-width: 768px) {
     padding-right: 48px;
   }

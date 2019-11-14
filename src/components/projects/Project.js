@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { css } from "@emotion/core"
 
 import Console from "./Console"
@@ -108,39 +108,31 @@ const Button = ({ toggleIsConsoleOpen }) => {
   )
 }
 
-class ProjectPage extends React.Component {
-  constructor(props) {
-    super(props)
+const Project = ({ data }) => {
+  const [isConsoleOpen, setIsConsoleOpen] = useState(false)
 
-    this.state = {
-      isConsoleOpen: false,
-    }
+  const toggleIsConsoleOpen = () => {
+    setIsConsoleOpen(prevState => ({ isConsoleOpen: !prevState.isConsoleOpen }))
   }
 
-  toggleIsConsoleOpen = () => {
-    this.setState(prevState => ({ isConsoleOpen: !prevState.isConsoleOpen }))
-  }
+  const { link, gif, info } = data
 
-  render() {
-    const { link, gif, info } = this.props.data
-
-    return (
-      <div css={projectContainer}>
-        <div css={project}>
-          <div css={browserFrame}>
-            <BrowserHeader link={link} />
-            <div>
-              <ProjectGif gif={gif} />
-              <Console info={info} isConsoleOpen={this.state.isConsoleOpen} />
-            </div>
-          </div>
+  return (
+    <div css={projectContainer}>
+      <div css={project}>
+        <div css={browserFrame}>
+          <BrowserHeader link={link} />
           <div>
-            <Button toggleIsConsoleOpen={this.toggleIsConsoleOpen} />
+            <ProjectGif gif={gif} />
+            <Console info={info} isConsoleOpen={isConsoleOpen} />
           </div>
         </div>
+        <div>
+          <Button toggleIsConsoleOpen={toggleIsConsoleOpen} />
+        </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
-export default ProjectPage
+export default Project

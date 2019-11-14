@@ -51,19 +51,14 @@ const Socials = () => {
   return (
     <div css={iconsContainer}>
       {siteSocials.map(({ name, linkTo }) => (
-        <div
-          key={linkTo}
-          css={css`
-            padding: 38px 0;
-          `}
-        >
+        <div key={linkTo}>
           <a
             href={linkTo}
             rel="noopener noreferrer"
             target="_blank"
             css={socialIcon}
           >
-            <Icon name={name} />
+            <Icon height="24px" width="24px" name={name} />
           </a>
         </div>
       ))}

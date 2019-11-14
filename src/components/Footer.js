@@ -9,7 +9,7 @@ const FooterContainerStyles = css`
   background: ${COLORS.GREY_DARK};
   display: flex;
   align-items: center;
-  height: 100px;
+  height: 80px;
   width: 100%;
   color: ${COLORS.GREY_LIGHT};
   padding: 0 40px;

@@ -1,7 +1,14 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { css } from "@emotion/core"
 
 import Email from "./Email"
+
+import * as COLORS from "../../colors"
+
+const contact = css`
+  background: ${COLORS.GREY};
+`
 
 const PRISMIC_CONTACT_QUERY = graphql`
   query Contact {
@@ -20,7 +27,7 @@ const Contact = () => {
   const html = prismicHome.data.text_field_html.html
 
   return (
-    <div id="contact">
+    <div id="contact" css={contact}>
       <Email html={html} />
     </div>
   )
