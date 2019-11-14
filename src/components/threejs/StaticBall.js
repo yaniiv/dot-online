@@ -1,7 +1,7 @@
 /* eslint-disable */
 import * as THREE from "three"
 
-import * as NUMBERS from "../numbers"
+import * as NUMBERS from "../../numbers"
 
 export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
   const group = new THREE.Group()

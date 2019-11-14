@@ -4,7 +4,7 @@ import chroma from "chroma-js"
 import Stats from "stats.js"
 
 import * as COLORS from "../../colors"
-import * as NUMBERS from "../numbers"
+import * as NUMBERS from "../../numbers"
 
 import StaticBall from "./StaticBall"
 import GeneralLights from "./GeneralLights"

@@ -4,6 +4,15 @@ import { css } from "@emotion/core"
 import * as COLORS from "../../colors"
 
 const container = css`
+  background: ${COLORS.GREY};
+  font-size: 22px;
+  font-weight: 600px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   display: flex;
   width: 100%;
   margin: 0 auto;
@@ -54,7 +63,7 @@ const About = ({ prismicAbout }) => {
   const htmlContent = prismicAbout.data.text_rich_field.html
   const imageUrl = prismicAbout.data.image_of_me.url
   return (
-    <div css={container}>
+    <div id="about" css={container}>
       <div css={text}>
         <div>
           <img css={image} src={imageUrl} />

@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
-import Header from "../components/Header"
 import SEO from "../components/Seo"
 import Footer from "../components/Footer"
+
+import * as COLORS from "../colors"
 
 import "../normalize.css"
 import "./layout.css"
@@ -26,6 +26,10 @@ const Layout = ({ children, backgroundColor }) => (
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   backgroundColor: PropTypes.string,
+}
+
+Layout.defaultProps = {
+  backgroundColor: COLORS.PURPLE,
 }
 
 export default Layout

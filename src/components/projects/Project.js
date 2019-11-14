@@ -1,6 +1,5 @@
-/* eslint-disable */
 import React from "react"
-import { css, jsx } from "@emotion/core"
+import { css } from "@emotion/core"
 
 import Console from "./Console"
 import ProjectGif from "./ProjectGif"
@@ -9,16 +8,14 @@ import Icon from "../Icon"
 
 import * as COLORS from "../../colors"
 
-export const projectContainer = () => {
-  return css`
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: ${COLORS.PURPLE};
-  `
-}
+export const projectContainer = css`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: ${COLORS.PURPLE};
+`
 
 export const project = css`
   width: 100%;
@@ -61,7 +58,7 @@ export const browserFrame = css`
   }
 `
 
-const submitButton = css`
+const infoButton = css`
   cursor: pointer;
   color: ${COLORS.GREY_DARK};
   background: ${COLORS.YELLOW};
@@ -84,7 +81,7 @@ const submitButton = css`
 
 const Button = ({ toggleIsConsoleOpen }) => {
   return (
-    <button onClick={toggleIsConsoleOpen} css={submitButton} value="Send Email">
+    <button onClick={toggleIsConsoleOpen} css={infoButton} value="Send Email">
       <div
         css={css`
           display: flex;
@@ -120,12 +117,10 @@ class ProjectPage extends React.Component {
   }
 
   toggleIsConsoleOpen = () => {
-    console.warn("toggleIsConsoleOpen")
     this.setState(prevState => ({ isConsoleOpen: !prevState.isConsoleOpen }))
   }
 
   render() {
-    console.warn("Project Component Props,", this.props.data)
     const { link, gif, info } = this.props.data
 
     return (

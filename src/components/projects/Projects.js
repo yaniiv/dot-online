@@ -5,17 +5,31 @@ import { css } from "@emotion/core"
 
 import * as SIZES from "../../sizes"
 
-const Projects = ({ projects }) => (
-  <div
-    css={css`
-      /* margin-top: -${SIZES.HEADER_HEIGHT_MOBILE};
+function normalizeProjectData(allPrismicProjects) {
+  const projectData = allPrismicProjects.edges.map(project => {
+    const {
+      node: {
+        id,
+        data: { project_website, project_gif, project_description },
+      },
+    } = project
 
-      @media (min-width: 768px) {
-        margin-top: -${SIZES.HEADER_HEIGHT_DESKTOP};
-      } */
-    `}
-  >
-    {projects.map(project => (
+    return {
+      id,
+      link: project_website.url,
+      gif: {
+        ...project_gif,
+      },
+      info: project_description.text,
+    }
+  })
+
+  return projectData
+}
+
+const Projects = ({ allPrismicProjects }) => (
+  <div id="projects">
+    {normalizeProjectData(allPrismicProjects).map(project => (
       <Project key={project.id} data={project} />
     ))}
   </div>
