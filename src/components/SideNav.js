@@ -9,147 +9,44 @@ import * as COLORS from "../colors"
 import * as SIZES from "../sizes"
 
 const headerContainerStyles = backgroundColor => css`
-  background: ${backgroundColor};
   position: absolute;
-  display: flex;
-  flex-direction: row;
-  /* justify-content: center; */
-
-  height: 300px;
-  width: 30px;
-
-  left: 0;
+  right: 0;
   top: 0;
 
-  /* padding: 1.5rem 1.5rem; */
-
-  @media (min-width: 768px) {
-    height: 100vh;
-    width: 140px;
-    flex-direction: column;
-    justify-content: center;
-    left: unset;
-    right: 0;
-    top: 0;
-    /* padding: 0 2rem; */
-  }
-`
-
-const headerLinkStyles = css`
-  font-size: 20px;
   display: flex;
-  color: ${COLORS.YANIV};
-  flex-direction: row;
-  text-align: right;
-  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
 
-  @media (min-width: 768px) {
-    flex-direction: column;
-  }
-
-  div {
-    margin: 0;
-    cursor: pointer;
-    justify-content: center;
-
-    padding: 10px 4px;
-
-    @media (min-width: 768px) {
-      flex-direction: column;
-      padding: 0.12rem 1rem;
-      /* padding: 2.5rem 2rem; */
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  a {
-    text-decoration: none;
-    /* 
-    padding: 1.5rem 1rem;
-    @media (min-width: 768px) {
-      padding: 2.5rem 2rem;
-    } */
-
-    &:visited {
-      color: ${COLORS.YANIV};
-      text-decoration: none;
-    }
-  }
+  background: ${COLORS.TRANSPARENT};
 `
 
-const Circle = ({ size = 24, color = COLORS.YELLOW, fill = "none" }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    css={css`
-      vertical-align: middle;
-      stroke-width: 2;
-      height: ${size}px;
-      width: ${size}px;
-    `}
-    viewBox="0 0 24 24"
-    fill={fill}
-    stroke={color}
-    strokeWidth="3"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <circle cx="12" cy="12" r="10" />
-  </svg>
-)
+const headerLinkContainer = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-const bulleted = css`
-  .bullet-container {
-    display: none;
-  }
+  margin: 20px 30px;
 
-  .active {
-    display: flex;
-    justify-content: flex-end;
+  font-size: 22px;
+  text-align: right;
 
-    .bullet-container {
-      padding: 8px 8px 0 0px;
-      margin-left: -4px;
+  color: ${COLORS.YANIV};
+`
 
-      display: inline-block;
-      vertical-align: middle;
+const headerLink = css`
+  margin: 4px 0;
 
-      @media (min-width: 768px) {
-        margin: unset;
-        flex-direction: column;
-        padding: 0 3px 0 8px;
-        /* padding: 2.5rem 2rem; */
-      }
-    }
+  cursor: pointer;
 
-    svg {
-      fill: ${COLORS.YELLOW};
-    }
+  &:hover {
+    text-decoration: underline;
   }
 `
 
 const SideNav = ({ color }) => (
   <header css={headerContainerStyles(color)}>
-    <div css={headerLinkStyles}>
-      <div
-        css={css`
-          @media (max-width: 768px) {
-            svg {
-              margin-left: -4px;
-              fill: ${COLORS.YELLOW};
-            }
-          }
-
-          .active {
-            svg {
-              margin-left: -4px;
-              fill: ${COLORS.YELLOW};
-            }
-          }
-        `}
-      >
+    <div css={headerLinkContainer}>
+      <div css={headerLink}>
         <ScrollLink
           activeClass="active"
           to="duality"
@@ -157,10 +54,10 @@ const SideNav = ({ color }) => (
           smooth={true}
           duration={500}
         >
-          <Circle size={20} />
+          yaniv
         </ScrollLink>
       </div>
-      <div css={bulleted}>
+      <div css={headerLink}>
         <ScrollLink
           activeClass="active"
           to="about"
@@ -169,12 +66,9 @@ const SideNav = ({ color }) => (
           duration={500}
         >
           about
-          <span className="bullet-container">
-            <Circle size={14} />
-          </span>
         </ScrollLink>
       </div>
-      <div css={bulleted}>
+      <div css={headerLink}>
         <ScrollLink
           activeClass="active"
           to="projects"
@@ -183,12 +77,9 @@ const SideNav = ({ color }) => (
           duration={1000}
         >
           projects
-          <span className="bullet-container">
-            <Circle size={14} />
-          </span>
         </ScrollLink>
       </div>
-      <div css={bulleted}>
+      <div css={headerLink}>
         <ScrollLink
           activeClass="active"
           to="contact"
@@ -197,35 +88,6 @@ const SideNav = ({ color }) => (
           duration={1000}
         >
           contact
-          <span className="bullet-container">
-            <Circle size={14} />
-          </span>
-        </ScrollLink>
-      </div>
-      <div
-        css={css`
-          @media (max-width: 768px) {
-            svg {
-              margin-left: -4px;
-              fill: ${COLORS.YELLOW};
-            }
-          }
-
-          .active {
-            svg {
-              fill: ${COLORS.PURPLE};
-            }
-          }
-        `}
-      >
-        <ScrollLink
-          activeClass="active"
-          to="foot"
-          spy={true}
-          smooth={true}
-          duration={1000}
-        >
-          <Circle fill={COLORS.YELLOW} size={20} />
         </ScrollLink>
       </div>
     </div>

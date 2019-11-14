@@ -48,18 +48,13 @@ const image = css`
 
 const About = ({ prismicAbout }) => {
   const htmlContent = prismicAbout.data.text_rich_field.html
-
+  const imageUrl = prismicAbout.data.image_of_me.url
   return (
     <div css={container}>
       <div css={text}>
-        <div css={css``}>
-          <div>
-            <img
-              css={image}
-              src="https://images.prismic.io/dot-online/591242e8-1e66-4d6e-b404-ee4d071ff28a_me.png?auto=compress,format"
-            />
-            <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-          </div>
+        <div>
+          <img css={image} src={imageUrl} />
+          <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
         </div>
       </div>
     </div>

@@ -94,6 +94,9 @@ const HomeEntry = () => {
         }
         prismicAbout {
           data {
+            image_of_me {
+              url
+            }
             text_rich_field {
               html
             }

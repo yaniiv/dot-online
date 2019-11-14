@@ -93,7 +93,17 @@ const Button = ({ toggleIsConsoleOpen }) => {
       >
         More Info
         <div css={css``}>
-          <Icon fill="black" viewBox="0 0 58 58" name="info" />
+          <Icon
+            fill="none"
+            css={css`
+              stroke-width: 3;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              fill: none;
+            `}
+            viewBox="0 0 24 24"
+            name="info"
+          />
         </div>
       </div>
     </button>
