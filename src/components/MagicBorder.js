@@ -6,7 +6,7 @@ import * as COLORS from "../colors"
 import isDesktop from "../utils"
 
 function getNumSwirls() {
-  let numSwirls = 18
+  let numSwirls = 25
 
   if (isDesktop()) {
     numSwirls = 50
