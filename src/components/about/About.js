@@ -1,11 +1,11 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 import * as COLORS from "../../colors"
 
 const container = css`
   background: ${COLORS.GREY};
-  font-size: 22px;
   font-weight: 600px;
   height: 100vh;
   width: 100vw;
@@ -59,15 +59,33 @@ const image = css`
   }
 `
 
-const About = ({ prismicAbout }) => {
-  const htmlContent = prismicAbout.data.text_rich_field.html
+const PRISMIC_ABOUT_QUERY = graphql`
+  query About {
+    prismicAbout {
+      data {
+        image_of_me {
+          url
+        }
+        text_rich_field {
+          html
+        }
+      }
+    }
+  }
+`
+
+const About = () => {
+  const { prismicAbout } = useStaticQuery(PRISMIC_ABOUT_QUERY)
+
+  const html = prismicAbout.data.text_rich_field.html
   const imageUrl = prismicAbout.data.image_of_me.url
+
   return (
     <div id="about" css={container}>
       <div css={text}>
         <div>
-          <img css={image} src={imageUrl} />
-          <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+          <img alt="yaniv" css={image} src={imageUrl} />
+          <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </div>
     </div>

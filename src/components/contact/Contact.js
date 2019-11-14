@@ -1,13 +1,27 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Email from "./Email"
 
-import * as QUERIES from "../../queries"
+const PRISMIC_CONTACT_QUERY = graphql`
+  query Contact {
+    prismicHome {
+      data {
+        text_field_html {
+          html
+        }
+      }
+    }
+  }
+`
 
-const Contact = ({ prismicHome }) => {
+const Contact = () => {
+  const { prismicHome } = useStaticQuery(PRISMIC_CONTACT_QUERY)
+  const html = prismicHome.data.text_field_html.html
+
   return (
     <div id="contact">
-      <Email prismicHome={prismicHome} />
+      <Email html={html} />
     </div>
   )
 }

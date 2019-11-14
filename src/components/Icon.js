@@ -1,7 +1,5 @@
 import React from "react"
 
-import * as COLORS from "../colors"
-
 const getPath = (name, props) => {
   switch (name) {
     case "github":
@@ -101,7 +99,7 @@ const SVG = ({
   className = "",
   height = "100%",
   viewBox = "0 0 24 24",
-  stroke = "#000",
+  stroke = "none",
   strokeWidth,
 }) => (
   <svg

@@ -1,9 +1,36 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
 
 import Project from "./Project"
-import { css } from "@emotion/core"
 
-import * as SIZES from "../../sizes"
+const PRISMIC_CONTACT_QUERY = graphql`
+  query Projects {
+    allPrismicProjects {
+      edges {
+        node {
+          id
+          first_publication_date
+          data {
+            project_website {
+              url
+              target
+            }
+            project_gif {
+              name
+              url
+              width
+              height
+            }
+            project_description {
+              html
+              text
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 function normalizeProjectData(allPrismicProjects) {
   const projectData = allPrismicProjects.edges.map(project => {
@@ -27,12 +54,16 @@ function normalizeProjectData(allPrismicProjects) {
   return projectData
 }
 
-const Projects = ({ allPrismicProjects }) => (
-  <div id="projects">
-    {normalizeProjectData(allPrismicProjects).map(project => (
-      <Project key={project.id} data={project} />
-    ))}
-  </div>
-)
+const Projects = () => {
+  const { allPrismicProjects } = useStaticQuery(PRISMIC_CONTACT_QUERY)
+
+  return (
+    <div id="projects">
+      {normalizeProjectData(allPrismicProjects).map(project => (
+        <Project key={project.id} data={project} />
+      ))}
+    </div>
+  )
+}
 
 export default Projects

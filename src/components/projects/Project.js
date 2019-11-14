@@ -97,6 +97,7 @@ const Button = ({ toggleIsConsoleOpen }) => {
               stroke-linecap: round;
               stroke-linejoin: round;
               fill: none;
+              stroke: #000;
             `}
             viewBox="0 0 24 24"
             name="info"
