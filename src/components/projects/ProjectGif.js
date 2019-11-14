@@ -15,7 +15,7 @@ const ProjectGif = ({ gif }) => {
 
   return (
     <div css={gifContainer}>
-      <img alt="gif-of-projec" css={image} src={url} />
+      <img alt="gif-of-project" css={image} src={url} />
     </div>
   )
 }

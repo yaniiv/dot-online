@@ -57,7 +57,7 @@ export const browserFrame = css`
 
   @media (min-width: 768px) {
     border: 3px solid black;
-    border-radius: 2px;
+    border-radius: 8px;
   }
 `
 

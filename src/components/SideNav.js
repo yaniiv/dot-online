@@ -10,7 +10,7 @@ import * as SIZES from "../sizes"
 
 const headerContainerStyles = backgroundColor => css`
   background: ${backgroundColor};
-  position: fixed;
+  position: absolute;
   display: flex;
   flex-direction: row;
   /* justify-content: center; */
@@ -19,13 +19,11 @@ const headerContainerStyles = backgroundColor => css`
   width: 30px;
 
   left: 0;
-  top: 30vh;
+  top: 0;
 
-  writing-mode: vertical-lr;
   /* padding: 1.5rem 1.5rem; */
 
   @media (min-width: 768px) {
-    writing-mode: horizontal-tb;
     height: 100vh;
     width: 140px;
     flex-direction: column;
