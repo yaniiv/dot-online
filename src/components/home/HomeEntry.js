@@ -3,7 +3,7 @@ import { Waypoint } from "react-waypoint"
 
 import Layout from "../Layout"
 import Duality from "../threejs/Duality"
-import MagicBorder from "../MagicBorder"
+import MagicBorder from "./MagicBorder"
 import Contact from "../contact/Contact"
 import Projects from "../projects/Projects"
 import About from "../about/About"

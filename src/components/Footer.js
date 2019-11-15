@@ -12,13 +12,13 @@ const FooterContainerStyles = css`
   height: 80px;
   width: 100%;
   color: ${COLORS.GREY_LIGHT};
-  padding: 0 40px;
+  padding: 0 30px;
 `
 
 const Footer = () => {
   return (
     <footer id="foot" css={FooterContainerStyles}>
-      <div>Copyright 2019 © Yaniv Goldobin</div>
+      <small>&copy; Copyright 2019, Yaniv Goldobin</small>
       <Socials />
     </footer>
   )

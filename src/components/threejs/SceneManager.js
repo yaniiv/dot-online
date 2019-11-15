@@ -7,13 +7,13 @@ import * as COLORS from "../../colors"
 import * as NUMBERS from "../../numbers"
 
 import StaticBall from "./StaticBall"
-import GeneralLights from "./GeneralLights"
-import DirectionalLights from "./DirectionalLights"
 import MovingBall from "./MovingBall"
-import Waves from "./Waves"
+// import DirectionalLights from "./DirectionalLights"
+// import GeneralLights from "./GeneralLights"
+// import Waves from "./Waves"
 import OrbitControls from "three-orbitcontrols"
 
-import isDesktop from "../../utils"
+import { isDesktop } from "../../utils"
 
 export default canvas => {
   const clock = new THREE.Clock()

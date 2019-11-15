@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import { css } from "@emotion/core"
 import chroma from "chroma-js"
 
-import * as COLORS from "../colors"
-import isDesktop from "../utils"
+import * as COLORS from "../../colors"
+import { isDesktop } from "../../utils"
 
 function getNumSwirls() {
   let numSwirls = 25

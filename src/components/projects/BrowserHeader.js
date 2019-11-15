@@ -9,7 +9,7 @@ const browserHeader = css`
   display: flex;
   background-color: #9c9795;
   border-bottom: 4px solid black;
-  border-radius: 4px;
+  border-radius: 2px;
 `
 
 const browserUrlBarContainer = css`
@@ -23,7 +23,7 @@ const browserUrlBarContainer = css`
 const browserUrlBar = css`
   background: ${COLORS.GREY_DARK};
   border: 2px solid black;
-  border-radius: 6px;
+  border-radius: 2px;
   height: 100%;
   display: flex;
   justify-content: space-between;

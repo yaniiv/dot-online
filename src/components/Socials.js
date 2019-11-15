@@ -6,25 +6,21 @@ import Icon from "./Icon"
 
 import * as COLORS from "../colors"
 
-const socialIcon = css`
-  width: 40px;
-  height: 40px;
-
-  @media (min-width: 768px) {
-    margin-right: 20px;
-    width: 50px;
-    height: 50px;
-  }
-`
-
 const iconsContainer = css`
   display: flex;
+  align-items: center;
   max-height: 100px;
   max-width: 230px;
   margin-left: auto;
+`
 
-  svg {
-    fill: ${COLORS.YANIV};
+const socialIcon = css`
+  display: flex;
+  align-items: center;
+  margin-left: 18px;
+
+  @media (min-width: 768px) {
+    margin-right: 20px;
   }
 `
 
@@ -58,7 +54,7 @@ const Socials = () => {
             target="_blank"
             css={socialIcon}
           >
-            <Icon height="24px" width="24px" name={name} />
+            <Icon height="24px" fill={COLORS.YANIV} width="24px" name={name} />
           </a>
         </div>
       ))}

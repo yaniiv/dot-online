@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
 
-import Form from "../home/Form"
+import Form from "./Form"
 
 import * as COLORS from "../../colors"
 

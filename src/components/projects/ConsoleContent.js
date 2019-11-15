@@ -9,6 +9,10 @@ const consoleContentStyles = css`
 `
 
 const aboutStyles = css`
+  @media (max-width: 768px) {
+    position: absolute;
+  }
+
   font-size: 14px;
   padding: 10px 18px;
 
@@ -19,8 +23,7 @@ const aboutStyles = css`
 
 const About = ({ about }) => <div css={aboutStyles}>{about}</div>
 
-const ConsoleContent = ({ info, isConsoleOpen }) => {
-  console.warn({ info })
+export const ConsoleContent = ({ info, isConsoleOpen }) => {
   return (
     <div css={consoleContentStyles}>
       {isConsoleOpen && <About about={info} />}
