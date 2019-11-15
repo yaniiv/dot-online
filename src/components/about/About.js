@@ -30,7 +30,6 @@ const container = css`
 const text = css`
   max-width: 600px;
   margin: 0 auto;
-  overflow-y: scroll;
 
   a {
     color: ${COLORS.YANIV};

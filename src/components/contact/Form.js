@@ -48,16 +48,35 @@ const submitButton = css`
   height: 50px;
   width: 150px;
   margin-left: auto;
+  cursor: pointer;
 `
+
+async function sendEmail(data) {
+  const response = await fetch("https://formspree.io/xrggylrv", {
+    method: "POST",
+    mode: "cors",
+    body: JSON.stringify(data),
+  })
+
+  console.warn("response", response)
+}
 
 export default function Form() {
   const { register, handleSubmit, errors } = useForm()
-  const onSubmit = data => console.log(data)
+  const onSubmit = data => sendEmail(data)
   console.log(errors)
 
   return (
     <div css={formContainer}>
-      <form css={form} onSubmit={handleSubmit(onSubmit)}>
+      <form
+        css={form}
+        action={`https://formspree.io/${process.env.FORMSPREE_FORM_ID}`}
+        method="POST"
+      >
+        <div
+          className="g-recaptcha"
+          data-sitekey={process.env.GOOGLE_RECAPTCHA_SITEKEY}
+        />
         <input
           type="text"
           placeholder="name"
