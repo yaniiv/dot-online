@@ -6498,14 +6498,6 @@ gatsby-graphiql-explorer@^0.2.25:
   dependencies:
     "@babel/runtime" "^7.6.3"
 
-gatsby-image@^2.0.30:
-  version "2.0.30"
-  resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.30.tgz#8aa3cd89998cab092c6d6281700832a065fab2bd"
-  integrity sha512-CBkJwEQgpZ1Qxb1AsP73YHAUL8NSTqmv75h2+eR6BlLBmMvbEqZGTMnMZddA8CCrbICrSQiRupDYPl4n2vzFCw==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    prop-types "^15.6.1"
-
 gatsby-link@^2.0.13:
   version "2.0.13"
   resolved "https://registry.yarnpkg.com/gatsby-link/-/gatsby-link-2.0.13.tgz#675e1fc18eab86771ae8aba19306afbae741a96d"
