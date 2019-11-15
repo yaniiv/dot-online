@@ -5,15 +5,13 @@ import * as COLORS from "../../colors"
 
 const consoleContentStyles = css`
   background-color: ${COLORS.GREY};
+  color: ${COLORS.WHITE};
   height: 100%;
   width: 100%;
+  overflow-y: scroll;
 `
 
 const aboutStyles = css`
-  @media (max-width: 768px) {
-    position: absolute;
-  }
-
   font-size: 16px;
   padding: 10px 18px;
 

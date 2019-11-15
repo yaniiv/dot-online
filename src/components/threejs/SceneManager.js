@@ -267,11 +267,11 @@ export default canvas => {
     camera.aspect = width / height
     camera.updateProjectionMatrix()
 
-    // if (isDesktop()) {
-    //   controls.enabled = true
-    // } else {
-    //   controls.enabled = false
-    // }
+    if (isDesktop()) {
+      controls.enabled = true
+    } else {
+      controls.enabled = false
+    }
 
     renderer.setSize(width, height)
   }

@@ -26,7 +26,7 @@ const HomeEntry = () => {
         }}
       />
       <Duality pauseRender={pauseDuality} />
-      <MagicBorder backgroundColor={COLORS.GREY} />
+      <MagicBorder />
       <About />
       <MagicBorder backgroundColor={COLORS.GREY} />
       <Projects />
