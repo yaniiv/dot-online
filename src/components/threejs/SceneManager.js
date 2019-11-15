@@ -8,7 +8,7 @@ import * as NUMBERS from "../../numbers"
 
 import StaticBall from "./StaticBall"
 import MovingBall from "./MovingBall"
-// import DirectionalLights from "./DirectionalLights"
+import DirectionalLights from "./DirectionalLights"
 // import GeneralLights from "./GeneralLights"
 // import Waves from "./Waves"
 import OrbitControls from "three-orbitcontrols"

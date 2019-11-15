@@ -9,20 +9,15 @@ const PRISMIC_CONTACT_QUERY = graphql`
       edges {
         node {
           id
-          first_publication_date
           data {
+            slug
             project_website {
               url
-              target
             }
             project_gif {
-              name
               url
-              width
-              height
             }
             project_description {
-              html
               text
             }
           }
@@ -33,34 +28,43 @@ const PRISMIC_CONTACT_QUERY = graphql`
 `
 
 function normalizeProjectData(allPrismicProjects) {
-  const projectData = allPrismicProjects.edges.map(project => {
-    const {
-      node: {
-        id,
-        data: { project_website, project_gif, project_description },
-      },
-    } = project
+  const projectData = allPrismicProjects.edges.reduce(
+    (projectsBySlug, project) => {
+      const {
+        node: {
+          id,
+          data: { slug, project_website, project_gif, project_description },
+        },
+      } = project
 
-    return {
-      id,
-      link: project_website.url,
-      gif: {
-        ...project_gif,
-      },
-      info: project_description.text,
-    }
-  })
+      const normalizedProject = {
+        id,
+        link: project_website.url,
+        gifSrc: project_gif.url,
+        info: project_description.text,
+      }
+
+      return {
+        [slug]: normalizedProject,
+        ...projectsBySlug,
+      }
+    },
+    {}
+  )
 
   return projectData
 }
 
+const projectsInOrder = ["ussr", "sperry", "terminal"]
+
 const Projects = () => {
   const { allPrismicProjects } = useStaticQuery(PRISMIC_CONTACT_QUERY)
+  const projectsBySlug = normalizeProjectData(allPrismicProjects)
 
   return (
     <div id="projects">
-      {normalizeProjectData(allPrismicProjects).map(project => (
-        <Project key={project.id} data={project} />
+      {projectsInOrder.map((projectSlug, index) => (
+        <Project key={index} data={projectsBySlug[projectSlug]} />
       ))}
     </div>
   )

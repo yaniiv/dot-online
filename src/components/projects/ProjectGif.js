@@ -10,18 +10,12 @@ const image = css`
   height: 100%;
 `
 
-const ProjectGif = ({ gif }) => {
-  const { url } = gif
-
+const ProjectGif = ({ gifSrc }) => {
   return (
     <div css={gifContainer}>
-      <img alt="gif-of-project" css={image} src={url} />
+      <img alt="gif-of-project" css={image} src={gifSrc} />
     </div>
   )
-}
-
-ProjectGif.defaultProps = {
-  autoPlay: true,
 }
 
 export default ProjectGif

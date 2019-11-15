@@ -113,23 +113,43 @@ const Project = ({ data }) => {
     })
   }
 
-  const { link, gif, info } = data
+  const { link, gifSrc, info } = data
 
   return (
-    <div css={projectContainer}>
-      <div css={project}>
-        <div css={browserFrame}>
-          <BrowserHeader link={link} />
+    <>
+      {/* <div
+        css={css`
+          background: ${COLORS.GREY};
+          position: absolute;
+          width: 80vw;
+          height: 80vh;
+          z-index: 5;
+          opacity: 0;
+          pointer-events: none;
+
+          ${isConsoleOpen &&
+            css`
+              opacity: 1;
+              pointer-events: all;
+              transition: opacity 0.15s ease-out;
+            `}
+        `}
+      /> */}
+      <div css={projectContainer}>
+        <div css={project}>
+          <div css={browserFrame}>
+            <BrowserHeader link={link} />
+            <div>
+              <ProjectGif gifSrc={gifSrc} />
+              <Console info={info} isConsoleOpen={isConsoleOpen} />
+            </div>
+          </div>
           <div>
-            <ProjectGif gif={gif} />
-            <Console info={info} isConsoleOpen={isConsoleOpen} />
+            <Button toggleIsConsoleOpen={toggleIsConsoleOpen} />
           </div>
         </div>
-        <div>
-          <Button toggleIsConsoleOpen={toggleIsConsoleOpen} />
-        </div>
       </div>
-    </div>
+    </>
   )
 }
 

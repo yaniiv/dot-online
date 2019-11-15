@@ -1,5 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
+
 import * as COLORS from "../../colors"
 
 const consoleContentStyles = css`
@@ -13,10 +14,11 @@ const aboutStyles = css`
     position: absolute;
   }
 
-  font-size: 14px;
+  font-size: 16px;
   padding: 10px 18px;
 
   @media (min-width: 768px) {
+    font-size: 18px;
     padding: 24px;
   }
 `

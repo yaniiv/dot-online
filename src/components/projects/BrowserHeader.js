@@ -8,16 +8,25 @@ const browserHeader = css`
   height: 60px;
   display: flex;
   background-color: #9c9795;
-  border-bottom: 4px solid black;
+  border-bottom: 2px solid black;
   border-radius: 2px;
+
+  @media (min-width: 768px) {
+    border-bottom: 4px solid black;
+    border-radius: 4px;
+  }
 `
 
 const browserUrlBarContainer = css`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 8px 8px;
+  padding: 6px;
   background: transparent;
+
+  @media (min-width: 768px) {
+    padding: 8px;
+  }
 `
 
 const browserUrlBar = css`
@@ -32,15 +41,20 @@ const browserUrlBar = css`
   padding: 0 16px;
   font-family: -apple-system, BlinkMacSystemFont;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.3px;
-  line-height: 34px;
+  line-height: 38px;
 
   color: ${COLORS.YANIV};
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    line-height: 34px;
+    font-size: 18px;
   }
 `
 
