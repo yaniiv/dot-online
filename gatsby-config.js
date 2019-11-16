@@ -49,13 +49,6 @@ module.exports = {
         icon: `src/images/hollow-64.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-recaptcha`,
-      options: {
-        async: true,
-        defer: true,
-      },
-    },
     // https://www.gatsbyjs.org/docs/sourcing-from-prismic/
     {
       resolve: `gatsby-source-prismic`,

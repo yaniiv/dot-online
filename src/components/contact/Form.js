@@ -73,10 +73,6 @@ export default function Form() {
         action={`https://formspree.io/${process.env.FORMSPREE_FORM_ID}`}
         method="POST"
       >
-        <div
-          className="g-recaptcha"
-          data-sitekey={process.env.GOOGLE_RECAPTCHA_SITEKEY}
-        />
         <input
           type="text"
           placeholder="name"
