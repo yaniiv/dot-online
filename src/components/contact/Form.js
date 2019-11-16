@@ -32,7 +32,7 @@ const form = css`
 const inputText = css`
   margin: 0 0 24px 0;
   width: 100%;
-  padding: 8px 30px;
+  padding: 8px 12px;
   background: ${COLORS.GREY_DARK};
   color: ${COLORS.YELLOW};
   border: 2px solid ${COLORS.PURPLE};
@@ -51,23 +51,11 @@ const submitButton = css`
   cursor: pointer;
 `
 
-async function sendEmail(data) {
-  const response = await fetch("https://formspree.io/xrggylrv", {
-    method: "POST",
-    mode: "cors",
-    body: JSON.stringify(data),
-  })
-
-  console.warn("response", response)
-}
-
 export default function Form() {
   const { register, handleSubmit, errors } = useForm()
-  const onSubmit = data => sendEmail(data)
-  console.log(errors)
 
   return (
-    <div css={formContainer}>
+    <div onSubmit={handleSubmit()} css={formContainer}>
       <form
         css={form}
         action={`https://formspree.io/${process.env.FORMSPREE_FORM_ID}`}
@@ -87,17 +75,15 @@ export default function Form() {
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           css={inputText}
         />
-        <input
-          type="text"
-          placeholder="email body"
-          name="email body"
-          ref={register({ required: true })}
+        <textarea
           css={css`
             ${inputText}
             height: 100px;
           `}
+          placeholder="body"
+          name="email body"
+          ref={register({ required: true })}
         />
-
         <button type="submit" css={submitButton} value="Send Email">
           <div
             css={css`
