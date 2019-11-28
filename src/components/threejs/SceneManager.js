@@ -9,6 +9,7 @@ import * as NUMBERS from "../../numbers"
 import StaticBall from "./StaticBall"
 import MovingBall from "./MovingBall"
 import DirectionalLights from "./DirectionalLights"
+import FloorPlane from "./FloorPlane"
 // import GeneralLights from "./GeneralLights"
 // import Waves from "./Waves"
 import OrbitControls from "three-orbitcontrols"
@@ -35,10 +36,8 @@ export default canvas => {
   const sceneSubjects = createSceneSubjects(scene)
   const controls = buildControls()
 
-  buildPlane(scene)
-
   // https://github.com/mrdoob/stats.js/
-  // const stats = buildStats()
+  const stats = buildStats()
   // buildAxisHelper(scene)
 
   function buildAxisHelper(scene) {
@@ -54,31 +53,13 @@ export default canvas => {
     return stats
   }
 
-  function buildPlane() {
-    var planeGeometry = new THREE.PlaneBufferGeometry(500, 500)
-    var planeMaterial = new THREE.MeshStandardMaterial({
-      color: COLORS.PURPLE,
-      side: THREE.DoubleSide,
-      transparent: true,
-      opacity: 0.1,
-      metalness: 0.1,
-      reflectivity: 0.1,
-    })
-    var plane = new THREE.Mesh(planeGeometry, planeMaterial)
-
-    plane.rotateX(29.827)
-    plane.receiveShadow = true
-
-    scene.add(plane)
-  }
-
   function buildControls() {
     const controls = new OrbitControls(camera, renderer.domElement)
     // controls.autoRotate = false
     controls.enableZoom = false
     // controls.addEventListener("change", render) // call this only in static scenes (i.e., if there is no animation loop)
     // controls.enableDamping = true // an animation loop is required when either damping or auto-rotation are enabled
-    controls.dampingFactor = 0.25
+    // controls.dampingFactor = 0.25
     controls.screenSpacePanning = false
     controls.minDistance = 100
     controls.maxDistance = 5000
@@ -166,8 +147,6 @@ export default canvas => {
       .mode("lch")
       .colors(numBalls)
 
-    console.warn("colors", colors)
-
     const balls = colors.map(color => {
       return new MovingBall(scene, ballProperties, color)
     })
@@ -176,11 +155,6 @@ export default canvas => {
   }
 
   function createStaticBalls({ scene, ballProperties }) {
-    // const colors = chroma
-    //   .scale(["#fafa6e", "#2A4858"])
-    //   .mode("lch")
-    //   .colors(2)
-
     return [
       new StaticBall({
         scene,
@@ -196,8 +170,6 @@ export default canvas => {
         color: COLORS.STATICBALLS[1],
         meshColor: COLORS.STATICBALLS[0],
       }),
-      // new StaticBall(scene, { x: 10, y: 10, z: 40 }, "red"),
-      // new StaticBall(scene, { x: 0, y: 0, z: 0 }, "#20B2AA"),
     ]
   }
 
@@ -210,6 +182,13 @@ export default canvas => {
       movingBallProperties = NUMBERS.MOVING_BALL_PROPERTIES.desktop
     }
 
+    new FloorPlane(scene)
+    new DirectionalLights(scene)
+    createStaticBalls({
+      scene,
+      ballProperties: staticBallProperties,
+    })
+
     const movingBalls = createMovingBalls({
       scene,
       ballProperties: movingBallProperties,
@@ -217,24 +196,13 @@ export default canvas => {
       numBalls: NUMBERS.NUM_BALLS,
     })
 
-    const staticBalls = createStaticBalls({
-      scene,
-      ballProperties: staticBallProperties,
-    })
-
-    const sceneSubjects = [
-      // new GeneralLights(scene),
-      new DirectionalLights(scene),
-      ...staticBalls,
-      ...movingBalls,
-      // new Waves(scene),
-    ]
+    const sceneSubjects = [...movingBalls]
 
     return sceneSubjects
   }
 
   function render() {
-    // stats.begin()
+    stats.begin()
 
     const elapsedTime = clock.getElapsedTime()
     // const axesHelper = new THREE.AxesHelper(5)
@@ -244,19 +212,18 @@ export default canvas => {
     for (let i = 0; i < sceneSubjects.length; i++)
       sceneSubjects[i].update(elapsedTime)
 
-    // updateCameraPositionRelativeToMouse()
-
     renderer.render(scene, camera)
-    // for shadlw
 
-    // stats.end()
+    stats.end()
   }
 
+  /*
   function updateCameraPositionRelativeToMouse() {
     camera.position.x += (mousePosition.x * 0.05 - camera.position.x) * 0.05
     camera.position.y += (-(mousePosition.y * 0.05) - camera.position.y) * 0.05
     camera.lookAt(origin)
   }
+  */
 
   function onWindowResize() {
     const { width, height } = canvas

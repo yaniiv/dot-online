@@ -17,17 +17,19 @@ const HomeEntry = () => {
   return (
     <Layout>
       <SideNav />
+      <Duality pauseRender={pauseDuality} />
+      <MagicBorder />
       <Waypoint
         onEnter={() => {
           setPauseDuality(false)
         }}
-        onLeave={() => {
+      />
+      <About />
+      <Waypoint
+        onEnter={() => {
           setPauseDuality(true)
         }}
       />
-      <Duality pauseRender={pauseDuality} />
-      <MagicBorder />
-      <About />
       <MagicBorder backgroundColor={COLORS.GREY} />
       <Projects />
       <MagicBorder />

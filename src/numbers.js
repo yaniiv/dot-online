@@ -5,8 +5,8 @@ export const MOVING_BALL_PROPERTIES = {
     xPosition: 30,
     focalRadius: 30,
     ballRadius: 2,
-    heightSegments: 30,
-    widthSegments: 30,
+    heightSegments: 20,
+    widthSegments: 20,
   },
   mobile: {
     xPosition: 15,

@@ -17,6 +17,9 @@ const PRISMIC_CONTACT_QUERY = graphql`
             project_gif {
               url
             }
+            project_image {
+              url
+            }
             project_description {
               text
             }
@@ -33,7 +36,13 @@ function normalizeProjectData(allPrismicProjects) {
       const {
         node: {
           id,
-          data: { slug, project_website, project_gif, project_description },
+          data: {
+            slug,
+            project_website,
+            project_gif,
+            project_image,
+            project_description,
+          },
         },
       } = project
 
@@ -41,6 +50,7 @@ function normalizeProjectData(allPrismicProjects) {
         id,
         link: project_website.url,
         gifSrc: project_gif.url,
+        imageSrc: project_image.url,
         info: project_description.text,
       }
 

@@ -60,8 +60,7 @@ export default class ThreeEntryPointManager {
 
   render = () => {
     if (this.isPaused) {
-      console.warn("isPaused in render")
-
+      console.warn("return empty from render because isPaused")
       return
     }
 

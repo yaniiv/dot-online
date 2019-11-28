@@ -22,13 +22,11 @@ export default class Duality extends Component {
   }
 
   componentDidUpdate() {
-    console.warn(
-      "Duality componentDidUpdate this.props.pauseRender",
-      this.props.pauseRender
-    )
     if (this.props.pauseRender) {
+      console.warn("PAUSE duality animation")
       this.ThreeEntryPoint.pause()
     } else {
+      console.warn("PLAY duality animation")
       this.ThreeEntryPoint.resume()
     }
   }

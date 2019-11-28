@@ -52,7 +52,7 @@ const submitButton = css`
 `
 
 export default function Form() {
-  const { register, handleSubmit, errors } = useForm()
+  const { register, handleSubmit } = useForm()
 
   return (
     <div onSubmit={handleSubmit()} css={formContainer}>
