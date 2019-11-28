@@ -18,7 +18,7 @@ const HomeEntry = () => {
     <Layout>
       <SideNav />
       <Duality pauseRender={pauseDuality} />
-      <MagicBorder />
+      {/* <MagicBorder /> */}
       <Waypoint
         onEnter={() => {
           setPauseDuality(false)
@@ -30,9 +30,9 @@ const HomeEntry = () => {
           setPauseDuality(true)
         }}
       />
-      <MagicBorder backgroundColor={COLORS.GREY} />
+      {/* <MagicBorder backgroundColor={COLORS.GREY} /> */}
       <Projects />
-      <MagicBorder />
+      {/* <MagicBorder /> */}
       <Contact />
     </Layout>
   )
