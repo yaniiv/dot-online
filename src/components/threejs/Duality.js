@@ -3,8 +3,6 @@ import { css } from "@emotion/core"
 
 import ThreeEntryPointManager from "./ThreeEntryPointManager"
 
-import * as COLORS from "../../colors"
-
 const duality = css`
   margin: auto;
   height: 100vh;
@@ -19,7 +17,6 @@ export default class Duality extends Component {
   }
 
   componentDidMount() {
-    console.warn("Duality, componentDidMount")
     this.ThreeEntryPoint = new ThreeEntryPointManager()
     this.ThreeEntryPoint.initialize(this.threeRootElement)
   }
