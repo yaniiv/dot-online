@@ -1,4 +1,5 @@
 import React from "react"
+import { css } from "@emotion/core"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Project from "./Project"
@@ -67,12 +68,20 @@ function normalizeProjectData(allPrismicProjects) {
 
 const projectsInOrder = ["ussr", "sperry", "terminal"]
 
+const projectContainer = css`
+  padding-bottom: 24px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 48px;
+  }
+`
+
 const Projects = () => {
   const { allPrismicProjects } = useStaticQuery(PRISMIC_CONTACT_QUERY)
   const projectsBySlug = normalizeProjectData(allPrismicProjects)
 
   return (
-    <div id="projects">
+    <div id="projects" css={projectContainer}>
       {projectsInOrder.map((projectSlug, index) => (
         <Project key={index} data={projectsBySlug[projectSlug]} />
       ))}
