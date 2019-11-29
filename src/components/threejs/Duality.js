@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { css } from "@emotion/core"
 
 import ThreeEntryPointManager from "./ThreeEntryPointManager"
+import Intro from "../about/Intro"
 
 const duality = css`
   margin: auto;
@@ -37,7 +38,9 @@ export default class Duality extends Component {
         id="duality"
         css={duality}
         ref={element => (this.threeRootElement = element)}
-      />
+      >
+        <Intro />
+      </div>
     )
   }
 }

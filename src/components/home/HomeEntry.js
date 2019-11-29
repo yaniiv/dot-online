@@ -3,13 +3,15 @@ import { Waypoint } from "react-waypoint"
 
 import Layout from "../Layout"
 import Duality from "../threejs/Duality"
-import MagicBorder from "./MagicBorder"
 import Contact from "../contact/Contact"
 import Projects from "../projects/Projects"
-import About from "../about/About"
+
 import SideNav from "../SideNav"
 
-import * as COLORS from "../../colors"
+// import About from "../about/About"
+// import MagicBorder from "./MagicBorder"
+
+// import * as COLORS from "../../colors"
 
 const HomeEntry = () => {
   const [pauseDuality, setPauseDuality] = useState(false)
@@ -17,19 +19,17 @@ const HomeEntry = () => {
   return (
     <Layout>
       <SideNav />
-      <Duality pauseRender={pauseDuality} />
-      {/* <MagicBorder /> */}
       <Waypoint
         onEnter={() => {
           setPauseDuality(false)
         }}
-      />
-      <About />
-      <Waypoint
-        onEnter={() => {
+        onLeave={() => {
           setPauseDuality(true)
         }}
       />
+      <Duality pauseRender={pauseDuality} />
+      {/* <MagicBorder /> */}
+      {/* <About /> */}
       {/* <MagicBorder backgroundColor={COLORS.GREY} /> */}
       <Projects />
       {/* <MagicBorder /> */}
