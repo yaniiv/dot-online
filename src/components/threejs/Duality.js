@@ -24,10 +24,10 @@ export default class Duality extends Component {
 
   componentDidUpdate() {
     if (this.props.pauseRender) {
-      console.warn("PAUSE duality animation")
+      // console.warn("PAUSE duality animation")
       this.ThreeEntryPoint.pause()
     } else {
-      console.warn("PLAY duality animation")
+      // console.warn("PLAY duality animation")
       this.ThreeEntryPoint.resume()
     }
   }

@@ -15,8 +15,8 @@ module.exports = {
         linkTo: `https://github.com/yantonsoup`,
       },
       {
-        name: `twitter`,
-        linkTo: `https://twitter.com/yantonsoup`,
+        name: `linkedin`,
+        linkTo: `linkedin.com/in/ygoldobin`,
       },
       {
         name: `medium`,

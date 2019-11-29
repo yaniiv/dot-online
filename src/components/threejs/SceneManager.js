@@ -37,7 +37,7 @@ export default canvas => {
   const controls = buildControls()
 
   // https://github.com/mrdoob/stats.js/
-  const stats = buildStats()
+  // const stats = buildStats()
   // buildAxisHelper(scene)
 
   function buildAxisHelper(scene) {
@@ -202,7 +202,7 @@ export default canvas => {
   }
 
   function render() {
-    stats.begin()
+    // stats.begin()
 
     const elapsedTime = clock.getElapsedTime()
     // const axesHelper = new THREE.AxesHelper(5)
@@ -214,7 +214,7 @@ export default canvas => {
 
     renderer.render(scene, camera)
 
-    stats.end()
+    // stats.end()
   }
 
   /*

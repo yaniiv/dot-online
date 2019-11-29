@@ -7,7 +7,7 @@ import Email from "./Email"
 import * as COLORS from "../../colors"
 
 const contact = css`
-  background: ${COLORS.GREY};
+  background: ${COLORS.PURPLE};
 `
 
 const PRISMIC_CONTACT_QUERY = graphql`

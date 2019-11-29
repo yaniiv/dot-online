@@ -5,7 +5,7 @@ import { css } from "@emotion/core"
 import * as COLORS from "../../colors"
 
 const container = css`
-  color: ${COLORS.YELLOW};
+  color: ${COLORS.WHITE_SOFT};
   position: absolute;
   left: 0;
   bottom: 0;
@@ -21,20 +21,31 @@ const container = css`
   }
 
   a {
-    color: ${COLORS.WHITE};
+    color: ${COLORS.YELLOW};
+    text-decoration: none;
     cursor: pointer;
   }
 `
 
+const PRISMIC_INTRO_QUERY = graphql`
+  query Intro {
+    prismicIntro {
+      data {
+        text {
+          html
+        }
+      }
+    }
+  }
+`
+
 const Intro = () => {
+  const { prismicIntro } = useStaticQuery(PRISMIC_INTRO_QUERY)
+  const html = prismicIntro.data.text.html
+
   return (
     <div css={container}>
-      Hello! I'm Yaniv, a software engineer from San Francisco, California. This
-      website is a collection of some of my more fully-formed side projects, the
-      code for which I make open source on{" "}
-      <a href="https://github.com/yantonsoup">github</a> whenever possible. If
-      you're more curious about my professional work, you're probably better off
-      checking <a href="https://www.linkedin.com/in/ygoldobin/">linkedin</a>.
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   )
 }

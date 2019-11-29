@@ -38,7 +38,7 @@ export default (scene, ballProperties, color) => {
   }
 
   // const scale = 4
-  const speed = 0.005
+  // const speed = 0.005
 
   function update(time) {
     // const angle = time * speed

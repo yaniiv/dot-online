@@ -7,7 +7,7 @@ import * as COLORS from "../../colors"
 
 const pageContainer = css`
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 80px);
 
   display: flex;
   flex-direction: column;
@@ -34,18 +34,19 @@ const contentContainer = css`
 
 const text = css`
   margin-bottom: 24px;
-  color: ${COLORS.WHITE};
+  color: ${COLORS.WHITE_SOFT};
 
   @media (min-width: 768px) {
     padding-right: 48px;
   }
 
   a {
+    text-decoration: none;
     color: ${COLORS.YELLOW};
   }
 
   a:visited {
-    color: ${COLORS.DARK_END_DUALITY};
+    color: ${COLORS.YELLOW};
   }
   a:hover {
     text-decoration: underline;

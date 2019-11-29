@@ -49,7 +49,7 @@ const SideNav = () => (
         yaniv
       </ScrollLink>
     </div>
-    <div css={headerLink}>
+    {/* <div css={headerLink}>
       <ScrollLink
         activeClass="active"
         to="about"
@@ -59,7 +59,7 @@ const SideNav = () => (
       >
         about
       </ScrollLink>
-    </div>
+    </div> */}
     <div css={headerLink}>
       <ScrollLink
         activeClass="active"
