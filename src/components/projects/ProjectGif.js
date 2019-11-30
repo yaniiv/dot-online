@@ -12,6 +12,8 @@ const image = css`
   height: 100%;
 `
 
+const addImgixParams = src => `${src}&w=848&q=65`
+
 const ProjectGif = ({ gifSrc, imageSrc }) => {
   let projectMediaSource = imageSrc
 
@@ -21,7 +23,11 @@ const ProjectGif = ({ gifSrc, imageSrc }) => {
 
   return (
     <div css={gifContainer}>
-      <img alt="gif-of-project" css={image} src={projectMediaSource} />
+      <img
+        alt="gif-of-project"
+        css={image}
+        src={addImgixParams(projectMediaSource)}
+      />
     </div>
   )
 }

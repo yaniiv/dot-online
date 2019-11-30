@@ -29,17 +29,14 @@ export const project = css`
   @media (min-width: 768px) {
     padding: 0;
     max-width: 648px;
-    max-height: 468px;
   }
 
   @media (min-width: 1024px) {
     max-width: 748px;
-    max-height: 528px;
   }
 
   @media (min-width: 1200px) {
     max-width: 848px;
-    max-height: 578px;
   }
 `
 
@@ -116,43 +113,23 @@ const Project = ({ data }) => {
   const { link, gifSrc, htmlDescription, imageSrc } = data
 
   return (
-    <>
-      {/* <div
-        css={css`
-          background: ${COLORS.GREY};
-          position: absolute;
-          width: 80vw;
-          height: 80vh;
-          z-index: 5;
-          opacity: 0;
-          pointer-events: none;
-
-          ${isConsoleOpen &&
-            css`
-              opacity: 1;
-              pointer-events: all;
-              transition: opacity 0.15s ease-out;
-            `}
-        `}
-      /> */}
-      <div css={projectContainer}>
-        <div css={project}>
-          <div css={browserFrame}>
-            <BrowserHeader link={link} />
-            <div>
-              <ProjectGif gifSrc={gifSrc} imageSrc={imageSrc} />
-              <Console
-                htmlDescription={htmlDescription}
-                isConsoleOpen={isConsoleOpen}
-              />
-            </div>
-          </div>
+    <div css={projectContainer}>
+      <div css={project}>
+        <div css={browserFrame}>
+          <BrowserHeader link={link} />
           <div>
-            <Button toggleIsConsoleOpen={toggleIsConsoleOpen} />
+            <ProjectGif gifSrc={gifSrc} imageSrc={imageSrc} />
+            <Console
+              htmlDescription={htmlDescription}
+              isConsoleOpen={isConsoleOpen}
+            />
           </div>
         </div>
+        <div>
+          <Button toggleIsConsoleOpen={toggleIsConsoleOpen} />
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 
