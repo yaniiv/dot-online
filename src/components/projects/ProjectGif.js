@@ -12,7 +12,17 @@ const image = css`
   height: 100%;
 `
 
-const addImgixParams = src => `${src}&w=848&q=65`
+const addImgixParams = src => {
+  let params = "&q=65"
+
+  if (isDesktop()) {
+    params += "&w=848"
+  } else {
+    params += "&w=703"
+  }
+
+  return `${src}${params}`
+}
 
 const ProjectGif = ({ gifSrc, imageSrc }) => {
   let projectMediaSource = imageSrc
