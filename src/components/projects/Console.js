@@ -29,11 +29,14 @@ const getConsoleStyles = isConsoleOpen => css`
 
 class Console extends React.Component {
   render() {
-    const { isConsoleOpen, info } = this.props
+    const { isConsoleOpen, htmlDescription } = this.props
 
     return (
       <div css={getConsoleStyles(isConsoleOpen)}>
-        <ConsoleContent info={info} isConsoleOpen={isConsoleOpen} />
+        <ConsoleContent
+          htmlDescription={htmlDescription}
+          isConsoleOpen={isConsoleOpen}
+        />
       </div>
     )
   }

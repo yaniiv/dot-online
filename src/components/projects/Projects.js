@@ -21,8 +21,8 @@ const PRISMIC_CONTACT_QUERY = graphql`
             project_image {
               url
             }
-            project_description {
-              text
+            project_text {
+              html
             }
           }
         }
@@ -41,8 +41,8 @@ function normalizeProjectData(allPrismicProjects) {
             slug,
             project_website,
             project_gif,
+            project_text,
             project_image,
-            project_description,
           },
         },
       } = project
@@ -52,7 +52,7 @@ function normalizeProjectData(allPrismicProjects) {
         link: project_website.url,
         gifSrc: project_gif.url,
         imageSrc: project_image.url,
-        info: project_description.text,
+        htmlDescription: project_text.html,
       }
 
       return {
@@ -66,7 +66,7 @@ function normalizeProjectData(allPrismicProjects) {
   return projectData
 }
 
-const projectsInOrder = ["ussr", "sperry", "terminal"]
+const projectsInOrder = ["ussr", "sperry", "dispersion", "terminal"]
 
 const projectContainer = css`
   padding-bottom: 24px;

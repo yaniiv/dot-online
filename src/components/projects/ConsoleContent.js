@@ -9,6 +9,10 @@ const consoleContentStyles = css`
   height: 100%;
   width: 100%;
   overflow-y: scroll;
+
+  a {
+    color: ${COLORS.YELLOW};
+  }
 `
 
 const aboutStyles = css`
@@ -21,12 +25,16 @@ const aboutStyles = css`
   }
 `
 
-const About = ({ about }) => <div css={aboutStyles}>{about}</div>
+const About = ({ htmlDescription }) => (
+  <div css={aboutStyles}>
+    <div dangerouslySetInnerHTML={{ __html: htmlDescription }} />
+  </div>
+)
 
-export const ConsoleContent = ({ info, isConsoleOpen }) => {
+export const ConsoleContent = ({ htmlDescription, isConsoleOpen }) => {
   return (
     <div css={consoleContentStyles}>
-      {isConsoleOpen && <About about={info} />}
+      {isConsoleOpen && <About htmlDescription={htmlDescription} />}
     </div>
   )
 }
