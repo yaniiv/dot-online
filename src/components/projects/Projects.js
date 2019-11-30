@@ -66,7 +66,7 @@ function normalizeProjectData(allPrismicProjects) {
   return projectData
 }
 
-const projectsInOrder = ["ussr", "sperry", "dispersion", "terminal"]
+const projectsInOrder = ["ussr", "sperry", "terminal", "dispersion"]
 
 const projectContainer = css`
   padding-bottom: 24px;
