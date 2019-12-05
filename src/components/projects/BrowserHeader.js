@@ -38,13 +38,13 @@ const browserUrlBar = css`
   justify-content: space-between;
   flex: 1;
   cursor: pointer;
-  padding: 0 16px;
   font-family: -apple-system, BlinkMacSystemFont;
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.3px;
   line-height: 38px;
+  overflow-x: scroll;
 
   color: ${COLORS.YANIV};
 
@@ -68,8 +68,18 @@ const BrowserHeader = ({ link }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          {link}
-          <div>
+          <div
+            css={css`
+              padding: 0 16px;
+            `}
+          >
+            {link}
+          </div>
+          <div
+            css={css`
+              padding: 0 16px;
+            `}
+          >
             <Icon
               css={css`
                 vertical-align: middle;
