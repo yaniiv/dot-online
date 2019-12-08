@@ -110,7 +110,7 @@ const Project = ({ data }) => {
     })
   }
 
-  const { link, gifSrc, htmlDescription, imageSrc } = data
+  const { link, videoSrc, htmlDescription, imageSrc } = data
 
   return (
     <div css={projectContainer}>
@@ -118,7 +118,7 @@ const Project = ({ data }) => {
         <div css={browserFrame}>
           <BrowserHeader link={link} />
           <div>
-            <ProjectGif gifSrc={gifSrc} imageSrc={imageSrc} />
+            <ProjectGif videoSrc={videoSrc} imageSrc={imageSrc} />
             <Console
               htmlDescription={htmlDescription}
               isConsoleOpen={isConsoleOpen}

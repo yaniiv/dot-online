@@ -24,20 +24,16 @@ const addImgixParams = src => {
   return `${src}${params}`
 }
 
-const ProjectGif = ({ gifSrc, imageSrc }) => {
-  let projectMediaSource = imageSrc
-
-  if (isDesktop()) {
-    projectMediaSource = gifSrc
-  }
-
+const ProjectGif = ({ imageSrc, videoSrc }) => {
   return (
     <div css={gifContainer}>
-      <img
-        alt="gif-of-project"
-        css={image}
-        src={addImgixParams(projectMediaSource)}
-      />
+      {videoSrc ? (
+        <video alt="gif-of-project" css={image} autoPlay loop muted playsInline>
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      ) : (
+        <img alt="gif-of-project" css={image} src={addImgixParams(imageSrc)} />
+      )}
     </div>
   )
 }

@@ -15,10 +15,10 @@ const PRISMIC_CONTACT_QUERY = graphql`
             project_website {
               url
             }
-            project_gif {
+            project_image {
               url
             }
-            project_image {
+            project_video {
               url
             }
             project_text {
@@ -32,6 +32,7 @@ const PRISMIC_CONTACT_QUERY = graphql`
 `
 
 function normalizeProjectData(allPrismicProjects) {
+  console.warn(allPrismicProjects)
   const projectData = allPrismicProjects.edges.reduce(
     (projectsBySlug, project) => {
       const {
@@ -40,9 +41,9 @@ function normalizeProjectData(allPrismicProjects) {
           data: {
             slug,
             project_website,
-            project_gif,
             project_text,
             project_image,
+            project_video,
           },
         },
       } = project
@@ -50,8 +51,8 @@ function normalizeProjectData(allPrismicProjects) {
       const normalizedProject = {
         id,
         link: project_website.url,
-        gifSrc: project_gif.url,
-        imageSrc: project_image.urll,
+        videoSrc: project_video.url,
+        imageSrc: project_image.url,
         htmlDescription: project_text.html,
       }
 
