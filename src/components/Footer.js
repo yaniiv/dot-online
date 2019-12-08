@@ -11,7 +11,7 @@ const FooterContainerStyles = css`
   align-items: center;
   height: 80px;
   width: 100%;
-  color: ${COLORS.GREY_LIGHT};
+  color: ${COLORS.WHITE_SOFT};
   padding: 0 30px;
 `
 

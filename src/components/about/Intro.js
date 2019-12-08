@@ -5,7 +5,7 @@ import { css } from "@emotion/core"
 import * as COLORS from "../../colors"
 
 const container = css`
-  color: ${COLORS.YELLOW};
+  color: ${COLORS.WHITE};
   position: absolute;
   left: 0;
   bottom: 0;
@@ -21,7 +21,7 @@ const container = css`
   }
 
   a {
-    color: ${COLORS.WHITE_SOFT};
+    color: ${COLORS.YELLOW};
     cursor: pointer;
     text-decoration: none;
   }

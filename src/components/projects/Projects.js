@@ -32,7 +32,6 @@ const PRISMIC_CONTACT_QUERY = graphql`
 `
 
 function normalizeProjectData(allPrismicProjects) {
-  console.warn(allPrismicProjects)
   const projectData = allPrismicProjects.edges.reduce(
     (projectsBySlug, project) => {
       const {
@@ -48,10 +47,12 @@ function normalizeProjectData(allPrismicProjects) {
         },
       } = project
 
+      const videoSrc = project_video ? project_video.url : null
+
       const normalizedProject = {
         id,
         link: project_website.url,
-        videoSrc: project_video.url,
+        videoSrc,
         imageSrc: project_image.url,
         htmlDescription: project_text.html,
       }
