@@ -34,7 +34,7 @@ const contentContainer = css`
 
 const text = css`
   margin-bottom: 24px;
-  color: ${COLORS.WHITE_SOFT};
+  color: ${COLORS.YELLOW};
 
   @media (min-width: 768px) {
     padding-right: 48px;
@@ -42,11 +42,11 @@ const text = css`
 
   a {
     text-decoration: none;
-    color: ${COLORS.YELLOW};
+    color: ${COLORS.WHITE_SOFT};
   }
 
   a:visited {
-    color: ${COLORS.YELLOW};
+    color: ${COLORS.WHITE_SOFT};
   }
   a:hover {
     text-decoration: underline;

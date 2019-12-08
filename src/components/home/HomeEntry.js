@@ -18,7 +18,7 @@ const HomeEntry = () => {
 
   return (
     <Layout>
-      <SideNav />x
+      <SideNav />
       <Waypoint
         onEnter={() => {
           setPauseDuality(false)
