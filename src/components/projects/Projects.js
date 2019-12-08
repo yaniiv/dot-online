@@ -51,7 +51,7 @@ function normalizeProjectData(allPrismicProjects) {
         id,
         link: project_website.url,
         gifSrc: project_gif.url,
-        imageSrc: project_image.url,
+        imageSrc: project_image.urll,
         htmlDescription: project_text.html,
       }
 

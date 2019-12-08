@@ -64,6 +64,7 @@ export default function Form() {
         <input
           type="text"
           placeholder="name"
+          aria-label="name"
           name="name"
           css={inputText}
           ref={register({ required: true, maxLength: 100 })}
@@ -71,11 +72,13 @@ export default function Form() {
         <input
           type="text"
           placeholder="email"
+          aria-label="email"
           name="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           css={inputText}
         />
         <textarea
+          aria-label="email body"
           css={css`
             ${inputText}
             height: 100px;

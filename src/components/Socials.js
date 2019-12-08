@@ -53,6 +53,7 @@ const Socials = () => {
             rel="noopener noreferrer"
             target="_blank"
             css={socialIcon}
+            aria-label={linkTo}
           >
             <Icon height="24px" fill={COLORS.YANIV} width="24px" name={name} />
           </a>
