@@ -42,6 +42,8 @@ const container = css`
 
 const text = css`
   /* max-width: 680px; */
+  min-height: 280px;
+
   margin: 0 auto;
   padding: 24px;
   background: ${COLORS.GREY};
@@ -85,7 +87,6 @@ const buttonContainer = css`
 `
 
 const renderActiveContent = (activeSection, prismicData) => {
-  console.warn({ activeSection })
   switch (activeSection) {
     case "about":
       return <AboutText data={prismicData} />

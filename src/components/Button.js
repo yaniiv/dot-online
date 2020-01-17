@@ -5,7 +5,7 @@ import * as COLORS from "../colors"
 import Icon from "./Icon"
 
 const activeColor = css`
-  background: ${COLORS.AQUA};
+  background: ${COLORS.PURPLE_LIGHT};
 `
 
 const getButtonStyles = (extraStyles, isActive) => css`
@@ -23,7 +23,6 @@ const getButtonStyles = (extraStyles, isActive) => css`
   cursor: pointer;
 
   ${extraStyles}
-
   ${isActive && activeColor}
 `
 

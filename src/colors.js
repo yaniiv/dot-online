@@ -8,6 +8,7 @@ export const GREY = "#4F4D4C"
 export const GREY_DARK = "#363433"
 
 export const YELLOW = "#ffd926"
+export const YELLOW_DARK = "#A88E19"
 export const PRIMARY_GRAY = GREY
 
 export const LIGHT_END_DUALITY = YELLOW
