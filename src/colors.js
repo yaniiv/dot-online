@@ -31,6 +31,8 @@ export const ABOUT_PAGE_BACKGROUND = "#415C52"
 export const FOOTER_BACKGROUND = "#363433"
 export const CONTACT_FORM_BACKGROUND = GREY
 
+export const AQUA = `#6cffb4`
+
 /* 
 const softGrey = "rgb(243, 243, 243)"
 // const white = "rgb(255, 255, 255)"
@@ -47,6 +49,5 @@ const borderGrey = "rgb(204, 204, 204)"
 #171717
 
 const purp = `rgb(125, 76, 219)`
-const aqua = `#6cffb4`
 const blue = "rgb(0, 169, 242)"
 */

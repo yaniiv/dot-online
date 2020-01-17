@@ -85,6 +85,7 @@ const Project = ({ data }) => {
             extraStyles={css`
               margin-left: auto;
             `}
+            isActive={isConsoleOpen}
             text="More Info"
             onClick={toggleIsConsoleOpen}
           />

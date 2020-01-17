@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
@@ -84,6 +84,48 @@ const buttonContainer = css`
   justify-content: flex-end;
 `
 
+const renderActiveContent = (activeSection, prismicData) => {
+  console.warn({ activeSection })
+  switch (activeSection) {
+    case "about":
+      return <AboutText data={prismicData} />
+    case "skills":
+      return <SkillsText />
+    case "education":
+      return <EducationText />
+  }
+}
+
+const AboutText = ({ data }) => (
+  <div>
+    <img alt="yaniv" css={image} src={data.image_of_me.url} />
+    <div dangerouslySetInnerHTML={{ __html: data.text_rich_field.html }} />
+  </div>
+)
+
+const SkillsText = () => (
+  <div>
+    <div>Strong</div>
+    <div>
+      Strong: JavaScript, Node, React, Redux, Graphql, Next, Express, ES6,
+      jQuery, HTML, SCSS, REST, Git
+    </div>
+    <br />
+    <div>Experienced</div>
+    <div>
+      Jest, D3, CircleCI, Webpack, Mongo, PostgreSQL, Angular, Electron, AWS,
+      Mocha, Cypress
+    </div>
+  </div>
+)
+
+const EducationText = () => (
+  <div>
+    California Polytechnic State University at San Luis Obispo - Bachelor of
+    Science, Electrical Engineering
+  </div>
+)
+
 const PRISMIC_ABOUT_QUERY = graphql`
   query About {
     prismicAbout {
@@ -100,24 +142,33 @@ const PRISMIC_ABOUT_QUERY = graphql`
 `
 
 const About = () => {
+  const [activeSection, setActiveSection] = useState("about")
   const { prismicAbout } = useStaticQuery(PRISMIC_ABOUT_QUERY)
 
+  const prismicData = prismicAbout.data
   const html = prismicAbout.data.text_rich_field.html
   const imageUrl = prismicAbout.data.image_of_me.url
 
   return (
     <div>
       <div id="about" css={container}>
-        <div css={text}>
-          <div>
-            <img alt="yaniv" css={image} src={imageUrl} />
-            <div dangerouslySetInnerHTML={{ __html: html }} />
-          </div>
-        </div>
+        <div css={text}>{renderActiveContent(activeSection, prismicData)}</div>
         <div css={buttonContainer}>
-          <Button text="About" />
-          <Button text="Skills" />
-          <Button text="Education" />
+          <Button
+            isActive={activeSection === "about"}
+            text="About"
+            onClick={() => setActiveSection("about")}
+          />
+          <Button
+            isActive={activeSection === "skills"}
+            text="Skills"
+            onClick={() => setActiveSection("skills")}
+          />
+          <Button
+            isActive={activeSection === "education"}
+            text="Education"
+            onClick={() => setActiveSection("education")}
+          />
         </div>
       </div>
     </div>

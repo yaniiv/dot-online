@@ -4,7 +4,11 @@ import { css } from "@emotion/core"
 import * as COLORS from "../colors"
 import Icon from "./Icon"
 
-const getButtonStyles = extraStyles => css`
+const activeColor = css`
+  background: ${COLORS.AQUA};
+`
+
+const getButtonStyles = (extraStyles, isActive) => css`
   color: ${COLORS.GREY_DARK};
   background: ${COLORS.YELLOW};
   border: 2px solid ${COLORS.PURPLE};
@@ -17,14 +21,17 @@ const getButtonStyles = extraStyles => css`
   margin-left: 24px;
   box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+
   ${extraStyles}
+
+  ${isActive && activeColor}
 `
 
-const Button = ({ text, onClick = () => {}, extraStyles }) => {
+const Button = ({ text, onClick, isActive, extraStyles }) => {
   return (
     <button
       onClick={onClick}
-      css={getButtonStyles(extraStyles)}
+      css={getButtonStyles(extraStyles, isActive)}
       value="Send Email"
     >
       <div
