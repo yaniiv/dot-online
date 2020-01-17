@@ -26,7 +26,7 @@ const getButtonStyles = (extraStyles, isActive) => css`
   ${isActive && activeColor}
 `
 
-const Button = ({ text, onClick, isActive, extraStyles }) => {
+const Button = ({ text, onClick, isActive, extraStyles, iconName }) => {
   return (
     <button
       onClick={onClick}
@@ -54,7 +54,7 @@ const Button = ({ text, onClick, isActive, extraStyles }) => {
           width="24px"
           height="24px"
           viewBox="0 0 24 24"
-          name="info"
+          name={iconName}
         />
       </div>
     </button>

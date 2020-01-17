@@ -9,9 +9,9 @@ import Projects from "../projects/Projects"
 import SideNav from "../SideNav"
 
 import About from "../about/About"
-import MagicBorder from "./MagicBorder"
+// import MagicBorder from "./MagicBorder"
 
-import * as COLORS from "../../colors"
+// import * as COLORS from "../../colors"
 
 const HomeEntry = () => {
   const [pauseDuality, setPauseDuality] = useState(false)
@@ -19,15 +19,6 @@ const HomeEntry = () => {
   return (
     <Layout>
       <SideNav />
-      {/* <Waypoint
-        onEnter={() => {
-          setPauseDuality(false)
-        }}
-        onLeave={() => {
-          setPauseDuality(true)
-        }}
-      /> */}
-      <Duality pauseRender={pauseDuality} />
       <Waypoint
         onEnter={() => {
           setPauseDuality(false)
@@ -36,6 +27,7 @@ const HomeEntry = () => {
           setPauseDuality(true)
         }}
       />
+      <Duality pauseRender={pauseDuality} />
       {/* <MagicBorder numSwirls={6} /> */}
       <About />
       {/* <MagicBorder backgroundColor={COLORS.GREY} /> */}

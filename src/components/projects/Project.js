@@ -4,7 +4,6 @@ import { css } from "@emotion/core"
 import Console from "./Console"
 import ProjectGif from "./ProjectGif"
 import BrowserHeader from "./BrowserHeader"
-import Icon from "../Icon"
 import Button from "../Button"
 
 import * as COLORS from "../../colors"
@@ -86,6 +85,7 @@ const Project = ({ data }) => {
               margin-left: auto;
             `}
             isActive={isConsoleOpen}
+            iconName="info"
             text="More Info"
             onClick={toggleIsConsoleOpen}
           />

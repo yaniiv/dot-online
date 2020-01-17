@@ -43,6 +43,7 @@ const container = css`
 const text = css`
   /* max-width: 680px; */
   min-height: 280px;
+  width: 100%;
 
   margin: 0 auto;
   padding: 24px;
@@ -91,9 +92,11 @@ const renderActiveContent = (activeSection, prismicData) => {
     case "about":
       return <AboutText data={prismicData} />
     case "skills":
-      return <SkillsText />
+      return <SkillsText data={prismicData} />
     case "education":
-      return <EducationText />
+      return <EducationText data={prismicData} />
+    default:
+      return
   }
 }
 
@@ -104,26 +107,15 @@ const AboutText = ({ data }) => (
   </div>
 )
 
-const SkillsText = () => (
+const SkillsText = ({ data }) => (
   <div>
-    <div>Strong</div>
-    <div>
-      Strong: JavaScript, Node, React, Redux, Graphql, Next, Express, ES6,
-      jQuery, HTML, SCSS, REST, Git
-    </div>
-    <br />
-    <div>Experienced</div>
-    <div>
-      Jest, D3, CircleCI, Webpack, Mongo, PostgreSQL, Angular, Electron, AWS,
-      Mocha, Cypress
-    </div>
+    <div dangerouslySetInnerHTML={{ __html: data.skills_rich_field.html }} />
   </div>
 )
 
-const EducationText = () => (
+const EducationText = ({ data }) => (
   <div>
-    California Polytechnic State University at San Luis Obispo - Bachelor of
-    Science, Electrical Engineering
+    <div dangerouslySetInnerHTML={{ __html: data.education_rich_field.html }} />
   </div>
 )
 
@@ -137,6 +129,12 @@ const PRISMIC_ABOUT_QUERY = graphql`
         text_rich_field {
           html
         }
+        skills_rich_field {
+          html
+        }
+        education_rich_field {
+          html
+        }
       }
     }
   }
@@ -147,8 +145,6 @@ const About = () => {
   const { prismicAbout } = useStaticQuery(PRISMIC_ABOUT_QUERY)
 
   const prismicData = prismicAbout.data
-  const html = prismicAbout.data.text_rich_field.html
-  const imageUrl = prismicAbout.data.image_of_me.url
 
   return (
     <div>
@@ -157,17 +153,20 @@ const About = () => {
         <div css={buttonContainer}>
           <Button
             isActive={activeSection === "about"}
-            text="About"
+            text="about"
+            iconName="person"
             onClick={() => setActiveSection("about")}
           />
           <Button
             isActive={activeSection === "skills"}
             text="Skills"
+            iconName="skills"
             onClick={() => setActiveSection("skills")}
           />
           <Button
             isActive={activeSection === "education"}
             text="Education"
+            iconName="education"
             onClick={() => setActiveSection("education")}
           />
         </div>
