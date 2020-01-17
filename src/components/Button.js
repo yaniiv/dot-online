@@ -5,7 +5,7 @@ import * as COLORS from "../colors"
 import Icon from "./Icon"
 
 const activeColor = css`
-  background: ${COLORS.PURPLE_LIGHT};
+  background: ${COLORS.BUTTON_ACTIVE};
 `
 
 const getButtonStyles = (extraStyles, isActive) => css`
@@ -14,13 +14,22 @@ const getButtonStyles = (extraStyles, isActive) => css`
   border: 2px solid ${COLORS.PURPLE};
   margin-top: 24px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-right: 14px;
   border-radius: 4px;
   height: 50px;
   width: 150px;
-  margin-left: 24px;
+
   box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+
+  margin-left: auto;
+
+  @media (min-width: 758px) {
+    margin-left: auto;
+    justify-content: center;
+    padding-right: unset;
+  }
 
   ${extraStyles}
   ${isActive && activeColor}

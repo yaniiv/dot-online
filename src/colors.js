@@ -32,9 +32,28 @@ export const ABOUT_PAGE_BACKGROUND = "#415C52"
 export const FOOTER_BACKGROUND = "#363433"
 export const CONTACT_FORM_BACKGROUND = GREY
 
-export const AQUA = `#6cffb4`
-
-/* 
+export const BUTTON_ACTIVE = "#cc1d81"
+/*
+0: "#ffd926"
+1: "#ffc922"
+2: "#ffb924"
+3: "#ffa92a"
+4: "#ff9932"
+5: "#ff883b"
+6: "#ff7845"
+7: "#ff684e"
+8: "#ff5857"
+9: "#ff4960"
+10: "#f53b69"
+11: "#e92e72"
+12: "#dc237a"
+13: "#cc1d81"
+14: "#bb1b87"
+15: "#a71d8d"
+16: "#922191"
+17: "#7b2694"
+18: "#602995"
+19: "#412c94"
 const softGrey = "rgb(243, 243, 243)"
 // const white = "rgb(255, 255, 255)"
 export const hoverGrey = "rgb(234, 234, 234)"

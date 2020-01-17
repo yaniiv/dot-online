@@ -49,8 +49,13 @@ const text = css`
   padding: 24px;
   background: ${COLORS.GREY};
   border: 2px solid black;
-  border-radius: 4px;
+  border-radius: 2px;
   box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
+
+  @media (min-width: 758px) {
+    border: 3px solid black;
+    border-radius: 6px;
+  }
 
   a {
     /* color: ${COLORS.YANIV}; */
@@ -83,8 +88,12 @@ const image = css`
 
 const buttonContainer = css`
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: column;
+
+  @media (min-width: 758px) {
+    justify-content: flex-end;
+    flex-direction: row;
+  }
 `
 
 const renderActiveContent = (activeSection, prismicData) => {
@@ -153,8 +162,8 @@ const About = () => {
         <div css={buttonContainer}>
           <Button
             isActive={activeSection === "about"}
-            text="about"
-            iconName="person"
+            text="About"
+            iconName="about"
             onClick={() => setActiveSection("about")}
           />
           <Button

@@ -9,7 +9,7 @@ import Projects from "../projects/Projects"
 import SideNav from "../SideNav"
 
 import About from "../about/About"
-// import MagicBorder from "./MagicBorder"
+import MagicBorder from "./MagicBorder"
 
 // import * as COLORS from "../../colors"
 
@@ -28,7 +28,7 @@ const HomeEntry = () => {
         }}
       />
       <Duality pauseRender={pauseDuality} />
-      {/* <MagicBorder numSwirls={6} /> */}
+      {/* <MagicBorder /> */}
       <About />
       {/* <MagicBorder backgroundColor={COLORS.GREY} /> */}
       <Projects />
