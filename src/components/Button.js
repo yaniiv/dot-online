@@ -26,7 +26,7 @@ const getButtonStyles = (extraStyles, isActive) => css`
   margin-left: auto;
 
   @media (min-width: 758px) {
-    margin-left: 24px;
+    margin-left: auto;
     justify-content: center;
     padding-right: unset;
   }

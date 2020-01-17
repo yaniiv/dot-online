@@ -15,7 +15,6 @@ const container = css`
   flex-direction: column;
   justify-content: center;
 
-  display: flex;
   width: 100%;
   margin: 0 auto;
   padding: 12px 30px;
@@ -89,9 +88,9 @@ const image = css`
 const buttonContainer = css`
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 
   @media (min-width: 758px) {
-    justify-content: flex-end;
     flex-direction: row;
   }
 `
