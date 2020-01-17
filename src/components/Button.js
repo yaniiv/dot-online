@@ -9,7 +9,7 @@ const activeColor = css`
 `
 
 const getButtonStyles = (extraStyles, isActive) => css`
-  color: ${COLORS.GREY_DARK};
+  color: ${COLORS.BLACK};
   background: ${COLORS.YELLOW};
   border: 2px solid ${COLORS.PURPLE};
   margin-top: 24px;
@@ -26,7 +26,7 @@ const getButtonStyles = (extraStyles, isActive) => css`
   margin-left: auto;
 
   @media (min-width: 758px) {
-    margin-left: auto;
+    margin-left: 24px;
     justify-content: center;
     padding-right: unset;
   }

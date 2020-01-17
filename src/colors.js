@@ -32,7 +32,7 @@ export const ABOUT_PAGE_BACKGROUND = "#415C52"
 export const FOOTER_BACKGROUND = "#363433"
 export const CONTACT_FORM_BACKGROUND = GREY
 
-export const BUTTON_ACTIVE = "#cc1d81"
+export const BUTTON_ACTIVE = GREY_LIGHT
 /*
 0: "#ffd926"
 1: "#ffc922"
