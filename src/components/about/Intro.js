@@ -8,7 +8,7 @@ const container = css`
   color: ${COLORS.WHITE};
   position: absolute;
   left: 0;
-  bottom: 0;
+  top: 0;
 
   width: 100%;
   font-size: 18px;

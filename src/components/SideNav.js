@@ -9,7 +9,7 @@ const headerContainer = css`
   position: absolute;
   right: 0;
   top: 0;
-  margin: 20px 30px;
+  margin: 12px 40px;
 
   display: flex;
   flex-direction: column;
@@ -19,15 +19,19 @@ const headerContainer = css`
   color: ${COLORS.YANIV};
 
   text-align: right;
-  font-size: 18px;
+  font-size: 20px;
 
   @media (min-width: 768px) {
-    font-size: 20px;
+    margin: 32px 40px;
+    font-size: 22px;
   }
 `
 
 const headerLink = css`
-  margin: 4px 0;
+  margin: 8px 0;
+  @media (min-width: 768px) {
+    margin: 4px 0;
+  }
 
   cursor: pointer;
 
@@ -46,10 +50,10 @@ const SideNav = () => (
         smooth={true}
         duration={500}
       >
-        yaniv
+        home
       </ScrollLink>
     </div>
-    {/* <div css={headerLink}>
+    <div css={headerLink}>
       <ScrollLink
         activeClass="active"
         to="about"
@@ -59,7 +63,7 @@ const SideNav = () => (
       >
         about
       </ScrollLink>
-    </div> */}
+    </div>
     <div css={headerLink}>
       <ScrollLink
         activeClass="active"
