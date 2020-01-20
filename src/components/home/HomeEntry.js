@@ -9,7 +9,7 @@ import Projects from "../projects/Projects"
 import SideNav from "../SideNav"
 
 import About from "../about/About"
-import MagicBorder from "./MagicBorder"
+// import MagicBorder from "./MagicBorder"
 
 // import * as COLORS from "../../colors"
 

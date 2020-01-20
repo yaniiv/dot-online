@@ -164,18 +164,39 @@ const About = () => {
             text="About"
             iconName="about"
             onClick={() => setActiveSection("about")}
+            extraStyles={css`
+              margin-left: auto;
+
+              @media (min-width: 758px) {
+                margin-left: 24px;
+              }
+            `}
           />
           <Button
             isActive={activeSection === "skills"}
             text="Skills"
             iconName="skills"
             onClick={() => setActiveSection("skills")}
+            extraStyles={css`
+              margin-left: auto;
+
+              @media (min-width: 758px) {
+                margin-left: 24px;
+              }
+            `}
           />
           <Button
             isActive={activeSection === "education"}
             text="Education"
             iconName="education"
             onClick={() => setActiveSection("education")}
+            extraStyles={css`
+              margin-left: auto;
+
+              @media (min-width: 758px) {
+                margin-left: 24px;
+              }
+            `}
           />
         </div>
       </div>
