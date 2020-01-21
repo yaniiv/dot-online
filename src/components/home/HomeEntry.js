@@ -29,15 +29,24 @@ const HomeEntry = () => {
             setHeaderTransparent(false)
           }}
           onLeave={() => {
-            setPauseDuality(true)
             setHeaderTransparent(true)
           }}
         />
         <Duality pauseRender={pauseDuality} />
+        <Waypoint
+          onEnter={() => {
+            setPauseDuality(false)
+          }}
+          onLeave={() => {}}
+        />
       </div>
-
-      {/* <MagicBorder /> */}
       <About />
+      <Waypoint
+        onEnter={() => {
+          setPauseDuality(true)
+        }}
+        onLeave={() => {}}
+      />
 
       {/* <MagicBorder backgroundColor={COLORS.GREY} /> */}
       <Projects />

@@ -13,7 +13,7 @@ const headerContainer = isTransparent => css`
   display: flex;
   justify-content: space-between;
 
-  transition: background-color 0.2s ease-in;
+  transition: background-color 0.25s ease-in;
   background: ${COLORS.PURPLE_DARK};
   color: ${COLORS.YANIV};
 
@@ -26,7 +26,7 @@ const headerContainer = isTransparent => css`
 
   ${isTransparent &&
     css`
-      transition: background-color 0.2s ease-in;
+      transition: background-color 0.25s ease-in;
       background-color: ${COLORS.TRANSPARENT};
     `}
 `
@@ -57,7 +57,16 @@ const TopNav = ({ isTransparent }) => (
           smooth={true}
           duration={500}
         >
-          👋 Hello! I'm Yaniv
+          {`👋 `}
+          <span
+            css={css`
+              @media (max-width: 768px) {
+                display: none;
+              }
+            `}
+          >
+            Hello! I'm Yaniv
+          </span>
         </ScrollLink>
       </div>
     </div>
