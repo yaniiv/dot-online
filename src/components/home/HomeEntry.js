@@ -6,7 +6,7 @@ import Duality from "../threejs/Duality"
 import Contact from "../contact/Contact"
 import Projects from "../projects/Projects"
 
-import SideNav from "../SideNav"
+// import SideNav from "../SideNav"
 import TopNav from "../TopNav"
 
 import About from "../about/About"

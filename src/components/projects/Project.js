@@ -9,12 +9,16 @@ import Button from "../Button"
 import * as COLORS from "../../colors"
 
 export const projectContainer = css`
-  height: 100vh;
+  height: 80vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: ${COLORS.PURPLE};
+
+  @media (min-width: 768px) {
+    height: 95vh;
+  }
 `
 
 export const project = css`

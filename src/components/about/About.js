@@ -9,7 +9,7 @@ import * as COLORS from "../../colors"
 const container = css`
   background: ${COLORS.TRANSPARENT};
   font-weight: 600px;
-  height: 80vh;
+  height: 90vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -22,6 +22,7 @@ const container = css`
 
   @media (min-width: 758px) {
     font-size: 20px;
+    height: 80vh;
     padding: 0;
   }
   color: ${COLORS.WHITE};
