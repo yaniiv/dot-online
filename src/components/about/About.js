@@ -58,9 +58,10 @@ const text = css`
     display: flex;
     flex-wrap: wrap;
     li {
-      background: ${COLORS.ROSETTE};
+      background: ${COLORS.TANG};
       border-radius: 8px;
-      padding: 4px 8px;
+      border: 2px solid black;
+      padding: 4px 12px;
       margin: 8px;
     }
   }

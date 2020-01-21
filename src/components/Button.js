@@ -5,7 +5,7 @@ import * as COLORS from "../colors"
 import Icon from "./Icon"
 
 const activeColor = css`
-  background: ${COLORS.BUTTON_ACTIVE};
+  background-color: ${COLORS.ROSETTE_LIGHT};
 `
 
 const getButtonStyles = (extraStyles, isActive) => css`

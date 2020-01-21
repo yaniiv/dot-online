@@ -35,6 +35,11 @@ export const CONTACT_FORM_BACKGROUND = GREY
 export const BUTTON_ACTIVE = GREY_LIGHT
 
 export const ROSETTE = "#cc1d81"
+export const ROSETTE_LIGHT = "#E35DB0"
+export const AQUA = "#40FFF3"
+export const AQUA_LIGHT = "#C4FCF8"
+export const TANG = "#4F2AD4"
+
 /*
 0: "#ffd926"
 1: "#ffc922"
