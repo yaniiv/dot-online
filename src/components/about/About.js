@@ -7,7 +7,7 @@ import Button from "../Button"
 import * as COLORS from "../../colors"
 
 const container = css`
-  background: ${COLORS.PURPLE};
+  background: ${COLORS.TRANSPARENT};
   font-weight: 600px;
   height: 100vh;
   width: 100vw;
@@ -31,7 +31,7 @@ const container = css`
   }
 
   @media (min-width: 1024px) {
-    max-width: 748px;
+    max-width: 780px;
   }
 
   @media (min-width: 1200px) {
@@ -46,10 +46,13 @@ const text = css`
 
   margin: 0 auto;
   padding: 24px;
-  background: ${COLORS.GREY};
+  background: ${COLORS.PURPLE_DARK};
   border: 2px solid black;
   border-radius: 2px;
   box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   @media (min-width: 758px) {
     border: 3px solid black;
@@ -86,12 +89,24 @@ const image = css`
 `
 
 const buttonContainer = css`
+  padding: 20px 0 0;
   display: flex;
-  flex-direction: column;
   justify-content: flex-end;
+  flex-wrap: wrap;
 
   @media (min-width: 758px) {
-    flex-direction: row;
+    justify-content: flex-end;
+  }
+`
+
+const buttonStyles = css`
+  margin: 10px 20px;
+  box-shadow: none;
+  color: #363433;
+  background: #ffd926;
+  border: 2px solid #412c94;
+
+  @media (min-width: 758px) {
   }
 `
 
@@ -110,6 +125,7 @@ const renderActiveContent = (activeSection, prismicData) => {
 
 const AboutText = ({ data }) => (
   <div>
+    <div />
     <img alt="yaniv" css={image} src={data.image_of_me.url} />
     <div dangerouslySetInnerHTML={{ __html: data.text_rich_field.html }} />
   </div>
@@ -157,47 +173,31 @@ const About = () => {
   return (
     <div>
       <div id="about" css={container}>
-        <div css={text}>{renderActiveContent(activeSection, prismicData)}</div>
-        <div css={buttonContainer}>
-          <Button
-            isActive={activeSection === "about"}
-            text="About"
-            iconName="about"
-            onClick={() => setActiveSection("about")}
-            extraStyles={css`
-              margin-left: auto;
-
-              @media (min-width: 758px) {
-                margin-left: 24px;
-              }
-            `}
-          />
-          <Button
-            isActive={activeSection === "skills"}
-            text="Skills"
-            iconName="skills"
-            onClick={() => setActiveSection("skills")}
-            extraStyles={css`
-              margin-left: auto;
-
-              @media (min-width: 758px) {
-                margin-left: 24px;
-              }
-            `}
-          />
-          <Button
-            isActive={activeSection === "education"}
-            text="Education"
-            iconName="education"
-            onClick={() => setActiveSection("education")}
-            extraStyles={css`
-              margin-left: auto;
-
-              @media (min-width: 758px) {
-                margin-left: 24px;
-              }
-            `}
-          />
+        <div css={text}>
+          {renderActiveContent(activeSection, prismicData)}
+          <div css={buttonContainer}>
+            <Button
+              isActive={activeSection === "about"}
+              text="About"
+              iconName="about"
+              onClick={() => setActiveSection("about")}
+              extraStyles={buttonStyles}
+            />
+            <Button
+              isActive={activeSection === "skills"}
+              text="Skills"
+              iconName="skills"
+              onClick={() => setActiveSection("skills")}
+              extraStyles={buttonStyles}
+            />
+            <Button
+              isActive={activeSection === "education"}
+              text="Studies"
+              iconName="education"
+              onClick={() => setActiveSection("education")}
+              extraStyles={buttonStyles}
+            />
+          </div>
         </div>
       </div>
     </div>

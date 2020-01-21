@@ -19,6 +19,7 @@ const getButtonStyles = (extraStyles, isActive) => css`
   border-radius: 4px;
   height: 50px;
   width: 150px;
+  padding: 0px 20px;
 
   box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -26,9 +27,6 @@ const getButtonStyles = (extraStyles, isActive) => css`
   margin-left: auto;
 
   @media (min-width: 758px) {
-    /* margin-left: auto; */
-    justify-content: center;
-    padding-right: unset;
   }
 
   ${extraStyles}
@@ -45,26 +43,40 @@ const Button = ({ text, onClick, isActive, extraStyles, iconName }) => {
       <div
         css={css`
           line-height: 28px;
+          /* margin: 0 auto; */
+          width: 100%;
+          display: flex;
+          flex-direction: row;
         `}
       >
-        {text}
-      </div>
-      <div>
-        <Icon
-          fill="none"
+        <div
           css={css`
-            stroke-width: 3;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            margin-left: 8px;
-            display: block;
+            margin: 0 auto;
           `}
-          stroke="black"
-          width="24px"
-          height="24px"
-          viewBox="0 0 24 24"
-          name={iconName}
-        />
+        >
+          {text}
+        </div>
+        <div
+          css={css`
+            line-height: 28px;
+          `}
+        >
+          <Icon
+            fill="none"
+            css={css`
+              stroke-width: 3;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              margin-left: 8px;
+              display: block;
+            `}
+            stroke="black"
+            width="24px"
+            height="24px"
+            viewBox="0 0 24 24"
+            name={iconName}
+          />
+        </div>
       </div>
     </button>
   )
