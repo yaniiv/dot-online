@@ -39,7 +39,7 @@ export default class Duality extends Component {
         css={duality}
         ref={element => (this.threeRootElement = element)}
       >
-        <Intro />
+        {/* <Intro /> */}
       </div>
     )
   }
