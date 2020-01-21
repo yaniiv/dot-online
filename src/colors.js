@@ -33,6 +33,8 @@ export const FOOTER_BACKGROUND = "#363433"
 export const CONTACT_FORM_BACKGROUND = GREY
 
 export const BUTTON_ACTIVE = GREY_LIGHT
+
+export const ROSETTE = "#cc1d81"
 /*
 0: "#ffd926"
 1: "#ffc922"

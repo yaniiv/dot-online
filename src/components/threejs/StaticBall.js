@@ -34,7 +34,7 @@ export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
   sphereFrame.position.set(xPosition, 20, 0)
 
   group.add(sphere)
-  group.add(sphereFrame)
+  // group.add(sphereFrame)
 
   scene.add(group)
 

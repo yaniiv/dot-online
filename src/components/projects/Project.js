@@ -86,7 +86,7 @@ const Project = ({ data }) => {
             `}
             isActive={isConsoleOpen}
             iconName="info"
-            text="More Info"
+            text="Info"
             onClick={toggleIsConsoleOpen}
           />
         </div>

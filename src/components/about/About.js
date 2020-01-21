@@ -41,7 +41,6 @@ const container = css`
 
 const text = css`
   /* max-width: 680px; */
-  min-height: 280px;
   width: 100%;
 
   margin: 0 auto;
@@ -53,6 +52,22 @@ const text = css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    li {
+      background: ${COLORS.ROSETTE};
+      border-radius: 8px;
+      padding: 4px 8px;
+      margin: 8px;
+    }
+  }
+
+  p {
+    padding: 8px 0;
+  }
 
   @media (min-width: 758px) {
     border: 3px solid black;
