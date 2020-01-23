@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: `yaniv`,
     description: `yan's projects and stuff`,
-    siteUrl: `https://www.aftertheussr.com.com`,
+    siteUrl: `https://www.yanivgoldobin.com`,
     author: `@yantonsoup`,
     siteSocials: [
       {
@@ -17,7 +17,7 @@ module.exports = {
       },
       {
         name: `linkedin`,
-        linkTo: `linkedin.com/in/ygoldobin`,
+        linkTo: `https://linkedin.com/in/ygoldobin`,
       },
       {
         name: `medium`,
