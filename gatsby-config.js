@@ -7,7 +7,8 @@ console.warn(`.env.${process.env.NODE_ENV}`)
 module.exports = {
   siteMetadata: {
     title: `yaniv`,
-    description: `yaniv, online`,
+    description: `yan's projects and stuff`,
+    siteUrl: `https://www.aftertheussr.com.com`,
     author: `@yantonsoup`,
     siteSocials: [
       {
@@ -26,6 +27,7 @@ module.exports = {
   },
 
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
