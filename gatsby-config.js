@@ -31,6 +31,20 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.yanivgoldobin.com",
+        sitemap: "https://www.yanivgoldobin.com/sitemap.xml",
+        policy: [
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: ["/wp-admin/", "/wp-content/"],
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
