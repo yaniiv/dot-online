@@ -24,9 +24,9 @@ function fragmentShader() {
 }
 
 export default (scene, position, color) => {
-  const SEPARATION = 50
-  const AMOUNTX = 20
-  const AMOUNTY = 20
+  const SEPARATION = 25
+  const AMOUNTX = 15
+  const AMOUNTY = 15
 
   let particles = 0
   let count = 0
@@ -69,10 +69,10 @@ export default (scene, position, color) => {
     for (let ix = 0; ix < AMOUNTX; ix++) {
       for (let iy = 0; iy < AMOUNTY; iy++) {
         positions[i + 1] =
-          Math.sin((ix + count) * 0.3) * 50 + Math.sin((iy + count) * 0.5) * 50
+          Math.sin((ix + count) * 0.3) * 10 + Math.sin((iy + count) * 0.5) * 10
         scales[j] =
-          (Math.sin((ix + count) * 0.3) + 1) * 8 +
-          (Math.sin((iy + count) * 0.5) + 1) * 8
+          (Math.sin((ix + count) * 0.3) + 1) * 4 +
+          (Math.sin((iy + count) * 0.3) + 1) * 4
         i += 3
         j++
       }

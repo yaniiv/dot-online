@@ -112,9 +112,9 @@ export default canvas => {
     }
 
     const desktopAngle = {
-      x: 45,
-      y: 100,
-      z: 65,
+      x: 100,
+      y: 60,
+      z: 140,
     }
 
     if (isDesktop()) {
@@ -182,10 +182,11 @@ export default canvas => {
       staticBallProperties = NUMBERS.STATIC_BALL_PROPERTIES.desktop
       movingBallProperties = NUMBERS.MOVING_BALL_PROPERTIES.desktop
     }
-
+    const waves = new Waves(scene)
     new FloorPlane(scene)
     new DirectionalLights(scene)
-    createStaticBalls({
+
+    const staticBalls = createStaticBalls({
       scene,
       ballProperties: staticBallProperties,
     })
@@ -197,7 +198,7 @@ export default canvas => {
       numBalls: NUMBERS.NUM_BALLS,
     })
 
-    const sceneSubjects = [...movingBalls]
+    const sceneSubjects = [...movingBalls, ...staticBalls, waves]
 
     return sceneSubjects
   }

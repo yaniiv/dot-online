@@ -7,7 +7,7 @@ import Contact from "../contact/Contact"
 import Projects from "../projects/Projects"
 
 import SideNav from "../SideNav"
-import Intro from "../about/Intro"
+// import Intro from "../about/Intro"
 // import TopNav from "../TopNav"
 
 import About from "../about/About"
@@ -36,9 +36,6 @@ const HomeEntry = () => {
           }}
         />
         <Duality pauseRender={pauseDuality} />
-
-        <About />
-
         <Waypoint
           onEnter={() => {
             setPauseDuality(false)
@@ -46,7 +43,7 @@ const HomeEntry = () => {
           onLeave={() => {}}
         />
       </div>
-      {/* <MagicBorder /> */}
+      <MagicBorder />
 
       <About />
       <Waypoint
