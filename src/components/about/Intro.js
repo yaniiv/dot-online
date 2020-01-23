@@ -6,7 +6,8 @@ import * as COLORS from "../../colors"
 
 const container = css`
   color: ${COLORS.WHITE};
-  position: absolute;
+  position: fixed;
+  display: flex;
   left: 0;
   top: 0;
 
@@ -47,13 +48,14 @@ const PRISMIC_INTRO_QUERY = graphql`
   }
 `
 
-const Intro = () => {
+const Intro = ({ isTransparent }) => {
   const { prismicIntro } = useStaticQuery(PRISMIC_INTRO_QUERY)
   const html = prismicIntro.data.text.html
 
   return (
     <div css={container}>
       <div dangerouslySetInnerHTML={{ __html: html }} />
+      {!isTransparent && `Hello! I'm Yaniv`}
     </div>
   )
 }

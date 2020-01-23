@@ -6,8 +6,9 @@ import Duality from "../threejs/Duality"
 import Contact from "../contact/Contact"
 import Projects from "../projects/Projects"
 
-// import SideNav from "../SideNav"
-import TopNav from "../TopNav"
+import SideNav from "../SideNav"
+import Intro from "../about/Intro"
+// import TopNav from "../TopNav"
 
 import About from "../about/About"
 // import MagicBorder from "./MagicBorder"
@@ -20,19 +21,22 @@ const HomeEntry = () => {
 
   return (
     <Layout>
-      {/* <SideNav /> */}
+      <SideNav isTransparent={isTransparent} />
+      {/* <Intro isTransparent={isTransparent} /> */}
       <div>
-        <TopNav isTransparent={isTransparent} />
+        {/* <TopNav isTransparent={isTransparent} /> */}
         <Waypoint
           onEnter={() => {
             setPauseDuality(false)
             setHeaderTransparent(false)
           }}
           onLeave={() => {
+            setPauseDuality(true)
             setHeaderTransparent(true)
           }}
         />
         <Duality pauseRender={pauseDuality} />
+        <About />
         <Waypoint
           onEnter={() => {
             setPauseDuality(false)
@@ -40,7 +44,7 @@ const HomeEntry = () => {
           onLeave={() => {}}
         />
       </div>
-      <About />
+      {/* <About /> */}
       <Waypoint
         onEnter={() => {
           setPauseDuality(true)

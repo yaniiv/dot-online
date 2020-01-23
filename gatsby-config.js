@@ -23,6 +23,10 @@ module.exports = {
         name: `medium`,
         linkTo: `https://medium.com/@yaniv_g`,
       },
+      {
+        name: `twitter`,
+        linkTo: `https://twitter.com/yantonsoup`,
+      },
     ],
   },
 

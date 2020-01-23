@@ -24,7 +24,7 @@ export const projectContainer = css`
 export const project = css`
   width: 100%;
   min-width: 375px;
-
+  z-index: 10;
   margin: auto;
   padding: 12px 30px;
 

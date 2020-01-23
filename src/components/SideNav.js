@@ -6,7 +6,7 @@ import { Link as ScrollLink } from "react-scroll"
 import * as COLORS from "../colors"
 
 const headerContainer = css`
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   margin: 12px 40px;
@@ -17,7 +17,7 @@ const headerContainer = css`
 
   background: ${COLORS.TRANSPARENT};
   color: ${COLORS.YANIV};
-
+  z-index: 5;
   text-align: right;
   font-size: 20px;
 
@@ -28,11 +28,10 @@ const headerContainer = css`
 `
 
 const headerLink = css`
-  margin: 8px 0;
+  margin: 4px 0;
   @media (min-width: 768px) {
-    margin: 4px 0;
+    margin: 8px 0;
   }
-
   cursor: pointer;
 
   &:hover {
@@ -40,7 +39,7 @@ const headerLink = css`
   }
 `
 
-const SideNav = () => (
+const SideNav = ({ isTransparent }) => (
   <header css={headerContainer}>
     <div css={headerLink}>
       <ScrollLink
@@ -50,7 +49,20 @@ const SideNav = () => (
         smooth={true}
         duration={500}
       >
-        home
+        {!isTransparent && (
+          <span>
+            {"👋 "}
+            <span
+              css={css`
+                color: white;
+              `}
+            >
+              yellow!
+            </span>{" "}
+            i'm <span />
+          </span>
+        )}
+        yaniv
       </ScrollLink>
     </div>
     <div css={headerLink}>
@@ -70,7 +82,7 @@ const SideNav = () => (
         to="projects"
         spy={true}
         smooth={true}
-        duration={1000}
+        duration={500}
       >
         projects
       </ScrollLink>
@@ -81,7 +93,7 @@ const SideNav = () => (
         to="contact"
         spy={true}
         smooth={true}
-        duration={1000}
+        duration={500}
       >
         contact
       </ScrollLink>

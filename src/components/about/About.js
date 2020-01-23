@@ -9,12 +9,13 @@ import * as COLORS from "../../colors"
 const container = css`
   background: ${COLORS.TRANSPARENT};
   font-weight: 600px;
-  height: 90vh;
+  min-height: 90vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
+  position: relative;
+  z-index: 10;
   width: 100%;
   margin: 0 auto;
   padding: 12px 30px;
