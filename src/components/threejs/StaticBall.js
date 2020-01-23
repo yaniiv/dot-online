@@ -2,7 +2,6 @@
 import * as THREE from "three"
 
 import * as NUMBERS from "../../numbers"
-import alphaTexture from "./textures/stripes_gradient.jpg"
 
 export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
   const group = new THREE.Group()
@@ -17,15 +16,6 @@ export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
     widthSegments,
     heightSegments
   )
-  /* 
-  const material = new THREE.MeshBasicMaterial({
-    map: texture,
-  });
-  const cube = new THREE.Mesh(geometry, material);
-  scene.add(cube);
-  cubes.push(cube);  // add to our list of cubes to rotate
-  */
-
   const material = new THREE.MeshBasicMaterial({ color })
   const sphere = new THREE.Mesh(geometry, material)
   const sphereFrame = new THREE.LineSegments(

@@ -12,7 +12,7 @@ import MovingBall from "./MovingBall"
 import DirectionalLights from "./DirectionalLights"
 import FloorPlane from "./FloorPlane"
 // import GeneralLights from "./GeneralLights"
-// import Waves from "./Waves"
+import Waves from "./Waves"
 import OrbitControls from "three-orbitcontrols"
 
 import { isDesktop } from "../../utils"

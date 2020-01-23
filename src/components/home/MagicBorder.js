@@ -45,7 +45,6 @@ const getSwirlDiameter = numSwirls => {
   return swirlDiameter
 }
 
-// numswirls = 40
 const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
   const conicGradientProperties = getConicGradient(degreeRotate, color)
   console.log("-${swirlDiameter / 2}px;", `-${swirlDiameter / 2}px`)
@@ -54,16 +53,11 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     height: ${swirlDiameter}px;
     margin-left: -${swirlDiameter / 2}px;
     border-radius: ${swirlDiameter / 2}px;
-    /* border: 1px solid ${COLORS.PURPLE}; */
     background: ${conicGradientProperties};
-    /* transition: background ease-in; */
-    /* background-color: white; */
-    /* transition-delay: 2s; */
     
 
     animation-duration: 6s;
-    animation-delay: ${index * 250}ms;
-    /* animation-delay: ${index * 500}ms; */
+    animation-delay: ${index * 200}ms;
     animation-name: slidein;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -145,7 +139,7 @@ const MagicBorder = ({
             width: 100vw;
             margin-bottom: -${swirlDiameter / 2}px;
 
-            animation-duration: 20s;
+            animation-duration: 30s;
             animation-name: slideabout;
             animation-iteration-count: infinite;
             animation-direction: alternate;
@@ -156,7 +150,7 @@ const MagicBorder = ({
               }
 
               to {
-                padding-left: 30vw;
+                padding-left: 50vw;
               }
             }
           `}
