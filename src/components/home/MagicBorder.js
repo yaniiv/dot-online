@@ -52,8 +52,8 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     width: ${swirlDiameter}px;
     height: ${swirlDiameter}px;
     margin-left: -${swirlDiameter / 2}px;
-    border-radius: ${swirlDiameter / 2}px;
-    border: 1px solid ${COLORS.PURPLE};
+    border-radius: ${swirlDiameter}px;
+    /* border: 1px solid ${COLORS.PURPLE}; */
     background: ${conicGradientProperties};
     
 

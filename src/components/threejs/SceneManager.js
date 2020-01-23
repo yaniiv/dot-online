@@ -108,7 +108,7 @@ export default canvas => {
     const mobileAngle = {
       x: 40,
       y: 80,
-      z: 10,
+      z: 80,
     }
 
     const desktopAngle = {
