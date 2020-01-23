@@ -43,7 +43,7 @@ const HomeEntry = () => {
           onLeave={() => {}}
         />
       </div>
-      <MagicBorder />
+      {/* <MagicBorder /> */}
 
       <About />
       <Waypoint

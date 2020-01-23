@@ -39,7 +39,8 @@ const headerLink = css`
   }
 
   .active {
-    text-decoration: underline;
+    font-size: 26px;
+    font-weight: 600;
   }
 `
 
@@ -50,8 +51,8 @@ const SideNav = ({ isTransparent }) => (
         activeClass="active"
         to="duality"
         spy={true}
-        smooth={true}
-        duration={500}
+        // smooth={true}
+        duration={200}
       >
         {!isTransparent && (
           <span>

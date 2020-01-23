@@ -23,7 +23,7 @@ const container = css`
 
   @media (min-width: 758px) {
     font-size: 20px;
-    height: 80vh;
+    height: 90vh;
     padding: 0;
   }
   color: ${COLORS.WHITE};
@@ -48,7 +48,7 @@ const text = css`
   margin: 0 auto;
   padding: 24px;
   background: ${COLORS.PURPLE_DARK};
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 2px;
   box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -73,7 +73,7 @@ const text = css`
   }
 
   @media (min-width: 758px) {
-    border: 3px solid black;
+    /* border: 3px solid black; */
     border-radius: 6px;
   }
 
