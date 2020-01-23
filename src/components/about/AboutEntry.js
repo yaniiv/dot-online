@@ -10,9 +10,9 @@ import SideNav from "../SideNav"
 import TopNav from "../TopNav"
 
 import About from "./About"
-// import MagicBorder from "./MagicBorder"
+import MagicBorder from "../home/MagicBorder"
 
-// import * as COLORS from "../../colors"
+import * as COLORS from "../../colors"
 
 const AboutEntry = () => {
   const [isTransparent, setHeaderTransparent] = useState(false)
@@ -29,9 +29,10 @@ const AboutEntry = () => {
           setHeaderTransparent(true)
         }}
       />
-      <About />
 
-      {/* <MagicBorder backgroundColor={COLORS.GREY} /> */}
+      <About />
+      <MagicBorder />
+
       {/* <MagicBorder /> */}
       <Contact />
     </Layout>

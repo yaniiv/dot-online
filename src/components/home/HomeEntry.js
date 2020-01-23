@@ -11,7 +11,7 @@ import Intro from "../about/Intro"
 // import TopNav from "../TopNav"
 
 import About from "../about/About"
-// import MagicBorder from "./MagicBorder"
+import MagicBorder from "./MagicBorder"
 
 // import * as COLORS from "../../colors"
 
@@ -36,6 +36,7 @@ const HomeEntry = () => {
           }}
         />
         <Duality pauseRender={pauseDuality} />
+
         <About />
         <Waypoint
           onEnter={() => {
@@ -52,7 +53,6 @@ const HomeEntry = () => {
         onLeave={() => {}}
       />
 
-      {/* <MagicBorder backgroundColor={COLORS.GREY} /> */}
       <Projects />
       {/* <MagicBorder /> */}
       <Contact />

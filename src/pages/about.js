@@ -1,7 +1,7 @@
-// import React from "react"
+import React from "react"
 
-// import AboutEntry from "../components/about/AboutEntry"
+import AboutEntry from "../components/about/AboutEntry"
 
-// const AboutPage = () => <AboutEntry />
+const AboutPage = () => <AboutEntry />
 
-// export default AboutPage
+export default AboutPage

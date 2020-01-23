@@ -9,13 +9,11 @@ function getNumSwirls() {
   let numSwirls = 20
 
   if (isDesktop()) {
-    numSwirls = 50
+    numSwirls = 40
   }
 
   return numSwirls
 }
-
-const numSwirls = getNumSwirls()
 
 function getConicGradient(degreeOffset, coneColor) {
   return `
@@ -24,6 +22,16 @@ function getConicGradient(degreeOffset, coneColor) {
       ${coneColor},
       ${COLORS.TRANSPARENT}
     );
+  `
+}
+
+function getLinearGradient(degreeOffset, coneColor) {
+  return `
+    linear-gradient(25deg, transparent 50%, ${
+      COLORS.PURPLE
+    } 50%), linear-gradient(90deg, transparent 50%, ${coneColor} 50%), linear-gradient(135deg, ${
+    COLORS.PURPLE
+  } 50%, #cbab00 50%), 0 50%
   `
 }
 
@@ -37,7 +45,7 @@ const getSwirlDiameter = numSwirls => {
   return swirlDiameter
 }
 
-const getSquiggleStyle = (degreeRotate, color, swirlDiameter) => {
+const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
   const conicGradientProperties = getConicGradient(degreeRotate, color)
 
   return css`
@@ -45,7 +53,33 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter) => {
     height: ${swirlDiameter}px;
     margin-left: -${swirlDiameter / 2}px;
     border-radius: ${swirlDiameter / 2}px;
+    /* border: 1px solid ${COLORS.PURPLE}; */
     background: ${conicGradientProperties};
+    /* transition: background ease-in; */
+    /* background-color: white; */
+    /* transition-delay: 2s; */
+
+    animation-duration: 4s;
+    animation-delay: ${index * 500}ms;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    @keyframes slidein {
+      from {
+        /* background-color: ${color}; */
+
+
+        margin-left: -${swirlDiameter / 2}px;
+      }
+
+      to {
+        margin-left: -${swirlDiameter}px;
+
+        /* background-color: ${COLORS.TRANSPARENT}; */
+      }
+    }
+    /* margin-left: 50px; */
   `
 }
 
@@ -64,15 +98,21 @@ const createSwirlStyles = ({ numSwirls, swirlDiameter, colorScale }) => {
   console.warn({ swirlColors })
   return swirlColors.map((color, index) => {
     const circleRotation = -90 + index * rotationPerFrame
-    const swirlStyles = getSquiggleStyle(circleRotation, color, swirlDiameter)
+    const swirlStyles = getSquiggleStyle(
+      circleRotation,
+      color,
+      swirlDiameter,
+      index
+    )
 
     return swirlStyles
   })
 }
 
 const MagicBorder = ({
-  colorScale = COLORS.SMALLBALLGRADIENT,
+  colorScale = COLORS.SQUIGGLEGRADIENT,
   backgroundColor = COLORS.PURPLE,
+  numSwirls = getNumSwirls(),
 }) => {
   const [isVisible, setIsVisible] = useState(false)
   const [swirlDiameter, setSwirlDiameter] = useState(
