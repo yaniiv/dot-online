@@ -9,7 +9,7 @@ const headerContainer = css`
   position: fixed;
   right: 0;
   top: 0;
-  margin: 12px 40px;
+  margin: 20px 40px;
 
   display: flex;
   flex-direction: column;
@@ -39,8 +39,12 @@ const headerLink = css`
   }
 
   .active {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
+    @media (min-width: 768px) {
+      font-size: 26px;
+      font-weight: 600;
+    }
   }
 `
 
