@@ -47,7 +47,7 @@ const getSwirlDiameter = numSwirls => {
 
 const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
   const conicGradientProperties = getConicGradient(degreeRotate, color)
-
+  console.log("-${swirlDiameter / 2}px;", `-${swirlDiameter / 2}px`)
   return css`
     width: ${swirlDiameter}px;
     height: ${swirlDiameter}px;
@@ -59,7 +59,7 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     /* background-color: white; */
     /* transition-delay: 2s; */
 
-    animation-duration: 4s;
+    animation-duration: 6s;
     animation-delay: ${index * 500}ms;
     animation-name: slidein;
     animation-iteration-count: infinite;
