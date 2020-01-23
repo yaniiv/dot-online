@@ -25,16 +25,6 @@ function getConicGradient(degreeOffset, coneColor) {
   `
 }
 
-function getLinearGradient(degreeOffset, coneColor) {
-  return `
-    linear-gradient(25deg, transparent 50%, ${
-      COLORS.PURPLE
-    } 50%), linear-gradient(70deg, transparent 50%, ${coneColor} 50%), linear-gradient(135deg, ${
-    COLORS.PURPLE
-  } 50%, #cbab00 50%), 0 50%
-  `
-}
-
 const getSwirlDiameter = numSwirls => {
   if (typeof window === "undefined") {
     return null
@@ -47,7 +37,6 @@ const getSwirlDiameter = numSwirls => {
 
 const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
   const conicGradientProperties = getConicGradient(degreeRotate, color)
-  console.log("-${swirlDiameter / 2}px;", `-${swirlDiameter / 2}px`)
   return css`
     width: ${swirlDiameter}px;
     height: ${swirlDiameter}px;
@@ -58,7 +47,7 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     
 
     animation-duration: 6s;
-    animation-delay: ${index * 200}ms;
+    animation-delay: ${index * 600}ms;
     animation-name: slidein;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -86,7 +75,12 @@ const getSwirlColors = (numSwirls, colorScale) => {
   return swirlColors
 }
 
-const createSwirlStyles = ({ numSwirls, swirlDiameter, colorScale }) => {
+const createSwirlStyles = ({
+  numSwirls,
+  swirlDiameter,
+  colorScale,
+  padding = "500px",
+}) => {
   const swirlColors = getSwirlColors(numSwirls, colorScale)
   const rotationPerFrame = 720 / numSwirls
   console.warn({ swirlColors })
@@ -108,7 +102,6 @@ const MagicBorder = ({
   backgroundColor = COLORS.PURPLE,
   numSwirls = getNumSwirls(),
 }) => {
-  const [isVisible, setIsVisible] = useState(false)
   const [swirlDiameter, setSwirlDiameter] = useState(
     getSwirlDiameter(numSwirls)
   )
@@ -121,7 +114,6 @@ const MagicBorder = ({
 
   useEffect(() => {
     // only render swirls after
-    setIsVisible(true)
 
     function handleResize() {
       const swirlDiameter = getSwirlDiameter(numSwirls)
@@ -132,37 +124,33 @@ const MagicBorder = ({
   })
 
   return (
-    <>
-      {isVisible ? (
-        <div
-          css={css`
-            display: flex;
+    <div
+      css={css`
+        display: flex;
 
-            margin-bottom: -${swirlDiameter / 2}px;
+        margin-bottom: -${swirlDiameter / 2}px;
 
-            animation-duration: 15s;
-            animation-name: slideabout;
-            animation-iteration-count: infinite;
-            animation-direction: alternate;
+        animation-duration: 6s;
+        animation-name: slideabout;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        padding-left: 500px;
+
+        @keyframes slideabout {
+          from {
             padding-left: 100px;
+          }
 
-            /* @keyframes slideabout {
-              from {
-                padding-left: 0px;
-              }
-
-              to {
-                padding-left: 10vw;
-              }
-            } */
-          `}
-        >
-          {swirlStyles.map((css, index) => (
-            <div css={css} key={index} />
-          ))}
-        </div>
-      ) : null}
-    </>
+          to {
+            padding-left: 1000px;
+          }
+        }
+      `}
+    >
+      {swirlStyles.map((css, index) => (
+        <div css={css} key={index} />
+      ))}
+    </div>
   )
 }
 

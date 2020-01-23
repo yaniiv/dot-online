@@ -51,8 +51,8 @@ const SideNav = ({ isTransparent }) => (
         activeClass="active"
         to="duality"
         spy={true}
-        // smooth={true}
-        duration={200}
+        smooth={true}
+        duration={300}
       >
         {!isTransparent && (
           <span>
@@ -76,7 +76,7 @@ const SideNav = ({ isTransparent }) => (
         to="about"
         spy={true}
         smooth={true}
-        duration={500}
+        duration={300}
       >
         about
       </ScrollLink>
@@ -87,7 +87,7 @@ const SideNav = ({ isTransparent }) => (
         to="projects"
         spy={true}
         smooth={true}
-        duration={500}
+        duration={300}
       >
         projects
       </ScrollLink>
