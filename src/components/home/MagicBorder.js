@@ -45,6 +45,7 @@ const getSwirlDiameter = numSwirls => {
   return swirlDiameter
 }
 
+// numswirls = 40
 const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
   const conicGradientProperties = getConicGradient(degreeRotate, color)
   console.log("-${swirlDiameter / 2}px;", `-${swirlDiameter / 2}px`)
@@ -58,28 +59,26 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     /* transition: background ease-in; */
     /* background-color: white; */
     /* transition-delay: 2s; */
+    
 
     animation-duration: 6s;
-    animation-delay: ${index * 500}ms;
+    animation-delay: ${index * 250}ms;
+    /* animation-delay: ${index * 500}ms; */
     animation-name: slidein;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 
     @keyframes slidein {
       from {
-        /* background-color: ${color}; */
-
-
+        /* margin-top: -${swirlDiameter / 2}px; */
         margin-left: -${swirlDiameter / 2}px;
       }
 
       to {
+        /* margin-top: -${swirlDiameter}px; */
         margin-left: -${swirlDiameter}px;
-
-        /* background-color: ${COLORS.TRANSPARENT}; */
       }
     }
-    /* margin-left: 50px; */
   `
 }
 
@@ -143,8 +142,23 @@ const MagicBorder = ({
         <div
           css={css`
             display: flex;
-            background: ${backgroundColor};
+            width: 100vw;
             margin-bottom: -${swirlDiameter / 2}px;
+
+            animation-duration: 20s;
+            animation-name: slideabout;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+
+            @keyframes slideabout {
+              from {
+                padding-left: 0px;
+              }
+
+              to {
+                padding-left: 30vw;
+              }
+            }
           `}
         >
           {swirlStyles.map((css, index) => (

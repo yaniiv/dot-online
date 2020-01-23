@@ -36,6 +36,7 @@ const HomeEntry = () => {
           }}
         />
         <Duality pauseRender={pauseDuality} />
+        <MagicBorder />
 
         <About />
         <Waypoint
@@ -54,7 +55,6 @@ const HomeEntry = () => {
       />
 
       <Projects />
-      {/* <MagicBorder /> */}
       <Contact />
     </Layout>
   )

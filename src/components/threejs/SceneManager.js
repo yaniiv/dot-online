@@ -2,6 +2,7 @@
 import * as THREE from "three"
 import chroma from "chroma-js"
 import Stats from "stats.js"
+import alphaTexture from "./textures/stripes_gradient.jpg"
 
 import * as COLORS from "../../colors"
 import * as NUMBERS from "../../numbers"
@@ -167,7 +168,7 @@ export default canvas => {
         scene,
         ballProperties,
         xPosition: -ballProperties.xPosition,
-        color: COLORS.STATICBALLS[1],
+        color: COLORS.PURPLE,
         meshColor: COLORS.STATICBALLS[0],
       }),
     ]
@@ -181,6 +182,10 @@ export default canvas => {
       staticBallProperties = NUMBERS.STATIC_BALL_PROPERTIES.desktop
       movingBallProperties = NUMBERS.MOVING_BALL_PROPERTIES.desktop
     }
+
+    scene.background = new THREE.CubeTextureLoader()
+      .setPath("textures/cube/pisa/")
+      .load(["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"])
 
     new FloorPlane(scene)
     new DirectionalLights(scene)
