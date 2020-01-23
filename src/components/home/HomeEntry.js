@@ -36,9 +36,9 @@ const HomeEntry = () => {
           }}
         />
         <Duality pauseRender={pauseDuality} />
-        <MagicBorder />
 
         <About />
+
         <Waypoint
           onEnter={() => {
             setPauseDuality(false)
@@ -46,7 +46,9 @@ const HomeEntry = () => {
           onLeave={() => {}}
         />
       </div>
-      {/* <About /> */}
+      {/* <MagicBorder /> */}
+
+      <About />
       <Waypoint
         onEnter={() => {
           setPauseDuality(true)
@@ -55,6 +57,8 @@ const HomeEntry = () => {
       />
 
       <Projects />
+      {/* <MagicBorder /> */}
+
       <Contact />
     </Layout>
   )

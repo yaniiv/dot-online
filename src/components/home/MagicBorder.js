@@ -29,7 +29,7 @@ function getLinearGradient(degreeOffset, coneColor) {
   return `
     linear-gradient(25deg, transparent 50%, ${
       COLORS.PURPLE
-    } 50%), linear-gradient(90deg, transparent 50%, ${coneColor} 50%), linear-gradient(135deg, ${
+    } 50%), linear-gradient(70deg, transparent 50%, ${coneColor} 50%), linear-gradient(135deg, ${
     COLORS.PURPLE
   } 50%, #cbab00 50%), 0 50%
   `
@@ -53,6 +53,7 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     height: ${swirlDiameter}px;
     margin-left: -${swirlDiameter / 2}px;
     border-radius: ${swirlDiameter / 2}px;
+    border: 1px solid ${COLORS.PURPLE};
     background: ${conicGradientProperties};
     
 
@@ -136,23 +137,24 @@ const MagicBorder = ({
         <div
           css={css`
             display: flex;
-            width: 100vw;
+
             margin-bottom: -${swirlDiameter / 2}px;
 
-            animation-duration: 30s;
+            animation-duration: 15s;
             animation-name: slideabout;
             animation-iteration-count: infinite;
             animation-direction: alternate;
+            padding-left: 100px;
 
-            @keyframes slideabout {
+            /* @keyframes slideabout {
               from {
                 padding-left: 0px;
               }
 
               to {
-                padding-left: 50vw;
+                padding-left: 10vw;
               }
-            }
+            } */
           `}
         >
           {swirlStyles.map((css, index) => (

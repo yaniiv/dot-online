@@ -162,14 +162,14 @@ export default canvas => {
         ballProperties,
         xPosition: ballProperties.xPosition,
         color: COLORS.STATICBALLS[0],
-        meshColor: COLORS.STATICBALLS[1],
+        meshColor: COLORS.STATICBALLS[0],
       }),
       new StaticBall({
         scene,
         ballProperties,
         xPosition: -ballProperties.xPosition,
-        color: COLORS.PURPLE,
-        meshColor: COLORS.STATICBALLS[0],
+        color: COLORS.STATICBALLS[1],
+        meshColor: COLORS.STATICBALLS[1],
       }),
     ]
   }
@@ -182,10 +182,6 @@ export default canvas => {
       staticBallProperties = NUMBERS.STATIC_BALL_PROPERTIES.desktop
       movingBallProperties = NUMBERS.MOVING_BALL_PROPERTIES.desktop
     }
-
-    scene.background = new THREE.CubeTextureLoader()
-      .setPath("textures/cube/pisa/")
-      .load(["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"])
 
     new FloorPlane(scene)
     new DirectionalLights(scene)

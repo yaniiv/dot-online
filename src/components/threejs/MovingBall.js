@@ -20,13 +20,13 @@ export default (scene, ballProperties, color) => {
   const sphere = new THREE.Mesh(geometry, material)
   const sphereFrame = new THREE.LineSegments(
     new THREE.EdgesGeometry(geometry),
-    new THREE.LineBasicMaterial()
+    new THREE.LineBasicMaterial({ color })
   )
 
   sphere.castShadow = true //default is false
   sphere.receiveShadow = false //default
 
-  group.add(sphere)
+  // group.add(sphere)
   group.add(sphereFrame)
 
   scene.add(group)

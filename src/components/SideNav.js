@@ -37,6 +37,10 @@ const headerLink = css`
   &:hover {
     text-decoration: underline;
   }
+
+  .active {
+    text-decoration: underline;
+  }
 `
 
 const SideNav = ({ isTransparent }) => (

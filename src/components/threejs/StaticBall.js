@@ -16,7 +16,11 @@ export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
     widthSegments,
     heightSegments
   )
-  const material = new THREE.MeshBasicMaterial({ color })
+  const material = new THREE.MeshBasicMaterial({
+    color,
+    transparent: true,
+  })
+
   const sphere = new THREE.Mesh(geometry, material)
   const sphereFrame = new THREE.LineSegments(
     new THREE.EdgesGeometry(geometry),
@@ -27,14 +31,16 @@ export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
   )
 
   sphere.castShadow = true //default is false
+  sphereFrame.castShadow = true //default is false
+
   sphere.receiveShadow = false //default
 
   // const { focalPointRadius, y, z } = position
   sphere.position.set(xPosition, 20, 0)
   sphereFrame.position.set(xPosition, 20, 0)
 
-  group.add(sphere)
-  // group.add(sphereFrame)
+  // group.add(sphere)
+  group.add(sphereFrame)
 
   scene.add(group)
 
