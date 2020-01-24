@@ -66,9 +66,9 @@ const SideNav = ({ isTransparent }) => (
                 color: white;
               `}
             >
-              yellow!
+              i'm
             </span>{" "}
-            i'm <span />
+            <span />
           </span>
         )}
         yaniv

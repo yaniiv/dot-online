@@ -5,6 +5,9 @@ import ThreeEntryPointManager from "./ThreeEntryPointManager"
 // import Intro from "../about/Intro"
 
 const duality = css`
+  /* position: sticky;
+  top: 0;
+  z-index: 1; */
   margin: auto;
   height: 100vh;
   width: 100%;

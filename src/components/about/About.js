@@ -133,9 +133,9 @@ const renderActiveContent = (activeSection, prismicData) => {
     case "about":
       return <AboutText data={prismicData} />
     case "skills":
-      return <SkillsText data={prismicData} />
+      return <AboutText data={prismicData} />
     case "education":
-      return <EducationText data={prismicData} />
+      return <AboutText data={prismicData} />
     default:
       return
   }
@@ -144,7 +144,7 @@ const renderActiveContent = (activeSection, prismicData) => {
 const AboutText = ({ data }) => (
   <div>
     <div />
-    <img alt="yaniv" css={image} src={data.image_of_me.url} />
+    {/* <img alt="yaniv" css={image} src={data.image_of_me.url} /> */}
     <div dangerouslySetInnerHTML={{ __html: data.text_rich_field.html }} />
   </div>
 )
@@ -193,7 +193,7 @@ const About = () => {
       <div id="about" css={container}>
         <div css={text}>
           {renderActiveContent(activeSection, prismicData)}
-          <div css={buttonContainer}>
+          {/* <div css={buttonContainer}>
             <Button
               isActive={activeSection === "about"}
               text="About"
@@ -215,7 +215,7 @@ const About = () => {
               onClick={() => setActiveSection("education")}
               extraStyles={buttonStyles}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
