@@ -3,8 +3,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 import Button from "../Button"
-import { Title } from '../projects/Project'
-import MagicBorder from "../home/MagicBorder"
 
 
 import * as COLORS from "../../colors"
@@ -12,7 +10,7 @@ import * as COLORS from "../../colors"
 const container = css`
   background: ${COLORS.TRANSPARENT};
   font-weight: 600px;
-  min-height: 90vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -49,7 +47,6 @@ const text = css`
   width: 100%;
 
   margin: 0 auto;
-  padding: 24px;
   /* background: ${COLORS.PURPLE_DARK}; */
   /* border: 2px solid black; */
   /* border-radius: 2px; */
@@ -193,9 +190,6 @@ const About = () => {
   return (
     <div>
       <div id="about" css={container}>
-      <Title title="👋 Hello, I'm Yaniv" />
-      <MagicBorder />
-
         <div css={text}>
 
           {renderActiveContent(activeSection, prismicData)}
