@@ -90,20 +90,20 @@ const text = css`
   }
 `
 
-const image = css`
-  float: left;
-  height: 80px;
-  width: 80px;
-  border-radius: 80px;
-  margin: 0 10px;
+// const image = css`
+//   float: left;
+//   height: 80px;
+//   width: 80px;
+//   border-radius: 80px;
+//   margin: 0 10px;
 
-  @media (min-width: 758px) {
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
-    margin: 10px 30px;
-  }
-`
+//   @media (min-width: 758px) {
+//     height: 100px;
+//     width: 100px;
+//     border-radius: 100px;
+//     margin: 10px 30px;
+//   }
+// `
 
 const buttonContainer = css`
   padding: 20px 0 0;

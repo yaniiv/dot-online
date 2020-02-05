@@ -11,7 +11,7 @@ import SideNav from "../SideNav"
 // import TopNav from "../TopNav"
 
 import About from "../about/About"
-import MagicBorder from "./MagicBorder"
+// import MagicBorder from "./MagicBorder"
 
 // import * as COLORS from "../../colors"
 
