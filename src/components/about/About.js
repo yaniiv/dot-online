@@ -3,6 +3,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 import Button from "../Button"
+import { Title } from '../projects/Project'
+import MagicBorder from "../home/MagicBorder"
+
 
 import * as COLORS from "../../colors"
 
@@ -47,10 +50,10 @@ const text = css`
 
   margin: 0 auto;
   padding: 24px;
-  background: ${COLORS.PURPLE_DARK};
+  /* background: ${COLORS.PURPLE_DARK}; */
   /* border: 2px solid black; */
-  border-radius: 2px;
-  box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
+  /* border-radius: 2px; */
+  /* box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2); */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,7 +86,7 @@ const text = css`
   }
 
   a:visited {
-    color: ${COLORS.DARK_END_DUALITY};
+    color: ${COLORS.LIGHT_END_DUALITY};
   }
 
   a:hover {
@@ -133,9 +136,9 @@ const renderActiveContent = (activeSection, prismicData) => {
     case "about":
       return <AboutText data={prismicData} />
     case "skills":
-      return <AboutText data={prismicData} />
+      return <SkillsText data={prismicData} />
     case "education":
-      return <AboutText data={prismicData} />
+      return <EducationText data={prismicData} />
     default:
       return
   }
@@ -185,15 +188,18 @@ const PRISMIC_ABOUT_QUERY = graphql`
 const About = () => {
   const [activeSection, setActiveSection] = useState("about")
   const { prismicAbout } = useStaticQuery(PRISMIC_ABOUT_QUERY)
-
   const prismicData = prismicAbout.data
 
   return (
     <div>
       <div id="about" css={container}>
+      <Title title="👋 Hello, I'm Yaniv" />
+      <MagicBorder />
+
         <div css={text}>
+
           {renderActiveContent(activeSection, prismicData)}
-          {/* <div css={buttonContainer}>
+          <div css={buttonContainer}>
             <Button
               isActive={activeSection === "about"}
               text="About"
@@ -215,8 +221,10 @@ const About = () => {
               onClick={() => setActiveSection("education")}
               extraStyles={buttonStyles}
             />
-          </div> */}
+          </div>
+
         </div>
+
       </div>
     </div>
   )

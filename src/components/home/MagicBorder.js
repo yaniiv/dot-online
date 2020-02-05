@@ -30,7 +30,7 @@ const getSwirlDiameter = numSwirls => {
     return null
   }
 
-  const swirlDiameter = (window.innerWidth / numSwirls) * 2
+  const swirlDiameter = (window.innerWidth / numSwirls) 
 
   return swirlDiameter
 }
@@ -46,8 +46,8 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     background: ${conicGradientProperties};
     
 
-    animation-duration: 6s;
-    animation-delay: ${index * 400}ms;
+    animation-duration: 3s;
+    animation-delay: ${index * 300}ms;
     animation-name: slidein;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -129,7 +129,6 @@ const MagicBorder = ({
         display: flex;
 
         margin-bottom: -${swirlDiameter / 2}px;
-        padding-left: 100px;
 
         /* animation-duration: 3s;
         animation-name: slideabout;

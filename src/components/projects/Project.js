@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { css } from "@emotion/core"
-import { Random } from 'react-animated-text';
 
 import Console from "./Console"
 import ProjectGif from "./ProjectGif"
@@ -91,17 +90,10 @@ const projectSubtitle = css`
   }
 `
 
-const Title = ({text, subtitle}) => (
+export const Title = ({title, subtitle}) => (
   <div css={titleContainer}>
     <div css={projectTitle}>
-      <Random
-        text={text}
-        paused={false}
-        iterations={1}
-        effect="verticalFadeIn"
-        effectChange={2}
-        effectDirection="up"
-      />
+      {title}
     </div>
     <div css={projectSubtitle}>{subtitle}</div>
     </div>
@@ -121,7 +113,7 @@ const Project = ({ data }) => {
   return (
     <div css={projectContainer}>
       <div css={project}>
-      <Title text={title} subtitle={subtitle}/>
+      <Title title={title} subtitle={subtitle}/>
         <div css={browserFrame}>
           <BrowserHeader link={link} />
           <div>

@@ -42,10 +42,14 @@ const HomeEntry = () => {
           }}
           onLeave={() => {}}
         />
-      </div>
-      {/* <MagicBorder /> */}
 
+      </div>
+
+        <div>
       <About />
+            {/* <MagicBorder /> */}
+
+      </div>
       <Waypoint
         onEnter={() => {
           setPauseDuality(true)
