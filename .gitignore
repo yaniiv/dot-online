@@ -69,3 +69,6 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+# ignore node_modules symlink
+node_modules
+node_modules.nosync

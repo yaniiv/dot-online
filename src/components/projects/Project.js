@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { css } from "@emotion/core"
+import { Random } from 'react-animated-text';
 
 import Console from "./Console"
 import ProjectGif from "./ProjectGif"
@@ -44,20 +45,67 @@ export const project = css`
   }
 `
 
-export const browserFrame = css`
-  border: 2px solid black;
-  border-radius: 2px;
+const browserFrame = css`
+
 
   display: flex;
   flex-direction: column;
   position: relative;
   box-shadow: 24px 24px 2px 2px rgba(0, 0, 0, 0.2);
 
+  border: 2px solid black;
+  border-radius: 2px;
   @media (min-width: 768px) {
     border: 3px solid black;
     border-radius: 6px;
   }
 `
+
+const titleContainer = css`
+  margin-left: 0;
+  margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    margin-left: -80px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+`
+
+const projectTitle = css`
+  font-size: 18px;
+  font-weight: 600px;
+  color: ${COLORS.YELLOW};
+
+  @media (min-width: 768px) {
+    font-size: 26px;
+  }
+`
+
+const projectSubtitle = css`
+  font-size: 14px;
+  color: ${COLORS.WHITE};
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+`
+
+const Title = ({text, subtitle}) => (
+  <div css={titleContainer}>
+    <div css={projectTitle}>
+      <Random
+        text={text}
+        paused={false}
+        iterations={1}
+        effect="verticalFadeIn"
+        effectChange={2}
+        effectDirection="up"
+      />
+    </div>
+    <div css={projectSubtitle}>{subtitle}</div>
+    </div>
+)
 
 const Project = ({ data }) => {
   const [isConsoleOpen, setIsConsoleOpen] = useState(false)
@@ -68,11 +116,12 @@ const Project = ({ data }) => {
     })
   }
 
-  const { link, videoSrc, htmlDescription, imageSrc } = data
+  const { link, title, subtitle, videoSrc, htmlDescription, imageSrc } = data
 
   return (
     <div css={projectContainer}>
       <div css={project}>
+      <Title text={title} subtitle={subtitle}/>
         <div css={browserFrame}>
           <BrowserHeader link={link} />
           <div>

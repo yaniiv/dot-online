@@ -47,7 +47,7 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     
 
     animation-duration: 6s;
-    animation-delay: ${index * 600}ms;
+    animation-delay: ${index * 400}ms;
     animation-name: slidein;
     animation-iteration-count: infinite;
     animation-direction: alternate;
@@ -98,7 +98,7 @@ const createSwirlStyles = ({
 }
 
 const MagicBorder = ({
-  colorScale = COLORS.SQUIGGLEGRADIENT,
+  colorScale = COLORS.SMALLBALLGRADIENT,
   backgroundColor = COLORS.PURPLE,
   numSwirls = getNumSwirls(),
 }) => {
@@ -129,12 +129,12 @@ const MagicBorder = ({
         display: flex;
 
         margin-bottom: -${swirlDiameter / 2}px;
+        padding-left: 100px;
 
-        animation-duration: 6s;
+        /* animation-duration: 3s;
         animation-name: slideabout;
         animation-iteration-count: infinite;
         animation-direction: alternate;
-        padding-left: 500px;
 
         @keyframes slideabout {
           from {
@@ -144,7 +144,7 @@ const MagicBorder = ({
           to {
             padding-left: 1000px;
           }
-        }
+        } */
       `}
     >
       {swirlStyles.map((css, index) => (
