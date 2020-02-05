@@ -25,7 +25,6 @@ const container = css`
   @media (min-width: 758px) {
     font-size: 20px;
     height: 90vh;
-    padding: 0;
   }
   color: ${COLORS.WHITE};
 
