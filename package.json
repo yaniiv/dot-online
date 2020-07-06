@@ -40,7 +40,7 @@
   "license": "MIT",
   "scripts": {
     "build": "NODE_ENV=production gatsby build",
-    "dev": "NODE_ENV=development gatsby develop",
+    "develop": "NODE_ENV=development gatsby develop",
     "prod": "yarn build && yarn serve",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",

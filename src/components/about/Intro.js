@@ -36,25 +36,25 @@ const container = css`
   }
 `
 
-const PRISMIC_INTRO_QUERY = graphql`
-  query Intro {
-    prismicIntro {
-      data {
-        text {
-          html
-        }
-      }
-    }
-  }
-`
+// const PRISMIC_INTRO_QUERY = graphql`
+//   query Intro {
+//     prismicIntro {
+//       data {
+//         text {
+//           html
+//         }
+//       }
+//     }
+//   }
+// `
 
 const Intro = ({ isTransparent }) => {
-  const { prismicIntro } = useStaticQuery(PRISMIC_INTRO_QUERY)
-  const html = prismicIntro.data.text.html
+  // const { prismicIntro } = useStaticQuery(PRISMIC_INTRO_QUERY)
+  // const html = prismicIntro.data.text.html
 
   return (
     <div css={container}>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      {/* <div dangerouslySetInnerHTML={{ __html: html }} /> */}
       {!isTransparent && `Hello! I'm Yaniv`}
     </div>
   )

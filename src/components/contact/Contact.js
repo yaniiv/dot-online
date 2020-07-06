@@ -10,25 +10,25 @@ const contact = css`
   background: ${COLORS.PURPLE};
 `
 
-const PRISMIC_CONTACT_QUERY = graphql`
-  query Contact {
-    prismicHome {
-      data {
-        text_field_html {
-          html
-        }
-      }
-    }
-  }
-`
+// const PRISMIC_CONTACT_QUERY = graphql`
+//   query Contact {
+//     prismicHome {
+//       data {
+//         text_field_html {
+//           html
+//         }
+//       }
+//     }
+//   }
+// `
 
 const Contact = () => {
-  const { prismicHome } = useStaticQuery(PRISMIC_CONTACT_QUERY)
-  const html = prismicHome.data.text_field_html.html
+  // const { prismicHome } = useStaticQuery(PRISMIC_CONTACT_QUERY)
+  // const html = prismicHome.data.text_field_html.html
 
   return (
     <div id="contact" css={contact}>
-      <Email html={html} />
+      {/* <Email html={html} /> */}
     </div>
   )
 }

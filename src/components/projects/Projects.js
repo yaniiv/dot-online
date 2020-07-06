@@ -4,38 +4,38 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Project from "./Project"
 
-const PRISMIC_CONTACT_QUERY = graphql`
-  query Projects {
-    allPrismicProjects {
-      edges {
-        node {
-          id
-          data {
-            slug
-            project_title {
-              text
-            }
-            project_subtitle {
-              text
-            }
-            project_website {
-              url
-            }
-            project_image {
-              url
-            }
-            project_video {
-              url
-            }
-            project_text {
-              html
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// const PRISMIC_PROJECT_QUERY = graphql`
+//   query Projects {
+//     allProjectss {
+//       edges {
+//         node {
+//           slug
+//           project_title
+//           project_text
+//           project_subtitle
+//           project_website {
+//             _linkType
+//             ... on _ExternalLink {
+//               url
+//             }
+//           }
+//           project_image {
+//             _linkType
+//             ... on _FileLink {
+//               url
+//             }
+//           }
+//           project_video {
+//             _linkType
+//             ... on _FileLink {
+//               url
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 function normalizeProjectData(allPrismicProjects) {
   const projectData = allPrismicProjects.edges.reduce(
@@ -90,14 +90,14 @@ const projectContainer = css`
 `
 
 const Projects = () => {
-  const { allPrismicProjects } = useStaticQuery(PRISMIC_CONTACT_QUERY)
-  const projectsBySlug = normalizeProjectData(allPrismicProjects)
+  // const { allPrismicProjects } = useStaticQuery(PRISMIC_PROJECT_QUERY)
+  // const projectsBySlug = normalizeProjectData(allPrismicProjects)
 
   return (
     <div id="projects" css={projectContainer}>
-      {projectsInOrder.map((projectSlug, index) => (
+      {/* {projectsInOrder.map((projectSlug, index) => (
         <Project key={index} data={projectsBySlug[projectSlug]} />
-      ))}
+      ))} */}
     </div>
   )
 }

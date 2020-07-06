@@ -75,7 +75,7 @@ module.exports = {
       options: {
         repositoryName: `dot-online`,
         accessToken: `${process.env.PRISMIC_API_KEY}`,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        // linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
 

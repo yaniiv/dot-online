@@ -160,38 +160,38 @@ const EducationText = ({ data }) => (
   </div>
 )
 
-const PRISMIC_ABOUT_QUERY = graphql`
-  query About {
-    prismicAbout {
-      data {
-        image_of_me {
-          url
-        }
-        text_rich_field {
-          html
-        }
-        skills_rich_field {
-          html
-        }
-        education_rich_field {
-          html
-        }
-      }
-    }
-  }
-`
+// const PRISMIC_ABOUT_QUERY = graphql`
+  // query About {
+  //   prismicAbout {
+  //     data {
+  //       image_of_me {
+  //         url
+  //       }
+  //       text_rich_field {
+  //         html
+  //       }
+  //       skills_rich_field {
+  //         html
+  //       }
+  //       education_rich_field {
+  //         html
+  //       }
+  //     }
+  //   }
+  // }
+// `
 
 const About = () => {
   const [activeSection, setActiveSection] = useState("about")
-  const { prismicAbout } = useStaticQuery(PRISMIC_ABOUT_QUERY)
-  const prismicData = prismicAbout.data
+  // const { prismicAbout } = useStaticQuery(PRISMIC_ABOUT_QUERY)
+  // const prismicData = prismicAbout.data
 
   return (
     <div>
       <div id="about" css={container}>
         <div css={text}>
 
-          {renderActiveContent(activeSection, prismicData)}
+          {/* {renderActiveContent(activeSection, prismicData)} */}
           <div css={buttonContainer}>
             <Button
               isActive={activeSection === "about"}
