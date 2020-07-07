@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { css } from "@emotion/core"
 
 import Button from "../Button"
 
+import data from '../../../content/data.js'
 
 import * as COLORS from "../../colors"
 
@@ -160,39 +160,15 @@ const EducationText = ({ data }) => (
   </div>
 )
 
-// const PRISMIC_ABOUT_QUERY = graphql`
-  // query About {
-  //   prismicAbout {
-  //     data {
-  //       image_of_me {
-  //         url
-  //       }
-  //       text_rich_field {
-  //         html
-  //       }
-  //       skills_rich_field {
-  //         html
-  //       }
-  //       education_rich_field {
-  //         html
-  //       }
-  //     }
-  //   }
-  // }
-// `
-
 const About = () => {
-  const [activeSection, setActiveSection] = useState("about")
-  // const { prismicAbout } = useStaticQuery(PRISMIC_ABOUT_QUERY)
-  // const prismicData = prismicAbout.data
+  // const [activeSection, setActiveSection] = useState("about")
 
   return (
     <div>
       <div id="about" css={container}>
         <div css={text}>
-
-          {/* {renderActiveContent(activeSection, prismicData)} */}
-          <div css={buttonContainer}>
+          <div>{data.prismic.about.text}</div>
+          {/* <div css={buttonContainer}>
             <Button
               isActive={activeSection === "about"}
               text="About"
@@ -214,7 +190,7 @@ const About = () => {
               onClick={() => setActiveSection("education")}
               extraStyles={buttonStyles}
             />
-          </div>
+          </div> */}
 
         </div>
 

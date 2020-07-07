@@ -69,16 +69,6 @@ module.exports = {
         icon: `src/images/hollow-64.png`, // This path is relative to the root of the site.
       },
     },
-    // https://www.gatsbyjs.org/docs/sourcing-from-prismic/
-    {
-      resolve: `gatsby-source-prismic`,
-      options: {
-        repositoryName: `dot-online`,
-        accessToken: `${process.env.PRISMIC_API_KEY}`,
-        // linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
-      },
-    },
-
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',

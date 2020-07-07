@@ -11,7 +11,7 @@ import SideNav from "../SideNav"
 // import TopNav from "../TopNav"
 
 import About from "../about/About"
-// import MagicBorder from "./MagicBorder"
+import MagicBorder from "./MagicBorder"
 
 // import * as COLORS from "../../colors"
 
@@ -47,7 +47,7 @@ const HomeEntry = () => {
 
         <div>
       <About />
-            {/* <MagicBorder /> */}
+            <MagicBorder />
 
       </div>
       <Waypoint
@@ -58,7 +58,7 @@ const HomeEntry = () => {
       />
 
       <Projects />
-      {/* <MagicBorder /> */}
+      <MagicBorder />
 
       <Contact />
     </Layout>

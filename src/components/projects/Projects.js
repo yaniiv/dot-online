@@ -1,71 +1,31 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { useStaticQuery, graphql } from "gatsby"
 
 import Project from "./Project"
 
-// const PRISMIC_PROJECT_QUERY = graphql`
-//   query Projects {
-//     allProjectss {
-//       edges {
-//         node {
-//           slug
-//           project_title
-//           project_text
-//           project_subtitle
-//           project_website {
-//             _linkType
-//             ... on _ExternalLink {
-//               url
-//             }
-//           }
-//           project_image {
-//             _linkType
-//             ... on _FileLink {
-//               url
-//             }
-//           }
-//           project_video {
-//             _linkType
-//             ... on _FileLink {
-//               url
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+import data from '../../../content/data.js'
 
-function normalizeProjectData(allPrismicProjects) {
-  const projectData = allPrismicProjects.edges.reduce(
+function normalizeProjectData() {
+  const projectData = data.prismic.projects.reduce(
     (projectsBySlug, project) => {
       const {
-        node: {
-          id,
-          data: {
-            slug,
-            project_subtitle,
-            project_title,
-            project_website,
-            project_text,
-            project_image,
-            project_video,
-          },
-        },
+        slug,
+        project_subtitle,
+        project_title,
+        project_website,
+        project_text,
+        project_image,
+        project_video,
       } = project
 
-      const videoSrc = project_video ? project_video.url : null
-
       const normalizedProject = {
-        id,
         slug,
-        title: project_title.text,
-        subtitle: project_subtitle.text,
-        link: project_website.url,
-        videoSrc,
-        imageSrc: project_image.url,
-        htmlDescription: project_text.html,
+        title: project_title,
+        subtitle: project_subtitle,
+        link: project_website,
+        videoSrc: project_video,
+        imageSrc: project_image,
+        htmlDescription: project_text,
       }
 
       return {
@@ -90,14 +50,13 @@ const projectContainer = css`
 `
 
 const Projects = () => {
-  // const { allPrismicProjects } = useStaticQuery(PRISMIC_PROJECT_QUERY)
-  // const projectsBySlug = normalizeProjectData(allPrismicProjects)
+  const projectsBySlug = normalizeProjectData()
 
   return (
     <div id="projects" css={projectContainer}>
-      {/* {projectsInOrder.map((projectSlug, index) => (
+      {projectsInOrder.map((projectSlug, index) => (
         <Project key={index} data={projectsBySlug[projectSlug]} />
-      ))} */}
+      ))}
     </div>
   )
 }

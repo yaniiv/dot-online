@@ -8,34 +8,19 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
 
 import favicon64 from "../images/hollow-64.png"
 
+import data from '../../content/data.js'
+
 function SEO({ description, lang, meta, keywords, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
-
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      title={data.site.siteMetadata.title}
+      titleTemplate={`%s | ${data.site.siteMetadata.title}`}
       link={[
         {
           rel: "icon",
@@ -53,15 +38,15 @@ function SEO({ description, lang, meta, keywords, title }) {
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: data.site.siteMetadata.description,
         },
         {
           property: `og:title`,
-          content: title,
+          content: data.site.siteMetadata.title,
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: data.site.siteMetadata.description,
         },
         {
           property: `og:type`,
@@ -73,15 +58,15 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: data.site.siteMetadata.author,
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: data.site.siteMetadata.title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: data.site.siteMetadata.description,
         },
       ]
         .concat(
@@ -92,7 +77,7 @@ function SEO({ description, lang, meta, keywords, title }) {
               }
             : []
         )
-        .concat(meta)}
+        }
     />
   )
 }

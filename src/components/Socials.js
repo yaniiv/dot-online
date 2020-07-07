@@ -4,6 +4,8 @@ import { css } from "@emotion/core"
 
 import Icon from "./Icon"
 
+import data from '../../../data.js'
+
 import * as COLORS from "../colors"
 
 const iconsContainer = css`
@@ -25,24 +27,10 @@ const socialIcon = css`
 `
 
 const Socials = () => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            siteSocials {
-              name
-              linkTo
-            }
-          }
-        }
-      }
-    `
-  )
 
   const {
     siteMetadata: { siteSocials },
-  } = site
+  } = data.site
 
   return (
     <div css={iconsContainer}>

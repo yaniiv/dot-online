@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
 
-import Socials from "./Socials"
+// import Socials from "./Socials"
 
 import * as COLORS from "../colors"
 
@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <footer id="foot" css={FooterContainerStyles}>
       <small>&copy; Copyright 2019, Yaniv Goldobin</small>
-      <Socials />
+      {/* <Socials /> */}
     </footer>
   )
 }
