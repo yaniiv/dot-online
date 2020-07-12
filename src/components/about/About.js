@@ -4,7 +4,6 @@ import { css } from "@emotion/core"
 import Button from "../Button"
 
 import data from '../../../content/data.js'
-
 import * as COLORS from "../../colors"
 
 const container = css`

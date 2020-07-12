@@ -198,7 +198,7 @@ export default canvas => {
       numBalls: NUMBERS.NUM_BALLS,
     })
 
-    const sceneSubjects = [...movingBalls, ...staticBalls, waves]
+    const sceneSubjects = [...movingBalls, ...staticBalls]
 
     return sceneSubjects
   }

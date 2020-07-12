@@ -50,6 +50,8 @@ const browserUrlBar = css`
 
   &:hover {
     text-decoration: underline;
+
+    svg
   }
 
   @media (min-width: 768px) {

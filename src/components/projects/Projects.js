@@ -3,7 +3,7 @@ import { css } from "@emotion/core"
 
 import Project from "./Project"
 
-import data from '../../../content/data.js'
+import data from "../../../content/data"
 
 function normalizeProjectData() {
   const projectData = data.prismic.projects.reduce(
