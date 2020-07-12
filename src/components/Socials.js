@@ -27,7 +27,6 @@ const socialIcon = css`
 `
 
 const Socials = () => {
-
   const {
     siteMetadata: { siteSocials },
   } = data.site

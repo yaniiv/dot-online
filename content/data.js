@@ -29,13 +29,13 @@ export default {
       image_of_me:
         "https://images.prismic.io/dot-online/591242e8-1e66-4d6e-b404-ee4d071ff28a_me.png?auto=compress,format&rect=0,0,2452,2452&w=100&h=100",
       text:
-        "Hello! I'm Yaniv. I'm a web developer in San Francisco, California . This website is a collection of my more fully-formed side projects. I try and make all the code open source on github whenever possible. If you're more curious about my professional work, you're probably better off checking my linkedin.",
+        "Hello! I'm Yaniv. I write code sometimes. This website is a collection of my more fully-formed side projects. I try and make all my code open source on github whenever possible.",
       github: "https://github.com/yantonsoup",
       url: "https://www.linkedin.com/in/ygoldobin/",
       education_rich_field: [
         {
           title:
-            "California Polytechnic State University at San Luis Obispo, 2011 - 2015",
+            "California Polytechnic State UniversitFy at San Luis Obispo, 2011 - 2015",
           text: "Bachelor of  Science, Electrical Engineering",
         },
         {

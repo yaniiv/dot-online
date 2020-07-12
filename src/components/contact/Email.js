@@ -54,12 +54,12 @@ const text = css`
   }
 `
 
-export default function Email({ html }) {
+export default function Email({ email }) {
   return (
     <div css={pageContainer}>
       <div css={contentContainer}>
         <div css={text}>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          {email}
         </div>
         <Form />
       </div>

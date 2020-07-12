@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { css } from "@emotion/core"
 
-import Button from "../Button"
+// import Button from "../Button"
 
 import data from '../../../content/data.js'
 import * as COLORS from "../../colors"
@@ -104,60 +104,60 @@ const text = css`
 //   }
 // `
 
-const buttonContainer = css`
-  padding: 20px 0 0;
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+// const buttonContainer = css`
+//   padding: 20px 0 0;
+//   display: flex;
+//   justify-content: flex-end;
+//   flex-wrap: wrap;
 
-  @media (min-width: 758px) {
-    justify-content: flex-end;
-  }
-`
+//   @media (min-width: 758px) {
+//     justify-content: flex-end;
+//   }
+// `
 
-const buttonStyles = css`
-  margin: 10px 20px;
-  box-shadow: none;
-  color: #363433;
-  background: #ffd926;
-  border: 2px solid #412c94;
+// const buttonStyles = css`
+//   margin: 10px 20px;
+//   box-shadow: none;
+//   color: #363433;
+//   background: #ffd926;
+//   border: 2px solid #412c94;
 
-  @media (min-width: 758px) {
-  }
-`
+//   @media (min-width: 758px) {
+//   }
+// `
 
-const renderActiveContent = (activeSection, prismicData) => {
-  switch (activeSection) {
-    case "about":
-      return <AboutText data={prismicData} />
-    case "skills":
-      return <SkillsText data={prismicData} />
-    case "education":
-      return <EducationText data={prismicData} />
-    default:
-      return
-  }
-}
+// const renderActiveContent = (activeSection, prismicData) => {
+//   switch (activeSection) {
+//     case "about":
+//       return <AboutText data={prismicData} />
+//     case "skills":
+//       return <SkillsText data={prismicData} />
+//     case "education":
+//       return <EducationText data={prismicData} />
+//     default:
+//       return
+//   }
+// }
 
-const AboutText = ({ data }) => (
-  <div>
-    <div />
-    {/* <img alt="yaniv" css={image} src={data.image_of_me.url} /> */}
-    <div dangerouslySetInnerHTML={{ __html: data.text_rich_field.html }} />
-  </div>
-)
+// const AboutText = ({ data }) => (
+//   <div>
+//     <div />
+//     {/* <img alt="yaniv" css={image} src={data.image_of_me.url} /> */}
+//     <div dangerouslySetInnerHTML={{ __html: data.text_rich_field.html }} />
+//   </div>
+// )
 
-const SkillsText = ({ data }) => (
-  <div>
-    <div dangerouslySetInnerHTML={{ __html: data.skills_rich_field.html }} />
-  </div>
-)
+// const SkillsText = ({ data }) => (
+//   <div>
+//     <div dangerouslySetInnerHTML={{ __html: data.skills_rich_field.html }} />
+//   </div>
+// )
 
-const EducationText = ({ data }) => (
-  <div>
-    <div dangerouslySetInnerHTML={{ __html: data.education_rich_field.html }} />
-  </div>
-)
+// const EducationText = ({ data }) => (
+//   <div>
+//     <div dangerouslySetInnerHTML={{ __html: data.education_rich_field.html }} />
+//   </div>
+// )
 
 const About = () => {
   // const [activeSection, setActiveSection] = useState("about")
