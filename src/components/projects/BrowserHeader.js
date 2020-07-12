@@ -48,10 +48,16 @@ const browserUrlBar = css`
 
   color: ${COLORS.YANIV};
 
+  svg {
+      visibility: hidden;
+    }
+
   &:hover {
     text-decoration: underline;
 
-    svg
+    svg {
+      visibility: visible;
+    }
   }
 
   @media (min-width: 768px) {

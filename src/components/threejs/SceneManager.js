@@ -182,9 +182,9 @@ export default canvas => {
       staticBallProperties = NUMBERS.STATIC_BALL_PROPERTIES.desktop
       movingBallProperties = NUMBERS.MOVING_BALL_PROPERTIES.desktop
     }
-    const waves = new Waves(scene)
-    new FloorPlane(scene)
-    new DirectionalLights(scene)
+    // const waves = new Waves(scene)
+    // new FloorPlane(scene)
+    // new DirectionalLights(scene)
 
     const staticBalls = createStaticBalls({
       scene,

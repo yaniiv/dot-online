@@ -58,7 +58,7 @@ const SideNav = ({ isTransparent }) => (
         smooth={true}
         duration={300}
       >
-        {!isTransparent && (
+        {/* {!isTransparent && (
           <span>
             {"👋 "}
             <span
@@ -70,8 +70,8 @@ const SideNav = ({ isTransparent }) => (
             </span>{" "}
             <span />
           </span>
-        )}
-        yaniv
+        )} */}
+        hello
       </ScrollLink>
     </div>
     <div css={headerLink}>
