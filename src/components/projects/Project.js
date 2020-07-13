@@ -5,6 +5,7 @@ import Console from "./Console"
 import ProjectGif from "./ProjectGif"
 import BrowserHeader from "./BrowserHeader"
 import Button from "../Button"
+import MagicBorder from "../home/MagicBorder"
 
 import * as COLORS from "../../colors"
 
@@ -116,6 +117,8 @@ const Project = ({ data }) => {
       <Title title={title} subtitle={subtitle}/>
         <div css={browserFrame}>
           <BrowserHeader link={link} />
+          
+
           <div>
             <ProjectGif videoSrc={videoSrc} imageSrc={imageSrc} />
             <Console

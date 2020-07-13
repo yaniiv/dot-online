@@ -7,11 +7,12 @@ import Contact from "../contact/Contact"
 import Projects from "../projects/Projects"
 
 import SideNav from "../SideNav"
-// import Intro from "../about/Intro"
-// import TopNav from "../TopNav"
+import Intro from "../about/Intro"
+import TopNav from "../TopNav"
 
 import About from "../about/About"
 import MagicBorder from "./MagicBorder"
+import MiddleNav from "../MiddleNav"
 
 // import * as COLORS from "../../colors"
 
@@ -24,6 +25,8 @@ const HomeEntry = () => {
       <SideNav isTransparent={isTransparent} />
       {/* <Intro isTransparent={isTransparent} /> */}
       <div>
+      {/* <MiddleNav isTransparent={isTransparent} /> */}
+
         {/* <TopNav isTransparent={isTransparent} /> */}
         <Waypoint
           onEnter={() => {

@@ -166,7 +166,8 @@ const About = () => {
     <div>
       <div id="about" css={container}>
         <div css={text}>
-          <div>{data.prismic.about.text}</div>
+          <div css={css`font-style: italic; font-size: 10px`}>software</div>
+          {/* <div>{data.prismic.about.text}</div> */}
           {/* <div css={buttonContainer}>
             <Button
               isActive={activeSection === "about"}
