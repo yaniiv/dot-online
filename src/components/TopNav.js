@@ -6,16 +6,20 @@ import { Link as ScrollLink } from "react-scroll"
 import * as COLORS from "../colors"
 
 const headerContainer = isTransparent => css`
-  position: sticky;
+  position: fixed;
   top: 0;
-  padding: 12px 16px;
+  /* padding: 12px 16px; */
+  padding: 0 40px;
+  /* height: 100px; */
+  width: 100%;
 
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  /* justify-content: center; */
 
   transition: background-color 0.25s ease-in;
-  background: ${COLORS.PURPLE_DARK};
-  color: ${COLORS.YANIV};
+  background: white;
+  color: ${COLORS.TANG};
 
   text-align: right;
   font-size: 20px;
@@ -31,8 +35,11 @@ const headerContainer = isTransparent => css`
     `}
 `
 
-const headerLink = css`
-  padding: 8px 16px;
+const headerLink = (fontsize) => css`
+  padding: 40px;
+
+  /* height: 100%; */
+  font-size: ${fontsize}px;
 
   cursor: pointer;
 
@@ -43,47 +50,24 @@ const headerLink = css`
 
 const TopNav = ({ isTransparent }) => (
   <header css={headerContainer(isTransparent)}>
-    <div>
-      <div
-        css={css`
-          color: white;
-          ${headerLink};
-        `}
-      >
-        <ScrollLink
-          activeClass="active"
-          to="duality"
-          spy={true}
-          smooth={true}
-          duration={500}
-        >
-          {`👋 `}
-          <span
-            css={css`
-              @media (max-width: 768px) {
-                display: none;
-              }
-            `}
-          >
-            Hello! I'm Yaniv
-          </span>
-        </ScrollLink>
-      </div>
-    </div>
-    <div
+    {/* <div
       css={css`
         display: flex;
       `}
-    >
-      <div css={headerLink}>
-        <ScrollLink
+    > */}
+    <div css={css`
+        ${headerLink};
+        font-size: 36px;
+        font-weight: 600;
+        color: ${COLORS.ROSETTE};
+      `}>        <ScrollLink
           activeClass="active"
           to="about"
           spy={true}
           smooth={true}
           duration={500}
         >
-          about
+          Work
         </ScrollLink>
       </div>
       <div css={headerLink}>
@@ -94,10 +78,10 @@ const TopNav = ({ isTransparent }) => (
           smooth={true}
           duration={1000}
         >
-          projects
+          info
         </ScrollLink>
       </div>
-      <div css={headerLink}>
+      {/* <h3 css={headerLink}>
         <ScrollLink
           activeClass="active"
           to="contact"
@@ -107,8 +91,8 @@ const TopNav = ({ isTransparent }) => (
         >
           contact
         </ScrollLink>
-      </div>
-    </div>
+      </h3> */}
+    {/* </div> */}
   </header>
 )
 

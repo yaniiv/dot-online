@@ -22,12 +22,12 @@ const HomeEntry = () => {
 
   return (
     <Layout>
-      <SideNav isTransparent={isTransparent} />
+    <SideNav isTransparent={isTransparent} />
       {/* <Intro isTransparent={isTransparent} /> */}
       <div>
       {/* <MiddleNav isTransparent={isTransparent} /> */}
 
-        {/* <TopNav isTransparent={isTransparent} /> */}
+        <TopNav isTransparent={isTransparent} />
         <Waypoint
           onEnter={() => {
             setPauseDuality(false)
@@ -49,7 +49,7 @@ const HomeEntry = () => {
       </div>
 
         <div>
-      <About />
+      {/* <About /> */}
             <MagicBorder />
 
       </div>
