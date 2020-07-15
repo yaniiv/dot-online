@@ -84,7 +84,7 @@ const SideNav = ({ isTransparent }) => (
         smooth={true}
         duration={300}
       >
-        Aftertheussr
+        aftertheussr.com
       </ScrollLink>
     </div>
     <div css={headerLink}>
@@ -95,7 +95,7 @@ const SideNav = ({ isTransparent }) => (
         smooth={true}
         duration={300}
       >
-        director site
+        sperry.work
       </ScrollLink>
     </div>
     <div css={headerLink}>
@@ -117,7 +117,7 @@ const SideNav = ({ isTransparent }) => (
         smooth={true}
         duration={500}
       >
-        dispersion
+        dispersion.js
       </ScrollLink>
     </div>
   </header>
