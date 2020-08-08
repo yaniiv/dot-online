@@ -61,9 +61,14 @@ const HomeEntry = () => {
         <div
           css={css`
             display: absolute;
-            background: ${COLORS.PUR};
+            background: ${COLORS.PURPLE};
             color: ${COLORS.YELLOW};
-
+            a {
+              color: ${COLORS.YELLOW} !important;
+            }
+            a:visited {
+              color: ${COLORS.ROSETTE} !important;
+            }
             position: absolute;
             /* width: 300px; */
 
@@ -161,7 +166,12 @@ const HomeEntry = () => {
             color: ${COLORS.YELLOW};
 
             position: absolute;
-
+            a {
+              color: ${COLORS.YELLOW} !important;
+            }
+            a:visited {
+              color: ${COLORS.ROSETTE} !important;
+            }
             left: 68vw;
             top: 56vh;
             @media (min-width: 768px) {
