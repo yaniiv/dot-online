@@ -12,12 +12,19 @@ import "./layout.css"
 const layoutStyles = backgroundColor => css`
   height: 100%;
   width: 100%;
-  background: ${backgroundColor};
+  /* background: ${backgroundColor}; */
   margin: 0 auto;
+
+  a {
+    color: ${COLORS.YELLOW};
+  }
+  a:visited {
+    color: ${COLORS.ROSETTE};
+  }
 `
 
 const Layout = ({ children, backgroundColor }) => (
-  <div css={layoutStyles(backgroundColor)}>
+  <div css={layoutStyles()}>
     <SEO title="Home" lang="en" keywords={[`yaniv`, `goldobin`]} />
     <main>{children}</main>
     {/* <Footer /> */}

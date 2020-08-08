@@ -47,7 +47,7 @@ const text = css`
   }
 
   a:visited {
-    color: ${COLORS.PURPLE_DARK};
+    color: ${COLORS.YELLOW};
   }
   a:hover {
     text-decoration: underline;
@@ -58,9 +58,7 @@ export default function Email({ email }) {
   return (
     <div css={pageContainer}>
       <div css={contentContainer}>
-        <div css={text}>
-          {email}
-        </div>
+        <div css={text}>{email}</div>
         <Form />
       </div>
     </div>

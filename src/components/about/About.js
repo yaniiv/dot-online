@@ -3,7 +3,7 @@ import { css } from "@emotion/core"
 
 // import Button from "../Button"
 
-import data from '../../../content/data.js'
+import data from "../../../content/data.js"
 import * as COLORS from "../../colors"
 
 const container = css`
@@ -75,14 +75,6 @@ const text = css`
     border-radius: 6px;
   }
 
-  a {
-    /* color: ${COLORS.YANIV}; */
-    color: ${COLORS.YELLOW};
-  }
-
-  a:visited {
-    color: ${COLORS.YELLOW};
-  }
 
   a:hover {
     text-decoration: underline;
@@ -190,9 +182,7 @@ const About = () => {
               extraStyles={buttonStyles}
             />
           </div> */}
-
         </div>
-
       </div>
     </div>
   )

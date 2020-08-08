@@ -68,10 +68,6 @@ const HomeEntry = () => {
 
           left: 18vw;
           position: absolute;
-          /* width: 300px; */
-          a:visited {
-            color: ${COLORS.YELLOW};
-          }
 
           @media (min-width: 768px) {
             left: 68vw;
@@ -138,9 +134,6 @@ const HomeEntry = () => {
           color: ${COLORS.YELLOW};
 
           position: absolute;
-          a:visited {
-            color: ${COLORS.YELLOW};
-          }
 
           left: 68vw;
           top: 56vh;

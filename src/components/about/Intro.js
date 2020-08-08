@@ -32,7 +32,7 @@ const container = css`
   }
 
   a:visited {
-    color: ${COLORS.PURPLE_DARK};
+    color: ${COLORS.YELLOW};
   }
 `
 
