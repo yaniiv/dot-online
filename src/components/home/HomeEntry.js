@@ -55,7 +55,7 @@ const HomeEntry = () => {
               font-weight: bolder;
             `}
           >
-            email
+            contact
           </span>{" "}
           <a href="mailto:hello@yaniv.online">hello@yaniv.online</a>
         </div>
