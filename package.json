@@ -44,7 +44,7 @@
     "dev": "NODE_ENV=development gatsby develop",
     "prod": "yarn build && yarn serve",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
