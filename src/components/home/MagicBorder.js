@@ -30,7 +30,7 @@ const getSwirlDiameter = numSwirls => {
     return null
   }
 
-  const swirlDiameter = (window.innerWidth / numSwirls) 
+  const swirlDiameter = window.innerWidth / numSwirls
 
   return swirlDiameter
 }

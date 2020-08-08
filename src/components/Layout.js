@@ -10,6 +10,8 @@ import "../normalize.css"
 import "./layout.css"
 
 const layoutStyles = backgroundColor => css`
+  height: 100vh;
+  width: 100vw;
   background: ${backgroundColor};
   margin: 0 auto;
 `
@@ -18,7 +20,7 @@ const Layout = ({ children, backgroundColor }) => (
   <div css={layoutStyles(backgroundColor)}>
     <SEO title="Home" lang="en" keywords={[`yaniv`, `goldobin`]} />
     <main>{children}</main>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 )
 

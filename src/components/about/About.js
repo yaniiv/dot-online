@@ -77,11 +77,11 @@ const text = css`
 
   a {
     /* color: ${COLORS.YANIV}; */
-    color: ${COLORS.LIGHT_END_DUALITY};
+    color: ${COLORS.YELLOW};
   }
 
   a:visited {
-    color: ${COLORS.LIGHT_END_DUALITY};
+    color: ${COLORS.YELLOW};
   }
 
   a:hover {
