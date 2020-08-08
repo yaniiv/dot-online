@@ -39,7 +39,7 @@ const HomeEntry = () => {
             color: ${COLORS.YELLOW};
 
             position: absolute;
-            width: 300px;
+            /* width: 300px; */
 
             left: 12vw;
             top: 86vh;
@@ -71,7 +71,7 @@ const HomeEntry = () => {
 
             left: 18vw;
             position: absolute;
-            width: 300px;
+            /* width: 300px; */
             a:visited {
               color: ${COLORS.YELLOW};
             }
@@ -157,6 +157,7 @@ const HomeEntry = () => {
             </div>
           </div>
         </div>
+        <Duality pauseRender={pauseDuality} />
       </div>
 
       {/* <Projects /> */}
@@ -172,7 +173,6 @@ const HomeEntry = () => {
             setHeaderTransparent(true)
           }}
         /> */}
-      <Duality pauseRender={pauseDuality} />
 
       {/* <Waypoint
           onEnter={() => {
