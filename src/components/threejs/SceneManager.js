@@ -22,8 +22,8 @@ export default canvas => {
   const origin = new THREE.Vector3(0, 0, 0)
 
   const screenDimensions = {
-    width: canvas.width,
-    height: canvas.height,
+    width: window.innerWidth,
+    height: window.innerHeight,
   }
 
   const mousePosition = {
