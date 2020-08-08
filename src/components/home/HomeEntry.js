@@ -17,10 +17,10 @@ const layoutStyles = backgroundColor => css`
   margin: 0 auto;
 
   a {
-    color: ${COLORS.YELLOW};
+    color: ${COLORS.YELLOW} !important;
   }
   a:visited {
-    color: ${COLORS.ROSETTE};
+    color: ${COLORS.ROSETTE} !important;
   }
 `
 // import SideNav from "../SideNav"
