@@ -10,8 +10,8 @@ import "../normalize.css"
 import "./layout.css"
 
 const layoutStyles = backgroundColor => css`
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background: ${backgroundColor};
   margin: 0 auto;
 `
