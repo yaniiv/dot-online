@@ -4,14 +4,16 @@ import React from "react"
 import { css } from "@emotion/core"
 import SEO from "../Seo"
 import * as COLORS from "../../colors"
+import MagicBorder from "./MagicBorder"
 
 import Duality from "../threejs/Duality"
 // import Contact from "../contact/Contact"
 // import Projects from "../projects/Projects"
 const layoutStyles = backgroundColor => css`
-  height: 100%;
+  margin: auto;
+  height: 100vh;
   width: 100%;
-  /* background: ${backgroundColor}; */
+  background: ${COLORS.PURPLE};
   margin: 0 auto;
 
   a {
@@ -26,7 +28,6 @@ const layoutStyles = backgroundColor => css`
 // import TopNav from "../TopNav"
 
 // import About from "../about/About"
-// import MagicBorder from "./MagicBorder"
 
 // import Project from "../projects/Project"
 // import Projects from "../projects/Projects"
@@ -38,15 +39,29 @@ const HomeEntry = () => {
     <div css={layoutStyles()}>
       <SEO title="Home" lang="en" keywords={[`yaniv`, `goldobin`]} />
       <main>
-        <Duality />
+        {/* <Duality /> */}
 
+        <div
+          css={css`
+            position: absolute;
+
+            /* left: 12vw; */
+            top: 32vh;
+            @media (min-width: 768px) {
+              top: 32vh;
+              left: 0;
+            }
+          `}
+        >
+          <MagicBorder />
+        </div>
         {/* <SideNav isTransparent={isTransparent} /> */}
         {/* <Intro isTransparent={isTransparent} /> */}
         {/* <TopNav isTransparent={isTransparent} /> */}
         <div
           css={css`
             display: absolute;
-            background: ${COLORS.PURPLE};
+            background: ${COLORS.PUR};
             color: ${COLORS.YELLOW};
 
             position: absolute;
@@ -70,7 +85,6 @@ const HomeEntry = () => {
           </span>{" "}
           <a href="mailto:hello@yaniv.online">hello@yaniv.online</a>
         </div>
-
         <div
           css={css`
             display: absolute;
@@ -84,7 +98,7 @@ const HomeEntry = () => {
             position: absolute;
 
             @media (min-width: 768px) {
-              left: 68vw;
+              left: 70vw;
               top: 26vh;
             }
           `}
@@ -140,7 +154,6 @@ const HomeEntry = () => {
             </div>
           </div>
         </div>
-
         <div
           css={css`
             display: absolute;
