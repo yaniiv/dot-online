@@ -11,7 +11,7 @@ import "./layout.css"
 
 const layoutStyles = backgroundColor => css`
   margin: auto;
-  position: fixed;
+  position: absolute;
   height: 100vh;
   width: 100vw;
   background: ${COLORS.PURPLE};
