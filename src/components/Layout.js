@@ -8,12 +8,13 @@ import * as COLORS from "../colors"
 
 import "../normalize.css"
 import "./layout.css"
+const isClient = () => typeof window !== "undefined"
 
 const layoutStyles = backgroundColor => css`
   margin: auto;
   position: relative;
-  height: ${window.innerHeight}px;
-  width: ${window.innerWidth}px;
+  height: ${isClient() && window.innerHeight}px;
+  width: ${isClient() && window.innerWidth}px;
   background: ${COLORS.PURPLE};
   margin: 0 auto;
 
