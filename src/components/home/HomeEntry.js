@@ -4,9 +4,11 @@ import * as COLORS from "../../colors"
 import MagicBorder from "./MagicBorder"
 import Layout from "../Layout"
 
+const isClient = () => typeof window !== "undefined"
+
 const HomeEntry = () => {
   return (
-    window && (
+    isClient() && (
       <Layout>
         <main>
           <div
