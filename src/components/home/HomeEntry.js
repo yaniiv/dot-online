@@ -13,6 +13,7 @@ const HomeEntry = () => {
         <main>
           <div
             css={css`
+              font-size: 14px;
               position: absolute;
               top: 32vh;
               @media (min-width: 768px) {
@@ -25,20 +26,14 @@ const HomeEntry = () => {
           </div>
           <div
             css={css`
-              display: absolute;
-              background: ${COLORS.PURPLE};
+              position: absolute;
+              background: ${COLORS.TRANSPARENT};
               color: ${COLORS.YELLOW};
-              a {
-                color: ${COLORS.YELLOW} !important;
-              }
-              a:visited {
-                color: ${COLORS.ROSETTE} !important;
-              }
               position: absolute;
               /* width: 300px; */
 
               left: 12vw;
-              top: 86vh;
+              top: 74vh;
               @media (min-width: 768px) {
                 top: 22vh;
                 left: 32vw;

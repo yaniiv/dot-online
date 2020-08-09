@@ -12,7 +12,7 @@ const isClient = () => typeof window !== "undefined"
 
 const layoutStyles = backgroundColor => css`
   margin: auto;
-  position: fixed;
+  position: absolute;
   height: 100%;
   width: 100%;
   background: ${COLORS.PURPLE};
@@ -21,6 +21,10 @@ const layoutStyles = backgroundColor => css`
   a {
     color: ${COLORS.YELLOW} !important;
   }
+  a:hover {
+    font-weight: 900;
+  }
+
   a:visited {
     color: ${COLORS.ROSETTE} !important;
   }
