@@ -10,16 +10,17 @@ import "../normalize.css"
 import "./layout.css"
 
 const layoutStyles = backgroundColor => css`
-  height: 100%;
+  margin: auto;
+  height: 100vh;
   width: 100%;
-  /* background: ${backgroundColor}; */
+  background: ${COLORS.PURPLE};
   margin: 0 auto;
 
   a {
-    color: ${COLORS.YELLOW};
+    color: ${COLORS.YELLOW} !important;
   }
   a:visited {
-    color: ${COLORS.ROSETTE};
+    color: ${COLORS.ROSETTE} !important;
   }
 `
 

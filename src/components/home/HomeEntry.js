@@ -1,51 +1,16 @@
 import React from "react"
-// import React, { useState } from "react"
-// import { Waypoint } from "react-waypoint"
 import { css } from "@emotion/core"
-import SEO from "../Seo"
 import * as COLORS from "../../colors"
 import MagicBorder from "./MagicBorder"
+import Layout from "../Layout"
 
-// import Duality from "../threejs/Duality"
-// import Contact from "../contact/Contact"
-// import Projects from "../projects/Projects"
-const layoutStyles = backgroundColor => css`
-  margin: auto;
-  height: 100vh;
-  width: 100%;
-  background: ${COLORS.PURPLE};
-  margin: 0 auto;
-
-  a {
-    color: ${COLORS.YELLOW} !important;
-  }
-  a:visited {
-    color: ${COLORS.ROSETTE} !important;
-  }
-`
-// import SideNav from "../SideNav"
-// import Intro from "../about/Intro"
-// import TopNav from "../TopNav"
-
-// import About from "../about/About"
-
-// import Project from "../projects/Project"
-// import Projects from "../projects/Projects"
 const HomeEntry = () => {
-  // const [pauseDuality, setPauseDuality] = useState(false)
-  // const [isTransparent, setHeaderTransparent] = useState(false)
-
   return (
-    <div css={layoutStyles()}>
-      <SEO title="Home" lang="en" keywords={[`yaniv`, `goldobin`]} />
+    <Layout>
       <main>
-        {/* <Duality /> */}
-
         <div
           css={css`
             position: absolute;
-            /* overflow: hidden; */
-            /* left: 12vw; */
             top: 32vh;
             @media (min-width: 768px) {
               top: 32vh;
@@ -55,9 +20,6 @@ const HomeEntry = () => {
         >
           <MagicBorder />
         </div>
-        {/* <SideNav isTransparent={isTransparent} /> */}
-        {/* <Intro isTransparent={isTransparent} /> */}
-        {/* <TopNav isTransparent={isTransparent} /> */}
         <div
           css={css`
             display: absolute;
@@ -203,7 +165,7 @@ const HomeEntry = () => {
           </div>
         </div>
       </main>
-    </div>
+    </Layout>
   )
 }
 
