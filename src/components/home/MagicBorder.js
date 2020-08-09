@@ -6,10 +6,10 @@ import * as COLORS from "../../colors"
 import { isDesktop } from "../../utils"
 
 function getNumSwirls() {
-  let numSwirls = 20
+  let numSwirls = 22
 
   if (isDesktop()) {
-    numSwirls = 40
+    numSwirls = 20
   }
 
   return numSwirls
@@ -32,7 +32,11 @@ const getSwirlDiameter = numSwirls => {
 
   const swirlDiameter = window.innerWidth / numSwirls
 
-  return swirlDiameter * 4
+  if (isDesktop()) {
+    return swirlDiameter * 2
+  }
+
+  return swirlDiameter * 8
 }
 
 const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
@@ -44,7 +48,22 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     border-radius: ${swirlDiameter}px;
     /* border: 1px solid ${COLORS.PURPLE}; */
     background: ${conicGradientProperties};
-    
+    display: block;
+    /* overflow:hidden; */
+    position: fixed;
+    left: ${160 + 5 * index}px;
+
+    /* left: 12vw;
+            top: 86vh;
+            @media (min-width: 768px) {
+              top: 22vh;
+              left: 32vw;
+            } */
+
+    ${isDesktop() &&
+      css`
+        left: calc(30vw + ${32 * index}px);
+      `}
 
     animation-duration: 2s;
     animation-delay: ${index * 300}ms;
@@ -83,7 +102,7 @@ const createSwirlStyles = ({
 }) => {
   const swirlColors = getSwirlColors(numSwirls, colorScale)
   const rotationPerFrame = 720 / numSwirls
-  console.warn({ swirlColors })
+  // console.warn({ swirlColors })
   return swirlColors.map((color, index) => {
     const circleRotation = -90 + index * rotationPerFrame
     const swirlStyles = getSquiggleStyle(
@@ -127,7 +146,7 @@ const MagicBorder = ({
     <div
       css={css`
         display: flex;
-
+        width: 400px
         margin-bottom: -${swirlDiameter / 2}px;
 
         /* animation-duration: 3s;

@@ -16,7 +16,6 @@ export const DARK_END_DUALITY = PURPLE
 
 export const BACKGROUND = DARK_END_DUALITY
 export const STATICBALLS = [LIGHT_END_DUALITY, DARK_END_DUALITY]
-export const SMALLBALLGRADIENT = [DARK_END_DUALITY, LIGHT_END_DUALITY]
 // export const SQUIGGLEGRADIENT = [DARK_END_DUALITY, LIGHT_END_DUALITY]
 // export const SQUIGGLEGRADIENT = ["#816ac2", "#ffeb62"]
 
@@ -42,6 +41,14 @@ export const ROSETTE_LIGHT = "#E35DB0"
 export const AQUA = "#40FFF3"
 export const AQUA_LIGHT = "#C4FCF8"
 export const TANG = "#4F2AD4"
+export const SMALLBALLGRADIENT = [
+  DARK_END_DUALITY,
+  TANG,
+  ROSETTE,
+  LIGHT_END_DUALITY,
+  TANG,
+  DARK_END_DUALITY,
+]
 
 /*
 0: "#ffd926"

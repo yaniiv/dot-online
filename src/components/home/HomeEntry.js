@@ -6,7 +6,7 @@ import SEO from "../Seo"
 import * as COLORS from "../../colors"
 import MagicBorder from "./MagicBorder"
 
-import Duality from "../threejs/Duality"
+// import Duality from "../threejs/Duality"
 // import Contact from "../contact/Contact"
 // import Projects from "../projects/Projects"
 const layoutStyles = backgroundColor => css`
@@ -44,7 +44,7 @@ const HomeEntry = () => {
         <div
           css={css`
             position: absolute;
-
+            /* overflow: hidden; */
             /* left: 12vw; */
             top: 32vh;
             @media (min-width: 768px) {
