@@ -12,7 +12,7 @@ const isClient = () => typeof window !== "undefined"
 
 const layoutStyles = backgroundColor => css`
   margin: auto;
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   background: ${COLORS.PURPLE};
