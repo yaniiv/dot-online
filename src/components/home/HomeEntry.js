@@ -146,13 +146,13 @@ const HomeEntry = () => {
                   font-weight: 800;
                 `}
               >
-                etc.
+                other
               </div>
               <div>
-                <a href="https://twitter.com/yantonsoup">twitter</a>
+                <a href="https://twitter.com/yan_iiv">twitter</a>
               </div>
               <div>
-                <a href="https://github.com/yantonsoup">github</a>{" "}
+                <a href="https://github.com/yaniiv">github</a>{" "}
               </div>
               <div>
                 <a href="https://linkedin.com/in/ygoldobin">linkedin</a>
