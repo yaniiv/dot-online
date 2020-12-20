@@ -6,10 +6,10 @@ import * as COLORS from "../../colors"
 import { isDesktop } from "../../utils"
 
 function getNumSwirls() {
-  let numSwirls = 22
+  let numSwirls = 16
 
   if (isDesktop()) {
-    numSwirls = 20
+    numSwirls = 16
   }
 
   return numSwirls
@@ -62,7 +62,7 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
 
     ${isDesktop() &&
       css`
-        left: calc(30vw + ${32 * index}px);
+        left: calc(20vw + ${32 * index}px);
       `}
 
     animation-duration: 2s;
