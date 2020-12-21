@@ -28,7 +28,7 @@ const HomeEntry = () => {
             <div
               css={css`
                 position: absolute;
-                top: 32vh;
+                top: 56vh;
                 @media (min-width: 768px) {
                   top: 32vh;
                   left: 0;
@@ -58,7 +58,7 @@ const HomeEntry = () => {
                 }
 
                 span {
-                  padding-left: 12px;
+                  padding-left: 6px;
                 }
               `}
             >
@@ -104,7 +104,7 @@ const HomeEntry = () => {
                   top: 36vh;
                 }
                 span {
-                  padding-left: 12px;
+                  padding-left: 6px;
                 }
               `}
             >
@@ -185,21 +185,66 @@ const HomeEntry = () => {
                 left: 68vw;
                 top: 56vh;
                 @media (min-width: 768px) {
-                  left: 38vw;
-                  top: 56vh;
+                  left: 22vw;
+                  top: 66vh;
+                }
+
+                span {
+                  padding-left: 6px;
                 }
               `}
             >
               <div>
-                <h3>other</h3>
+                <h3>blog posts</h3>
+                <div>
+                  <a href="https://medium.com/@yaniv_g/hosting-websites-on-ipfs-with-ipns-b94659c42b52">
+                    Hosting websites on IPFS with IPNS
+                  </a>
+                  <span>- 2016</span>
+                </div>
+                <div>
+                  <a href="https://medium.com/@yaniv_g/dont-use-bodyparser-json-with-jquery-post-d034c44ac7ad">
+                    Jquery.post doesn’t play nice with bodyparser.json
+                  </a>
+                  <span>- 2016</span>
+                </div>
+              </div>
+            </div>
+            <div
+              css={css`
+                display: absolute;
+                background: ${COLORS.TRANSPARENT};
+                color: ${COLORS.YELLOW};
+
+                position: absolute;
+                a {
+                  color: ${COLORS.YELLOW} !important;
+                }
+                a:visited {
+                  color: ${COLORS.ROSETTE} !important;
+                }
+                left: 68vw;
+                top: 56vh;
+                @media (min-width: 768px) {
+                  left: 68vw;
+                  top: 66vh;
+                }
+              `}
+            >
+              <div>
+                <h3>code</h3>
                 <div>
                   <a href="https://github.com/yaniiv">github</a>{" "}
                 </div>
+                <h3
+                  css={css`
+                    padding-top: 20px;
+                  `}
+                >
+                  professional work
+                </h3>
                 <div>
                   <a href="https://linkedin.com/in/ygoldobin">linkedin</a>
-                </div>
-                <div>
-                  <a href="https://medium.com/@yaniv_g">medium</a>
                 </div>
               </div>
             </div>
