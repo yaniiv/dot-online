@@ -3,8 +3,41 @@ import { css } from "@emotion/core"
 import * as COLORS from "../../colors"
 import MagicBorder from "./MagicBorder"
 import Layout from "../Layout"
-
+// 0: "#412c94"
+// 1: "#452ca9"
+// 2: "#4a2cbe"
+// 3: "#4f2ad4"
+// 4: "#9708b7"
+// 5: "#ba009a"
+// 6: "#cc1d81"
+// 7: "#ff4e5d"
+// 8: "#ff9335"
+// 9: "#ffd926"
+// 10: "#ff6f3e"
+// 11: "#fd008d"
+// 12: "#4f2ad4"
+// 13: "#4a2cbe"
+// 14: "#452ca9"
+// 15: "#412c94"
+// length: 16/
 const isClient = () => typeof window !== "undefined"
+
+const secionStyles = css`
+  position: absolute;
+  background: ${COLORS.TRANSPARENT};
+  color: ${COLORS.YELLOW};
+
+  a {
+    color: ${COLORS.YELLOW} !important;
+  }
+  a:visited {
+    color: ${COLORS.ROSETTE} !important;
+  }
+
+  span {
+    padding-left: 6px;
+  }
+`
 
 const HomeEntry = () => {
   return (
@@ -18,10 +51,12 @@ const HomeEntry = () => {
               a {
                 font-size: 16px;
                 padding: 2px 0;
+                color: #ff9335;
               }
               h3 {
                 font-size: 20px;
                 margin: 0;
+                color: #fd008d;
               }
 
               @media (min-width: 768px) {
@@ -51,19 +86,13 @@ const HomeEntry = () => {
             </div>
             <div
               css={css`
-                position: absolute;
-                background: ${COLORS.TRANSPARENT};
-                color: ${COLORS.YELLOW};
-                position: absolute;
-                left: 12vw;
-                top: 78vh;
+                ${secionStyles};
+
+                left: 8vw;
+                top: 74vh;
                 @media (min-width: 768px) {
                   top: 16vh;
                   left: 22vw;
-                }
-
-                span {
-                  padding-left: 6px;
                 }
               `}
             >
@@ -89,27 +118,18 @@ const HomeEntry = () => {
                 >
                   U.S. Digital Response
                 </a>
-                <span>- using tech for public service - ongoing </span>
+                <span>- using technology for public service - ongoing </span>
               </div>
             </div>
             <div
               css={css`
-                display: absolute;
-                background: ${COLORS.TRANSPARENT};
-                color: ${COLORS.YELLOW};
-                /* right: 8vw; */
-                top: 6vh;
-                z-index: 20;
-
-                left: 18vw;
-                position: absolute;
+                ${secionStyles};
+                top: 4vh;
+                left: 8vw;
 
                 @media (min-width: 768px) {
                   left: 50vw;
                   top: 36vh;
-                }
-                span {
-                  padding-left: 6px;
                 }
               `}
             >
@@ -176,19 +196,10 @@ const HomeEntry = () => {
             </div>
             <div
               css={css`
-                display: absolute;
-                background: ${COLORS.TRANSPARENT};
-                color: ${COLORS.YELLOW};
+                ${secionStyles};
 
-                position: absolute;
-                a {
-                  color: ${COLORS.YELLOW} !important;
-                }
-                a:visited {
-                  color: ${COLORS.ROSETTE} !important;
-                }
                 left: 8vw;
-                top: 46vh;
+                top: 40vh;
                 @media (min-width: 768px) {
                   left: 22vw;
                   top: 66vh;
@@ -217,19 +228,10 @@ const HomeEntry = () => {
             </div>
             <div
               css={css`
-                display: absolute;
-                background: ${COLORS.TRANSPARENT};
-                color: ${COLORS.YELLOW};
+                ${secionStyles};
 
-                position: absolute;
-                a {
-                  color: ${COLORS.YELLOW} !important;
-                }
-                a:visited {
-                  color: ${COLORS.ROSETTE} !important;
-                }
                 left: 62vw;
-                top: 58vh;
+                top: 54vh;
                 @media (min-width: 768px) {
                   left: 68vw;
                   top: 66vh;
