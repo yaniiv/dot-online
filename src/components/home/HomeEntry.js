@@ -73,6 +73,25 @@ const HomeEntry = () => {
           </div>
           <div
             css={css`
+              position: absolute;
+              display: flex;
+              flex-direction: column;
+              left: 8vw;
+              top: 66vh;
+              color: ${COLORS.YELLOW} !important;
+              font-size: 40px !important;
+              @media (min-width: 768px) {
+                left: unset;
+                right: 8vw;
+                top: 8vh;
+              }
+            `}
+          >
+            🙆 Hello!
+            <span>thanks for visiting</span>
+          </div>
+          <div
+            css={css`
               ${secionStyles};
 
               left: 8vw;
