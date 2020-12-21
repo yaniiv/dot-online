@@ -1,3 +1,9 @@
 {
-  "search.searchEditor.reusePriorSearchConfiguration": true
+  "search.searchEditor.reusePriorSearchConfiguration": true,
+  "workbench.colorCustomizations": {
+    "terminal.background": "#33344a",
+    "activityBar.background": "#0F3425",
+    "titleBar.activeBackground": "#154934",
+    "titleBar.activeForeground": "#F3FCF8"
+  }
 }

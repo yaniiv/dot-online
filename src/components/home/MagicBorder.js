@@ -62,7 +62,7 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
 
     ${isDesktop() &&
       css`
-        left: calc(20vw + ${32 * index}px);
+        left: calc(10vw + ${32 * index}px);
       `}
 
     animation-duration: 2s;

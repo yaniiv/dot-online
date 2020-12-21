@@ -16,22 +16,34 @@ const HomeEntry = () => {
               div,
               span,
               a {
-                font-size: 20px;
+                font-size: 16px;
                 padding: 2px 0;
               }
-
               h3 {
+                font-size: 20px;
                 margin: 0;
+              }
+
+              @media (min-width: 768px) {
+                div,
+                span,
+                a {
+                  font-size: 20px;
+                  padding: 2px 0;
+                }
+                h3 {
+                  font-size: 22px;
+                }
               }
             `}
           >
             <div
               css={css`
                 position: absolute;
-                top: 56vh;
+                display: none;
                 @media (min-width: 768px) {
-                  top: 32vh;
-                  left: 0;
+                  display: block;
+                  top: 34vh;
                 }
               `}
             >
@@ -43,18 +55,11 @@ const HomeEntry = () => {
                 background: ${COLORS.TRANSPARENT};
                 color: ${COLORS.YELLOW};
                 position: absolute;
-                /* width: 300px; */
-                div,
-                span,
-                a {
-                  font-size: 20px;
-                }
-
                 left: 12vw;
-                top: 74vh;
+                top: 78vh;
                 @media (min-width: 768px) {
-                  top: 22vh;
-                  left: 32vw;
+                  top: 16vh;
+                  left: 22vw;
                 }
 
                 span {
@@ -100,7 +105,7 @@ const HomeEntry = () => {
                 position: absolute;
 
                 @media (min-width: 768px) {
-                  left: 60vw;
+                  left: 50vw;
                   top: 36vh;
                 }
                 span {
@@ -182,8 +187,8 @@ const HomeEntry = () => {
                 a:visited {
                   color: ${COLORS.ROSETTE} !important;
                 }
-                left: 68vw;
-                top: 56vh;
+                left: 8vw;
+                top: 46vh;
                 @media (min-width: 768px) {
                   left: 22vw;
                   top: 66vh;
@@ -223,8 +228,8 @@ const HomeEntry = () => {
                 a:visited {
                   color: ${COLORS.ROSETTE} !important;
                 }
-                left: 68vw;
-                top: 56vh;
+                left: 62vw;
+                top: 58vh;
                 @media (min-width: 768px) {
                   left: 68vw;
                   top: 66vh;
