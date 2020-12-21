@@ -66,7 +66,7 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
       `}
 
     animation-duration: 2s;
-    animation-delay: ${index * 500}ms;
+    animation-delay: ${index * 300}ms;
     animation-name: slidein;
     animation-iteration-count: infinite;
     animation-direction: alternate;
