@@ -1,8 +1,8 @@
 export default {
   site: {
     siteMetadata: {
-      title: "yaniv's forest of links",
-      description: "yan's projects and stuff",
+      title: "yaniv's link forest",
+      description: "don't get lost",
       author: "@yantonsoup",
       siteSocials: [
         {
