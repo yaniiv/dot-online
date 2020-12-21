@@ -101,9 +101,7 @@ const createSwirlStyles = ({
   padding = "500px",
 }) => {
   const swirlColors = getSwirlColors(numSwirls, colorScale)
-  console.warn(`swirlColors`, swirlColors)
   const rotationPerFrame = 720 / numSwirls
-  // console.warn({ swirlColors })
   return swirlColors.map((color, index) => {
     const circleRotation = -90 + index * rotationPerFrame
     const swirlStyles = getSquiggleStyle(

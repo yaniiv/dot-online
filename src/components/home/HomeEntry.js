@@ -87,7 +87,25 @@ const HomeEntry = () => {
               }
             `}
           >
-            🙆 Hello!
+            <span>
+              <span
+                css={css`
+                  font-size: 40px !important;
+                `}
+                role="img"
+                aria-label="hello"
+              >
+                🙆
+              </span>
+              <span
+                css={css`
+                  color: ${COLORS.YELLOW} !important;
+                  font-size: 40px !important;
+                `}
+              >
+                {` Hello!`}
+              </span>
+            </span>
             <span>thanks for visiting</span>
           </div>
           <div
