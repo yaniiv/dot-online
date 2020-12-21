@@ -11,7 +11,7 @@ import Helmet from "react-helmet"
 
 import favicon64 from "../images/hollow-64.png"
 
-import data from '../../content/data.js'
+import data from "../../content/data.js"
 
 function SEO({ description, lang, meta, keywords, title }) {
   return (
@@ -20,7 +20,6 @@ function SEO({ description, lang, meta, keywords, title }) {
         lang,
       }}
       title={data.site.siteMetadata.title}
-      titleTemplate={`%s | ${data.site.siteMetadata.title}`}
       link={[
         {
           rel: "icon",
@@ -68,16 +67,14 @@ function SEO({ description, lang, meta, keywords, title }) {
           name: `twitter:description`,
           content: data.site.siteMetadata.description,
         },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        }
+      ].concat(
+        keywords.length > 0
+          ? {
+              name: `keywords`,
+              content: keywords.join(`, `),
+            }
+          : []
+      )}
     />
   )
 }

@@ -1,7 +1,7 @@
 export default {
   site: {
     siteMetadata: {
-      title: "yaniv",
+      title: "yaniv's forest of links",
       description: "yan's projects and stuff",
       author: "@yantonsoup",
       siteSocials: [
@@ -54,7 +54,8 @@ export default {
           "https://medium.com/@yaniv_g/hosting-websites-on-ipfs-with-ipns-b94659c42b52",
         project_subtitle: "An Electron App and Library to Interface with IPFS",
         project_website: "https://github.com/dispersionjs/dispersion",
-        project_image: "https://images.prismic.io/dot-online/2db5f64f-a9d4-44b2-a614-50dc9fba5165_dispersion_min.jpg?auto=compress,format",
+        project_image:
+          "https://images.prismic.io/dot-online/2db5f64f-a9d4-44b2-a614-50dc9fba5165_dispersion_min.jpg?auto=compress,format",
         project_video: null,
       },
       {
