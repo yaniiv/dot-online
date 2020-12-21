@@ -14,8 +14,12 @@ const secionStyles = css`
   a {
     color: ${COLORS.YELLOW} !important;
   }
+  a:hover {
+    font-weight: 900;
+  }
+
   a:visited {
-    color: ${COLORS.ROSETTE} !important;
+    color: #ffc922 !important;
   }
 
   span {
@@ -72,7 +76,7 @@ const HomeEntry = () => {
               ${secionStyles};
 
               left: 8vw;
-              top: 74vh;
+              top: 78vh;
               @media (min-width: 768px) {
                 top: 16vh;
                 left: 22vw;
@@ -176,7 +180,7 @@ const HomeEntry = () => {
               ${secionStyles};
 
               left: 8vw;
-              top: 40vh;
+              top: 44vh;
               @media (min-width: 768px) {
                 left: 22vw;
                 top: 66vh;
@@ -208,7 +212,7 @@ const HomeEntry = () => {
               ${secionStyles};
 
               left: 62vw;
-              top: 54vh;
+              top: 58vh;
               @media (min-width: 768px) {
                 left: 68vw;
                 top: 66vh;

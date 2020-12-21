@@ -17,17 +17,6 @@ const layoutStyles = backgroundColor => css`
   overflow-y: scroll;
   display: flex;
   margin: 0 auto;
-
-  a {
-    color: ${COLORS.YELLOW} !important;
-  }
-  a:hover {
-    font-weight: 900;
-  }
-
-  a:visited {
-    color: ${COLORS.ROSETTE} !important;
-  }
 `
 
 const Layout = ({ children, backgroundColor }) => (
