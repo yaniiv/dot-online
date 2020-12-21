@@ -6,28 +6,30 @@ console.warn(`.env.${process.env.NODE_ENV}`)
 
 module.exports = {
   siteMetadata: {
-    title: "yaniv's link forest",
-    description: "don't get lost",
-    author: "@yantonsoup",
+    title: `yaniv`,
+    description: `yan's projects and stuff`,
+    siteUrl: `https://www.yanivgoldobin.com`,
+    author: `@yantonsoup`,
     siteSocials: [
       {
-        name: "github",
-        linkTo: "https://github.com/yantonsoup",
+        name: `github`,
+        linkTo: `https://github.com/yantonsoup`,
       },
       {
-        name: "linkedin",
-        linkTo: "https://linkedin.com/in/ygoldobin",
+        name: `linkedin`,
+        linkTo: `https://linkedin.com/in/ygoldobin`,
       },
       {
-        name: "medium",
-        linkTo: "https://medium.com/@yaniv_g",
+        name: `medium`,
+        linkTo: `https://medium.com/@yaniv_g`,
       },
       {
-        name: "twitter",
-        linkTo: "https://twitter.com/yantonsoup",
+        name: `twitter`,
+        linkTo: `https://twitter.com/yan_iiv`,
       },
     ],
   },
+
   plugins: [
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-emotion`,

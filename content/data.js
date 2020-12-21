@@ -19,7 +19,7 @@ export default {
         },
         {
           name: "twitter",
-          linkTo: "https://twitter.com/yantonsoup",
+          linkTo: "https://twitter.com/yan_iiv",
         },
       ],
     },
