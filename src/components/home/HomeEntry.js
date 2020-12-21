@@ -3,23 +3,7 @@ import { css } from "@emotion/core"
 import * as COLORS from "../../colors"
 import MagicBorder from "./MagicBorder"
 import Layout from "../Layout"
-// 0: "#412c94"
-// 1: "#452ca9"
-// 2: "#4a2cbe"
-// 3: "#4f2ad4"
-// 4: "#9708b7"
-// 5: "#ba009a"
-// 6: "#cc1d81"
-// 7: "#ff4e5d"
-// 8: "#ff9335"
-// 9: "#ffd926"
-// 10: "#ff6f3e"
-// 11: "#fd008d"
-// 12: "#4f2ad4"
-// 13: "#4a2cbe"
-// 14: "#452ca9"
-// 15: "#412c94"
-// length: 16/
+
 const isClient = () => typeof window !== "undefined"
 
 const secionStyles = css`
@@ -46,6 +30,7 @@ const HomeEntry = () => {
         <main>
           <div
             css={css`
+              overflow-y: scroll;
               div,
               span,
               a {
@@ -106,7 +91,7 @@ const HomeEntry = () => {
                   NYC[x] Innovation Fellowship
                 </a>
                 <span>
-                  - the innaugural cohort of the NYC[x] innovation fellowship
+                  - the inaugural cohort of the NYC[x] innovation fellowship
                   program - 2020
                 </span>
               </div>
