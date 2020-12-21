@@ -2,17 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import { css } from "@emotion/core"
 import SEO from "../components/Seo"
-// import Footer from "../components/Footer"
 
 import * as COLORS from "../colors"
 
 import "../normalize.css"
 import "./layout.css"
-const isClient = () => typeof window !== "undefined"
 
 const layoutStyles = backgroundColor => css`
   margin: auto;
-  position: fixed;
+  position: absolute;
   height: 100%;
   width: 100%;
   background: ${COLORS.PURPLE};
