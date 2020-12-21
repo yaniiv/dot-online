@@ -14,6 +14,8 @@ const layoutStyles = backgroundColor => css`
   height: 100%;
   width: 100%;
   background: ${COLORS.PURPLE};
+  overflow-y: scroll;
+  display: flex;
   margin: 0 auto;
 
   a {
