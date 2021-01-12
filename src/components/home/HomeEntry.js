@@ -37,7 +37,7 @@ const HomeEntry = () => {
             span,
             a {
               font-size: 16px;
-              padding: 2px 0;
+              padding: s2px 0;
               color: #ff9335;
             }
             h3 {
@@ -134,15 +134,33 @@ const HomeEntry = () => {
                 program - 2020
               </span>
             </div>
-            <div>
-              <a
-                rel="noreferrer"
-                target="_blank"
-                href="https://www.usdigitalresponse.org/"
-              >
-                U.S. Digital Response
-              </a>
-              <span>- using technology for public service - ongoing </span>
+            <div
+              css={css`
+                display: flex;
+                flex-direction: column;
+              `}
+            >
+              <div>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href="https://www.usdigitalresponse.org/"
+                >
+                  U.S. Digital Response
+                </a>
+                <span>- using technology for public service - ongoing </span>
+              </div>
+              <div>
+                <a
+                  href="https://covid19.nj.gov/forms/self"
+                  css={css`
+                    padding-left: 24px !important;
+                  `}
+                >
+                  New Jersey Symptom Tracker
+                </a>
+                <span> - 2020</span>
+              </div>
             </div>
           </div>
           <div
