@@ -159,7 +159,11 @@ const HomeEntry = () => {
                 >
                   New Jersey Symptom Tracker
                 </a>
-                <span> - 2020</span>
+                <span>
+                  {" "}
+                  - create a form to help folks in NJ track their symptoms -
+                  2020
+                </span>
               </div>
             </div>
           </div>
