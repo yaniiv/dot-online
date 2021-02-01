@@ -191,7 +191,7 @@ const HomeEntry = () => {
                 </a>
                 <span>- visualizing post-Soviet migration patterns - 2019</span>
               </div>
-              <div>
+              {/* <div>
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -203,7 +203,7 @@ const HomeEntry = () => {
                   - what does a website feel like when you can't see yourself in
                   it? - 2019
                 </span>
-              </div>
+              </div> */}
               <div>
                 <a rel="noreferrer" target="_blank" href="https://sperry.work/">
                   sperry.work
