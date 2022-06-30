@@ -17,7 +17,7 @@ import OrbitControls from "three-orbitcontrols"
 
 import { isDesktop } from "../../utils"
 
-export default canvas => {
+export default (canvas) => {
   const clock = new THREE.Clock()
   const origin = new THREE.Vector3(0, 0, 0)
 
@@ -148,7 +148,7 @@ export default canvas => {
       .mode("lch")
       .colors(numBalls)
 
-    const balls = colors.map(color => {
+    const balls = colors.map((color) => {
       return new MovingBall(scene, ballProperties, color)
     })
 

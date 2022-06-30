@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import alphaTexture from "./textures/stripes_gradient.jpg"
 
-export default scene => {
+export default (scene) => {
   const group = new THREE.Group()
 
   const subjectGeometry = deformGeometry(new THREE.IcosahedronGeometry(10, 2))

@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import * as COLORS from "../../colors"
 
-export default scene => {
+export default (scene) => {
   var planeGeometry = new THREE.PlaneBufferGeometry(500, 500)
   var planeMaterial = new THREE.MeshStandardMaterial({
     color: COLORS.PURPLE,

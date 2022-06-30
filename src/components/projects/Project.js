@@ -45,8 +45,6 @@ export const project = css`
 `
 
 const browserFrame = css`
-
-
   display: flex;
   flex-direction: column;
   position: relative;
@@ -90,20 +88,18 @@ const projectSubtitle = css`
   }
 `
 
-export const Title = ({title, subtitle}) => (
+export const Title = ({ title, subtitle }) => (
   <div css={titleContainer}>
-    <div css={projectTitle}>
-      {title}
-    </div>
+    <div css={projectTitle}>{title}</div>
     <div css={projectSubtitle}>{subtitle}</div>
-    </div>
+  </div>
 )
 
 const Project = ({ data }) => {
   const [isConsoleOpen, setIsConsoleOpen] = useState(false)
 
   const toggleIsConsoleOpen = () => {
-    setIsConsoleOpen(prevConsoleOpenState => {
+    setIsConsoleOpen((prevConsoleOpenState) => {
       return !prevConsoleOpenState
     })
   }
@@ -113,7 +109,7 @@ const Project = ({ data }) => {
   return (
     <div css={projectContainer}>
       <div css={project}>
-      <Title title={title} subtitle={subtitle}/>
+        <Title title={title} subtitle={subtitle} />
         <div css={browserFrame}>
           <BrowserHeader link={link} />
           <div>

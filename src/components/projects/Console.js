@@ -6,7 +6,7 @@ import ConsoleContent from "./ConsoleContent"
 
 import * as COLORS from "../../colors"
 
-const getConsoleStyles = isConsoleOpen => css`
+const getConsoleStyles = (isConsoleOpen) => css`
   background-color: ${COLORS.WHITE};
   color: ${COLORS.YELLOW};
   position: absolute;
@@ -21,10 +21,10 @@ const getConsoleStyles = isConsoleOpen => css`
   height: calc(100% - 60px);
 
   ${isConsoleOpen &&
-    css`
-      opacity: 1;
-      transition: opacity 0.15s ease-out;
-    `}
+  css`
+    opacity: 1;
+    transition: opacity 0.15s ease-out;
+  `}
 `
 
 class Console extends React.Component {

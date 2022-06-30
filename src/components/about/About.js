@@ -75,7 +75,6 @@ const text = css`
     border-radius: 6px;
   }
 
-
   a:hover {
     text-decoration: underline;
   }

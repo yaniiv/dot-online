@@ -5,12 +5,8 @@ import * as NUMBERS from "../../numbers"
 
 export default ({ scene, ballProperties, xPosition, color, meshColor }) => {
   const group = new THREE.Group()
-  const {
-    focalRadius,
-    ballRadius,
-    heightSegments,
-    widthSegments,
-  } = ballProperties
+  const { focalRadius, ballRadius, heightSegments, widthSegments } =
+    ballProperties
   const geometry = new THREE.SphereBufferGeometry(
     ballRadius,
     widthSegments,

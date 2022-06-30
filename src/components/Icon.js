@@ -1,6 +1,6 @@
 import React from "react"
 
-const getPath = name => {
+const getPath = (name) => {
   switch (name) {
     case "github":
       return (

@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import alphaTexture from "./textures/stripes_gradient.jpg"
 
-export default scene => {
+export default (scene) => {
   const group = new THREE.Group()
 
   function CustomSinCurve(scale) {
@@ -13,7 +13,7 @@ export default scene => {
   CustomSinCurve.prototype = Object.create(THREE.Curve.prototype)
   CustomSinCurve.prototype.constructor = CustomSinCurve
 
-  CustomSinCurve.prototype.getPoint = function(t) {
+  CustomSinCurve.prototype.getPoint = function (t) {
     var tx = t * 3 - 1.5
     var ty = Math.sin(2 * Math.PI * t)
     var tz = 0

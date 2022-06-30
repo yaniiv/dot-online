@@ -4,7 +4,7 @@ import { css } from "@emotion/core"
 
 import Icon from "./Icon"
 
-import data from '../../../data.js'
+import data from "../../../data.js"
 
 import * as COLORS from "../colors"
 

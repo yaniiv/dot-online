@@ -1,7 +1,7 @@
 export default {
   site: {
     siteMetadata: {
-      title: "yaniv's link forest",
+      title: "a forest of links",
       description: "don't get lost",
       author: "@yantonsoup",
       siteSocials: [
@@ -28,8 +28,7 @@ export default {
     about: {
       image_of_me:
         "https://images.prismic.io/dot-online/591242e8-1e66-4d6e-b404-ee4d071ff28a_me.png?auto=compress,format&rect=0,0,2452,2452&w=100&h=100",
-      text:
-        "Hello! I'm Yaniv. I write code sometimes. This website is a collection of my more fully-formed side projects. I try and make all my code open source on github whenever possible.",
+      text: "Hello! I'm Yaniv. I write code sometimes. This website is a collection of my more fully-formed side projects. I try and make all my code open source on github whenever possible.",
       github: "https://github.com/yantonsoup",
       url: "https://www.linkedin.com/in/ygoldobin/",
       education_rich_field: [

@@ -8,7 +8,7 @@ import * as COLORS from "../colors"
 import "../normalize.css"
 import "./layout.css"
 
-const layoutStyles = backgroundColor => css`
+const layoutStyles = (backgroundColor) => css`
   margin: auto;
   position: absolute;
   height: 100%;

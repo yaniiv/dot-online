@@ -1,7 +1,7 @@
 import * as THREE from "three"
 import * as COLORS from "../../colors"
 
-export default scene => {
+export default (scene) => {
   // lightOut.position.set(40, 20, 40)
 
   var light = new THREE.DirectionalLight(COLORS.PURPLE, 1)

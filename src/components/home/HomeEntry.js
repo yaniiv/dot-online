@@ -6,6 +6,14 @@ import Layout from "../Layout"
 
 const isClient = () => typeof window !== "undefined"
 
+const textMaxWidth = css`
+  max-width: 500px;
+
+  @media (min-width: 768px) {
+    max-width: 800px;
+  }
+`
+
 const secionStyles = css`
   position: absolute;
   background: ${COLORS.TRANSPARENT};
@@ -65,7 +73,7 @@ const HomeEntry = () => {
               display: none;
               @media (min-width: 768px) {
                 display: block;
-                top: 34vh;
+                top: 38vh;
               }
             `}
           >
@@ -77,13 +85,13 @@ const HomeEntry = () => {
               display: flex;
               flex-direction: column;
               left: 8vw;
-              top: 66vh;
+              top: 54vh;
               color: ${COLORS.YELLOW} !important;
               font-size: 40px !important;
               @media (min-width: 768px) {
                 left: unset;
-                right: 8vw;
-                top: 8vh;
+                right: 6vw;
+                top: 6vh;
               }
             `}
           >
@@ -113,25 +121,38 @@ const HomeEntry = () => {
               ${secionStyles};
 
               left: 8vw;
-              top: 78vh;
+              top: 72vh;
               @media (min-width: 768px) {
-                top: 16vh;
+                top: 12vh;
                 left: 22vw;
               }
             `}
           >
             <h3>volunteering</h3>
-            <div>
+            <div css={textMaxWidth}>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://www1.nyc.gov/assets/cto/#/press-release/new-york-city-celebrates-third-cohort-of-award-winning-nycx-innovation-fellows-program"
+              >
+                NYC[x] Innovation Fellowship, Cohort 3
+              </a>
+              <span>
+                - digitizing forms for low income housing programs with the NYC
+                Department of Housing Preservation & Development - 2021
+              </span>
+            </div>
+            <div css={textMaxWidth}>
               <a
                 rel="noreferrer"
                 target="_blank"
                 href="https://www1.nyc.gov/assets/cto/#/press-release/new-york-city-celebrates-first-cohort-of-nyc-x-innovation-fellows"
               >
-                NYC[x] Innovation Fellowship
+                NYC[x] Innovation Fellowship, Cohort 1
               </a>
               <span>
-                - the inaugural cohort of the NYC[x] innovation fellowship
-                program - 2020
+                - creating mapping tools to help the NYC Office of the CTO
+                extend universal broadband access - 2020
               </span>
             </div>
             <div
@@ -150,7 +171,7 @@ const HomeEntry = () => {
                 </a>
                 <span>- using technology for public service - ongoing </span>
               </div>
-              <div>
+              <div css={textMaxWidth}>
                 <a
                   href="https://covid19.nj.gov/forms/self"
                   css={css`
@@ -159,11 +180,7 @@ const HomeEntry = () => {
                 >
                   New Jersey Symptom Tracker
                 </a>
-                <span>
-                  {" "}
-                  - create a form to help folks in NJ track their symptoms -
-                  2020
-                </span>
+                <span>- Helping people in NJ track their symptoms - 2020</span>
               </div>
             </div>
           </div>
@@ -175,7 +192,7 @@ const HomeEntry = () => {
 
               @media (min-width: 768px) {
                 left: 50vw;
-                top: 36vh;
+                top: 38vh;
               }
             `}
           >
@@ -191,7 +208,7 @@ const HomeEntry = () => {
                 </a>
                 <span>- visualizing post-Soviet migration patterns - 2019</span>
               </div>
-              {/* <div>
+              <div>
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -199,11 +216,8 @@ const HomeEntry = () => {
                 >
                   thiswebsiteisnotaboutyou.com
                 </a>
-                <span>
-                  - what does a website feel like when you can't see yourself in
-                  it? - 2019
-                </span>
-              </div> */}
+                <span>- a website without the ego - 2019</span>
+              </div>
               <div>
                 <a rel="noreferrer" target="_blank" href="https://sperry.work/">
                   sperry.work
@@ -239,9 +253,9 @@ const HomeEntry = () => {
               ${secionStyles};
 
               left: 8vw;
-              top: 44vh;
+              top: 30vh;
               @media (min-width: 768px) {
-                left: 22vw;
+                left: 14vw;
                 top: 66vh;
               }
 
@@ -270,8 +284,8 @@ const HomeEntry = () => {
             css={css`
               ${secionStyles};
 
-              left: 62vw;
-              top: 58vh;
+              left: 54vw;
+              top: 54vh;
               @media (min-width: 768px) {
                 left: 68vw;
                 top: 66vh;

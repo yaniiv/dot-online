@@ -5,7 +5,7 @@ import { Link as ScrollLink } from "react-scroll"
 
 import * as COLORS from "../colors"
 
-const headerContainer = isTransparent => css`
+const headerContainer = (isTransparent) => css`
   position: sticky;
   top: 0;
   padding: 12px 16px;
@@ -25,10 +25,10 @@ const headerContainer = isTransparent => css`
   }
 
   ${isTransparent &&
-    css`
-      transition: background-color 0.25s ease-in;
-      background-color: ${COLORS.TRANSPARENT};
-    `}
+  css`
+    transition: background-color 0.25s ease-in;
+    background-color: ${COLORS.TRANSPARENT};
+  `}
 `
 
 const headerLink = css`

@@ -49,8 +49,8 @@ const browserUrlBar = css`
   color: ${COLORS.YANIV};
 
   svg {
-      visibility: hidden;
-    }
+    visibility: hidden;
+  }
 
   &:hover {
     text-decoration: underline;

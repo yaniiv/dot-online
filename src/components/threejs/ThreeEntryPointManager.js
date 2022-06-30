@@ -9,7 +9,7 @@ export default class ThreeEntryPointManager {
     this.canvasHalfHeight = null
   }
 
-  initialize = container => {
+  initialize = (container) => {
     this.createCanvas(document, container)
     this.sceneManager = new SceneManager(this.canvas)
     this.bindEventListeners()

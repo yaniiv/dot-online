@@ -2,12 +2,8 @@ import * as THREE from "three"
 
 export default (scene, ballProperties, color) => {
   const group = new THREE.Group()
-  const {
-    focalRadius,
-    ballRadius,
-    heightSegments,
-    widthSegments,
-  } = ballProperties
+  const { focalRadius, ballRadius, heightSegments, widthSegments } =
+    ballProperties
 
   const geometry = new THREE.SphereBufferGeometry(
     ballRadius,

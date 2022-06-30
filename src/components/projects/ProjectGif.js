@@ -12,7 +12,7 @@ const image = css`
   height: 100%;
 `
 
-const addImgixParams = src => {
+const addImgixParams = (src) => {
   let params = "&q=65"
 
   if (isDesktop()) {

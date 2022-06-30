@@ -9,7 +9,6 @@ const contact = css`
   background: ${COLORS.PURPLE};
 `
 
-
 const Contact = () => {
   return (
     <div id="contact" css={contact}>

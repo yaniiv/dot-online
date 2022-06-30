@@ -25,7 +25,7 @@ function getConicGradient(degreeOffset, coneColor) {
   `
 }
 
-const getSwirlDiameter = numSwirls => {
+const getSwirlDiameter = (numSwirls) => {
   if (typeof window === "undefined") {
     return null
   }
@@ -61,35 +61,30 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
             } */
 
     ${isDesktop() &&
-      css`
-        left: calc(10vw + ${32 * index}px);
-      `}
-
-    animation-duration: 2s;
-    animation-delay: ${index * 300}ms;
-    animation-name: slidein;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-
-    @keyframes slidein {
-      from {
-        /* margin-top: -${swirlDiameter / 2}px; */
-        margin-left: -${swirlDiameter / 2}px;
-      }
-
-      to {
-        /* margin-top: -${swirlDiameter}px; */
-        margin-left: -${swirlDiameter}px;
-      }
-    }
+    css`
+      left: calc(10vw + ${32 * index}px);
+    `}// animation-duration: 2s;
+    // animation-delay: ${index * 300}ms;
+    // animation-name: slidein;
+    // animation-iteration-count: infinite;
+    // animation-direction: alternate;
+    //
+    // @keyframes slidein {
+    //   from {
+    //     /* margin-top: -${swirlDiameter / 2}px; */
+    //     margin-left: -${swirlDiameter / 2}px;
+    //   }
+    //
+    //   to {
+    //     /* margin-top: -${swirlDiameter}px; */
+    //     margin-left: -${swirlDiameter}px;
+    //   }
+    // }
   `
 }
 
 const getSwirlColors = (numSwirls, colorScale) => {
-  const swirlColors = chroma
-    .scale(colorScale)
-    .mode("lch")
-    .colors(numSwirls)
+  const swirlColors = chroma.scale(colorScale).mode("lch").colors(numSwirls)
 
   return swirlColors
 }
@@ -131,8 +126,6 @@ const MagicBorder = ({
   })
 
   useEffect(() => {
-    // only render swirls after
-
     function handleResize() {
       const swirlDiameter = getSwirlDiameter(numSwirls)
       setSwirlDiameter(swirlDiameter)
@@ -145,23 +138,8 @@ const MagicBorder = ({
     <div
       css={css`
         display: flex;
-        width: 400px
+        width: 400px;
         margin-bottom: -${swirlDiameter / 2}px;
-
-        /* animation-duration: 3s;
-        animation-name: slideabout;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-
-        @keyframes slideabout {
-          from {
-            padding-left: 100px;
-          }
-
-          to {
-            padding-left: 1000px;
-          }
-        } */
       `}
     >
       {swirlStyles.map((css, index) => (
@@ -172,3 +150,18 @@ const MagicBorder = ({
 }
 
 export default MagicBorder
+
+/* animation-duration: 3s;
+animation-name: slideabout;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+
+@keyframes slideabout {
+  from {
+    padding-left: 100px;
+  }
+
+  to {
+    padding-left: 1000px;
+  }
+} */
