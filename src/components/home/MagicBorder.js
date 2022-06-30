@@ -46,19 +46,10 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     height: ${swirlDiameter}px;
     margin-left: -${swirlDiameter / 2}px;
     border-radius: ${swirlDiameter}px;
-    /* border: 1px solid ${COLORS.PURPLE}; */
     background: ${conicGradientProperties};
     display: block;
-    /* overflow:hidden; */
     position: fixed;
     left: ${120 + 5 * index}px;
-
-    /* left: 12vw;
-            top: 86vh;
-            @media (min-width: 768px) {
-              top: 22vh;
-              left: 32vw;
-            } */
 
     ${isDesktop() &&
     css`
@@ -71,12 +62,10 @@ const getSquiggleStyle = (degreeRotate, color, swirlDiameter, index) => {
     //
     // @keyframes slidein {
     //   from {
-    //     /* margin-top: -${swirlDiameter / 2}px; */
     //     margin-left: -${swirlDiameter / 2}px;
     //   }
     //
     //   to {
-    //     /* margin-top: -${swirlDiameter}px; */
     //     margin-left: -${swirlDiameter}px;
     //   }
     // }
