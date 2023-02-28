@@ -208,7 +208,7 @@ const HomeEntry = () => {
                 </a>
                 <span>- visualizing post-Soviet migration patterns - 2019</span>
               </div>
-              <div>
+              {/* <div>
                 <a
                   target="_blank"
                   rel="noreferrer"
@@ -217,7 +217,7 @@ const HomeEntry = () => {
                   thiswebsiteisnotaboutyou.com
                 </a>
                 <span>- a website without the ego - 2019</span>
-              </div>
+              </div> */}
               <div>
                 <a rel="noreferrer" target="_blank" href="https://sperry.work/">
                   sperry.work
