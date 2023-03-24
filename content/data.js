@@ -89,18 +89,18 @@ export default {
         project_video:
           "https://prismic-io.s3.amazonaws.com/dot-online/843db246-a716-474d-9378-4faf96fba1ea_terminal_1366_5.0s_10fps.mp4",
       },
-      {
-        node: {
-          slug: "twinay",
-          project_title: "This Website Is Not About You",
-          project_text:
-            "What does it feel like when a website asks you to contribute, without offering anything in return? ",
-          project_subtitle: "Selfless Contributions",
-          project_website: "http://www.thiswebsiteisnotaboutyou.com/",
-          project_image: null,
-          project_video: null,
-        },
-      },
+//       {
+//         node: {
+//           slug: "twinay",
+//           project_title: "This Website Is Not About You",
+//           project_text:
+//             "What does it feel like when a website asks you to contribute, without offering anything in return? ",
+//           project_subtitle: "Selfless Contributions",
+//           project_website: "http://www.thiswebsiteisnotaboutyou.com/",
+//           project_image: null,
+//           project_video: null,
+//         },
+//       },
     ],
   },
 }
