@@ -67,6 +67,10 @@ function SEO({ description, lang, meta, keywords, title }) {
           name: `twitter:description`,
           content: data.site.siteMetadata.description,
         },
+        {
+          name: `robots`,
+          content: `noindex`,
+        }
       ].concat(
         keywords.length > 0
           ? {
